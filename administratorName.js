@@ -2,10 +2,10 @@
 
 //  Программа выводит имя приветсвие Администратора
 //  Ввод имени через переменную {inputName}
-//  Вывод ранее присвоеного омени через переменную {AdministratorName}
+//  Вывод ранее присвоеного омени через переменную {administratorName}
 
-let inputName = prompt('Введите имя администратора', 'Login:');
-const AdministratorName = inputName;
+const inputName = prompt('Введите имя администратора', 'Login: ');
+const administratorName = inputName;
 
-console.log (AdministratorName);
-document.write('Приветствую Вас администратор: ' + AdministratorName);
+console.log (administratorName);
+document.write('Приветствую Вас администратор: ' + administratorName + '.');
