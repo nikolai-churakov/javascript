@@ -1,9 +1,9 @@
 "use strict";
 
 //  Перевод показаний температуры из градусов Цельсия в Фарингейты
-//  {Tcelsius} Заданая температура ( градусы Цельсия)
-//  {Tfaringeit} Результат, температура в градусах Фарингейта
-//  {toFixed} Округление результата до 1 знака после запятой.
+//  {inputTemperatureCelsius} Ввод температуры в градусах Цельсия)
+//  {converteTemperatureFaringeit} Пересчет температуры из градусов Цельсия в градусы по Фарингейту
+//  {toFixed} Округление результата до 1 знака после запятой
 
   const inputTemperatureCelsius  = + prompt('Введите температуру в градусах Цельсия', 'Градусы Цельсия');
   const converteTemperatureFaringeit = 9 / 5 * inputTemperatureCelsius  + 32;
