@@ -38,8 +38,8 @@ console.log(totalLastThreeNumberTicket);
 if (totalFirstThreeNumberTicket === totalLastThreeNumberTicket) {
     console.log('Ваш билет №' + ticketNumber + '. Счастливый.' + '\n' +
         'Вы ВЫЙГРАЛИ!!!');
+    document.write('Ваш билет №' + ticketNumber + '. Счастливый.' + '\n' +
+        'Вы ВЫЙГРАЛИ!!!');
     } else {console.log('Вам не повездл. Попробуйте снова.');
+            document.write('Вам не повездл. Попробуйте снова.');
 }
-
-
-
