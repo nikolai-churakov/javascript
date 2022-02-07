@@ -7,21 +7,28 @@
 // - если а и b отрицательные, вывести их произведение;
 // - если а и b разных знаков, вывести их сумму;
 
-let a = +prompt('Ведите целое значение первой переменной','');
-let b = +prompt('Ведите целое значение второй переменной','');
-let itog;
-
-function numberComparison() {
-    if (a > 0 && b > 0) {
-        itog = a - b
-        console.log('A+ and B+.  Разность значений = ' + itog);
-    } else if (a < 0 && b < 0) {
-        itog = a * b
-        console.log('A- and B-.  Произведений переменных = ' + itog);
-    } else {
-        let itog = a + b
-        console.log('значения А и B имеют разыне знаки. Сумма переменных = ' + itog);
+const getUsersNumbers = () => {
+    const firstNumber = +prompt('Ведите целое значение ПЕРВОЙ переменной','');
+    const secondNumber = +prompt('Ведите целое значение ВТОРОЙ переменной','');
+    if (Number.isNaN(firstNumber) && Number.isNaN(firstNumber)) {
+        console.log('Введено не верное значание. Введите ЦЕЛОЕ ЧИСЛО');
+        getUsersNumbers();
     }
-    // return itog; Нужен он тут или нет ???
+    // if (typeof firstNumber !== 'number' || typeof secondNumber !== 'number') {
+    //     console.log('Введите цифровое значение');
+    //     getUsersNumbers();
+    return {firstNumber, secondNumber};
+}
+
+const numberComparison = () => {
+    const {firstNumber, secondNumber} = getUsersNumbers();
+
+    if (firstNumber > 0 && secondNumber > 0) {
+        console.log('A+ and B+.  Разность значений = ' + `${firstNumber - secondNumber}`);
+    } else if (firstNumber < 0 && secondNumber < 0) {
+        console.log('A- and B-.  Произведений переменных = ' + `${firstNumber - secondNumber}`);
+    } else {
+        console.log('значения А и B имеют разыне знаки. Сумма переменных = ' + `${firstNumber - secondNumber}`);
+    }
 }
 numberComparison();
