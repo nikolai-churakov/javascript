@@ -10,16 +10,18 @@
 let a = +prompt('Ведите целое значение первой переменной','');
 let b = +prompt('Ведите целое значение второй переменной','');
 let itog;
-// let resultA = (a > 0); // true
-// let resultB = (b > 0); // true
 
-if (a > 0 && b > 0) {
-    itog = a - b
-    console.log('A+ and B+.  Разность значений = ' + itog);
-} else if (a < 0 && b < 0) {
-    itog = a * b
-    console.log('A- and B-.  Произведений переменных = ' + itog);
-} else {
-    let itog = a + b
-    console.log('значения А и B имеют разыне знаки. Сумма переменных = ' + itog);
+function numberComparison() {
+    if (a > 0 && b > 0) {
+        itog = a - b
+        console.log('A+ and B+.  Разность значений = ' + itog);
+    } else if (a < 0 && b < 0) {
+        itog = a * b
+        console.log('A- and B-.  Произведений переменных = ' + itog);
+    } else {
+        let itog = a + b
+        console.log('значения А и B имеют разыне знаки. Сумма переменных = ' + itog);
+    }
+    // return itog; Нужен он тут или нет ???
 }
+numberComparison();
