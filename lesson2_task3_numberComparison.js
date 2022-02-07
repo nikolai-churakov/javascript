@@ -10,7 +10,7 @@
 const getUsersNumbers = () => {
     const firstNumber = +prompt('Ведите целое значение ПЕРВОЙ переменной','');
     const secondNumber = +prompt('Ведите целое значение ВТОРОЙ переменной','');
-    if (Number.isNaN(firstNumber) && Number.isNaN(firstNumber)) {
+    if ( Number.isNaN(firstNumber) || Number.isNaN(firstNumber) ) {
         console.log('Введено не верное значание. Введите ЦЕЛОЕ ЧИСЛО');
         getUsersNumbers();
     }
