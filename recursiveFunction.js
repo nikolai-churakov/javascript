@@ -24,4 +24,5 @@
 //     return fibonacci_string;
 // }
 // alert(fibonacci(15, 1, 0));
-ленные произвольные начальные значен
+//
+// const myFunction = (n) => n <= 1 ? 1 : myFunction(n - 1) + ' ' + n;
