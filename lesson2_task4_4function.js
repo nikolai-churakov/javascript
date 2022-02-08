@@ -39,4 +39,4 @@ function multiply ()
     console.log('Сумма значений = ' + `${firstNumber * secondNumber}`);
     return (firstNumber * secondNumber);
 }
-divide();
+multiply();
