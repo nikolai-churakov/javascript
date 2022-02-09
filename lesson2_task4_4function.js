@@ -19,7 +19,7 @@ add();
 //  * Функция вычитания.
 function reduce ()
 {
-    console.log('Сумма значений = ' + `${firstNumber - secondNumber}`);
+    console.log('Разность значений = ' + `${firstNumber - secondNumber}`);
     return (firstNumber - secondNumber);
 }
 reduce();
@@ -28,7 +28,7 @@ reduce();
 //  * Функция деления.
 function divide ()
 {
-    console.log('Сумма значений = ' + `${firstNumber / secondNumber}`);
+    console.log('Частное значений = ' + `${firstNumber / secondNumber}`);
     return (firstNumber / secondNumber);
 }
 divide();
@@ -37,7 +37,8 @@ divide();
 //  * Функция умножения.
 function multiply ()
 {
-    console.log('Сумма значений = ' + `${firstNumber * secondNumber}`);
+    console.log('Произведение значений = ' + `${firstNumber * secondNumber}`);
     return (firstNumber * secondNumber);
 }
-multiply();
+multiply()
+
