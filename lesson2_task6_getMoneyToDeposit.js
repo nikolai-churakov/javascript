@@ -5,33 +5,29 @@ const lastDigital = getMoney % 10;
 
 function currensy () {
     if (lastDigital > 0 && lastDigital <= 1) {
-        console.log('рубль');
-        return ('рубль');
+        currensy = 'рубль';
     }
     if (lastDigital > 1 && lastDigital < 5) {
-        console.log('рубля');
-        return ('рубля');
+        currensy = 'рубля';
     } else {
-        console.log('рублей');
-        return ('рублей');
+        currensy = 'рублей';
     }
 }
 currensy ();
 
 function getMoneyToDeposit () {
-    alert('Добрый день. Предлагаем пополнить вклад.')
     switch (getMoney) {
-        case "101":
-            console.log('Ваша сумма в ' + getMoney + ' рубль успешно зачислена.');
-            return (getMoney);
-        case "10020":
-            console.log('Ваша сумма в ' + getMoney + ' рубль успешно зачислена.');
-            return (getMoney);
-        case "120104":
-            console.log('Ваша сумма в ' + getMoney + ' рубль успешно зачислена.');
-            return (getMoney);
+        case 101:
+            console.log('Выбраная из вариантов сумма в ' + getMoney + ' рубль успешно зачислена.');
+            break;
+        case 10020:
+            console.log('Выбраная из вариантов сумма ' + getMoney + '  рублей успешно зачислена.');
+            break;
+        case 120104:
+            console.log('Выбраная из вариантов сумма ' + getMoney + '  рубля успешно зачислена.');
+            break;
         default:
-            console.log('Ваша сумма в' + getMoney + currensy + ' успешно зачислена.');
+            console.log('Ваша сумма в ' + getMoney + ' ' + currensy + ' успешно зачислена.');
     }
 }
 getMoneyToDeposit();
