@@ -6,26 +6,65 @@
 // переданного значения операции (использовать switch) выполнить одну из арифметических операций
 // (использовать функции из задания 4) и вернуть полученное значение.
 
-function mathOperation () {
-    const operation = prompt('Выбирите операцию: multiply / divide / reduce / add', '');
-    const firstNumber = +prompt('Ведите целое значение ПЕРВОЙ переменной', '');
-    const secondNumber = +prompt('Ведите целое значение ВТОРОЙ переменной', '');
+const operation = prompt('Выбирите операцию: multiply / divide / reduce / add', '');
+const firstNumber = +prompt('Ведите целое значение ПЕРВОЙ переменной', '');
+const secondNumber = +prompt('Ведите целое значение ВТОРОЙ переменной', '');
 
-    switch (operation) {
+/**
+ * Функция сложения
+ * @param firstNumber
+ * @param secondNumber
+ * @returns Сумму двух чисел
+ */
+const addition = (firstNumber, secondNumber) => firstNumber + secondNumber;
+
+/**
+ * Функция вычитания
+ * @param firstNumber
+ * @param secondNumber
+ * @returns Разность двух значений
+ */
+const subtraction = (firstNumber, secondNumber) => firstNumber - secondNumber;
+
+/**
+ * Функция деления
+ * @param firstNumber
+ * @param secondNumber
+ * @returns {number}
+ */
+const division = (firstNumber, secondNumber) => firstNumber / secondNumber;
+
+/**
+ * Функция умножения
+ * @param firstNumber
+ * @param secondNumber
+ * @returns {number}
+ */
+const multiply = (firstNumber, secondNumber) => firstNumber * secondNumber;
+
+/**
+ * Функция четырех мат. операций multiply / subtraction / division / addition
+ * @param firstArg
+ * @param secondArg
+ * @param operationName
+ * @returns Результат мат. операции в зависимости от operationName
+ */
+const mathOperation = (firstArg, secondArg, operationName) => {
+    switch (operationName) {
         case "multiply":
-            console.log('Произведение значений = ' + `${firstNumber * secondNumber}`);
-            return (firstNumber - secondNumber);
-        case "divide":
-            console.log('Частное значений = ' + `${firstNumber / secondNumber}`);
-            return (firstNumber - secondNumber);
-        case "reduce":
-            console.log('Разность значений = ' + `${firstNumber - secondNumber}`);
-            return (firstNumber - secondNumber);
-        case "add":
-            console.log('Сумма значений = ' + `${firstNumber + secondNumber}`);
-            break;
-        default:
-            console.log("Вы ввели не верную операцию " + operation + ".  Выбирите из multiply / divide / reduce / add");
+            return multiply(firstArg, secondArg);
+        case "subtraction":
+            return subtraction(firstArg, secondArg);
+        case "division":
+            return division(firstArg, secondArg);
+        case "addition":
+            return addition(firstArg, secondArg);
     }
 }
-mathOperation();
+
+const isNumbersNaN = Number.isNaN(firstNumber) || Number.isNaN(secondNumber);
+const isOperationNameNotValid = operation !== 'multiply' && operation  !== 'subtraction' && operation  !== 'division' && operation  !== 'addition';
+
+if (!isNumbersNaN && !isOperationNameNotValid) {
+    console.log(mathOperation(firstNumber, secondNumber, operation));
+}

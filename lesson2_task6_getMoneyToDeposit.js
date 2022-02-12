@@ -1,36 +1,43 @@
 "use strict";
 
-const getMoney = +prompt('Выбирите сумму для пополнения ( 101 руб., 10020 руб. или 120104 руб.', '');
-const lastDigital = getMoney % 10;
+const replenishmentAmount = prompt('Выбирите сумму для пополнения ( 101 руб., 10020 руб. или 120104 руб.', '');
+// проверка на валидность replenishmentAmount
 
-function currensy () {
-    if (lastDigital > 0 && lastDigital <= 1) {
-        currensy = 'рубль';
-    }
-    if (lastDigital > 1 && lastDigital < 5) {
-        currensy = 'рубля';
+/**
+ *
+ * @param amountMoney
+ * @return
+ */
+const getCurrency = (amountMoney) => {
+    const lastSymbol = amountMoney[amountMoney.length - 1];
+
+    if (lastSymbol > 0 && lastSymbol <= 1) {
+        return 'рубль';
+    } else if (lastSymbol > 1 && lastSymbol < 5) {
+        return 'рубля';
     } else {
-        currensy = 'рублей';
+        return 'рублей';
     }
 }
-currensy ();
 
-function getMoneyToDeposit () {
-    switch (getMoney) {
-        case 101:
-            console.log('Выбраная из вариантов сумма в ' + getMoney + ' рубль успешно зачислена.');
-            break;
-        case 10020:
-            console.log('Выбраная из вариантов сумма ' + getMoney + '  рублей успешно зачислена.');
-            break;
-        case 120104:
-            console.log('Выбраная из вариантов сумма ' + getMoney + '  рубля успешно зачислена.');
+
+const getMoneyToDeposit = (amountMoney) => { // amountMoney = '100500'
+    const currency = getCurrency(amountMoney);
+    const isCustomMoney = amountMoney === 101 || amountMoney === 10020 || amountMoney === 120104;
+
+    switch (true) {
+        case isCustomMoney:
+            console.log(`Выбраная из вариантов сумма в ${amountMoney} ${currency} успешно зачислена.`);
             break;
         default:
-            console.log('Ваша сумма в ' + getMoney + ' ' + currensy + ' успешно зачислена.');
+            console.log(`Ваша сумма в ${amountMoney} ${currency}. Успешно зачислена.`);
     }
 }
-getMoneyToDeposit();
+
+if (!Number.isNaN(+replenishmentAmount)) {
+    getMoneyToDeposit(replenishmentAmount);
+}
+
 
 // Урок 2. Задание 6.
 // Программа должна спросить у пользователя количество денег, которое он хочет положить в банк.
