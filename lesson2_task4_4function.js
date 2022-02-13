@@ -4,41 +4,45 @@
 // Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя параметрами.
 // Обязательно использовать оператор return.
 
-const firstNumber = 6;
-const secondNumber = 2;
+const firstValue = 6;
+const secondValue = 2;
 
-//  Функция суммы.
-function add ()
-{
-    console.log('Сумма значений = ' + `${firstNumber + secondNumber}`);
-    return (firstNumber + secondNumber);
-}
-add();
+/**
+ * Функция сложения
+ * @param firstNumber
+ * @param secondNumber
+ * @returns Сумму двух чисел
+ */
+const addition = (firstNumber, secondNumber) => firstNumber + secondNumber;
 
+addition(firstValue, secondValue);
 
-//  * Функция вычитания.
-function reduce ()
-{
-    console.log('Разность значений = ' + `${firstNumber - secondNumber}`);
-    return (firstNumber - secondNumber);
-}
-reduce();
+/**
+ * Функция вычитания
+ * @param firstNumber
+ * @param secondNumber
+ * @returns Разность двух значений
+ */
+const subtraction = (firstNumber, secondNumber) => firstNumber - secondNumber;
 
+subtraction(firstValue, secondValue);
 
-//  * Функция деления.
-function divide ()
-{
-    console.log('Частное значений = ' + `${firstNumber / secondNumber}`);
-    return (firstNumber / secondNumber);
-}
-divide();
+/**
+ * Функция деления
+ * @param firstNumber
+ * @param secondNumber
+ * @returns Частное двух чисел
+ */
+const division = (firstNumber, secondNumber) => firstNumber / secondNumber;
 
+division(firstValue, secondValue);
 
-//  * Функция умножения.
-function multiply ()
-{
-    console.log('Произведение значений = ' + `${firstNumber * secondNumber}`);
-    return (firstNumber * secondNumber);
-}
-multiply()
+/**
+ * Функция умножения
+ * @param firstNumber
+ * @param secondNumber
+ * @returns Произведение двух чисел
+ */
+const multiply = (firstNumber, secondNumber) => firstNumber * secondNumber;
 
+multiply(firstValue, secondValue)
