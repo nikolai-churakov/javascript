@@ -31,7 +31,7 @@ subtraction(firstValue, secondValue);
  * Функция деления
  * @param firstNumber
  * @param secondNumber
- * @returns {number}
+ * @returns Частное двух чисел
  */
 const division = (firstNumber, secondNumber) => firstNumber / secondNumber;
 
@@ -41,7 +41,7 @@ division(firstValue, secondValue);
  * Функция умножения
  * @param firstNumber
  * @param secondNumber
- * @returns {number}
+ * @returns Произведение двух чисел
  */
 const multiply = (firstNumber, secondNumber) => firstNumber * secondNumber;
 
