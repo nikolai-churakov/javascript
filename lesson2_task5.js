@@ -30,7 +30,7 @@ const subtraction = (firstNumber, secondNumber) => firstNumber - secondNumber;
  * Функция деления
  * @param firstNumber
  * @param secondNumber
- * @returns {number}
+ * @returns Частное двух чисел
  */
 const division = (firstNumber, secondNumber) => firstNumber / secondNumber;
 
@@ -38,12 +38,12 @@ const division = (firstNumber, secondNumber) => firstNumber / secondNumber;
  * Функция умножения
  * @param firstNumber
  * @param secondNumber
- * @returns {number}
+ * @returns Произведение двух чисел
  */
 const multiply = (firstNumber, secondNumber) => firstNumber * secondNumber;
 
 /**
- * Функция четырех мат. операций multiply / subtraction / division / addition
+ * Функция четырех мат. операций addition / subtraction / division / multiply
  * @param firstArg
  * @param secondArg
  * @param operationName
