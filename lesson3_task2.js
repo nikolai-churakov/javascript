@@ -3,3 +3,10 @@
 // ```
 // for(…){/* здесь пусто */}
 // ```
+"use strict";
+
+let i=0;
+while (i>3) {
+    alert('while: ' +i);
+    i++;
+}
