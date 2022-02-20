@@ -11,6 +11,9 @@ function resetGame() {
 
     while (generatedNumbers.length < 4) {
         const part = Math.floor(Math.random()*10);
+        if (generatedNumbers === part) {
+            generatedNumbers.push(part)
+        }
 
     }
 }
