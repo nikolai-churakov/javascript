@@ -4,9 +4,14 @@
 // for(…){/* здесь пусто */}
 // ```
 "use strict";
+let arr = [
+    ['чураков', 'николай', 7177872, 34],
+    [true, 'москва', 'ЮЗАО', 261],
+    [13, 0o3, 101, 777000],
+];
 
-let i=0;
-while (i>3) {
-    alert('while: ' +i);
-    i++;
+for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+        console.log(arr[i][j]);
+    }
 }
