@@ -51,6 +51,17 @@ function isValidGuess(guess) {
     return  true;
 }
 
-function getGuessResult() {
+function getGuessResult(guess) {
+    const result = [0, 0];
 
+    for (let i =0; i < guess.length; i++) {
+        if (+guess[i] === generatedNumbers[i]) {
+            result[0]++;
+        }
+        else if (generatedNumbers.includes(+guess[i])) {
+            result[1]++;
+        }
+    }
+
+    return  result;
 }
