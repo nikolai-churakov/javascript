@@ -32,7 +32,9 @@ function startGame() {
             alert('Небходимо ввести 4 целые положительные цифры');
             continue;
         }
-        alert('Разбираем значение пользователя.');
+        attemptsCount++;
+
+        const result = getGuessResult(guess);
     }
 }
 
@@ -47,4 +49,8 @@ function isValidGuess(guess) {
         }
     }
     return  true;
+}
+
+function getGuessResult() {
+
 }
