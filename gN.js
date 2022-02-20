@@ -32,18 +32,19 @@ function startGame() {
             alert('Небходимо ввести 4 целые положительные цифры');
             continue;
         }
-        alert('Разбираем значение пользователя.')
+        alert('Разбираем значение пользователя.');
     }
 }
 
-function isValidGuess() {
+function isValidGuess(guess) {
     if (guess.length !== 4) {
         return false;
     }
 
     for (let i = 0; i < guess.length; i++) {
-        if (parseInt()s)
+        if (!Number.isNaN(parseInt(guess[i]))) {
+
+        }
     }
-
-
+    return  true;
 }
