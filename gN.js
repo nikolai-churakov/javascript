@@ -29,8 +29,10 @@ function startGame() {
         }
 
         if (!isValidGuess(guess)) {
-
+            alert('Небходимо ввести 4 целые положительные цифры');
+            continue;
         }
+        alert('Разбираем значение пользователя.')
     }
 }
 
