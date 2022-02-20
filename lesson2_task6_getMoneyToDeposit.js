@@ -14,6 +14,7 @@ const replenishmentAmount = prompt('Выбирите сумму пополнен
  */
 const getCurrency = (amountMoney) => {
     const lastSymbol = amountMoney[amountMoney.length - 1];
+    //const lastDigital = getMoney % 10;
 
     if (lastSymbol > 0 && lastSymbol <= 1) {
         return 'рубль';
