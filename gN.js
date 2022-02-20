@@ -37,5 +37,13 @@ function startGame() {
 }
 
 function isValidGuess() {
-    
+    if (guess.length !== 4) {
+        return false;
+    }
+
+    for (let i = 0; i < guess.length; i++) {
+        if (parseInt()s)
+    }
+
+
 }
