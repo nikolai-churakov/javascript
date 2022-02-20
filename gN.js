@@ -10,6 +10,7 @@ function resetGame() {
     generatedNumbers = [];
 
     while (generatedNumbers.length < 4) {
+        const part = Math.floor(Math.random()*10);
 
     }
 }
