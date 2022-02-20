@@ -4,6 +4,7 @@ let generatedNumbers;
 let attemptsCount;
 
 resetGame();
+startGame();
 
 function resetGame() {
     attemptsCount = 0;
@@ -16,4 +17,23 @@ function resetGame() {
         }
 
     }
+}
+
+function startGame() {
+    while (true) {
+        const guess = prompt('Попробуйте отгадать 4 различных целых положительных цифры, загаданных комьютером. \n' +
+        'Можете ввести -1 если хотите закончить игру.');
+
+        if (guess === '-1') {
+            return alert('Игра завершена');
+        }
+
+        if (!isValidGuess(guess)) {
+
+        }
+    }
+}
+
+function isValidGuess() {
+    
 }
