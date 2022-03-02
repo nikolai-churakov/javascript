@@ -23,23 +23,23 @@
         }
     };
 
-    const game = {
-      settings,
-      player,
+const game = {
+    settings,
+    player,
 
-         run() {
-          this.player.init(this.settings.startPositionX, this.settings.startPositionY)
-          this.render();
-         },
+    run() {
+        this.player.init(this.settings.startPositionX, this.settings.startPositionY)
+        this.render();
+    },
 
-        render() {
-          let map = '';
+    render() {
+        let map = '';
 
-          for (let row = 0; row < this.settings.rowsCount; row++ ) {
-              map += 'Строка';
-              map += '\n';
-          }
-          console.log(map);
+        for (let row = 0; row < this.settings.rowsCount; row++ ) {
+            map += 'Строка';
+            map += '\n';
+        }
+        console.log(map);
         },
     };
 
