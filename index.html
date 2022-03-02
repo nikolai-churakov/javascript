@@ -29,8 +29,18 @@
 
          run() {
           this.player.init(this.settings.startPositionX, this.settings.startPositionY)
-
+          this.render();
          },
+
+        render() {
+          let map = '';
+
+          for (let row = 0; row < this.settings.rowsCount; row++ ) {
+              map += 'Строка';
+              map += '\n';
+          }
+
+        }
     };
 
     game.run();
