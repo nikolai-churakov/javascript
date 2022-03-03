@@ -8,6 +8,8 @@
 <h1>Игра</h1>
 <script>
     'use strict';
+
+    // Data transfer Object
     const settings = {
     rowsCount: 10,
     colsCount: 10,
@@ -25,8 +27,8 @@
     };
 
 const game = {
-    settings,
-    player,
+    settings: settings,
+    player: settings,
 
     run() {
         this.player.init(this.settings.startPositionX, this.settings.startPositionY)
