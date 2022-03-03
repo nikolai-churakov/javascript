@@ -31,6 +31,7 @@ const game = {
     player,
 
     run() {
+        console.log(settings.rowsCount);
         this.player.init(this.settings.startPositionX, this.settings.startPositionY);
         this.render();
     },
