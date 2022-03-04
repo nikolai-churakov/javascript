@@ -23,6 +23,10 @@
         init(startX, startY) {
             this.x = startX;
             this.y = startY;
+        },
+
+        move() {
+
         }
     };
 
@@ -41,6 +45,8 @@ const game = {
                 alert('До свидания');
                 return;
             }
+
+            this.player.move();
 
             alert('Двигаем игрока');
         }
@@ -67,7 +73,7 @@ const game = {
             const direction = parseInt(prompt('Введите чило куда вы хотите переместиться, для выхода -1'));
 
             if (!availableDirections.includes(direction)) {
-                alert('Для перемещения необходимо ввести одно из чисел: 2, 4, 6, 8, для выхода -1');
+                alert(`Для перемещения необходимо ввести одно из чисел: ${availableDirections.join(', ')}, для выхода -1`);
                 continue;
             }
             return direction;
