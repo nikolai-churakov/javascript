@@ -13,8 +13,8 @@
     const settings = {
     rowsCount: 10,
     colsCount: 10,
-    startPositionX: 3,
-    startPositionY: 4,
+    startPositionX: 0,
+    startPositionY: 0,
      };
 
     const player = {
@@ -33,7 +33,11 @@ const game = {
     run() {
         console.log(settings.rowsCount);
         this.player.init(this.settings.startPositionX, this.settings.startPositionY);
-        this.render();
+        while (true) {
+            this.render();
+
+            const direction = this.getDirection();
+        }
     },
 
     render() {
@@ -51,6 +55,18 @@ const game = {
         }
         console.log(map);
         },
+    getDirection() {
+        const availableDirections = [-1, 2, 4, 6, 8];
+        while (true) {
+            const direction = parseInt(promt('Введите чило куда вы хотите переместиться, для выхода -1'));
+
+            if (пользователь ввел фигню) {
+                alert('Для перемещения необходимо ввести одно из чисел: 2, 4, 6, 8, для выхода -1');
+                continue;
+            }
+            return direction;
+        }
+    },
     };
 
     game.run();
