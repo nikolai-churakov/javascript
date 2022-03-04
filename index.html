@@ -31,12 +31,16 @@ const game = {
     player,
 
     run() {
-        console.log(settings.rowsCount);
         this.player.init(this.settings.startPositionX, this.settings.startPositionY);
         while (true) {
             this.render();
 
             const direction = this.getDirection();
+
+            if (direction === -1) {
+                alert('До свидания');
+                return;
+            }
         }
     },
 
@@ -60,7 +64,7 @@ const game = {
         while (true) {
             const direction = parseInt(promt('Введите чило куда вы хотите переместиться, для выхода -1'));
 
-            if (пользователь ввел фигню) {
+            if (!availableDirections.includes(direction)) {
                 alert('Для перемещения необходимо ввести одно из чисел: 2, 4, 6, 8, для выхода -1');
                 continue;
             }
