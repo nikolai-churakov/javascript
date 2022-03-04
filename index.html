@@ -25,8 +25,22 @@
             this.y = startY;
         },
 
-        move() {
+        move(direction) {
+            switch (direction) {
+                case 2:
+                    this.y++;
+                    break;
+                 case 4:
+                     this.x--;
+                     break;
+                case 6:
+                    this.x++;
+                    break;
+                case 8:
+                    this.y--;
+                    break;
 
+            }
         }
     };
 
@@ -46,7 +60,7 @@ const game = {
                 return;
             }
 
-            this.player.move();
+            this.player.move(direction);
 
             alert('Двигаем игрока');
         }
