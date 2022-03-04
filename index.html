@@ -13,8 +13,8 @@
     const settings = {
     rowsCount: 10,
     colsCount: 10,
-    startPositionX: 0,
-    startPositionY: 0,
+    startPositionX: 3,
+    startPositionY: 4,
      };
 
     const player = {
@@ -60,7 +60,6 @@ const game = {
             }
 
             this.player.move(direction);
-
             alert('Двигаем игрока');
         }
     },
@@ -78,8 +77,10 @@ const game = {
             }
             map += '\n';
         }
+        console.clear();
         console.log(map);
         },
+
     getDirection() {
         const availableDirections = [-1, 2, 4, 6, 8];
         while (true) {
