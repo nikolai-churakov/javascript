@@ -2,21 +2,100 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Расчеты на js</title>
+    <title>Игра</title>
 </head>
 <body>
+<h1>Игра</h1>
+<script>
+    'use strict';
 
-    <h1>Игра</h1>
-    <script src="lesson3_task3.js"></script>
+    // Data transfer Object
+    const settings = {
+    rowsCount: 10,
+    colsCount: 10,
+    startPositionX: 3,
+    startPositionY: 4,
+     };
 
-<!--    <h1>Задание №1. Расчет значений на js</h1>-->
-<!--    <script src="converseTemperature.js"></script>-->
+    const player = {
+        x: null,
+        y: null,
+        init(startX, startY) {
+            this.x = startX;
+            this.y = startY;
+        },
 
-<!--    <h1>Задание №2. Ввод имени администратора</h1>-->
-<!--    <script src="administratorName.js"></script>-->
+        move(direction) {
+            switch (direction) {
+                case 2:
+                    this.y++;
+                    break;
+                 case 4:
+                     this.x--;
+                     break;
+                case 6:
+                    this.x++;
+                    break;
+                case 8:
+                    this.y--;
+                    break;
+            }
+        }
+    };
 
-<!--    <h1>Задание №5. Проверка лотерейного билета</h1>-->
-<!--    <script src="happyTicket.js"></script>-->
+const game = {
+    settings,
+    player,
 
+    run() {
+        this.player.init(this.settings.startPositionX, this.settings.startPositionY);
+        while (true) {
+            this.render();
+
+            const direction = this.getDirection();
+
+            if (direction === -1) {
+                alert('До свидания');
+                return;
+            }
+
+            this.player.move(direction);
+        }
+    },
+
+    render() {
+        let map = '';
+
+        for (let row = 0; row < this.settings.rowsCount; row++ ) {
+            for (let col = 0; col < this.settings.colsCount; col++) {
+                if (this.player.y === row && this.player.x === col) {
+                    map += 'o ';
+                } else {
+                    map += 'x ';
+                }
+            }
+            map += '\n';
+        }
+        console.clear();
+        console.log(map);
+        },
+
+    getDirection() {
+        const availableDirections = [-1, 2, 4, 6, 8];
+        while (true) {
+            const direction = parseInt(prompt('Введите чило куда вы хотите переместиться, для выхода -1'));
+
+            if (!availableDirections.includes(direction)) {
+                alert(`Для перемещения необходимо ввести одно из чисел: ${availableDirections.join(', ')}, для выхода -1`);
+                continue;
+            }
+            return direction;
+        }
+    },
+    };
+
+    game.run();
+
+</script>
 </body>
 </html>
