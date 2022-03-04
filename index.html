@@ -64,7 +64,7 @@ const game = {
     getDirection() {
         const availableDirections = [-1, 2, 4, 6, 8];
         while (true) {
-            const direction = parseInt(promt('Введите чило куда вы хотите переместиться, для выхода -1'));
+            const direction = parseInt(prompt('Введите чило куда вы хотите переместиться, для выхода -1'));
 
             if (!availableDirections.includes(direction)) {
                 alert('Для перемещения необходимо ввести одно из чисел: 2, 4, 6, 8, для выхода -1');
