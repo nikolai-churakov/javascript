@@ -41,7 +41,7 @@ const game = {
 
         for (let row = 0; row < this.settings.rowsCount; row++ ) {
             for (let col = 0; col < this.settings.colsCount; col++) {
-                if (this.settings.y === row && this.player.x === col) {
+                if (this.player.y === row && this.player.x === col) {
                     map += 'o ';
                 } else {
                     map += 'x ';
