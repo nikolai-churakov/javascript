@@ -16,9 +16,9 @@ const getDigitsOfNumber = () => {
     }
 
     let objNumber = {
-        "Значание первого порядка": arrNumber[0],
-        "Значание второго порядка": arrNumber[1],
-        "Значание третьего порядка": arrNumber[2],
+        "Значание содержит ЕДИНИЦ": arrNumber[2],
+        "Значание содержит ДЕСЯТКОВ": arrNumber[1],
+        "Значание содержит СОТЕН": arrNumber[0],
     };
     console.log(objNumber);
     return objNumber;
