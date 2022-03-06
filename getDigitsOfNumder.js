@@ -1,10 +1,14 @@
 'use strict';
 
+const replenishmentAmount = prompt(`Введите целое число от 0 до 999.` + `\n`  + `Для выхода нажмите -1.`, ``);
+const errorNumberExit = 'Выход из функции.';
+const errorNumberNotIntegerOrIsNaN = 'Число введене НЕВЕРНО.';
+
 const getDigitsOfNumber = () => {
-    const number = prompt(`Введите целое число от 0 до 999.` + `\n`  + `Для выхода нажмите -1.`, ``);
+    const number = replenishmentAmount;
 
     if (number === '-1') {
-        return alert('Выход из функции.');
+        return alert(`${errorNumberExit}`);
     }
 
     let arrNumber = number.split('', 3);
@@ -24,4 +28,9 @@ const getDigitsOfNumber = () => {
     return objNumber;
 };
 
-getDigitsOfNumber();
+if (!Number.isInteger(+replenishmentAmount) || Number.isNaN(replenishmentAmount)) {
+    alert(` ${errorNumberNotIntegerOrIsNaN}`);
+
+} else {
+    getDigitsOfNumber(replenishmentAmount);
+}
