@@ -39,6 +39,22 @@
                 case 8:
                     this.y--;
                     break;
+                case 1:
+                    this.y++;
+                    this.x--;
+                    break;
+                case 3:
+                    this.y++;
+                    this.x++;
+                    break;
+                case 7:
+                    this.y--;
+                    this.x--;
+                    break;
+                case 9:
+                    this.y--;
+                    this.x++;
+                    break;
             }
         }
     };
@@ -81,7 +97,7 @@ const game = {
         },
 
     getDirection() {
-        const availableDirections = [-1, 2, 4, 6, 8];
+        const availableDirections = [-1, 2, 4, 6, 8, 1, 7, 9, 3];
         while (true) {
             const direction = parseInt(prompt('Введите чило куда вы хотите переместиться, для выхода -1'));
 
