@@ -4,6 +4,11 @@ const replenishmentAmount = prompt(`Введите целое число от 0 
 const errorNumberExit = 'Выход из функции.';
 const errorNumberNotIntegerOrIsNaN = 'Число введене НЕВЕРНО.';
 
+
+/**
+ * Переводит целое  числов в объект. Помещая в свойства числа по порядкам.
+ * @returns {{"Значание содержит ЕДИНИЦ": string, "Значание содержит ДЕСЯТКОВ": string, "Значание содержит СОТЕН": string}|*}
+ */
 const getDigitsOfNumber = () => {
     const number = replenishmentAmount;
 
