@@ -25,14 +25,22 @@
             this.y = startY;
         },
 
-        move(direction) {
-            switch (direction) {
+        move(nextPoint) {
+
+        },
+
+        getNextPosition() {
+            const nextPosition = {
+                x: player.x,
+                y: player.y,
+            };
+            switch (nextPosition) {
                 case 2:
                     this.y++;
                     break;
-                 case 4:
-                     this.x--;
-                     break;
+                case 4:
+                    this.x--;
+                    break;
                 case 6:
                     this.x++;
                     break;
@@ -56,7 +64,7 @@
                     this.x++;
                     break;
             }
-        }
+        },
     };
 
 const game = {
@@ -68,14 +76,18 @@ const game = {
         while (true) {
             this.render();
 
-            const direction = this.getDirection();
-
+            const direction= this.getDirection();
             if (direction === -1) {
                 alert('До свидания');
                 return;
             }
 
             this.player.move(direction);
+
+            const nextPoint = this.player.getNextPosition(direction);
+            if(this.canPlayerMakeStep(nextPoint)) {
+                this.player.move(nextPoint);
+            }
         }
     },
 
@@ -106,6 +118,12 @@ const game = {
                 continue;
             }
             return direction;
+        }
+    },
+
+    canPlayerMakeStep(nextPosition){
+        if((this.x > -1 && this.x < this.settings.rowsCount) && (this.y > -1 && this.y < this.settings.colsCount)) {
+            return true;
         }
     },
     };
