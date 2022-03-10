@@ -32,7 +32,7 @@
 
         getNextPosition() {
             const nextPosition = {
-                x: this.x, //Правильно this.x или player.x
+                x: player.x,
                 y: player.y,
             };
             switch (nextPosition) {
@@ -110,7 +110,7 @@ const game = {
     getDirection() {
         const availableDirections = [-1, 2, 8, 4, 6, 1, 7, 9, 3];
         while (true) {
-            const direction = parseInt(prompt('Введите чило куда вы хотите переместиться, для выхода -1'));
+            const direction = parseInt(prompt(`Введите одно из чисел: ${availableDirections.join(', ')}, куда вы хотите переместиться, для выхода -1`));
 
             if (!availableDirections.includes(direction)) {
                 alert(`Для перемещения необходимо ввести одно из чисел: ${availableDirections.join(', ')}, для выхода -1`);
