@@ -27,7 +27,15 @@
         },
 
         move(nextPoint) {
-            switch (nextPoint) {
+
+        },
+
+        getNextPosition() {
+            const nextPosition = {
+                x: this.x, //Правильно this.x или player.x
+                y: player.y,
+            };
+            switch (nextPosition) {
                 case 2:
                     this.y++;
                     break;
@@ -57,13 +65,6 @@
                     this.x++;
                     break;
             }
-        },
-
-        getNextPosition() {
-            const nextPosition = {
-                x: player.x,
-                y: player.y,
-            };
         },
     };
 
@@ -107,7 +108,7 @@ const game = {
         },
 
     getDirection() {
-        const availableDirections = [-1, 2, 4, 6, 8, 1, 7, 9, 3];
+        const availableDirections = [-1, 2, 8, 4, 6, 1, 7, 9, 3];
         while (true) {
             const direction = parseInt(prompt('Введите чило куда вы хотите переместиться, для выхода -1'));
 
@@ -120,7 +121,8 @@ const game = {
     },
 
     canPlayerMakeStep() {
-        if((this.player.x > -1 && this.player.x < this.settings.rowsCount) && (this.player.y > -1 && this.player.y < this.settings.colsCount)) {
+        if((this.player.x > -1 && this.player.x < this.settings.rowsCount) &&
+            (this.player.y > -1 && this.player.y < this.settings.colsCount)) {
             return true;
         }
     },
