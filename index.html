@@ -76,7 +76,7 @@ const game = {
         while (true) {
             this.render();
 
-            const direction= this.getDirection();
+            const direction = this.getDirection();
             if (direction === -1) {
                 alert('До свидания');
                 return;
@@ -121,7 +121,7 @@ const game = {
         }
     },
 
-    canPlayerMakeStep(nextPosition){
+    canPlayerMakeStep() {
         if((this.x > -1 && this.x < this.settings.rowsCount) && (this.y > -1 && this.y < this.settings.colsCount)) {
             return true;
         }
