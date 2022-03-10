@@ -26,12 +26,8 @@
             this.y = startY;
         },
 
-        getNextPosition() {
-            const nextPosition = {
-                x: player.x,
-                y: player.y,
-            };
-            switch (nextPosition) {
+       moveNextPosition(direction) {
+            switch (direction) {
                 case 2:
                     this.y++;
                     break;
@@ -63,29 +59,35 @@
             }
         },
 
-        move(nextPoint) {
-
+        moveBack(x, y) {
+            this.x = x;
+            this.y = y;
         },
     };
 
-const game = {
+    const game = {
     settings,
     player,
 
     run() {
         this.player.init(this.settings.startPositionX, this.settings.startPositionY);
         while (true) {
+            const x = this.player.x;
+            const y = this.player.y;
+
             this.render();
 
             const direction = this.getDirection();
+
             if (direction === -1) {
                 alert('До свидания');
                 return;
             }
 
-            const nextPoint = this.player.getNextPosition(direction);
-            if (this.canPlayerMakeStep(nextPoint)) {
-                this.player.move(nextPoint);
+            this.player.moveNextPosition(direction);
+
+            if (this.player.x < 0 || this.player.x > 10 || this.player.y < 0 || this.player.y > 10 ) {
+                this.player.moveBack(x, y);
             }
         }
     },
@@ -113,17 +115,11 @@ const game = {
             const direction = parseInt(prompt(`Введите одно из чисел: ${availableDirections.join(', ')}, куда вы хотите переместиться, для выхода -1`));
 
             if (!availableDirections.includes(direction)) {
+
                 alert(`Для перемещения необходимо ввести одно из чисел: ${availableDirections.join(', ')}, для выхода -1`);
                 continue;
             }
             return direction;
-        }
-    },
-
-    canPlayerMakeStep() {
-        if((this.player.x > -1 && this.player.x < this.settings.rowsCount) &&
-            (this.player.y > -1 && this.player.y < this.settings.colsCount)) {
-            return true;
         }
     },
     };
