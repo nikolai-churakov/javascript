@@ -23,19 +23,19 @@ const getDigitsOfNumber = () => {
     } else if (arrNumber.length < 2) {
         arrNumber.unshift('0', '0');
     }
-
-    let objNumber = {
-        "Значание содержит ЕДИНИЦ": arrNumber[2],
-        "Значание содержит ДЕСЯТКОВ": arrNumber[1],
-        "Значание содержит СОТЕН": arrNumber[0],
-    };
-    console.log(objNumber);
-    return objNumber;
 };
 
 if (!Number.isInteger(+replenishmentAmount) || Number.isNaN(replenishmentAmount)) {
     alert(` ${errorNumberNotIntegerOrIsNaN}`);
 
 } else {
-    getDigitsOfNumber(replenishmentAmount);
+    getDigitsOfNumber(+replenishmentAmount);
 }
+
+// const getDigitsOfNumber = (number) => {
+//     return {
+//         firstNumber: 0,
+//         secondNumber: 1,
+//         thirdNumber: 3
+//     }
+// };
