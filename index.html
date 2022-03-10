@@ -20,21 +20,14 @@
     const player = {
         x: null,
         y: null,
+
         init(startX, startY) {
             this.x = startX;
             this.y = startY;
         },
 
         move(nextPoint) {
-
-        },
-
-        getNextPosition() {
-            const nextPosition = {
-                x: player.x,
-                y: player.y,
-            };
-            switch (nextPosition) {
+            switch (nextPoint) {
                 case 2:
                     this.y++;
                     break;
@@ -65,6 +58,13 @@
                     break;
             }
         },
+
+        getNextPosition() {
+            const nextPosition = {
+                x: player.x,
+                y: player.y,
+            };
+        },
     };
 
 const game = {
@@ -82,10 +82,8 @@ const game = {
                 return;
             }
 
-            this.player.move(direction);
-
             const nextPoint = this.player.getNextPosition(direction);
-            if(this.canPlayerMakeStep(nextPoint)) {
+            if (this.canPlayerMakeStep(nextPoint)) {
                 this.player.move(nextPoint);
             }
         }
@@ -122,7 +120,7 @@ const game = {
     },
 
     canPlayerMakeStep() {
-        if((this.x > -1 && this.x < this.settings.rowsCount) && (this.y > -1 && this.y < this.settings.colsCount)) {
+        if((this.player.x > -1 && this.player.x < this.settings.rowsCount) && (this.player.y > -1 && this.player.y < this.settings.colsCount)) {
             return true;
         }
     },
