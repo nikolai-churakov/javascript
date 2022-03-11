@@ -1,6 +1,6 @@
 'use strict';
 
-const replenishmentAmount = prompt(`Введите целое число от 0 до 999.` + `\n`  + `Для выхода нажмите -1.`, ``);
+const number = prompt(`Введите целое число от 0 до 999.` + `\n`  + `Для выхода нажмите -1.`, ``);
 const errorNumberExit = 'Выход из функции.';
 const errorNumberNotIntegerOrIsNaN = 'Число введене НЕВЕРНО.';
 
@@ -9,8 +9,7 @@ const errorNumberNotIntegerOrIsNaN = 'Число введене НЕВЕРНО.'
  * Переводит целое числов в объект. Помещая в свойства числа по порядкам.
  * @returns {{"Значание содержит ЕДИНИЦ": string, "Значание содержит ДЕСЯТКОВ": string, "Значание содержит СОТЕН": string}|*}
  */
-const getDigitsOfNumber = () => {
-    const number = replenishmentAmount;
+const getDigitsOfNumber = (number) => {
 
     if (number === '-1') {
         return alert(`${errorNumberExit}`);
@@ -25,11 +24,11 @@ const getDigitsOfNumber = () => {
     }
 };
 
-if (!Number.isInteger(+replenishmentAmount) || Number.isNaN(replenishmentAmount)) {
+if (!Number.isInteger(+number) || Number.isNaN(number)) {
     alert(` ${errorNumberNotIntegerOrIsNaN}`);
 
 } else {
-    getDigitsOfNumber(+replenishmentAmount);
+    getDigitsOfNumber(+number);
 }
 
 // const getDigitsOfNumber = (number) => {
