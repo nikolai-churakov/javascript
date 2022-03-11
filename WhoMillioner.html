@@ -5,7 +5,7 @@
     <title>Игра</title>
 </head>
 <body>
-<h1>Игра в консоле</h1>
+<h1>Игра</h1>
 <script>
     'use strict';
 
@@ -20,20 +20,19 @@
     const player = {
         x: null,
         y: null,
-
         init(startX, startY) {
             this.x = startX;
             this.y = startY;
         },
 
-       moveNextPosition(direction) {
+        move(direction) {
             switch (direction) {
                 case 2:
                     this.y++;
                     break;
-                case 4:
-                    this.x--;
-                    break;
+                 case 4:
+                     this.x--;
+                     break;
                 case 6:
                     this.x++;
                     break;
@@ -57,24 +56,16 @@
                     this.x++;
                     break;
             }
-        },
-
-        moveBack(x, y) {
-            this.x = x;
-            this.y = y;
-        },
+        }
     };
 
-    const game = {
+const game = {
     settings,
     player,
 
     run() {
         this.player.init(this.settings.startPositionX, this.settings.startPositionY);
         while (true) {
-            const x = this.player.x;
-            const y = this.player.y;
-
             this.render();
 
             const direction = this.getDirection();
@@ -84,11 +75,7 @@
                 return;
             }
 
-            this.player.moveNextPosition(direction);
-
-            if (this.player.x < 0 || this.player.x > 10 || this.player.y < 0 || this.player.y > 10 ) {
-                this.player.moveBack(x, y);
-            }
+            this.player.move(direction);
         }
     },
 
@@ -110,12 +97,11 @@
         },
 
     getDirection() {
-        const availableDirections = [-1, 2, 8, 4, 6, 1, 7, 9, 3];
+        const availableDirections = [-1, 2, 4, 6, 8, 1, 7, 9, 3];
         while (true) {
-            const direction = parseInt(prompt(`Введите одно из чисел: ${availableDirections.join(', ')}, куда вы хотите переместиться, для выхода -1`));
+            const direction = parseInt(prompt('Введите чило куда вы хотите переместиться, для выхода -1'));
 
             if (!availableDirections.includes(direction)) {
-
                 alert(`Для перемещения необходимо ввести одно из чисел: ${availableDirections.join(', ')}, для выхода -1`);
                 continue;
             }
