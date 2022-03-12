@@ -9,15 +9,9 @@ const number = `123`;
  */
 const getDigitsOfNumber = (number) => {
     let objNumber = {};
-    if (number <= 9) {
-        objNumber["Значание содержит ЕДИНИЦ"] = number;
-    } else if (number <= 999) {
-        objNumber["Значание содержит ЕДИНИЦ"] = Math.floor(number % 10);
-        objNumber["Значание содержит ДЕСЯТКОВ"] = Math.floor(number / 10 % 10);
-        objNumber["Значание содержит СОТЕН"] = Math.floor(number / 100 % 10);
-    } else {
-        console.log('Вы ввели число за диапазоном 0 - 999');
-    }
+    objNumber["Значание содержит ЕДИНИЦ"] = Math.floor(number % 10);
+    objNumber["Значание содержит ДЕСЯТКОВ"] = Math.floor(number / 10 % 10);
+    objNumber["Значание содержит СОТЕН"] = Math.floor(number / 100 % 10);
     return objNumber;
 };
 
