@@ -6,7 +6,7 @@
 
 
 const inputName = prompt('Введите имя администратора', 'Login: ');
-const administratorName = inputName;
+const lesson1_task1_administratorName = inputName;
 
 console.log (administratorName);
 document.write('Приветствую Вас администратор: ' + administratorName + '.');
