@@ -29,12 +29,12 @@
         {
             text: "Сколько было черепашек нинздя?",
             variants: {
-                'a': 'a - 222',
+                'a': 'a - 2',
                 'b': 'b - 5',
                 'c': 'c - 4',
                 'd': 'd - 3',
             },
-            trueAnswerIndex: 'a',
+            trueAnswerIndex: 'c',
         },
         // {
         //     text: "Главный враг черепашек?",
@@ -74,24 +74,23 @@ const game = {
 
     run() {
         alert('Добро пожаловать в игру, Миллионер по неволе!');
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < settings.numberOfQuestions; i++) {
             let question = questions[(i)];
             alert(`${question.text} : \n ${question.variants['a']}\
             ${question.variants['b']} \
             ${question.variants['c']} \
             ${question.variants['d']}`);
             const variant = prompt(`Введите БУКВУ соответвующую варианту ответа:`,'');
-            settings.numberOfThueAnswer++;
 
-            if (settings.numberOfThueAnswer === 2) {
-                alert(`Вы выйграли! Правильно ответив на ${settings.numberOfThueAnswer} вопросов.`);
+            if (settings.numberOfThueAnswer === 1) {
+                alert(`Вы выйграли! Правильно ответив на ${settings.numberOfThueAnswer+1} вопросов.`);
             } else if (variant === question.trueAnswerIndex) {
                 alert("Правильный ответ! \n Переходим в следующему вопросу.");
                 settings.numberOfThueAnswer++;
                 console.log(settings.numberOfThueAnswer);
             }
             else {
-                alert(`Ой. Нет.. Правильно ответилина ${settings.numberOfThueAnswer} из ${settings.numberOfThueAnswer} вопросов.`);
+                alert(`Ой. Нет.. Правильно ответилина ${settings.numberOfThueAnswer} из ${settings.numberOfQuestions} вопросов.`);
                 break;
             }
         }
