@@ -5,7 +5,7 @@
     <title>Игра</title>
 </head>
 <body>
-<h1>Миллиоер по неволе</h1>
+<h1>Игра. Гуру черепашен ниндзя.</h1>
 <script>
     'use strict';
 
@@ -80,7 +80,8 @@ const game = {
             ${question.variants['b']} \
             ${question.variants['c']} \
             ${question.variants['d']}`);
-            const variant = prompt(`Введите БУКВУ соответвующую варианту ответа:`,'')
+            const variant = prompt(`Введите БУКВУ соответвующую варианту ответа:`,'');
+            settings.numberOfThueAnswer++;
 
             if (settings.numberOfThueAnswer === 2) {
                 alert(`Вы выйграли! Правильно ответив на ${settings.numberOfThueAnswer} вопросов.`);
@@ -90,7 +91,7 @@ const game = {
                 console.log(settings.numberOfThueAnswer);
             }
             else {
-                alert("ошибка")
+                alert(`Ой. Нет.. Правильно ответилина ${settings.numberOfThueAnswer} из ${settings.numberOfThueAnswer} вопросов.`);
                 break;
             }
         }
