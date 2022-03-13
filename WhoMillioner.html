@@ -80,16 +80,18 @@ const game = {
             ${question.variants['b']} \
             ${question.variants['c']} \
             ${question.variants['d']}`);
-            const variant = prompt(`Введите вариант ответа:`,'')
-            if (variant === question.trueAnswerIndex) {
-                alert("правильно!");
+            const variant = prompt(`Введите БУКВУ соответвующую варианту ответа:`,'')
+
+            if (settings.numberOfThueAnswer === 2) {
+                alert(`Вы выйграли! Правильно ответив на ${settings.numberOfThueAnswer} вопросов.`);
+            } else if (variant === question.trueAnswerIndex) {
+                alert("Правильный ответ! \n Переходим в следующему вопросу.");
                 settings.numberOfThueAnswer++;
                 console.log(settings.numberOfThueAnswer);
-            } else if (settings.numberOfThueAnswer === 2) {
-                alert("Игра завершена! Вы ответили на все вопросы!");
             }
             else {
                 alert("ошибка")
+                break;
             }
         }
 
