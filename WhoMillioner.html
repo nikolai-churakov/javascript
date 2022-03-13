@@ -5,6 +5,7 @@
     <title>Игра</title>
 </head>
 <body>
+<h2>Урок 4. Задание 3.</h2>
 <h1>Игра Гуру черепашен ниндзя.</h1>
 <script>
     'use strict';
@@ -12,7 +13,7 @@
     // Data transfer Object
     const settings = {
         numberOfQuestions: 5,
-        numberOfThueAnswer: 0,
+        numberOfThueAnswer: 1,
      };
 
     const questions = [
@@ -77,11 +78,9 @@ const game = {
         for (let i = 0; i < settings.numberOfQuestions; i++) {
             let question = questions[(i)];
 
-            const variant = prompt(`${question.text}\n
+            const variant = prompt(`Вопрос ${settings.numberOfThueAnswer}.\n ${question.text}\n
                 ${question.variants['1']}       ${question.variants['2']}\n
-                ${question.variants['3']}       ${question.variants['4']}\n
-
-            Выбери ЦИФРУ правильного варианта ответа.\nДля выхода введи \"-1"`, '');
+                ${question.variants['3']}       ${question.variants['4']}\n\nВыбери ЦИФРУ правильного ответа.\nДля выхода введи \"-1"`, '');
 
             if (+variant === -1) {
                 alert(`Вы выбрали выход. Спасибо!`);
@@ -89,13 +88,13 @@ const game = {
             }
 
             if (settings.numberOfThueAnswer === 5) {
-                alert(`Вы выйграли!\n Правильно ответив на ВСЕ вопросы.`);
+                alert(`Вы выйграли! Ответи на все вопросы.\nПравильных ответов ${settings.numberOfThueAnswer}.`);
                 break;
             } else if (variant === question.trueAnswerIndex) {
                 settings.numberOfThueAnswer++;
-                alert(`Правильный ответ! \n Переходим в  вопросу ${settings.numberOfThueAnswer}.`);
+                alert(`Правильный ответ! \nПереходим в  вопросу ${settings.numberOfThueAnswer}.`);
             } else {
-                alert(`Ой. Нет.. \n Дано правильных ответов ${settings.numberOfThueAnswer} из ${settings.numberOfQuestions} вопросов.`);
+                alert(`Ой. Нет.. \nДано правильных ответов ${settings.numberOfThueAnswer} из ${settings.numberOfQuestions} вопросов.`);
                 break;
             }
         }
