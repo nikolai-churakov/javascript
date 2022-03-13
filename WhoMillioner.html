@@ -5,109 +5,109 @@
     <title>Игра</title>
 </head>
 <body>
-<h1>Игра</h1>
+<h1>Миллиоер по неволе</h1>
 <script>
     'use strict';
 
     // Data transfer Object
     const settings = {
-    rowsCount: 10,
-    colsCount: 10,
-    startPositionX: 3,
-    startPositionY: 4,
+        numberOfQuestions: 5,
+        numberOfThueAnswer: 0,
      };
 
-    const player = {
-        x: null,
-        y: null,
-        init(startX, startY) {
-            this.x = startX;
-            this.y = startY;
+    const questions = [
+         {
+            text: "Сколько пальцев у черепашки ниндзя на одной конечности?",
+            variants: {
+                'a': 'a - 5',
+                'b': 'b - 2',
+                'c': 'c - 3',
+                'd': 'd - 4',
+            },
+            trueAnswerIndex: 'c',
         },
-
-        move(direction) {
-            switch (direction) {
-                case 2:
-                    this.y++;
-                    break;
-                 case 4:
-                     this.x--;
-                     break;
-                case 6:
-                    this.x++;
-                    break;
-                case 8:
-                    this.y--;
-                    break;
-                case 1:
-                    this.y++;
-                    this.x--;
-                    break;
-                case 3:
-                    this.y++;
-                    this.x++;
-                    break;
-                case 7:
-                    this.y--;
-                    this.x--;
-                    break;
-                case 9:
-                    this.y--;
-                    this.x++;
-                    break;
-            }
-        }
-    };
+        {
+            text: "Сколько было черепашек нинздя?",
+            variants: {
+                'a': 'a - 222',
+                'b': 'b - 5',
+                'c': 'c - 4',
+                'd': 'd - 3',
+            },
+            trueAnswerIndex: 'a',
+        },
+        // {
+        //     text: "Главный враг черепашек?",
+        //     variants: {
+        //         'a': 'Бибоп',
+        //         'b': 'Шредер',
+        //         'c': 'Кренк',
+        //         'd': 'Бивис',
+        //     },
+        //     trueAnswerIndex: 'c',
+        // },
+        // {
+        //     text: "Как звали подругу черепашек?",
+        //     variants: {
+        //         'a': 'Каролина',
+        //         'b': 'Сони',
+        //         'c': 'Эйприл',
+        //         'd': 'Фатима',
+        //     },
+        //     trueAnswerIndex: 'c',
+        // },
+        // {
+        //     text: "Как звали учителя зерепашек?",
+        //     variants: {
+        //         'a': 'Ксерокс',
+        //         'b': 'Эпсон',
+        //         'c': 'Сплинтер',
+        //         'd': 'Ислам Махачев',
+        //     },
+        //     trueAnswerIndex: 'c',
+        // },
+    ];
 
 const game = {
     settings,
-    player,
+    questions,
 
     run() {
-        this.player.init(this.settings.startPositionX, this.settings.startPositionY);
-        while (true) {
-            this.render();
-
-            const direction = this.getDirection();
-
-            if (direction === -1) {
-                alert('До свидания');
-                return;
+        alert('Добро пожаловать в игру, Миллионер по неволе!');
+        for (let i = 0; i < 5; i++) {
+            let question = questions[(i)];
+            alert(`${question.text} : \n ${question.variants['a']}\
+            ${question.variants['b']} \
+            ${question.variants['c']} \
+            ${question.variants['d']}`);
+            const variant = prompt(`Введите вариант ответа:`,'')
+            if (variant === question.trueAnswerIndex) {
+                alert("правильно!");
+                settings.numberOfThueAnswer++;
+                console.log(settings.numberOfThueAnswer);
+            } else if (settings.numberOfThueAnswer === 2) {
+                alert("Игра завершена! Вы ответили на все вопросы!");
             }
-
-            this.player.move(direction);
-        }
-    },
-
-    render() {
-        let map = '';
-
-        for (let row = 0; row < this.settings.rowsCount; row++ ) {
-            for (let col = 0; col < this.settings.colsCount; col++) {
-                if (this.player.y === row && this.player.x === col) {
-                    map += 'o ';
-                } else {
-                    map += 'x ';
-                }
+            else {
+                alert("ошибка")
             }
-            map += '\n';
         }
-        console.clear();
-        console.log(map);
-        },
 
-    getDirection() {
-        const availableDirections = [-1, 2, 4, 6, 8, 1, 7, 9, 3];
-        while (true) {
-            const direction = parseInt(prompt('Введите чило куда вы хотите переместиться, для выхода -1'));
+        // alert(question.text);
+        //
+        // console.log(question.text);
 
-            if (!availableDirections.includes(direction)) {
-                alert(`Для перемещения необходимо ввести одно из чисел: ${availableDirections.join(', ')}, для выхода -1`);
-                continue;
-            }
-            return direction;
+            // this.render();
+            //
+            // const direction = this.getDirection();
+            //
+            // if (direction === -1) {
+            //     alert('До свидания');
+            //     return;
+            // }
+
+            // this.player.move(direction);
         }
-    },
     };
 
     game.run();

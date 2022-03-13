@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dd2cd0b-ddcc-4fc8-a570-48fac11a49cf" name="Changes" comment="getObjFromNum" />
+    <list default="true" id="0dd2cd0b-ddcc-4fc8-a570-48fac11a49cf" name="Changes" comment="rename task">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WhoMillioner.html" beforeDir="false" afterPath="$PROJECT_DIR$/WhoMillioner.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -186,21 +189,9 @@
       <workItem from="1647017970567" duration="7040000" />
       <workItem from="1647083046049" duration="126000" />
       <workItem from="1647083179938" duration="208000" />
-      <workItem from="1647084284942" duration="363000" />
-    </task>
-    <task id="LOCAL-00085" summary="task 5">
-      <created>1646163815681</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1646163815681</updated>
-    </task>
-    <task id="LOCAL-00086" summary="task 5">
-      <created>1646163832863</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1646163832863</updated>
+      <workItem from="1647084284942" duration="1700000" />
+      <workItem from="1647110752215" duration="1331000" />
+      <workItem from="1647159677911" duration="7654000" />
     </task>
     <task id="LOCAL-00087" summary="task 5">
       <created>1646228366597</created>
@@ -531,7 +522,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647084534308</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="rename task">
+      <created>1647084691459</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1647084691459</updated>
+    </task>
+    <task id="LOCAL-00135" summary="rename task">
+      <created>1647084878047</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1647084878047</updated>
+    </task>
+    <option name="localTasksCounter" value="136" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +554,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add fix" />
     <MESSAGE value="add fix task4" />
     <MESSAGE value="add fix task5" />
     <MESSAGE value="add fix task6" />
@@ -574,7 +578,8 @@
     <MESSAGE value="task 5" />
     <MESSAGE value="task 1" />
     <MESSAGE value="getObjFromNum" />
-    <option name="LAST_COMMIT_MESSAGE" value="getObjFromNum" />
+    <MESSAGE value="rename task" />
+    <option name="LAST_COMMIT_MESSAGE" value="rename task" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
