@@ -54,7 +54,7 @@
                 '3': '3 - Эйприл',
                 '4': '4 - Фатима',
             },
-            trueAnswerIndex: '2',
+            trueAnswerIndex: '3',
         },
         {
             text: "Как звали учителя зерепашек?",
@@ -81,7 +81,8 @@ const game = {
                 ${question.variants['1']}       ${question.variants['2']}\n
                 ${question.variants['3']}       ${question.variants['4']}\n
 
-            Выбери ЦИФРУ правильного варианта ответа.\n Для выхода введи \"-1"`, '');
+            Выбери ЦИФРУ правильного варианта ответа.\n
+            Для выхода введи \"-1"`, '');
 
             if (+variant === -1) {
                 alert(`Вы выбрали выход. Спасибо!`);
@@ -92,9 +93,8 @@ const game = {
                 alert(`Вы выйграли!\n Правильно ответив на ВСЕ вопросы.`);
                 break;
             } else if (variant === question.trueAnswerIndex) {
-                alert("Правильный ответ! \n Переходим в следующему вопросу.");
                 settings.numberOfThueAnswer++;
-                console.log(settings.numberOfThueAnswer);
+                alert(`Правильный ответ! \n Переходим в  вопросу ${settings.numberOfThueAnswer}.`);
             } else {
                 alert(`Ой. Нет.. \n Дано правильных ответов ${settings.numberOfThueAnswer} из ${settings.numberOfQuestions} вопросов.`);
                 break;
