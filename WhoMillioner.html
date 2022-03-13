@@ -5,7 +5,7 @@
     <title>Игра</title>
 </head>
 <body>
-<h1>Игра. Гуру черепашен ниндзя.</h1>
+<h1>Игра Гуру черепашен ниндзя.</h1>
 <script>
     'use strict';
 
@@ -19,22 +19,22 @@
          {
             text: "Сколько пальцев у черепашки ниндзя на одной конечности?",
             variants: {
-                'a': 'a - 5',
-                'b': 'b - 2',
-                'c': 'c - 3',
-                'd': 'd - 4',
+                '1': '1. - пять пальцев',
+                '2': '2. - два пальца',
+                '3': '3. - три пальца',
+                '4': '4. - четыре пальца',
             },
-            trueAnswerIndex: 'c',
+            trueAnswerIndex: '3',
         },
         {
             text: "Сколько было черепашек нинздя?",
             variants: {
-                'a': 'a - 2',
-                'b': 'b - 5',
-                'c': 'c - 4',
-                'd': 'd - 3',
+                '1': '1 - две черепашки',
+                '2': '2 - пять черепашек',
+                '3': '3 - четыре черепашеки',
+                '4': '4 - три черепашки',
             },
-            trueAnswerIndex: 'c',
+            trueAnswerIndex: '3',
         },
         // {
         //     text: "Главный враг черепашек?",
@@ -73,42 +73,32 @@ const game = {
     questions,
 
     run() {
-        alert('Добро пожаловать в игру, Миллионер по неволе!');
+        alert('Добро пожаловать в игру Гуру черепашек ниндзя!');
         for (let i = 0; i < settings.numberOfQuestions; i++) {
             let question = questions[(i)];
-            alert(`${question.text} : \n ${question.variants['a']}\
-            ${question.variants['b']} \
-            ${question.variants['c']} \
-            ${question.variants['d']}`);
-            const variant = prompt(`Введите БУКВУ соответвующую варианту ответа:`,'');
+
+            const variant = prompt(`${question.text}\n
+                ${question.variants['1']}       ${question.variants['2']}\n
+                ${question.variants['3']}       ${question.variants['4']}\n
+
+            Выбери ЦИФРУ правильного варианта ответа.\n Для выхода введи \"-1"`, '');
+
+            if (+variant === -1) {
+                alert(`Вы выбрали выход. Спасибо!`);
+                break;
+            }
 
             if (settings.numberOfThueAnswer === 1) {
-                alert(`Вы выйграли! Правильно ответив на ${settings.numberOfThueAnswer+1} вопросов.`);
+                alert(`Вы выйграли!\n Правильно ответив на ВСЕ вопросы.`);
             } else if (variant === question.trueAnswerIndex) {
                 alert("Правильный ответ! \n Переходим в следующему вопросу.");
                 settings.numberOfThueAnswer++;
                 console.log(settings.numberOfThueAnswer);
-            }
-            else {
-                alert(`Ой. Нет.. Правильно ответилина ${settings.numberOfThueAnswer} из ${settings.numberOfQuestions} вопросов.`);
+            } else {
+                alert(`Ой. Нет.. \n Дано правильных ответов ${settings.numberOfThueAnswer} из ${settings.numberOfQuestions} вопросов.`);
                 break;
             }
         }
-
-        // alert(question.text);
-        //
-        // console.log(question.text);
-
-            // this.render();
-            //
-            // const direction = this.getDirection();
-            //
-            // if (direction === -1) {
-            //     alert('До свидания');
-            //     return;
-            // }
-
-            // this.player.move(direction);
         }
     };
 

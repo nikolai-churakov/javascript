@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dd2cd0b-ddcc-4fc8-a570-48fac11a49cf" name="Changes" comment="rename task">
+    <list default="true" id="0dd2cd0b-ddcc-4fc8-a570-48fac11a49cf" name="Changes" comment="finish game modul">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WhoMillioner.html" beforeDir="false" afterPath="$PROJECT_DIR$/WhoMillioner.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,21 +192,7 @@
       <workItem from="1647084284942" duration="1700000" />
       <workItem from="1647110752215" duration="1331000" />
       <workItem from="1647159677911" duration="7654000" />
-      <workItem from="1647189015083" duration="770000" />
-    </task>
-    <task id="LOCAL-00089" summary="task 1">
-      <created>1646229735120</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1646229735120</updated>
-    </task>
-    <task id="LOCAL-00090" summary="task 1">
-      <created>1646231957913</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1646231957913</updated>
+      <workItem from="1647189015083" duration="2471000" />
     </task>
     <task id="LOCAL-00091" summary="task 1">
       <created>1646232829990</created>
@@ -536,7 +523,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647189412413</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="rename task">
+      <created>1647189873035</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1647189873035</updated>
+    </task>
+    <task id="LOCAL-00139" summary="finish game modul">
+      <created>1647190274238</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1647190274238</updated>
+    </task>
+    <option name="localTasksCounter" value="140" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +555,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add fix task4" />
     <MESSAGE value="add fix task5" />
     <MESSAGE value="add fix task6" />
     <MESSAGE value="добавлена функция возведения числа в степерь" />
@@ -579,7 +579,8 @@
     <MESSAGE value="task 1" />
     <MESSAGE value="getObjFromNum" />
     <MESSAGE value="rename task" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename task" />
+    <MESSAGE value="finish game modul" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish game modul" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
