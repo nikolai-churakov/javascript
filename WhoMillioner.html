@@ -88,8 +88,9 @@ const game = {
                 break;
             }
 
-            if (settings.numberOfThueAnswer === 1) {
+            if (settings.numberOfThueAnswer === 5) {
                 alert(`Вы выйграли!\n Правильно ответив на ВСЕ вопросы.`);
+                break;
             } else if (variant === question.trueAnswerIndex) {
                 alert("Правильный ответ! \n Переходим в следующему вопросу.");
                 settings.numberOfThueAnswer++;
