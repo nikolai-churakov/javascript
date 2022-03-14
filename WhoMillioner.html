@@ -5,109 +5,100 @@
     <title>Игра</title>
 </head>
 <body>
-<h1>Игра</h1>
+<h2>Урок 4. Задание 3.</h2>
+<h1>Игра Гуру черепашен ниндзя.</h1>
 <script>
     'use strict';
 
     // Data transfer Object
     const settings = {
-    rowsCount: 10,
-    colsCount: 10,
-    startPositionX: 3,
-    startPositionY: 4,
+        numberOfQuestions: 5,
+        numberOfThueAnswer: 1,
      };
 
-    const player = {
-        x: null,
-        y: null,
-        init(startX, startY) {
-            this.x = startX;
-            this.y = startY;
+    const questions = [
+         {
+            text: "Сколько пальцев у черепашки ниндзя на одной конечности?",
+            variants: {
+                '1': '1 - пять пальцев',
+                '2': '2 - два пальца',
+                '3': '3 - три пальца',
+                '4': '4 - четыре пальца',
+            },
+            trueAnswerIndex: '3',
         },
-
-        move(direction) {
-            switch (direction) {
-                case 2:
-                    this.y++;
-                    break;
-                 case 4:
-                     this.x--;
-                     break;
-                case 6:
-                    this.x++;
-                    break;
-                case 8:
-                    this.y--;
-                    break;
-                case 1:
-                    this.y++;
-                    this.x--;
-                    break;
-                case 3:
-                    this.y++;
-                    this.x++;
-                    break;
-                case 7:
-                    this.y--;
-                    this.x--;
-                    break;
-                case 9:
-                    this.y--;
-                    this.x++;
-                    break;
-            }
-        }
-    };
+        {
+            text: "Сколько было черепашек нинздя?",
+            variants: {
+                '1': '1 - пять черепашки',
+                '2': '2 - две черепашек',
+                '3': '3 - три черепашеки',
+                '4': '4 - четыре черепашки',
+            },
+            trueAnswerIndex: '4',
+        },
+        {
+            text: "Главный враг черепашек?",
+            variants: {
+                '1': '1 - Бибоп',
+                '2': '2 - Шредер',
+                '3': '3 - Бивис',
+                '4': '4 - Кренк',
+            },
+            trueAnswerIndex: '4',
+        },
+        {
+            text: "Как звали подругу черепашек?",
+            variants: {
+                '1': '1 - Каролина',
+                '2': '2 - Сони',
+                '3': '3 - Эйприл',
+                '4': '4 - Фатима',
+            },
+            trueAnswerIndex: '3',
+        },
+        {
+            text: "Как звали учителя зерепашек?",
+            variants: {
+                '1': '1 - Ксерокс',
+                '2': '2 - Эпсон',
+                '3': '3 - Сплинтер',
+                '4': '4 - Ислам Махачев',
+            },
+            trueAnswerIndex: '3',
+        },
+    ];
 
 const game = {
     settings,
-    player,
+    questions,
 
     run() {
-        this.player.init(this.settings.startPositionX, this.settings.startPositionY);
-        while (true) {
-            this.render();
+        alert('Добро пожаловать в игру Гуру черепашек ниндзя!');
+        for (let i = 0; i < settings.numberOfQuestions; i++) {
+            let question = questions[(i)];
 
-            const direction = this.getDirection();
+            const variant = prompt(`Вопрос ${settings.numberOfThueAnswer}.\n ${question.text}\n
+                ${question.variants['1']}       ${question.variants['2']}\n
+                ${question.variants['3']}       ${question.variants['4']}\n\nВыбери ЦИФРУ правильного ответа.\nДля выхода введи \"-1"`, '');
 
-            if (direction === -1) {
-                alert('До свидания');
-                return;
+            if (+variant === -1) {
+                alert(`Вы выбрали выход. Спасибо!`);
+                break;
             }
 
-            this.player.move(direction);
-        }
-    },
-
-    render() {
-        let map = '';
-
-        for (let row = 0; row < this.settings.rowsCount; row++ ) {
-            for (let col = 0; col < this.settings.colsCount; col++) {
-                if (this.player.y === row && this.player.x === col) {
-                    map += 'o ';
-                } else {
-                    map += 'x ';
-                }
+            if (settings.numberOfThueAnswer === 5) {
+                alert(`Вы выйграли! Ответи на все вопросы.\nПравильных ответов ${settings.numberOfThueAnswer}.`);
+                break;
+            } else if (variant === question.trueAnswerIndex) {
+                settings.numberOfThueAnswer++;
+                alert(`Правильный ответ! \nПереходим в  вопросу ${settings.numberOfThueAnswer}.`);
+            } else {
+                alert(`Ой. Нет.. \nДано правильных ответов ${settings.numberOfThueAnswer} из ${settings.numberOfQuestions} вопросов.`);
+                break;
             }
-            map += '\n';
         }
-        console.clear();
-        console.log(map);
-        },
-
-    getDirection() {
-        const availableDirections = [-1, 2, 4, 6, 8, 1, 7, 9, 3];
-        while (true) {
-            const direction = parseInt(prompt('Введите чило куда вы хотите переместиться, для выхода -1'));
-
-            if (!availableDirections.includes(direction)) {
-                alert(`Для перемещения необходимо ввести одно из чисел: ${availableDirections.join(', ')}, для выхода -1`);
-                continue;
-            }
-            return direction;
         }
-    },
     };
 
     game.run();
