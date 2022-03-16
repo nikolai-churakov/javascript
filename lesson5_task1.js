@@ -16,7 +16,7 @@ const player = {
     y: null,
     direction: null,
 
-    init(startX,StartY, sratDirection) {
+    init(startX,StartY, startDirection) {
         this.x = startX;
         this.y = startY;
         this.direction = startDirection;
