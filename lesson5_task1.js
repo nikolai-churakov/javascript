@@ -28,5 +28,4 @@ const game = {
 
 };
 
-window.onload = () => game.run();
 window.addEventListener('load', () => game.run());
