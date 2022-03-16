@@ -26,13 +26,15 @@ const player = {
 const game = {
     player,
     settings,
+    containerElement: null,
 
     run() {
         this.init();
     },
 
     init() {
-        this.player.init(this.settings.startPositionX, this.settings.startPositionY, this.settings.startDirection)
+        this.player.init(this.settings.startPositionX, this.settings.startPositionY, this.settings.startDirection);
+        this.containerElement = document.getElementById('game')
     },
 
 };
