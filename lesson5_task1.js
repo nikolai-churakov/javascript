@@ -8,17 +8,24 @@ const settings = {
     startDirection: 'right',
     stepInSecond: 5,
     playerCellColor: 'AA3333',
-    emtyCellColor: 'EEEEEE',
+    emptyCellColor: 'EEEEEE',
 };
 
-const = player {
+const player = {
     x: null,
     y: null,
+    direction: null,
 
 };
 
 const game = {
+    player,
+    settings,
+
+    run() {
+        console.log(this.settings);
+    }
 
 };
 
-game.run();
+window.onload = () => game.run();
