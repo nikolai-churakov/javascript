@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dd2cd0b-ddcc-4fc8-a570-48fac11a49cf" name="Changes" comment="finish game modul">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0dd2cd0b-ddcc-4fc8-a570-48fac11a49cf" name="Changes" comment="выполнил корректировку по замечаниям шефа">
+      <change beforePath="$PROJECT_DIR$/lesson5_task1.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson5_task1.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/lesson3_task2.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task1.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lesson5_task1.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task3.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task4.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson2_task3_numberComparison.js" root0="FORCE_HIGHLIGHTING" />
@@ -192,69 +193,7 @@
       <workItem from="1647110752215" duration="1331000" />
       <workItem from="1647159677911" duration="7654000" />
       <workItem from="1647189015083" duration="3123000" />
-    </task>
-    <task id="LOCAL-00095" summary="task 1">
-      <created>1646319001417</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1646319001417</updated>
-    </task>
-    <task id="LOCAL-00096" summary="task 1">
-      <created>1646319193900</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1646319193900</updated>
-    </task>
-    <task id="LOCAL-00097" summary="task 1">
-      <created>1646319588530</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1646319588530</updated>
-    </task>
-    <task id="LOCAL-00098" summary="task 1">
-      <created>1646319961306</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1646319961306</updated>
-    </task>
-    <task id="LOCAL-00099" summary="task 1">
-      <created>1646372383617</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1646372383617</updated>
-    </task>
-    <task id="LOCAL-00100" summary="task 1">
-      <created>1646372420458</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1646372420458</updated>
-    </task>
-    <task id="LOCAL-00101" summary="task 1">
-      <created>1646373280083</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1646373280083</updated>
-    </task>
-    <task id="LOCAL-00102" summary="task 1">
-      <created>1646373393150</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1646373393150</updated>
-    </task>
-    <task id="LOCAL-00103" summary="task 1">
-      <created>1646373515049</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1646373515049</updated>
+      <workItem from="1647456529657" duration="2403000" />
     </task>
     <task id="LOCAL-00104" summary="task 1">
       <created>1646417781259</created>
@@ -536,7 +475,70 @@
       <option name="project" value="LOCAL" />
       <updated>1647192153873</updated>
     </task>
-    <option name="localTasksCounter" value="144" />
+    <task id="LOCAL-00144" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647456582456</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1647456582456</updated>
+    </task>
+    <task id="LOCAL-00145" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647457842151</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1647457842151</updated>
+    </task>
+    <task id="LOCAL-00146" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647458185870</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1647458185870</updated>
+    </task>
+    <task id="LOCAL-00147" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647458646115</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1647458646115</updated>
+    </task>
+    <task id="LOCAL-00148" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647458894018</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1647458894018</updated>
+    </task>
+    <task id="LOCAL-00149" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647459129184</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1647459129184</updated>
+    </task>
+    <task id="LOCAL-00150" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647459221668</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1647459221668</updated>
+    </task>
+    <task id="LOCAL-00151" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647459382653</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1647459382653</updated>
+    </task>
+    <task id="LOCAL-00152" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647459411895</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1647459411895</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +556,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add fix task5" />
     <MESSAGE value="add fix task6" />
     <MESSAGE value="добавлена функция возведения числа в степерь" />
     <MESSAGE value="+2 f" />
@@ -579,7 +580,8 @@
     <MESSAGE value="getObjFromNum" />
     <MESSAGE value="rename task" />
     <MESSAGE value="finish game modul" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish game modul" />
+    <MESSAGE value="выполнил корректировку по замечаниям шефа" />
+    <option name="LAST_COMMIT_MESSAGE" value="выполнил корректировку по замечаниям шефа" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
