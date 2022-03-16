@@ -32,7 +32,7 @@ const game = {
     },
 
     init() {
-        this.player
+        this.player.init(this.settings.startPositionX, this.settings.startPositionY, this.settings.startDirection)
     },
 
 };
