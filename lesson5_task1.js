@@ -23,6 +23,7 @@ const game = {
     settings,
 
     run() {
+        this.init();
         console.log(this.settings);
     }
 

@@ -38,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/lesson3_task2.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task1.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lesson5_task1.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task3.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task4.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson2_task3_numberComparison.js" root0="FORCE_HIGHLIGHTING" />
@@ -192,21 +193,7 @@
       <workItem from="1647110752215" duration="1331000" />
       <workItem from="1647159677911" duration="7654000" />
       <workItem from="1647189015083" duration="3123000" />
-      <workItem from="1647456529657" duration="1768000" />
-    </task>
-    <task id="LOCAL-00100" summary="task 1">
-      <created>1646372420458</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1646372420458</updated>
-    </task>
-    <task id="LOCAL-00101" summary="task 1">
-      <created>1646373280083</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1646373280083</updated>
+      <workItem from="1647456529657" duration="2093000" />
     </task>
     <task id="LOCAL-00102" summary="task 1">
       <created>1646373393150</created>
@@ -537,7 +524,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647458894018</updated>
     </task>
-    <option name="localTasksCounter" value="149" />
+    <task id="LOCAL-00149" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647459129184</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1647459129184</updated>
+    </task>
+    <task id="LOCAL-00150" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647459221668</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1647459221668</updated>
+    </task>
+    <option name="localTasksCounter" value="151" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
