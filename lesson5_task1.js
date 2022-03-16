@@ -16,6 +16,11 @@ const player = {
     y: null,
     direction: null,
 
+    init(startX,StartY, sratDirection) {
+        this.x = startX;
+        this.y = startY;
+        this.direction = startDirection;
+    }
 };
 
 const game = {
@@ -24,8 +29,11 @@ const game = {
 
     run() {
         this.init();
-        console.log(this.settings);
-    }
+    },
+
+    init() {
+        this.player
+    },
 
 };
 

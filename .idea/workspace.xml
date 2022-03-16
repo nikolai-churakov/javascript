@@ -193,21 +193,7 @@
       <workItem from="1647110752215" duration="1331000" />
       <workItem from="1647159677911" duration="7654000" />
       <workItem from="1647189015083" duration="3123000" />
-      <workItem from="1647456529657" duration="2093000" />
-    </task>
-    <task id="LOCAL-00102" summary="task 1">
-      <created>1646373393150</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1646373393150</updated>
-    </task>
-    <task id="LOCAL-00103" summary="task 1">
-      <created>1646373515049</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1646373515049</updated>
+      <workItem from="1647456529657" duration="2403000" />
     </task>
     <task id="LOCAL-00104" summary="task 1">
       <created>1646417781259</created>
@@ -538,7 +524,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647459221668</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647459382653</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1647459382653</updated>
+    </task>
+    <task id="LOCAL-00152" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647459411895</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1647459411895</updated>
+    </task>
+    <option name="localTasksCounter" value="153" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
