@@ -20,13 +20,14 @@ const player = {
         this.x = startX;
         this.y = StartY;
         this.direction = startDirection;
-    }
+    },
 };
 
 const game = {
     player,
     settings,
     containerElement: null,
+    sellElements: null,
 
     run() {
         this.init();
@@ -39,14 +40,17 @@ const game = {
 
     initCells() {
         this.containerElement.innerHTML = '';
+        this.sellElements = [];
         for (let row = 0; row < this.settings.rowCount; row++) {
             const trElem = document.createElement('tr');
             this.containerElement.appendChild(trElem);
             for (let col = 0; col < this.settings.colsCount; col++) {
                 const cell = document.createElement('td');
+                this.sellElements.push(cell);
                 trElem.appendChild(cell);
             }
         }
+        console.log(this.sellElements)
     },
 };
 
