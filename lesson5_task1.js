@@ -39,9 +39,15 @@ const game = {
 
     initCells() {
         this.containerElement.innerHTML = '';
-
+        for (let row = 0; row < this.settings.rowCount; row++) {
+            const trElem = document.createElement('tr');
+            this.containerElement.appendChild(trElem);
+            for (let col = 0; col < this.settings.colsCount; col++) {
+                const cell = document.createElement('td');
+                trElem.appendChild(cell);
+            }
+        }
     },
-
 };
 
 window.addEventListener('load', () => game.run());
