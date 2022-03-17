@@ -18,25 +18,42 @@ const player = {
 
     init(startX,StartY, startDirection) {
         this.x = startX;
-        this.y = startY;
+        this.y = StartY;
         this.direction = startDirection;
-    }
+    },
 };
 
 const game = {
     player,
     settings,
     containerElement: null,
+    sellElements: null,
 
     run() {
+        console.log(123);
         this.init();
     },
 
     init() {
         this.player.init(this.settings.startPositionX, this.settings.startPositionY, this.settings.startDirection);
-        this.containerElement = document.getElementById('game')
+        this.containerElement = document.getElementById('game');
     },
 
+    initCells() {
+        this.containerElement.innerHTML = '';
+        this.sellElements = [];
+        for (let row = 0; row < this.settings.rowCount; row++) {
+            const trElem = document.createElement('tr');
+            this.containerElement.appendChild(trElem);
+            for (let col = 0; col < this.settings.colsCount; col++) {
+                const cell = document.createElement('td');
+                this.sellElements.push(cell);
+                trElem.appendChild(cell);
+            }
+        }
+        console.log(this.sellElements)
+    },
 };
 
-window.addEventListener('load', () => game.run());
+// window.addEventListener('load', () => game.run());
+window.onload = () => game.run();
