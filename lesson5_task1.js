@@ -30,6 +30,7 @@ const game = {
     sellElements: null,
 
     run() {
+        console.log(123);
         this.init();
     },
 
