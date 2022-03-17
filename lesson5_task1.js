@@ -18,7 +18,7 @@ const player = {
 
     init(startX,StartY, startDirection) {
         this.x = startX;
-        this.y = startY;
+        this.y = StartY;
         this.direction = startDirection;
     }
 };
@@ -39,5 +39,4 @@ const game = {
 
 };
 
-window.addEventListener('load', () => game.run());
 window.addEventListener('load', () => game.run());
