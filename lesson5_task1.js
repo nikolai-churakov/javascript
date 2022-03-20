@@ -57,17 +57,18 @@ const game = {
     player,
     settings,
     containerElement: null,
-    cellElements: null,
+    sellElements: null,
 
     run() {
         this.init();
+        this.render();
 
         setInterval( () => {
-            this.player.makeStep();
-            this.render();
+            if (this.canPlayerMakeStep()) {
+                this.player.makeStep();
+                this.render();
+            }
         }, 1000 / this.settings.stepInSecond);
-
-        this.render();
     },
 
     init() {
@@ -85,7 +86,7 @@ const game = {
             this.containerElement.appendChild(trElem);
             for (let col = 0; col < this.settings.colsCount; col++) {
                 const cell = document.createElement('td');
-                this.cellElements.push(cell);
+                this.sellElements.push(cell);
                 trElem.appendChild(cell);
             }
         }
@@ -96,13 +97,21 @@ const game = {
     },
 
     render() {
-        this.cellElements.forEach(cell => cell.style.backgroundColor = this.settings.emptyCellColor);
+        this.sellElements.forEach(cell => cell.style.backgroundColor = this.settings.emptyCellColor);
         const playerCell = document
             .querySelector(`tr:nth-child(${this.player.y+1})`)
             .querySelector(`td:nth-child(${this.player.x+1})`);
 
         playerCell.style.backgroundColor = this.settings.playerCellColor;
     },
+
+    canPlayerMakeStep() {
+        const nextPoint = this.player.getNextStepPoint();
+        return nextPoint.x >= 0 &&
+            nextPoint.x < this.settings.colsCount &&
+            nextPoint.y >= 0 &&
+            nextPoint.y < this.settings.rowCount;
+        }
 };
 
 window.addEventListener('load', () => game.run());
