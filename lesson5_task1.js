@@ -38,6 +38,7 @@ const game = {
     init() {
         this.player.init(this.settings.startPositionX, this.settings.startPositionY, this.settings.startDirection);
         this.containerElement = document.getElementById('game');
+        this.initCells();
     },
 
     initCells() {
