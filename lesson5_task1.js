@@ -29,7 +29,12 @@ const player = {
     },
 
     getNextStepPoint() {
+        const point = {
+            x: this.x,
+            y: this.y,
+        };
 
+        return point;
     }
 };
 
