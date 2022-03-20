@@ -93,6 +93,10 @@ const game = {
     },
 
     initEventHandlers() {
+        document.addEventListener('keydown', () => this.keyDownHandler())
+    },
+
+    keyDownHadler() {
 
     },
 
