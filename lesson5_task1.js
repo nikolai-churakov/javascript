@@ -40,7 +40,7 @@ const game = {
         this.player.init(this.settings.startPositionX, this.settings.startPositionY, this.settings.startDirection);
         this.containerElement = document.getElementById('game');
         this.initCells();
-        this.initEventHandlers
+        this.initEventHandlers();
     },
 
     initCells() {
@@ -59,12 +59,12 @@ const game = {
 
     initEventHandlers() {
 
-    };
+    },
 
     render() {
         const playerCell = document.querySelector('tr:nth-child(5)');
         console.log(playerCell);
-};
+},
 
 window.addEventListener('load', () => game.run());
 // window.onload = () => game.run();
