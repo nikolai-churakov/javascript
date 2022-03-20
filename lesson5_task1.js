@@ -4,7 +4,7 @@ const settings = {
     rowCount: 10,
     colsCount: 10,
     startPositionX: 2,
-    startPositionY: 0,
+    startPositionY: 4,
     startDirection: 'right',
     stepInSecond: 5,
     playerCellColor: 'AA3333',
