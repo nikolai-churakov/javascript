@@ -22,6 +22,10 @@ const player = {
         this.direction = startDirection;
     },
 
+    setDirection(direction) {
+        this.direction = direction;
+    },
+
     makeStep() {
         const nextPoint = this.getNextStepPoint();
         this.x = nextPoint.x;
@@ -93,11 +97,24 @@ const game = {
     },
 
     initEventHandlers() {
-        document.addEventListener('keydown', () => this.keyDownHandler())
+        document.addEventListener('keydown', Event => this.keyDownHandler(Event))
     },
 
-    keyDownHadler() {
-
+    keyDownHandler(Event) {
+        switch (Event.code) {
+            case 'KeyW':
+            case 'ArrowUp':
+                return this.player.setDirection('up');
+            case 'KeyD':
+            case 'ArrowRight':
+                return this.player.setDirection('right');
+            case 'KeyS':
+            case 'ArrowDown':
+                return this.player.setDirection('down');
+            case 'KeyA':
+            case 'ArrowLeft':
+                return this.player.setDirection('left');
+        }
     },
 
     render() {
