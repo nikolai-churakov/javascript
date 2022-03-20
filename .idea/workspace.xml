@@ -197,21 +197,7 @@
       <workItem from="1647542591299" duration="3065000" />
       <workItem from="1647547017391" duration="529000" />
       <workItem from="1647798137240" duration="562000" />
-      <workItem from="1647798740628" duration="2232000" />
-    </task>
-    <task id="LOCAL-00121" summary="getObjFromNum">
-      <created>1646851683696</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1646851683696</updated>
-    </task>
-    <task id="LOCAL-00122" summary="getObjFromNum">
-      <created>1646852140054</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1646852140054</updated>
+      <workItem from="1647798740628" duration="2557000" />
     </task>
     <task id="LOCAL-00123" summary="getObjFromNum">
       <created>1646852191931</created>
@@ -542,7 +528,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647800824713</updated>
     </task>
-    <option name="localTasksCounter" value="170" />
+    <task id="LOCAL-00170" summary="init in game">
+      <created>1647801028404</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1647801028404</updated>
+    </task>
+    <task id="LOCAL-00171" summary="init in game">
+      <created>1647801049542</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1647801049542</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -4,11 +4,11 @@ const settings = {
     rowCount: 10,
     colsCount: 10,
     startPositionX: 2,
-    startPositionY: 4,
+    startPositionY: 5,
     startDirection: 'right',
     stepInSecond: 5,
-    playerCellColor: 'AA3333',
-    emptyCellColor: 'EEEEEE',
+    playerCellColor: '#AA3333',
+    emptyCellColor: '#EEEEEE',
 };
 
 const player = {
@@ -64,9 +64,9 @@ const game = {
     render() {
         const playerCell = document
             .querySelector(`tr:nth-child(${this.player.y+1})`)
-            .querySelector(`td:nth-child(${this.player.x+1})`)
-        ;
+            .querySelector(`td:nth-child(${this.player.x+1})`);
 
+        console.log(playerCell);
         playerCell.style.backgroundColor = this.settings.playerCellColor;
     },
 };
