@@ -34,6 +34,13 @@ const player = {
             y: this.y,
         };
 
+        switch (this.direction) {
+            case 'up':
+            case 'right':
+            case 'down':
+            case 'left':
+        }
+
         return point;
     }
 };
