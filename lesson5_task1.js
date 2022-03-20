@@ -32,6 +32,8 @@ const game = {
     run() {
         this.init();
 
+
+
         this.render();
     },
 
