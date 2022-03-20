@@ -21,6 +21,10 @@ const player = {
         this.y = StartY;
         this.direction = startDirection;
     },
+
+    makeStep() {
+
+    },
 };
 
 const game = {
@@ -32,7 +36,10 @@ const game = {
     run() {
         this.init();
 
-
+        setInterval( () => {
+            this.player.makeStep();
+            this.render();
+        }, 1000 / this.settings.stepInSecond);
 
         this.render();
     },
