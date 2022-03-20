@@ -62,8 +62,12 @@ const game = {
     },
 
     render() {
-        const playerCell = document.querySelector(`tr:nth-child(${this.player.y+1})`);
-        console.log(playerCell);
+        const playerCell = document
+            .querySelector(`tr:nth-child(${this.player.y+1})`)
+            .querySelector(`td:nth-child(${this.player.x+1})`)
+        ;
+
+        playerCell.style.backgroundColor = this.settings.playerCellColor;
     },
 };
 
