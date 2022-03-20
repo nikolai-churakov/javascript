@@ -197,21 +197,7 @@
       <workItem from="1647542591299" duration="3065000" />
       <workItem from="1647547017391" duration="529000" />
       <workItem from="1647798137240" duration="562000" />
-      <workItem from="1647798740628" duration="786000" />
-    </task>
-    <task id="LOCAL-00115" summary="getObjFromNum">
-      <created>1646578751914</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1646578751914</updated>
-    </task>
-    <task id="LOCAL-00116" summary="getObjFromNum">
-      <created>1646584734759</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1646584734759</updated>
+      <workItem from="1647798740628" duration="1267000" />
     </task>
     <task id="LOCAL-00117" summary="getObjFromNum">
       <created>1646660995678</created>
@@ -542,7 +528,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647799075070</updated>
     </task>
-    <option name="localTasksCounter" value="164" />
+    <task id="LOCAL-00164" summary="init in game">
+      <created>1647799589776</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1647799589776</updated>
+    </task>
+    <task id="LOCAL-00165" summary="init in game">
+      <created>1647799722180</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1647799722180</updated>
+    </task>
+    <option name="localTasksCounter" value="166" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,6 +586,18 @@
     <MESSAGE value="выполнил корректировку по замечаниям шефа" />
     <MESSAGE value="init in game" />
     <option name="LAST_COMMIT_MESSAGE" value="init in game" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/lesson5_task1.js</url>
+          <line>2</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

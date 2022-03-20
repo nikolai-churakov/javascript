@@ -3,8 +3,8 @@
 const settings = {
     rowCount: 10,
     colsCount: 10,
-    startPositionX: 0,
-    startPositionY: 0,
+    startPositionX: 2,
+    startPositionY: 4,
     startDirection: 'right',
     stepInSecond: 5,
     playerCellColor: 'AA3333',
@@ -56,6 +56,14 @@ const game = {
             }
         }
     },
+
+    initEventHandlers() {
+
+    };
+
+    render() {
+        const playerCell = document.querySelector('tr:nth-child(5)');
+        console.log(playerCell);
 };
 
 window.addEventListener('load', () => game.run());
