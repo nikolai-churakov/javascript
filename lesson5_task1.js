@@ -36,9 +36,17 @@ const player = {
 
         switch (this.direction) {
             case 'up':
+                point.y--;
+                break;
             case 'right':
+                point.x++;
+                break;
             case 'down':
+                point.y++;
+                break;
             case 'left':
+                point.x--;
+                break;
         }
 
         return point;
@@ -49,7 +57,7 @@ const game = {
     player,
     settings,
     containerElement: null,
-    sellElements: null,
+    cellElements: null,
 
     run() {
         this.init();
@@ -77,7 +85,7 @@ const game = {
             this.containerElement.appendChild(trElem);
             for (let col = 0; col < this.settings.colsCount; col++) {
                 const cell = document.createElement('td');
-                this.sellElements.push(cell);
+                this.cellElements.push(cell);
                 trElem.appendChild(cell);
             }
         }
@@ -88,6 +96,7 @@ const game = {
     },
 
     render() {
+        this.cellElements.forEach(cell => cell.style.backgroundColor = this.settings.emptyCellColor);
         const playerCell = document
             .querySelector(`tr:nth-child(${this.player.y+1})`)
             .querySelector(`td:nth-child(${this.player.x+1})`);
