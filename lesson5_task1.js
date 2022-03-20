@@ -31,6 +31,7 @@ const game = {
 
     run() {
         console.log(123);
+        console.log(this.settings);
         this.init();
     },
 
@@ -57,3 +58,4 @@ const game = {
 
 // window.addEventListener('load', () => game.run());
 window.onload = () => game.run();
+console.log(456);

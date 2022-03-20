@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dd2cd0b-ddcc-4fc8-a570-48fac11a49cf" name="Changes" comment="выполнил корректировку по замечаниям шефа">
+    <list default="true" id="0dd2cd0b-ddcc-4fc8-a570-48fac11a49cf" name="Changes" comment="init in game">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lesson5_task1.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson5_task1.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,10 +39,10 @@
     <setting file="file://$PROJECT_DIR$/lesson3_task2.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task1.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/lesson5_task1.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task3.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task4.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson2_task3_numberComparison.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lesson5_task1.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson2_task5.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson2_task4_4function.js" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -86,11 +87,11 @@
       <recent name="C:\workSpace\javascript" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.WhoMillioner.html">
+  <component name="RunManager" selected="JavaScript Debug.lesson5_task1.html">
     <configuration type="NodeJSConfigurationType" path-to-node="node">
       <method v="2" />
     </configuration>
-    <configuration name="WhoMillioner.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/javascript/WhoMillioner.html" useBuiltInWebServerPort="true">
+    <configuration name="lesson5_task1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/javascript/lesson5_task1.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="lesson3_task1.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/lesson3_task1.js" working-dir="$PROJECT_DIR$">
@@ -110,7 +111,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JavaScript Debug.WhoMillioner.html" />
+        <item itemvalue="JavaScript Debug.lesson5_task1.html" />
         <item itemvalue="Node.js.lesson3_task5.js" />
         <item itemvalue="Node.js.lesson3_task4.js" />
         <item itemvalue="Node.js.lesson3_task3.js" />
@@ -194,69 +195,9 @@
       <workItem from="1647159677911" duration="7654000" />
       <workItem from="1647189015083" duration="3123000" />
       <workItem from="1647456529657" duration="2403000" />
-    </task>
-    <task id="LOCAL-00104" summary="task 1">
-      <created>1646417781259</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1646417781259</updated>
-    </task>
-    <task id="LOCAL-00105" summary="task 1">
-      <created>1646418689880</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1646418689880</updated>
-    </task>
-    <task id="LOCAL-00106" summary="task 1">
-      <created>1646418984624</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1646418984624</updated>
-    </task>
-    <task id="LOCAL-00107" summary="task 1">
-      <created>1646419047166</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1646419047166</updated>
-    </task>
-    <task id="LOCAL-00108" summary="task 1">
-      <created>1646419125945</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1646419125945</updated>
-    </task>
-    <task id="LOCAL-00109" summary="task 1">
-      <created>1646419460122</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1646419460126</updated>
-    </task>
-    <task id="LOCAL-00110" summary="task 1">
-      <created>1646419743426</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1646419743426</updated>
-    </task>
-    <task id="LOCAL-00111" summary="task 1">
-      <created>1646419957279</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1646419957279</updated>
-    </task>
-    <task id="LOCAL-00112" summary="task 1">
-      <created>1646420492165</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1646420492165</updated>
+      <workItem from="1647542591299" duration="3065000" />
+      <workItem from="1647547017391" duration="529000" />
+      <workItem from="1647798137240" duration="316000" />
     </task>
     <task id="LOCAL-00113" summary="task 1">
       <created>1646420720603</created>
@@ -538,7 +479,70 @@
       <option name="project" value="LOCAL" />
       <updated>1647459411895</updated>
     </task>
-    <option name="localTasksCounter" value="153" />
+    <task id="LOCAL-00153" summary="выполнил корректировку по замечаниям шефа">
+      <created>1647542951977</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1647542951978</updated>
+    </task>
+    <task id="LOCAL-00154" summary="init in game">
+      <created>1647543098542</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1647543098542</updated>
+    </task>
+    <task id="LOCAL-00155" summary="init in game">
+      <created>1647543237007</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1647543237007</updated>
+    </task>
+    <task id="LOCAL-00156" summary="init in game">
+      <created>1647543390922</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1647543390922</updated>
+    </task>
+    <task id="LOCAL-00157" summary="init in game">
+      <created>1647543884379</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1647543884379</updated>
+    </task>
+    <task id="LOCAL-00158" summary="init in game">
+      <created>1647544407931</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1647544407931</updated>
+    </task>
+    <task id="LOCAL-00159" summary="init in game">
+      <created>1647545053084</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1647545053084</updated>
+    </task>
+    <task id="LOCAL-00160" summary="init in game">
+      <created>1647545133770</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1647545133770</updated>
+    </task>
+    <task id="LOCAL-00161" summary="init in game">
+      <created>1647545675740</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1647545675740</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +560,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add fix task6" />
     <MESSAGE value="добавлена функция возведения числа в степерь" />
     <MESSAGE value="+2 f" />
     <MESSAGE value="add ss" />
@@ -581,7 +584,8 @@
     <MESSAGE value="rename task" />
     <MESSAGE value="finish game modul" />
     <MESSAGE value="выполнил корректировку по замечаниям шефа" />
-    <option name="LAST_COMMIT_MESSAGE" value="выполнил корректировку по замечаниям шефа" />
+    <MESSAGE value="init in game" />
+    <option name="LAST_COMMIT_MESSAGE" value="init in game" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
