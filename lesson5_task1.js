@@ -24,6 +24,8 @@ const player = {
 
     makeStep() {
         const nextPoint = this.getNextStepPoint();
+        this.x = nextPoint.x;
+        this.y = nextPoint.y;
     },
 
     getNextStepPoint() {
