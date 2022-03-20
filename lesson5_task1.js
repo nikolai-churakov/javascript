@@ -64,7 +64,8 @@ const game = {
     render() {
         const playerCell = document.querySelector('tr:nth-child(5)');
         console.log(playerCell);
-},
+    },
+};
 
 window.addEventListener('load', () => game.run());
-// window.onload = () => game.run();
+// window.onload = () => game.run()

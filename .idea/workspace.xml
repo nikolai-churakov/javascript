@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dd2cd0b-ddcc-4fc8-a570-48fac11a49cf" name="Changes" comment="init in game">
-      <change beforePath="$PROJECT_DIR$/lesson5_task1.js" beforeDir="false" afterPath="$PROJECT_DIR$/lesson5_task1.js" afterDir="false" />
-    </list>
+    <list default="true" id="0dd2cd0b-ddcc-4fc8-a570-48fac11a49cf" name="Changes" comment="init in game" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -197,21 +195,7 @@
       <workItem from="1647542591299" duration="3065000" />
       <workItem from="1647547017391" duration="529000" />
       <workItem from="1647798137240" duration="562000" />
-      <workItem from="1647798740628" duration="1267000" />
-    </task>
-    <task id="LOCAL-00117" summary="getObjFromNum">
-      <created>1646660995678</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1646660995678</updated>
-    </task>
-    <task id="LOCAL-00118" summary="getObjFromNum">
-      <created>1646661144507</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1646661144507</updated>
+      <workItem from="1647798740628" duration="1616000" />
     </task>
     <task id="LOCAL-00119" summary="getObjFromNum">
       <created>1646662848665</created>
@@ -542,7 +526,21 @@
       <option name="project" value="LOCAL" />
       <updated>1647799722180</updated>
     </task>
-    <option name="localTasksCounter" value="166" />
+    <task id="LOCAL-00166" summary="init in game">
+      <created>1647800214756</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1647800214756</updated>
+    </task>
+    <task id="LOCAL-00167" summary="init in game">
+      <created>1647800307276</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1647800307276</updated>
+    </task>
+    <option name="localTasksCounter" value="168" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,18 +584,6 @@
     <MESSAGE value="выполнил корректировку по замечаниям шефа" />
     <MESSAGE value="init in game" />
     <option name="LAST_COMMIT_MESSAGE" value="init in game" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/lesson5_task1.js</url>
-          <line>2</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
