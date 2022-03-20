@@ -66,7 +66,6 @@ const game = {
             .querySelector(`tr:nth-child(${this.player.y+1})`)
             .querySelector(`td:nth-child(${this.player.x+1})`);
 
-        console.log(playerCell);
         playerCell.style.backgroundColor = this.settings.playerCellColor;
     },
 };
