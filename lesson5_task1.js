@@ -23,8 +23,12 @@ const player = {
     },
 
     makeStep() {
-
+        const nextPoint = this.getNextStepPoint();
     },
+
+    getNextStepPoint() {
+
+    }
 };
 
 const game = {
