@@ -30,9 +30,10 @@ const game = {
     sellElements: null,
 
     run() {
-        console.log(123);
         console.log(this.settings);
         this.init();
+
+        this.render();
     },
 
     init() {
@@ -53,10 +54,8 @@ const game = {
                 trElem.appendChild(cell);
             }
         }
-        console.log(this.sellElements)
     },
 };
 
 // window.addEventListener('load', () => game.run());
 window.onload = () => game.run();
-console.log(456);
