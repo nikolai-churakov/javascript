@@ -5,8 +5,8 @@ const settings = {
     colsCount: 10,
     startPositionX: 0,
     startPositionY: 0,
-    playerCellColor: '#AA3333',
-    emptyCellColor: '#EEEEEE',
+    playerCellColor: '#733535',
+    emptyCellColor: '#ececec',
 };
 
 const game = {
@@ -36,15 +36,18 @@ const game = {
                 trElem.appendChild(cell);
             }
         }
+        console.log(this.sellElements.length -1);
     },
 
     render() {
-        this.sellElements.forEach(cell => cell.style.backgroundColor = this.settings.emptyCellColor);
-        const playerCell = document
-            .querySelector(`tr:nth-child(${this.player.y+1})`)
-            .querySelector(`td:nth-child(${this.player.x+1})`);
 
-        playerCell.style.backgroundColor = this.settings.playerCellColor;
+        for (let i; i < this.sellElements.length; i++) {
+            if (this.sellElements % 2) {
+                this.sellElements.forEach(cell => cell.style.backgroundColor = this.settings.playerCellColor);
+            } else {
+                this.sellElements.forEach(cell => cell.style.backgroundColor = this.settings.emptyCellColor);
+            }
+        }
     },
 };
 
