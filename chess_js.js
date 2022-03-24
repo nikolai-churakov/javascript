@@ -37,8 +37,7 @@ const game = {
             }
         }
         console.log(this.sellElements.length);
-        const rarka = this.sellElements.length;
-        return rarka;
+
     },
 
     render() {
