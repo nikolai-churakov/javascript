@@ -36,11 +36,13 @@ const game = {
                 trElem.appendChild(cell);
             }
         }
-        console.log(this.sellElements.length -1);
+        console.log(this.sellElements.length);
+        const rarka = this.sellElements.length;
+        return rarka;
     },
 
     render() {
-
+        console.log(rarka);
         for (let i; i < this.sellElements.length; i++) {
             if (this.sellElements % 2) {
                 this.sellElements.forEach(cell => cell.style.backgroundColor = this.settings.playerCellColor);
@@ -49,6 +51,7 @@ const game = {
             }
         }
     },
+
 };
 
 window.addEventListener('load', () => game.run());
