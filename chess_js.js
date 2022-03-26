@@ -191,7 +191,8 @@ const board = {
             for (let j = 0; j < 64; j++) {
                 let cellId = this.sellElements[j].id
                 if (settings.figure[i].coordinate === cellId) {
-                    this.sellElements[j].innerHTML = `<span style="color:${settings.figure[i].color};">${settings.figure[i].img}<span>`;
+                    this.sellElements[j].innerHTML = `<span style="color:${settings.figure[i].color}; 
+                    position:relative; top:-1px;left:2px">${settings.figure[i].img};<span>`;
                 }
             }
         }
@@ -200,11 +201,11 @@ const board = {
     pawnRange () {
         let pawnsRowWhite = document.querySelectorAll('tr:nth-child(2) td');
         for (let i = 0; i < 8; i++) {
-            pawnsRowWhite[i].innerHTML = `<span style="color: white;">&#9817<span>`;
+            pawnsRowWhite[i].innerHTML = `<span style="color: white; position:relative; top:-1px;left:2px">&#9817<span>`;
         }
         let pawnsRowBlack = document.querySelectorAll('tr:nth-child(7) td');
         for (let i = 0; i < 8; i++) {
-            pawnsRowBlack[i].innerHTML = `<span style="color: black;">&#9817<span>`;
+            pawnsRowBlack[i].innerHTML = `<span style="color: black;position:relative; top:-1px;left:2px ">&#9817<span>`;
         }
     },
 
@@ -215,6 +216,8 @@ const board = {
         for (let i = 0; i < 8; i++) {
             let tdColLetter = document.createElement('td');
             tdColLetter.innerHTML = this.settings.colLetter[i];
+            table.style.position = "relative";
+            table.style.top = "-1px";
             tdColLetter.style.textAlign = 'center';
             trColLetter.appendChild(tdColLetter);
         }
