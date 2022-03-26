@@ -22,12 +22,12 @@
                 </div>
                 <div class="form-group col-md-6">
                     <label>
-                        <input type="text" name="name" class="form-control" placeholder="Имя">
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Имя">
                     </label>
                 </div>
                 <div class="form-group col-md-6">
                     <label>
-                        <input type="text" name="phone" class="form-control" placeholder="Телефон">
+                        <input type="text" id="phone" name="phone" class="form-control" placeholder="Телефон">
                     </label>
                 </div>
             </div>
@@ -35,17 +35,19 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label>
-                        <input type="password" name="password" class="form-control" placeholder="Пароль">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Пароль">
                     </label>
                 </div>
                 <div class="form-group col-md-6">
                     <label>
-                        <input class="form-control" name="password_repeat" placeholder="Повторите пароль" type="password">
+                        <input class="form-control" id="password-return" name="password_repeat" placeholder="Повторите пароль" type="password">
                     </label>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Отправить</button>
         </form>
+
+        <div class="alarmMessage" id="alarmMessage"></div>
     </div>
 
 <script src="inspectForm.js"></script>
