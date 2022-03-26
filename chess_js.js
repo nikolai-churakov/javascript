@@ -1,13 +1,22 @@
 'use strict';
 
 const settings = {
-    rowCount: 10,
-    colsCount: 10,
-    startPositionX: 0,
-    startPositionY: 0,
-    playerCellColor: '#733535',
-    emptyCellColor: '#ececec',
+    rowCount: 8,
+    colsCount: 8,
+    rowNumber: [1, 2, 3, 4, 5, 6, 7, 8],
+    colLetter: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
+    cellFirstColor: '#DEB887',
+    cellSecondColor: '#733535',
 };
+
+const cell = {
+    settings,
+    rowCoordinate: null,
+    colCoordinete: null,
+    divElem: null,
+    backgroundColor: null,
+};
+
 
 const game = {
     settings,
@@ -16,7 +25,6 @@ const game = {
 
     run() {
         this.init();
-        this.render();
     },
 
     init() {
@@ -37,19 +45,9 @@ const game = {
             }
         }
         console.log(this.sellElements.length);
-
-    },
-
-    render() {
-        console.log(rarka);
-        for (let i; i < this.sellElements.length; i++) {
-            if (this.sellElements % 2) {
-                this.sellElements.forEach(cell => cell.style.backgroundColor = this.settings.playerCellColor);
-            } else {
-                this.sellElements.forEach(cell => cell.style.backgroundColor = this.settings.emptyCellColor);
-            }
+        const infoBOX = this.sellElements.length;
+        console.log(infoBOX);
         }
-    },
 
 };
 
