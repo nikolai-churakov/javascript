@@ -1,45 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f5c36ba-c1c9-445d-bc33-63e12b5adeb4" name="Changes" comment="forEach" />
+    <list default="true" id="5f5c36ba-c1c9-445d-bc33-63e12b5adeb4" name="Changes" comment="добил нумерацию доски">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chess_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/chess_js.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="additional21" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/lesson2_task6_getMoneyToDeposit.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/chess_js.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/OneDrive/Рабочий стол/chess3.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task2.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task1.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/js-base-js/js-base-js/chess3.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lesson2_task5.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lesson2_task4_4function.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/index.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task3.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson3_task4.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson2_task3_numberComparison.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/lesson5_task1.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/lesson2_task5.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/lesson2_task4_4function.js" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="26iAH6uwM6JVYRd346Au8jsPDzu" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="RunManager">
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.chess.html">
+    <configuration name="chess.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/javascript/chess.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="lesson5_task1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/javascript/lesson5_task1.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="chess_js.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/chess_js.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.chess.html" />
+        <item itemvalue="Node.js.chess_js.js" />
         <item itemvalue="JavaScript Debug.lesson5_task1.html" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="forEach">
       <created>1647802922015</created>
@@ -62,8 +100,142 @@
       <option name="project" value="LOCAL" />
       <updated>1647803896496</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f5c36ba-c1c9-445d-bc33-63e12b5adeb4" name="Changes" comment="forEach" />
+      <created>1647895944012</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647895944012</updated>
+      <workItem from="1647895946169" duration="66000" />
+      <workItem from="1648004432395" duration="2060000" />
+      <workItem from="1648055750658" duration="6203000" />
+      <workItem from="1648147172734" duration="1443000" />
+      <workItem from="1648282529434" duration="12679000" />
+    </task>
+    <task id="LOCAL-00004" summary="forEach">
+      <created>1647896004478</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1647896004478</updated>
+    </task>
+    <task id="LOCAL-00005" summary="forEach">
+      <created>1648005565921</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1648005565921</updated>
+    </task>
+    <task id="LOCAL-00006" summary="forEach">
+      <created>1648005597425</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1648005597425</updated>
+    </task>
+    <task id="LOCAL-00007" summary="forEach">
+      <created>1648005607380</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1648005607380</updated>
+    </task>
+    <task id="LOCAL-00008" summary="forEach">
+      <created>1648006265009</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1648006265009</updated>
+    </task>
+    <task id="LOCAL-00009" summary="forEach">
+      <created>1648057511130</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1648057511130</updated>
+    </task>
+    <task id="LOCAL-00010" summary="forEach">
+      <created>1648064275472</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1648064275472</updated>
+    </task>
+    <task id="LOCAL-00011" summary="forEach">
+      <created>1648147992507</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1648147992507</updated>
+    </task>
+    <task id="LOCAL-00012" summary="forEach">
+      <created>1648149502726</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1648149502726</updated>
+    </task>
+    <task id="LOCAL-00013" summary="forEach">
+      <created>1648283772414</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1648283772414</updated>
+    </task>
+    <task id="LOCAL-00014" summary="forEach">
+      <created>1648286152112</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1648286152112</updated>
+    </task>
+    <task id="LOCAL-00015" summary="forEach">
+      <created>1648286753753</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1648286753753</updated>
+    </task>
+    <task id="LOCAL-00016" summary="forEach">
+      <created>1648287540310</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1648287540310</updated>
+    </task>
+    <task id="LOCAL-00017" summary="forEach">
+      <created>1648288979388</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1648288979388</updated>
+    </task>
+    <task id="LOCAL-00018" summary="победил эти ебаные фигуры!!!!">
+      <created>1648292001114</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1648292001114</updated>
+    </task>
+    <task id="LOCAL-00019" summary="победил эти ебаные фигуры!!!!">
+      <created>1648293093443</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1648293093443</updated>
+    </task>
+    <task id="LOCAL-00020" summary="добил нумерацию доски">
+      <created>1648295423332</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1648295423332</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -78,6 +250,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="forEach" />
-    <option name="LAST_COMMIT_MESSAGE" value="forEach" />
+    <MESSAGE value="победил эти ебаные фигуры!!!!" />
+    <MESSAGE value="добил нумерацию доски" />
+    <option name="LAST_COMMIT_MESSAGE" value="добил нумерацию доски" />
   </component>
 </project>

@@ -115,6 +115,7 @@ const game = {
             case 'ArrowLeft':
                 return this.player.setDirection('left');
         }
+
     },
 
     render() {
