@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5f5c36ba-c1c9-445d-bc33-63e12b5adeb4" name="Changes" comment="forEach">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chess.html" beforeDir="false" afterPath="$PROJECT_DIR$/chess.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chess_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/chess_js.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +109,7 @@
       <workItem from="1648004432395" duration="2060000" />
       <workItem from="1648055750658" duration="6203000" />
       <workItem from="1648147172734" duration="1443000" />
-      <workItem from="1648282529434" duration="3508000" />
+      <workItem from="1648282529434" duration="4193000" />
     </task>
     <task id="LOCAL-00004" summary="forEach">
       <created>1647896004478</created>
@@ -182,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648283772414</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="forEach">
+      <created>1648286152112</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1648286152112</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

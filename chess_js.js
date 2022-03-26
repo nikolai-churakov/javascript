@@ -31,6 +31,7 @@ const board = {
         this.containerElement = document.getElementById('board');
         this.creatBoard();
         this.colorCell();
+        this.figureRange();
     },
 
     creatBoard() {
@@ -52,7 +53,7 @@ const board = {
 
     colorCell () {
         let flag = true;
-        for (let i = 0; i < 64; i++) {
+        for (let i = 0; i < this.sellElements.length; i++) {
             if ( i % 8 === 0) flag = !flag;
             if (flag) {
                 this.sellElements[i].style.backgroundColor = this.settings.cellSecondColor;
