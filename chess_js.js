@@ -123,6 +123,10 @@ const board = {
     settings,
         containerElement: null,
         sellElements: null,
+        tdElements: null,
+        tdElem: null,
+        id: null,
+
 
     run() {
         this.init();
@@ -141,18 +145,34 @@ const board = {
     creatBoard() {
         this.containerElement.innerHTML = '';
         this.sellElements = [];
-        for (let row = 0; row < this.settings.rowCount; row++) {
-            const trElem = document.createElement('tr');
-            this.containerElement.appendChild(trElem);
-            for (let col = 0; col < this.settings.colsCount; col++) {
-                const cell = document.createElement('td');
-                this.sellElements.push(cell);
-                trElem.appendChild(cell);
+        let table = document.createElement('table');
+        for (let row = 0; row <= this.settings.rowCount-1; row++) {
+            let tr = document.createElement("tr");
+            for (let col = 0; col <= this.settings.colsCount-1; col++) {
+                this.tdElem = document.createElement("td");
+                tr.appendChild(this.tdElem);
+                this.sellElements.push(this.tdElem);
+                let id = this.settings.colLetter[col] + this.settings.rowNumber[row];
+                this.tdElem.id = id;
             }
+            document.body.appendChild(table);
+            table.appendChild(tr);
         }
-        console.log(this.sellElements.length);
-        const infoBOX = this.sellElements.length;
-        console.log(infoBOX);
+        // this.containerElement.innerHTML = '';
+        // this.sellElements = [];
+        // for (let row = 0; row < this.settings.rowCount; row++) {
+        //     const trElem = document.createElement('tr');
+        //     this.containerElement.appendChild(trElem);
+        //     for (let col = 0; col < this.settings.colsCount; col++) {
+        //         const cell = document.createElement('td');
+        //         this.sellElements.push(cell);
+        //         trElem.appendChild(cell);
+        //
+        //     }
+        // }
+        // console.log(this.sellElements.length);
+        // const infoBOX = this.sellElements.length;
+        // console.log(infoBOX);
         },
 
     colorCell () {
@@ -171,9 +191,9 @@ const board = {
 
     arrangementFigure () {
         for (let i = 0; i < settings.figure.length; i++) {
-            for (let j = 0; j < 64; j++){
-                let cellId = this.sellElements[j].id;
-                if (settings.figure[i].coordinate === cellId) {
+            for (let j = 0; j < 64; j++) {
+                let cellId = this.sellElements[j].id
+                if (settings.figure[i].coordinate == cellId) {
                     this.sellElements[j].innerHTML = `<span style="color:${settings.figure[i].color};">${settings.figure[i].img}<span>`;
                 }
             }
