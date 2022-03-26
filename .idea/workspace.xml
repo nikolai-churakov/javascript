@@ -66,9 +66,13 @@
     <configuration name="lesson5_task1.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/javascript/lesson5_task1.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="chess_js.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/chess_js.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.chess.html" />
+        <item itemvalue="Node.js.chess_js.js" />
         <item itemvalue="JavaScript Debug.lesson5_task1.html" />
       </list>
     </recent_temporary>
@@ -106,7 +110,7 @@
       <workItem from="1648004432395" duration="2060000" />
       <workItem from="1648055750658" duration="6203000" />
       <workItem from="1648147172734" duration="1443000" />
-      <workItem from="1648282529434" duration="1152000" />
+      <workItem from="1648282529434" duration="3508000" />
     </task>
     <task id="LOCAL-00004" summary="forEach">
       <created>1647896004478</created>
@@ -171,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648149502726</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="forEach">
+      <created>1648283772414</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1648283772414</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

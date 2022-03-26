@@ -5,20 +5,20 @@ const settings = {
     colsCount: 8,
     rowNumber: [1, 2, 3, 4, 5, 6, 7, 8],
     colLetter: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
-    cellFirstColor: '#DEB887',
-    cellSecondColor: '#733535',
+    cellFirstColor: '#f3d0ad',
+    cellSecondColor: '#814040',
 };
 
 const cell = {
     settings,
     rowCoordinate: null,
-    colCoordinete: null,
+    colCoordinate: null,
     divElem: null,
     backgroundColor: null,
 };
 
 
-const game = {
+const board = {
     settings,
         containerElement: null,
         sellElements: null,
@@ -28,11 +28,12 @@ const game = {
     },
 
     init() {
-        this.containerElement = document.getElementById('game');
-        this.initCells();
+        this.containerElement = document.getElementById('board');
+        this.creatBoard();
+        this.colorCell();
     },
 
-    initCells() {
+    creatBoard() {
         this.containerElement.innerHTML = '';
         this.sellElements = [];
         for (let row = 0; row < this.settings.rowCount; row++) {
@@ -47,8 +48,27 @@ const game = {
         console.log(this.sellElements.length);
         const infoBOX = this.sellElements.length;
         console.log(infoBOX);
+        },
+
+    colorCell () {
+        let flag = true;
+        for (let i = 0; i < 64; i++) {
+            if ( i % 8 === 0) flag = !flag;
+            if (flag) {
+                this.sellElements[i].style.backgroundColor = this.settings.cellSecondColor;
+                flag = !flag;
+            } else {
+                this.sellElements[i].style.backgroundColor = this.settings.cellFirstColor;
+                flag = !flag;
+            }
         }
+
+    },
+
+
+
+
 
 };
 
-window.addEventListener('load', () => game.run());
+window.addEventListener('load', () => board.run());
