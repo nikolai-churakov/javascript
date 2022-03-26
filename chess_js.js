@@ -133,6 +133,9 @@ const board = {
         this.creatBoard();
         this.colorCell();
         this.arrangementFigure();
+        this.pawnRange();
+        this.insertColLetter();
+        this.insertRowNumber();
     },
 
     creatBoard() {
@@ -177,7 +180,48 @@ const board = {
         }
     },
 
+    pawnRange () {
+        let pawnsRowWhite = document.querySelectorAll('tr:nth-child(2) td');
+        for (let i = 0; i < 8; i++) {
+            pawnsRowWhite[i].innerHTML = `<span style="color: white;">&#9817<span>`;
+        }
+        let pawnsRowBlack = document.querySelectorAll('tr:nth-child(7) td');
+        for (let i = 0; i < 8; i++) {
+            pawnsRowBlack[i].innerHTML = `<span style="color: black;">&#9817<span>`;
+        }
+    },
+
+    insertColLetter () {
+        let table = document.createElement('table');
+        table.id = 'colLetterTable';
+        let trColLetter = document.createElement('tr');
+        for (let i = 0; i < 8; i++) {
+            let tdColLetter = document.createElement('td');
+            tdColLetter.innerHTML = this.settings.colLetter[i];
+            tdColLetter.style.textAlign = 'center';
+            trColLetter.appendChild(tdColLetter);
+        }
+        document.body.appendChild(table);
+        table.appendChild(trColLetter);
+    },
+
+    insertRowNumber () {
+
+        let trs = document.querySelectorAll('tr');
+        for (let i = 0; i < 9; i++) {
+            if (i < 8) {
+                let tdRowNumber = document.createElement('td');
+                tdRowNumber.innerHTML = this.settings.rowNumber[i];
+                tdRowNumber.style.textAlign = 'center';
+                trs[i].insertAdjacentElement("afterBegin", tdRowNumber);
+            } else {
+                let tdRowNumber = document.createElement('td');
+                trs[i].insertAdjacentElement("afterBegin", tdRowNumber);
+            }
+        }
+    },
 
 };
 
 window.addEventListener('load', () => board.run());
+
