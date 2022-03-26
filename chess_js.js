@@ -7,6 +7,107 @@ const settings = {
     colLetter: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
     cellFirstColor: '#f3d0ad',
     cellSecondColor: '#814040',
+
+    figure: [
+        {
+            color: 'white',
+            coordinate: 'A1',
+            value: 'rook',
+            img: '&#9814',
+        },
+        {
+            color: 'white',
+            coordinate: 'B1',
+            value: 'knight',
+            img: '&#9816',
+        },
+        {
+            color: 'white',
+            coordinate: 'C1',
+            value: 'bishop',
+            img: '&#9815',
+        },
+        {
+            color: 'white',
+            coordinate: 'D1',
+            value: 'queen',
+            img: '&#9813',
+        },
+        {
+            color: 'white',
+            coordinate: 'E1',
+            value: 'king',
+            img: '&#9812',
+        },
+        {
+            color: 'white',
+            coordinate: 'F1',
+            value: 'bishop',
+            img: '&#9815',
+        },
+        {
+            color: 'white',
+            coordinate: 'G1',
+            value: 'knight',
+            img: '&#9816',
+
+        },
+        {
+            color: 'white',
+            coordinate: 'H1',
+            value: 'rook',
+            img: '&#9814',
+        },
+        {
+            color: 'black',
+            coordinate: 'A8',
+            value: 'rook',
+            img: '&#9814',
+        },
+        {
+            color: 'black',
+            coordinate: 'B8',
+            value: 'knight',
+            img: '&#9816',
+        },
+        {
+            color: 'black',
+            coordinate: 'C8',
+            value: 'bishop',
+            img: '&#9815',
+        },
+        {
+            color: 'black',
+            coordinate: 'D8',
+            value: 'queen',
+            img: '&#9813',
+        },
+        {
+            color: 'black',
+            coordinate: 'E8',
+            value: 'king',
+            img: '&#9812',
+        },
+        {
+            color: 'black',
+            coordinate: 'F8',
+            value: 'bishop',
+            img: '&#9815',
+        },
+        {
+            color: 'black',
+            coordinate: 'G8',
+            value: 'knight',
+            img: '&#9816',
+        },
+        {
+            color: 'black',
+            coordinate: 'H8',
+            value: 'rook',
+            img: '&#9814',
+        },
+    ]
+
 };
 
 const cell = {
@@ -31,7 +132,7 @@ const board = {
         this.containerElement = document.getElementById('board');
         this.creatBoard();
         this.colorCell();
-        this.figureRange();
+        this.arrangementFigure();
     },
 
     creatBoard() {
@@ -63,11 +164,18 @@ const board = {
                 flag = !flag;
             }
         }
-
     },
 
-
-
+    arrangementFigure () {
+        for (let i = 0; i < settings.figure.length; i++) {
+            for (let j = 0; j < 64; j++){
+                let cellId = this.sellElements[j].id;
+                if (settings.figure[i].coordinate === cellId) {
+                    this.sellElements[j].innerHTML = `<span style="color:${settings.figure[i].color};">${settings.figure[i].img}<span>`;
+                }
+            }
+        }
+    },
 
 
 };
