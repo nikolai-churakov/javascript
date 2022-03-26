@@ -125,8 +125,6 @@ const board = {
         sellElements: null,
         tdElements: null,
         tdElem: null,
-        id: null,
-
 
     run() {
         this.init();
@@ -152,8 +150,7 @@ const board = {
                 this.tdElem = document.createElement("td");
                 tr.appendChild(this.tdElem);
                 this.sellElements.push(this.tdElem);
-                let id = this.settings.colLetter[col] + this.settings.rowNumber[row];
-                this.tdElem.id = id;
+                this.tdElem.id = this.settings.colLetter[col] + this.settings.rowNumber[row];
             }
             document.body.appendChild(table);
             table.appendChild(tr);
@@ -193,7 +190,7 @@ const board = {
         for (let i = 0; i < settings.figure.length; i++) {
             for (let j = 0; j < 64; j++) {
                 let cellId = this.sellElements[j].id
-                if (settings.figure[i].coordinate == cellId) {
+                if (settings.figure[i].coordinate === cellId) {
                     this.sellElements[j].innerHTML = `<span style="color:${settings.figure[i].color};">${settings.figure[i].img}<span>`;
                 }
             }
@@ -231,12 +228,12 @@ const board = {
         for (let i = 0; i < 9; i++) {
             if (i < 8) {
                 let tdRowNumber = document.createElement('td');
-                tdRowNumber.innerHTML = this.settings.rowNumber[i];
+                tdRowNumber.innerHTML = settings.rowNumber[i];
                 tdRowNumber.style.textAlign = 'center';
-                trs[i].insertAdjacentElement("afterBegin", tdRowNumber);
+                trs[i].insertAdjacentElement("afterbegin", tdRowNumber);
             } else {
                 let tdRowNumber = document.createElement('td');
-                trs[i].insertAdjacentElement("afterBegin", tdRowNumber);
+                trs[i].insertAdjacentElement("afterbegin", tdRowNumber);
             }
         }
     },
