@@ -5,6 +5,7 @@ class CheckForm {
         this.name = name;
         this.phone = phone;
         this.password = password;
+        this.counter = 0;
     }
 
     init() {
@@ -49,14 +50,14 @@ class CheckForm {
 
     AlarmMessage(){
         if (this.counter > 0) {
-            document.getElementById('alarmMessage').textContent = 'Введите данные в верном формате';
+            document.getElementById('alarmMessage').textContent = 'Не верный формат данных';
         }
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('checkBtn').addEventListener('click', () => {
-        let checkForm = new CheckForm ('name', 'phone', 'password', 'message');
+        let checkForm = new CheckForm ('name', 'phone', 'password');
         checkForm.init();
     })
 })
