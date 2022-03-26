@@ -228,7 +228,7 @@ const board = {
         for (let i = 0; i < 9; i++) {
             if (i < 8) {
                 let tdRowNumber = document.createElement('td');
-                tdRowNumber.innerHTML = settings.rowNumber[i];
+                tdRowNumber.innerHTML = this.settings.rowNumber[i];
                 tdRowNumber.style.textAlign = 'center';
                 trs[i].insertAdjacentElement("afterbegin", tdRowNumber);
             } else {
