@@ -4,40 +4,33 @@ const inspectForm = {
     counter: 0,
 
     run() {
-        console.log(`1`);
-        this.introduce();
         this.nameCheck();
         this.phoneCheck();
         this.passwordCheck();
         this.AlarmMessage();
-        this.introduce();
-    },
-
-    introduce() {
-        console.log(`2`);
     },
 
     nameCheck() {
-        let nameValue = document.getElementById(this.name).value;
+        let nameValue = document.getElementById("name").value;
         if (/^[a-z]{2,}$/ig.test(nameValue)) {
-            this.isRight(this.name);
+            this.isRight("name");
         } else {
-            this.isWrong(this.name);
+            this.isWrong("name");
         }
     },
 
     phoneCheck() {
-        let phoneValue = document.getElementById(this.phone).value;
+        let phoneValue = document.getElementById("phone").value;
         if (/^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/ig.test(phoneValue)){
-            this.isRight(phone);
-        } else this.isWrong(phone);
+            this.isRight("phone");
+        } else this.isWrong("phone");
     },
 
     passwordCheck() {
-        let emailValue = document.getElementById(password).value;
-        if (/^[a-z]+(\.|\_|)mail@[a-z]+\.(com && ru)/ig.test(passwordValue)){
-            this.isRight(password);
-        } else this.isWrong(password);
+        let passwordValue = document.getElementById("password").value;
+        if (/(?=.*[0-9])/ig.test(passwordValue)){
+            this.isRight("password");
+        } else this.isWrong("password");
     },
 
     isRight(id){
@@ -50,19 +43,17 @@ const inspectForm = {
     },
 
     AlarmMessage(){
-        if (counter > 0) {
+        if (this.counter > 0) {
             document.getElementById('alarmMessage').textContent = 'Ошибка!';
         }
     },
 };
 
-window.addEventListener('load', () => inspectForm.run());
+// window.addEventListener('load', () => inspectForm.run());
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     document.getElementById('checkBtn').addEventListener('click', () => {
-//         let checkForm = new CheckForm ('name', 'phone', 'password');
-//         checkForm.init();
-//     })
-// })
-
+document.addEventListener('DOMContentLoaded', () => {
+document.getElementById("checkBtn").addEventListener('click', () => {
+    inspectForm.run();
+})
+})
 console.log(`script load `);
