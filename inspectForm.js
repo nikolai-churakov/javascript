@@ -7,12 +7,18 @@ class CheckForm {
     }
 
 
+
     init() {
         this.nameCheck();
         this.phoneCheck();
         this.passwordCheck();
         this.AlarmMessage();
+        this.introduce();
     }
+
+    introduce() {
+        console.log(`123`);
+    };
 
     nameCheck() {
         let nameValue = document.getElementById(this.name).value;
@@ -30,7 +36,6 @@ class CheckForm {
         } else this.isWrong(phone);
     };
 
-
     passwordCheck() {
         let emailValue = document.getElementById(password).value;
         if (/^[a-z]+(\.|\_|)mail@[a-z]+\.(com && ru)/ig.test(passwordValue)){
@@ -44,12 +49,12 @@ class CheckForm {
 
     isWrong(id){
         document.getElementById(id).style.borderColor = 'red';
-        this.counter = counter + 1;
+        this.counter = this.counter + 1;
     };
 
     AlarmMessage(){
         if (counter > 0) {
-            document.getElementById('alarmMessage').textContent = 'Не верный формат данных';
+            document.getElementById('alarmMessage').textContent = 'Ошибка!';
         }
     };
 }

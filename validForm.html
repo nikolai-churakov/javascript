@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Урок 5. задание 3 со звездочками</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+-->
     <style>
         .form-wrap {
             margin: auto;
@@ -15,41 +15,19 @@
     </style>
 </head>
 <body>
-    <div class="form-wrap">
-        <form class="my-form" action="">
-            <div class="form-row">
-                <div>
-                    <h3>Форма отправки данных на сервер с проверкой в js</h3>
-                </div>
-                <div class="form-group col-md-6">
-                    <label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Имя">
-                    </label>
-                </div>
-                <div class="form-group col-md-6">
-                    <label>
-                        <input type="text" id="phone" name="phone" class="form-control" placeholder="Телефон">
-                    </label>
-                </div>
-            </div>
+    <h3>Форма отправки данных на сервер с проверкой в js</h3>
+        <form>
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Пароль">
-                    </label>
-                </div>
-                <div class="form-group col-md-6">
-                    <label>
-                        <input class="form-control" id="password-return" name="password_repeat" placeholder="Повторите пароль" type="password">
-                    </label>
-                </div>
-            </div>
+            <input type="text" id="name" name="name" placeholder="Имя">
+            <input type="text" id="phone" name="phone" placeholder="Телефон">
+
+            <input type="password" id="password" name="password" placeholder="Пароль">
+            <input id="password-return" name="password_repeat" placeholder="Повторите пароль" type="password">
+
             <button type="submit" id="checkBtn" class="btn btn-primary">Отправить</button>
         </form>
 
         <div class="alarmMessage" id="alarmMessage"></div>
-    </div>
 
 <script src="inspectForm.js"></script>
 </body>
