@@ -126,6 +126,8 @@ const board = {
         tdElements: null,
         tdElem: null,
 
+
+    //  remove
     run() {
         this.init();
     },
@@ -155,21 +157,6 @@ const board = {
             document.body.appendChild(table);
             table.appendChild(tr);
         }
-        // this.containerElement.innerHTML = '';
-        // this.sellElements = [];
-        // for (let row = 0; row < this.settings.rowCount; row++) {
-        //     const trElem = document.createElement('tr');
-        //     this.containerElement.appendChild(trElem);
-        //     for (let col = 0; col < this.settings.colsCount; col++) {
-        //         const cell = document.createElement('td');
-        //         this.sellElements.push(cell);
-        //         trElem.appendChild(cell);
-        //
-        //     }
-        // }
-        // console.log(this.sellElements.length);
-        // const infoBOX = this.sellElements.length;
-        // console.log(infoBOX);
         },
 
     colorCell () {
@@ -244,4 +231,3 @@ const board = {
 };
 
 window.addEventListener('load', () => board.run());
-

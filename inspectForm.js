@@ -47,6 +47,7 @@ const inspectForm = {
             document.getElementById('alarmMessage').textContent = 'Ошибка!';
         }
     },
+
 };
 
 // window.addEventListener('load', () => inspectForm.run());
@@ -56,6 +57,6 @@ document.getElementById("checkBtn").addEventListener('click', () => {
     inspectForm.run();
 })
 })
-
+window.Event.preventDefault();
 // Как сделать задержку чтобы результата не отваливался.
 console.log(`script load `);
