@@ -138,4 +138,3 @@ const game = {
 
 window.addEventListener('load', () => game.run());
 // window.onload = () => game.run()
-console.log(123);
