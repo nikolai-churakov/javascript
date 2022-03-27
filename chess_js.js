@@ -1,5 +1,5 @@
 'use strict';
-
+// done
 const settings = {
     rowCount: 8,
     colsCount: 8,

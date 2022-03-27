@@ -56,4 +56,6 @@ document.getElementById("checkBtn").addEventListener('click', () => {
     inspectForm.run();
 })
 })
+
+// Как сделать задержку чтобы результата не отваливался.
 console.log(`script load `);
