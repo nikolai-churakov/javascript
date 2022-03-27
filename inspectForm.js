@@ -6,6 +6,7 @@ class CheckForm {
         this.counter = 0;
     }
 
+
     init() {
         this.nameCheck();
         this.phoneCheck();
