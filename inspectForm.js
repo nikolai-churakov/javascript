@@ -1,61 +1,61 @@
-class CheckForm {
-    constructor (name, phone, password) {
-        this.name = name;
-        this.phone = phone;
-        this.password = password;
-        this.counter = 0;
-    }
+'use strict';
 
-    init() {
+const inspectForm = {
+    counter: 0,
+
+    run() {
         this.nameCheck();
         this.phoneCheck();
         this.passwordCheck();
         this.AlarmMessage();
-    }
+    },
 
     nameCheck() {
-        let nameValue = document.getElementById(this.name).value;
+        let nameValue = document.getElementById("name").value;
         if (/^[a-z]{2,}$/ig.test(nameValue)) {
-            this.isRight(this.name);
+            this.isRight("name");
         } else {
-            this.isWrong(this.name);
+            this.isWrong("name");
         }
-    };
+    },
 
     phoneCheck() {
-        let phoneValue = document.getElementById(this.phone).value;
+        let phoneValue = document.getElementById("phone").value;
         if (/^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/ig.test(phoneValue)){
-            this.isRight(phone);
-        } else this.isWrong(phone);
-    };
-
+            this.isRight("phone");
+        } else this.isWrong("phone");
+    },
 
     passwordCheck() {
-        let emailValue = document.getElementById(password).value;
-        if (/^[a-z]+(\.|\_|)mail@[a-z]+\.(com && ru)/ig.test(passwordValue)){
-            this.isRight(password);
-        } else this.isWrong(password);
-    };
+        let passwordValue = document.getElementById("password").value;
+        if (/(?=.*[0-9])/ig.test(passwordValue)){
+            this.isRight("password");
+        } else this.isWrong("password");
+    },
 
     isRight(id){
         document.getElementById(id).style.borderColor = 'green';
-    };
+    },
 
     isWrong(id){
         document.getElementById(id).style.borderColor = 'red';
-        this.counter = counter + 1;
-    };
+        this.counter = this.counter + 1;
+    },
 
     AlarmMessage(){
-        if (counter > 0) {
-            document.getElementById('alarmMessage').textContent = 'Не верный формат данных';
+        if (this.counter > 0) {
+            document.getElementById('alarmMessage').textContent = 'Ошибка!';
         }
-    };
-}
+    },
+};
+
+// window.addEventListener('load', () => inspectForm.run());
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('checkBtn').addEventListener('click', () => {
-        let checkForm = new CheckForm ('name', 'phone', 'password');
-        checkForm.init();
-    })
+document.getElementById("checkBtn").addEventListener('click', () => {
+    inspectForm.run();
 })
+})
+
+// Как сделать задержку чтобы результата не отваливался.
+console.log(`script load `);
