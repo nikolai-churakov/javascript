@@ -54,9 +54,6 @@ const inspectForm = {
 
 document.addEventListener('DOMContentLoaded', () => {
 document.getElementById("checkBtn").addEventListener('click', () => {
-    inspectForm.run();
+    Event.preventDefault(inspectForm.run());
 })
 })
-window.Event.preventDefault();
-// Как сделать задержку чтобы результата не отваливался.
-console.log(`script load `);
