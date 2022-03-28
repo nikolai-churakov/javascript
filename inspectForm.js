@@ -50,10 +50,10 @@ const inspectForm = {
 
 };
 
-// window.addEventListener('load', () => inspectForm.run());
+// window.addEventListener('click', () => inspectForm.run())
 
 document.addEventListener('DOMContentLoaded', () => {
 document.getElementById("checkBtn").addEventListener('click', () => {
-    Event.preventDefault(inspectForm.run());
+    (inspectForm.run());
 })
 })
