@@ -45,17 +45,12 @@ const inspectForm = {
     AlarmMessage(){
         if (this.counter > 0) {
             document.getElementById('alarmMessage').textContent = 'Ошибка!';
+            // inspectForm.preventDefault();
+            window.event.preventDefault();
         }
     },
 };
-
-// window.addEventListener('load', () => inspectForm.run());
-
-document.addEventListener('DOMContentLoaded', () => {
+// window.addEventListener('click', () => inspectForm.run())
 document.getElementById("checkBtn").addEventListener('click', () => {
-    inspectForm.run();
-})
-})
-
-// Как сделать задержку чтобы результата не отваливался.
-console.log(`script load `);
+    (inspectForm.run());
+});
