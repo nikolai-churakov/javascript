@@ -45,16 +45,14 @@ const inspectForm = {
     AlarmMessage(){
         if (this.counter > 0) {
             document.getElementById('alarmMessage').textContent = 'Ошибка!';
-            inspectForm.preventDefault();
+            // inspectForm.preventDefault();
+            window.event.preventDefault();
         }
     },
-
 };
 
-window.addEventListener('click', () => inspectForm.run())
+// window.addEventListener('click', () => inspectForm.run())
 
-// document.addEventListener('DOMContentLoaded', () => {
-// document.getElementById("checkBtn").addEventListener('click', () => {
-//     (inspectForm.run());
-// })
-// })
+document.getElementById("checkBtn").addEventListener('click', () => {
+    (inspectForm.run());
+});
