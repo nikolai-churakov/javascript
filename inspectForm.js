@@ -50,9 +50,7 @@ const inspectForm = {
         }
     },
 };
-
 // window.addEventListener('click', () => inspectForm.run())
-
 document.getElementById("checkBtn").addEventListener('click', () => {
     (inspectForm.run());
 });
