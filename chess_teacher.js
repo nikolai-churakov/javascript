@@ -18,6 +18,10 @@ const chess = {
                 const td = document.createElement('td');
                 tr.appendChild(td);
 
+                if (rows[row] === 0 && cols[col] !== 0) {
+                    td.innerHTML = cols[col];
+                }
+
 
             }
         }
