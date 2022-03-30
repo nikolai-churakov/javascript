@@ -6,6 +6,105 @@
 const chess = {
     gameContainerEl: document.getElementById('board'),
 
+    figures: {
+      'A1': {
+        color: 'white',
+        coordinate: 'A1',
+        value: 'rook',
+        img: '&#9814',
+      },
+      'B1': {
+        color: 'white',
+        coordinate: 'B1',
+        value: 'knight',
+        img: '&#9816',
+      },
+      'C1': {
+        color: 'white',
+        coordinate: 'C1',
+        value: 'bishop',
+        img: '&#9815',
+      },
+      'D1': {
+        color: 'white',
+        coordinate: 'D1',
+        value: 'queen',
+        img: '&#9813',
+      },
+      'E1': {
+        color: 'white',
+        coordinate: 'E1',
+        value: 'king',
+        img: '&#9812',
+      },
+      'F1': {
+        color: 'white',
+        coordinate: 'F1',
+        value: 'bishop',
+        img: '&#9815',
+      },
+      'G1': {
+        color: 'white',
+        coordinate: 'G1',
+        value: 'knight',
+        img: '&#9816',
+      },
+      'H1': {
+        color: 'white',
+        coordinate: 'H1',
+        value: 'rook',
+        img: '&#9814',
+      },
+      'A8': {
+          color: 'black',
+          coordinate: 'A8',
+          value: 'rook',
+          img: '&#9814',
+      },
+      'B8': {
+          color: 'black',
+          coordinate: 'B8',
+          value: 'knight',
+          img: '&#9816',
+      },
+      'C8': {
+          color: 'black',
+          coordinate: 'C8',
+          value: 'bishop',
+          img: '&#9815',
+      },
+      'D8': {
+          color: 'black',
+          coordinate: 'D8',
+          value: 'king',
+          img: '&#9812',
+      },
+      'E8': {
+          color: 'black',
+          coordinate: 'E8',
+          value: 'queen',
+          img: '&#9813',
+      },
+      'F8': {
+          color: 'black',
+          coordinate: 'F8',
+          value: 'bishop',
+          img: '&#9815',
+      },
+      'G8': {
+          color: 'black',
+          coordinate: 'G8',
+          value: 'knight',
+          img: '&#9816',
+      },
+      'H8': {
+          color: 'black',
+          coordinate: 'H8',
+          value: 'rook',
+          img: '&#9814',
+      },
+    },
+
     renderMap() {
         const rows = [0, 8, 7, 6, 5, 4, 3, 2, 1, 0];
         const cols = [0, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 0];
