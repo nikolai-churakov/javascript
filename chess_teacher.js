@@ -5,4 +5,10 @@
  */
 const chess = {
     gameContainerEl: document.getElementById('board'),
-}
+
+    renderMap() {
+        console.log(123);
+    }
+};
+
+chess.renderMap();
