@@ -20,8 +20,12 @@ const chess = {
 
                 if (rows[row] === 0 && cols[col] !== 0) {
                     td.innerHTML = cols[col];
+                } else if (cols[col] === 0 && rows[row] !== 0){
+                    td.innerHTML = rows[row];
+                } else if (cols[col] === 0 && rows[row] === 0) {
+                    td.style.border = 'none';
+                    td.style.backgroundColor = 'white';
                 }
-
 
             }
         }
