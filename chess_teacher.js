@@ -15,12 +15,14 @@ const chess = {
             this.gameContainerEl.appendChild(tr);
 
             for (let col = 0; col < cols.length; col++) {
-                const td = document.createElement('tr');
+                const td = document.createElement('td');
                 tr.appendChild(td);
+
+
             }
         }
     }
-}
+};
 
 chess.renderMap();
 
