@@ -27,10 +27,26 @@ const chess = {
                     td.style.backgroundColor = 'white';
                 }
 
+                if (this.isCellIsBlack(row, col)) {
+                    td.style.backgroundColor = '#814040'
+                } else if (row > 0 && row < 9  && col > 0 && col < 9) {
+                    td.style.backgroundColor = '#f3d0ad'
+                }
             }
         }
+    },
+    /**
+     * Определяем является ли ячейка черной.
+     * @param rowNum Номер в строке.
+     * @param colNum Номер в колонке.
+     * @return boolean true если ячейка черная.
+     */
+    isCellIsBlack(rowNum, colNum) {
+        if  (rowNum === 0 || rowNum === 9 || colNum ===0 || colNum ===9) {
+            return false;
+        }
+        return (rowNum % 2 === 0 && colNum % 2 === 1) || (rowNum % 2 === 1 && colNum % 2 === 0);
     }
 };
 
 chess.renderMap();
-
