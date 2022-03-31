@@ -134,24 +134,11 @@ const chess = {
         return (rowNum % 2 === 0 && colNum % 2 === 1) || (rowNum % 2 === 1 && colNum % 2 === 0);
     },
 
-    // colorCell () {
-    //     let flag = true;
-    //     for (let i = 0; i < this.sellEle ments.length; i++) {
-    //         if ( i % 8 === 0) flag = !flag;
-    //         if (flag) {
-    //             this.sellElements[i].style.backgroundColor = this.settings.cellSecondColor;
-    //             flag = !flag;
-    //         } else {
-    //             this.sellElements[i].style.backgroundColor = this.settings.cellFirstColor;
-    //             flag = !flag;
-    //         }
-    //     }
-    // },
-
     renderFigures() {
       for (const figure of this.figures) {
-          const col = figure.pos.charAt(0);
-          const row = figure.pos.charAt(1);
+          const position = this.figures;
+        this.figures = document.querySelector(`[data-col=`${col}`][data-row=`${row}`]`).innerHTML =
+            this.figures.img;
       }
     },
 };
