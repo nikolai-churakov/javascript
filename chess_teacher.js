@@ -9,67 +9,56 @@ const chess = {
     figures: {
       'A1': {
         color: 'white',
-        coordinate: 'A1',
         value: 'rook',
         img: '&#9814',
       },
       'B1': {
         color: 'white',
-        coordinate: 'B1',
         value: 'knight',
         img: '&#9816',
       },
       'C1': {
         color: 'white',
-        coordinate: 'C1',
         value: 'bishop',
         img: '&#9815',
       },
       'D1': {
         color: 'white',
-        coordinate: 'D1',
         value: 'queen',
         img: '&#9813',
       },
       'E1': {
         color: 'white',
-        coordinate: 'E1',
         value: 'king',
         img: '&#9812',
       },
       'F1': {
         color: 'white',
-        coordinate: 'F1',
         value: 'bishop',
         img: '&#9815',
       },
       'G1': {
         color: 'white',
-        coordinate: 'G1',
         value: 'knight',
         img: '&#9816',
       },
       'H1': {
         color: 'white',
-        coordinate: 'H1',
         value: 'rook',
         img: '&#9814',
       },
       'A8': {
           color: 'black',
-          coordinate: 'A8',
           value: 'rook',
           img: '&#9814',
       },
       'B8': {
           color: 'black',
-          coordinate: 'B8',
           value: 'knight',
           img: '&#9816',
       },
       'C8': {
           color: 'black',
-          coordinate: 'C8',
           value: 'bishop',
           img: '&#9815',
       },
@@ -145,7 +134,13 @@ const chess = {
             return false;
         }
         return (rowNum % 2 === 0 && colNum % 2 === 1) || (rowNum % 2 === 1 && colNum % 2 === 0);
-    }
+    },
+
+    renderFigures() {
+      for (const figure of this.figures) {
+          const col = figure.pos.charAt()
+      }
+    },
 };
 
 chess.renderMap();
