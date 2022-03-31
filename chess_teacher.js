@@ -150,7 +150,8 @@ const chess = {
 
     renderFigures() {
       for (const figure of this.figures) {
-          const col = figure.pos.charAt()
+          const col = figure.pos.charAt(0);
+          const row = figure.pos.charAt(1);
       }
     },
 };
