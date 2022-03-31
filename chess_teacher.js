@@ -64,31 +64,26 @@ const chess = {
       },
       'D8': {
           color: 'black',
-          coordinate: 'D8',
           value: 'king',
           img: '&#9812',
       },
       'E8': {
           color: 'black',
-          coordinate: 'E8',
           value: 'queen',
           img: '&#9813',
       },
       'F8': {
           color: 'black',
-          coordinate: 'F8',
           value: 'bishop',
           img: '&#9815',
       },
       'G8': {
           color: 'black',
-          coordinate: 'G8',
           value: 'knight',
           img: '&#9816',
       },
       'H8': {
           color: 'black',
-          coordinate: 'H8',
           value: 'rook',
           img: '&#9814',
       },
@@ -105,6 +100,9 @@ const chess = {
             for (let col = 0; col < cols.length; col++) {
                 const td = document.createElement('td');
                 tr.appendChild(td);
+
+                td.dataset.row = rows[row];
+                td.dataset.col = cols[col];
 
                 if (rows[row] === 0 && cols[col] !== 0) {
                     td.innerHTML = cols[col];
@@ -135,6 +133,20 @@ const chess = {
         }
         return (rowNum % 2 === 0 && colNum % 2 === 1) || (rowNum % 2 === 1 && colNum % 2 === 0);
     },
+
+    // colorCell () {
+    //     let flag = true;
+    //     for (let i = 0; i < this.sellEle ments.length; i++) {
+    //         if ( i % 8 === 0) flag = !flag;
+    //         if (flag) {
+    //             this.sellElements[i].style.backgroundColor = this.settings.cellSecondColor;
+    //             flag = !flag;
+    //         } else {
+    //             this.sellElements[i].style.backgroundColor = this.settings.cellFirstColor;
+    //             flag = !flag;
+    //         }
+    //     }
+    // },
 
     renderFigures() {
       for (const figure of this.figures) {
