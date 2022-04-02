@@ -48,10 +48,13 @@ const inspectForm = {
             document.getElementById('alarmMessage').textContent = 'Ошибка!';
             // inspectForm.preventDefault();
             window.event.preventDefault();
+        } else {
+            document.getElementById('alarmMessage').textContent = 'Форма отправлена на сервер';
+            window.event.preventDefault();
         }
     },
 };
-// window.addEventListener('click', () => inspectForm.run())
+
 document.getElementById("checkBtn").addEventListener('click', () => {
     (inspectForm.run());
 });
