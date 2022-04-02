@@ -8,7 +8,7 @@ const settings = {
     cellFirstColor: '#f3d0ad',
     cellSecondColor: '#814040',
 
-    figure: [
+    figures: [
         {
             color: 'white',
             coordinate: 'A1',
@@ -167,12 +167,12 @@ const board = {
     },
 
     arrangementFigure () {
-        for (let i = 0; i < settings.figure.length; i++) {
+        for (let i = 0; i < settings.figures.length; i++) {
             for (let j = 0; j < 64; j++) {
                 let cellId = this.sellElements[j].id
-                if (settings.figure[i].coordinate === cellId) {
-                    this.sellElements[j].innerHTML = `<span style="color:${settings.figure[i].color}; 
-                    position:relative; top:-1px;left:2px">${settings.figure[i].img};<span>`;
+                if (settings.figures[i].coordinate === cellId) {
+                    this.sellElements[j].innerHTML = `<span style="color:${settings.figures[i].color}; 
+                    position:relative; top:-1px;left:2px">${settings.figures[i].img};<span>`;
                 }
             }
         }
