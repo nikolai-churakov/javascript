@@ -139,32 +139,15 @@ const chess = {
         return (rowNum % 2 === 0 && colNum % 2 === 1) || (rowNum % 2 === 1 && colNum % 2 === 0);
     },
 
-
-    // arrangementFigure () {
-    //     for (let i = 0; i < settings.figure.length; i++) {
-    //         for (let j = 0; j < 64; j++) {
-    //             let cellId = this.sellElements[j].id
-    //             if (settings.figure[i].coordinate === cellId) {
-    //                 this.sellElements[j].innerHTML = `<span style="color:${settings.figure[i].color};
-    //                 position:relative; top:-1px;left:2px">${settings.figure[i].img};<span>`;
-    //             }
-    //         }
-    //     }
-    // },
-    //
-
     renderFigures() {
-        let col =
-        if (document.querySelector(`[data-col=`${col}`][data-row=`${row}`]`) === this.figures.object.keys()) {
-
-        }
-
       for (const figure of this.figures) {
           let col = figure.name.charAt(0)
           let row = figure.name.charAt(1)
 
+          if (document.querySelector(`[data-col=`${col}`][data-row=`${row}`]`) === this.figures.object.keys()) {
               figure.position = document.querySelector(`[data-col=`${col}`][data-row=`${row}`]`)
-                  .innerHTML = this.figures[figure.img];
+                  .innerHTML = this.figures.figure.img;
+          }
       }
     },
 };
