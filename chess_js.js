@@ -118,19 +118,12 @@ const cell = {
     backgroundColor: null,
 };
 
-
 const board = {
     settings,
         containerElement: null,
         sellElements: null,
         tdElements: null,
         tdElem: null,
-
-
-    //  remove
-    run() {
-        this.init();
-    },
 
     init() {
         this.containerElement = document.getElementById('board');
@@ -230,4 +223,4 @@ const board = {
 
 };
 
-window.addEventListener('load', () => board.run());
+window.addEventListener('load', () => board.init());
