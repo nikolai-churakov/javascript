@@ -164,11 +164,9 @@ const chess = {
           let row = figure.name.charAt(1)
 
               figure.position = document.querySelector(`[data-col=`${col}`][data-row=`${row}`]`)
-        .innerHTML = figure.img
+                  .innerHTML = this.figures[figure.img];
       }
     },
 };
-console.log(chess.figures['A1']);
-
 
 chess.init();
