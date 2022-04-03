@@ -6,6 +6,8 @@
 const chess = {
     gameContainerEl: document.getElementById('board'),
 
+    // figures['B1']['img']
+
     figures: {
         'A1': {
             color: 'white',
@@ -91,12 +93,12 @@ const chess = {
 
     init() {
         this.renderMap();
-        this.renderFigures();
+        // this.renderFigures();
     },
 
     renderMap() {
         const rows = [0, 8, 7, 6, 5, 4, 3, 2, 1, 0];
-        const cols = [0, 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 0];
+        const cols = [0, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 0];
 
         for (let row = 0; row < rows.length; row++) {
             const tr = document.createElement('tr');
@@ -113,15 +115,22 @@ const chess = {
                     td.innerHTML = cols[col];
                 } else if (cols[col] === 0 && rows[row] !== 0) {
                     td.innerHTML = rows[row];
-                } else if (cols[col] === 0 && rows[row] === 0) {
-                    td.style.border = 'none';
-                    td.style.backgroundColor = 'white';
                 }
+                    // else if (cols[col] === 0 && rows[row] === 0) {
+                //     td.style.border = 'none';
+                //     td.style.backgroundColor = 'white';
+                // }
 
                 if (this.isCellIsBlack(row, col)) {
                     td.style.backgroundColor = '#814040'
                 } else if (row > 0 && row < 9 && col > 0 && col < 9) {
                     td.style.backgroundColor = '#f3d0ad'
+                }
+
+                console.log(Object.values(this.figures));
+
+                if (this.figures[`${cols[col]}${rows[row]}`]) {
+                    td.innerHTML = this.figures[`${cols[col]}${rows[row]}`].img;
                 }
             }
         }
@@ -133,8 +142,6 @@ const chess = {
         }
         return (rowNum % 2 === 0 && colNum % 2 === 1) || (rowNum % 2 === 1 && colNum % 2 === 0);
     },
-
-
 
     // renderFigures() {
     //   for (let figure of this.figures) {

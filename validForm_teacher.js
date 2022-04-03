@@ -1,7 +1,10 @@
 "use strict";
-
+/**
+ * Метод проверки поля по данным
+ * @type {{mustContainNumber(), fieldsCompare(), length()}}
+ */
 const validationMethods = {
-    length() {
+    length(field, args) {
 
     },
 
@@ -9,8 +12,11 @@ const validationMethods = {
 
     },
 
+    fieldsCompare() {
 
-}
+
+    },
+};
 
 const form = {
     formEl: null,
