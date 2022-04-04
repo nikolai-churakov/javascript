@@ -84,7 +84,7 @@ const form = {
      * Инициализация формы.
      */
     init() {
-        this.formEl = document.querySelector('.form-wrap');
+        this.formEl = document.querySelector(".form-wrap");
         this.formEl.addEventListener('submit', e => this.formSubmit(e))
 
         this.rules = [
@@ -148,7 +148,25 @@ const form = {
         }
 
         return isValid;
-    }
+    },
+
+    /**
+     * Устанавливает класс провала валидации и сообщает почему валидация провалена.
+     * @param {HTMLInputElement} inputEl - поле которое надо проверить.
+     * @param {string | null} message - сообщение об ошибке.
+     */
+    setInValidField() {
+
+    },
+
+    /**
+     * Устанавливает класс валидация, убирает сообщения о провале валидации если такое было.
+     * @param {HTMLInputElement} inputEl - поле которое надо проверить.
+     * @param {string | null} message - сообщение об ошибке.
+     */
+    setValidField() {
+
+    },
 };
 
 form.init();
