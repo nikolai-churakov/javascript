@@ -70,8 +70,9 @@ const validationMethods = {
      * @return {string | null} - строку с ошибкой или nll если ошибки небыл.
      */
     fieldsCompare(field, args) {
-
-
+        return field.value !== document.querySelector(args[0]).value
+            ? 'Поля не совпадают.'
+            : null;
     },
 };
 
