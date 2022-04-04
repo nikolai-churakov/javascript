@@ -7,7 +7,7 @@ const validationMethods = {
     /**
      * Метод проверки поля по длине.
      * @param {HTMLInputElement} field - поле каторое надо проверить.
-     * @param args - массив с аргументами.
+     * @param {Array} args - массив с аргументами.
      * @return {string | null} - строку с ошибкой или nll если ошибки небыл.
      */
     length(field, args) {
@@ -63,7 +63,13 @@ const validationMethods = {
         return null;
     },
 
-    fieldsCompare() {
+    /**
+     * Проверяет совпадает ли у 2х полей значение.
+     * @param {HTMLInputElement} field - поле катьорое надо проверить.
+     * @param {Array} args - поле катьорое надо проверить.
+     * @return {string | null} - строку с ошибкой или nll если ошибки небыл.
+     */
+    fieldsCompare(field, args) {
 
 
     },
