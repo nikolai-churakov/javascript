@@ -21,10 +21,11 @@ const inspectForm = {
 
     phoneCheck() {
         let phoneValue = document.getElementById("phone").value;
-        if (/^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/ig.test(phoneValue)){
+        if (/^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/ig.test(phoneValue)){
             this.isRight("phone");
         } else this.isWrong("phone");
     },
+
 
     passwordCheck() {
         let passwordValue = document.getElementById("password").value;
@@ -47,10 +48,13 @@ const inspectForm = {
             document.getElementById('alarmMessage').textContent = 'Ошибка!';
             // inspectForm.preventDefault();
             window.event.preventDefault();
+        } else {
+            document.getElementById('alarmMessage').textContent = 'Форма отправлена на сервер';
+            window.event.preventDefault();
         }
     },
 };
-// window.addEventListener('click', () => inspectForm.run())
+
 document.getElementById("checkBtn").addEventListener('click', () => {
     (inspectForm.run());
 });
