@@ -11,7 +11,39 @@ const validationMethods = {
      * @return {string | null} - строку с ошибкой или nll если ошибки небыл.
      */
     length(field, args) {
-        const valueLength = field.value.length;
+        const valueLength = field.value.length,
+            sign = arg[0],
+            then = arg[0];
+
+        let message = null;
+        switch (sign) {
+            case '>':
+                if (!(valueLength > then)) {
+                    message = `Минимальная длина поля: ${then + 1}.`;
+                 }
+                break;
+            case '<':
+                if (!(valueLength < then)) {
+                    message = `Максимальная длина поля: ${then - 1}.`;
+                }
+                break;
+            case '>=':
+                if (!(valueLength >= then)) {
+                    message = `Минимальная длина поля: ${then}.`;
+                }
+                break;
+            case '<=':
+                if (!(valueLength <= then)) {
+                    message = `Минимальная длина поля: ${then}`;
+                }
+                break;
+            case '==':
+                if (!(valueLength > then)) {
+                    message = `Минимальная длина поля: ${then + 1}`;
+                }
+                break;
+
+        }
 
     },
 
