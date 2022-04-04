@@ -118,6 +118,10 @@ const form = {
         ];
     },
 
+    /**
+     * Метод каторый запускается перед отправкой формы.
+     * @param {Event} e -событие отправки формы.
+     */
     formSubmit(e) {
         if (!this.validate()) {
             e.preventDefault();
