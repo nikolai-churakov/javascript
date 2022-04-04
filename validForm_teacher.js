@@ -81,8 +81,7 @@ const form = {
     rules: null,
 
     /**
-     * Метод, который запускается перед отправкой формы.
-     * @param {Event} e - событие отправки формы.
+     * Инициализация формы.
      */
     init() {
         this.formEl = document.querySelector('.form-wrap');
@@ -99,24 +98,29 @@ const form = {
             {
                 selector: 'input[name="phone"]',
                 methods: [
-                    {name: 'length', args: ['>=', 1]},
-                    {name: 'length', args: ['<=', 50]},
+                    {name: 'mustContainNumber'},
+                    {name: 'length', args: ['==', 11]},
                 ],
             },
             {
                 selector: 'input[name="password"]',
                 methods: [
-                    {name: 'length', args: ['>=', 1]},
+                    {name: 'length', args: ['>=', 5]},
                     {name: 'length', args: ['<=', 50]},
                 ],
             },
             {
                 selector: 'input[name="password_repeat"]',
                 methods: [
-                    {name: 'length', args: ['>=', 1]},
-                    {name: 'length', args: ['<=', 50]},
+                    {name: 'fieldsCompare', args: ['input[name="password"]']},
                 ],
             },
         ];
+    },
+
+    formSubmit(e) {
+        if (!this.validate()) {
+            e.preventDefault();
+        }
     },
 }
