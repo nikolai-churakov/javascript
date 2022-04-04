@@ -34,12 +34,12 @@ const validationMethods = {
                 break;
             case '<=':
                 if (!(valueLength <= then)) {
-                    message = `Минимальная длина поля: ${then}`;
+                    message = `Минимальная длина поля: ${then}.`;
                 }
                 break;
             case '==':
-                if (!(valueLength > then)) {
-                    message = `Минимальная длина поля: ${then + 1}`;
+                if (valueLength !== then) {
+                    message = `длина поля должна равняться: ${then} символам.`;
                 }
                 break;
 
