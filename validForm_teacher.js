@@ -6,10 +6,12 @@ const validationMethods = {
 
     /**
      * Метод проверки поля по длине.
-     * @param field
-     * @param args
+     * @param field - поле каторое надо проверить.
+     * @param args - массив с аргументами.
+     * @return {string | null} - строку с ошибкой или nll если ошибки небыл.
      */
     length(field, args) {
+        const valueLength = field.value.length;
 
     },
 
