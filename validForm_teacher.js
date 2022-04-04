@@ -51,10 +51,16 @@ const validationMethods = {
     /**
      * Проверяет содержит ли поля только цифры.
      * @param {HTMLInputElement} field - поле катьорое надо проверить.
-     * @param {string | null} - строку с ошибкой или nll если ошибки небыл.
+     * @return {string | null} - строку с ошибкой или nll если ошибки небыл.
      */
-    mustContainNumber() {
+    mustContainNumber(field) {
+        for (const val of field.value) {
+            if (!Number.isInteger(Number.parseInt(val))) {
+                return `Поле должно содержать только цифры.`;
+            }
+        }
 
+        return null;
     },
 
     fieldsCompare() {
