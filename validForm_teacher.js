@@ -1,9 +1,14 @@
 "use strict";
 /**
- * Метод проверки поля по данным
- * @type {{mustContainNumber(), fieldsCompare(), length()}}
+ * Объект содержащий методы проверки
  */
 const validationMethods = {
+
+    /**
+     * Метод проверки поля по длине.
+     * @param field
+     * @param args
+     */
     length(field, args) {
 
     },
