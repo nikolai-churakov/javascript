@@ -84,7 +84,7 @@ const form = {
      * Инициализация формы.
      */
     init() {
-        this.formEl = document.querySelector(".form-wrap");
+        this.formEl = document.querySelector(".div-wrap");
         this.formEl.addEventListener('submit', e => this.formSubmit(e))
 
         this.rules = [
