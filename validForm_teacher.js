@@ -127,4 +127,28 @@ const form = {
             e.preventDefault();
         }
     },
-}
+
+    /**
+     * Валидирует форму.
+     */
+    validate() {
+        let isValid = true;
+        for (let rule of this.rules) {
+            const inputEl = document.querySelector(rule.selector);
+            for (let method of rule.methods) {
+                const validFunction = validationMethods[method.name];
+                const errMessage = validFunction(inputEl, method.args);
+                if (errMessage) {
+                    console.log(errMessage);
+                    isValid = false;
+                } else {
+                    console.log('Ошибок не было.');
+                }
+            }
+        }
+
+        return isValid;
+    }
+};
+
+form.init();
