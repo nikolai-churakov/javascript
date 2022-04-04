@@ -6,14 +6,14 @@ const validationMethods = {
 
     /**
      * Метод проверки поля по длине.
-     * @param field - поле каторое надо проверить.
+     * @param {HTMLInputElement} field - поле каторое надо проверить.
      * @param args - массив с аргументами.
      * @return {string | null} - строку с ошибкой или nll если ошибки небыл.
      */
     length(field, args) {
         const valueLength = field.value.length,
-            sign = arg[0],
-            then = arg[0];
+            sign = args[0],
+            then = args[1];
 
         let message = null;
         switch (sign) {
@@ -42,11 +42,17 @@ const validationMethods = {
                     message = `длина поля должна равняться: ${then} символам.`;
                 }
                 break;
-
         }
+
+        return message;
 
     },
 
+    /**
+     * Проверяет содержит ли поля только цифры.
+     * @param {HTMLInputElement} field - поле катьорое надо проверить.
+     * @param {string | null} - строку с ошибкой или nll если ошибки небыл.
+     */
     mustContainNumber() {
 
     },
