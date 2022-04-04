@@ -80,6 +80,10 @@ const form = {
     formEl: null,
     rules: null,
 
+    /**
+     * Метод, который запускается перед отправкой формы.
+     * @param {Event} e - событие отправки формы.
+     */
     init() {
         this.formEl = document.querySelector('.form-wrap');
         this.formEl.addEventListener('submit', e => this.formSubmit(e))
@@ -88,9 +92,31 @@ const form = {
             {
                 selector: 'input[name="name"]',
                 methods: [
-                    'length'
+                    {name: 'length', args: ['>=', 1]},
+                    {name: 'length', args: ['<=', 50]},
                 ],
-            }
+            },
+            {
+                selector: 'input[name="phone"]',
+                methods: [
+                    {name: 'length', args: ['>=', 1]},
+                    {name: 'length', args: ['<=', 50]},
+                ],
+            },
+            {
+                selector: 'input[name="password"]',
+                methods: [
+                    {name: 'length', args: ['>=', 1]},
+                    {name: 'length', args: ['<=', 50]},
+                ],
+            },
+            {
+                selector: 'input[name="password_repeat"]',
+                methods: [
+                    {name: 'length', args: ['>=', 1]},
+                    {name: 'length', args: ['<=', 50]},
+                ],
+            },
         ];
     },
 }
