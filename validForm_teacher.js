@@ -156,7 +156,9 @@ const form = {
      * @param {string | null} message - сообщение об ошибке.
      */
     setInValidField(inputEl, message) {
-
+        const cl = inputEl.classList;
+        cl.remove('is-valid');
+        cl.add('is-invalid')
 
         let hintWrap = inputEl.parentNode
 
