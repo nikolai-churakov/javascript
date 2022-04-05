@@ -155,7 +155,8 @@ const form = {
      * @param {HTMLInputElement} inputEl - поле которое надо проверить.
      * @param {string | null} message - сообщение об ошибке.
      */
-    setInValidField() {
+    setInValidField(inputEl, message) {
+
 
         let hintWrap = inputEl.parentNode
 
