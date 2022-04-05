@@ -160,7 +160,7 @@ const form = {
         cl.remove('is-valid');
         cl.add('is-invalid')
 
-        let hintWrap = inputEl.parentNode
+        let hintWrap = inputEl.parentNode.querySelector('alarmMessage')
 
     },
 
