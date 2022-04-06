@@ -49,6 +49,11 @@ const chess = {
             value: 'rook',
             img: '&#9814',
         },
+        'A2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
         'A8': {
             color: 'black',
             value: 'rook',
