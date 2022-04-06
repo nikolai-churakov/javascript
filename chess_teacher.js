@@ -129,6 +129,46 @@ const chess = {
             value: 'rook',
             img: '&#9820',
         },
+        'A7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'B7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'C7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'D7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'E7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'F7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'G7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'H7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
     },
 
     init() {
