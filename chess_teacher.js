@@ -9,82 +9,82 @@ const chess = {
     // figures['B1']['img']
 
     figures: {
-        'A8': {
+        'A1': {
             color: 'white',
             value: 'rook',
             img: '&#9814',
         },
-        'B8': {
+        'B1': {
             color: 'white',
             value: 'knight',
             img: '&#9816',
         },
-        'C8': {
+        'C1': {
             color: 'white',
             value: 'bishop',
             img: '&#9815',
         },
-        'D8': {
+        'D1': {
             color: 'white',
             value: 'queen',
             img: '&#9813',
         },
-        'E8': {
+        'E1': {
             color: 'white',
             value: 'king',
             img: '&#9812',
         },
-        'F8': {
+        'F1': {
             color: 'white',
             value: 'bishop',
             img: '&#9815',
         },
-        'G8': {
+        'G1': {
             color: 'white',
             value: 'knight',
             img: '&#9816',
         },
-        'H8': {
+        'H1': {
             color: 'white',
             value: 'rook',
             img: '&#9814',
         },
-        'A1': {
+        'A8': {
             color: 'black',
             value: 'rook',
             img: '&#9820',
         },
-        'B1': {
+        'B8': {
             color: 'black',
             value: 'knight',
             img: '&#9822',
         },
-        'C1': {
+        'C8': {
             color: 'black',
             value: 'bishop',
             img: '&#9821',
         },
-        'D1': {
+        'E8': {
             color: 'black',
             value: 'king',
             img: '&#9818',
         },
-        'E1': {
+        'D8': {
             color: 'black',
             value: 'queen',
             img: '&#9819',
         },
-        'F1': {
+        'F8': {
             color: 'black',
             value: 'bishop',
             img: '&#9821',
         },
-        'G1': {
+        'G8': {
             color: 'black',
             value: 'knight',
             img: '&#9822',
         },
-        'H1': {
+        'H8': {
             color: 'black',
             value: 'rook',
             img: '&#9820',
