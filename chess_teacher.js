@@ -54,6 +54,41 @@ const chess = {
             value: 'pawn',
             img: '&#9817',
         },
+        'B2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'C2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'D2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'E2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'F2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'G2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'H2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
         'A8': {
             color: 'black',
             value: 'rook',
