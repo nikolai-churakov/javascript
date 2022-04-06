@@ -52,32 +52,32 @@ const chess = {
         'A8': {
             color: 'black',
             value: 'rook',
-            img: '&#9814',
+            img: '&#9820',
         },
         'B8': {
             color: 'black',
             value: 'knight',
-            img: '&#9816',
+            img: '&#9822',
         },
         'C8': {
             color: 'black',
             value: 'bishop',
-            img: '&#9815',
+            img: '&#9821',
         },
         'D8': {
             color: 'black',
             value: 'king',
-            img: '&#9812',
+            img: '&#9818',
         },
         'E8': {
             color: 'black',
             value: 'queen',
-            img: '&#9813',
+            img: '&#9819',
         },
         'F8': {
             color: 'black',
             value: 'bishop',
-            img: '&#9815',
+            img: '&#9821',
         },
         'G8': {
             color: 'black',
