@@ -82,12 +82,12 @@ const chess = {
         'G8': {
             color: 'black',
             value: 'knight',
-            img: '&#9816',
+            img: '&#9822',
         },
         'H8': {
             color: 'black',
             value: 'rook',
-            img: '&#9814',
+            img: '&#9820',
         },
     },
 
