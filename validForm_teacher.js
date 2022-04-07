@@ -160,8 +160,14 @@ const form = {
         cl.remove('is-valid');
         cl.add('is-invalid')
 
-        let hintWrap = inputEl.parentNode.querySelector('alarmMessage')
+        let hintWrap = inputEl.parentNode.querySelector('alarmMessage');
+        if (!hintWrap) {
+            hintWrap = document.add('invalid-feedback');
+            hintWrap.classList.add('invalid-feedback');
+            inputEl.parentNode.appendChild(hintWrap);
+        }
 
+        hintWrap.textContent = message;
     },
 
     /**
@@ -170,7 +176,9 @@ const form = {
      * @param {string | null} message - сообщение об ошибке.
      */
     setValidField() {
-
+        const cl = inputEl.classList;
+        cl.remove('is-valid');
+        cl.add('is-valid');
     },
 };
 
