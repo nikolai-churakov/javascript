@@ -85,7 +85,7 @@ const form = {
      */
     init() {
         this.formEl = document.querySelector(".div-wrap");
-        this.formEl.addEventListener('submit', e => this.formSubmit(e))
+        this.formEl.addEventListener('submit', e => this.formSubmit(e));
 
         this.rules = [
             {
@@ -161,7 +161,7 @@ const form = {
         cl.remove('is-valid');
         cl.add('is-invalid')
 
-        let hintWrap = inputEl.parentNode.querySelector('alarmMessage');
+        let hintWrap = inputEl.parentNode.querySelector('.alarmMessage');
         if (!hintWrap) {
             hintWrap = document.add('invalid-feedback');
             hintWrap.classList.add('invalid-feedback');
