@@ -139,10 +139,11 @@ const form = {
                 const validFunction = validationMethods[method.name];
                 const errMessage = validFunction(inputEl, method.args);
                 if (errMessage) {
-                    console.log(errMessage);
+                    this.setInValidField(inputEl, errMessage);
                     isValid = false;
+                    break;
                 } else {
-                    console.log('Ошибок не было.');
+                    this.setValidField(inputEl);
                 }
             }
         }
@@ -152,7 +153,7 @@ const form = {
 
     /**
      * Устанавливает класс провала валидации и сообщает почему валидация провалена.
-     * @param {HTMLInputElement} inputEl - поле которое надо проверить.
+     * @param {Element} inputEl - поле которое надо проверить.
      * @param {string | null} message - сообщение об ошибке.
      */
     setInValidField(inputEl, message) {
@@ -172,7 +173,7 @@ const form = {
 
     /**
      * Устанавливает класс валидация, убирает сообщения о провале валидации если такое было.
-     * @param {HTMLInputElement} inputEl - поле которое надо проверить.
+     * @param {Element} inputEl - поле которое надо проверить.
      * @param {string | null} message - сообщение об ошибке.
      */
     setValidField() {
