@@ -84,7 +84,7 @@ const form = {
      * Инициализация формы.
      */
     init() {
-        this.formEl = document.querySelector(".div-wrap");
+        this.formEl = document.querySelector('.form-wrap');
         this.formEl.addEventListener('submit', e => this.formSubmit(e));
 
         this.rules = [
@@ -163,8 +163,8 @@ const form = {
 
         let hintWrap = inputEl.parentNode.querySelector('.alarmMessage');
         if (!hintWrap) {
-            hintWrap = document.add('invalid-feedback');
-            hintWrap.classList.add('invalid-feedback');
+            hintWrap = document.add('alarmMessage');
+            hintWrap.classList.add('alarmMessage');
             inputEl.parentNode.appendChild(hintWrap);
         }
 
