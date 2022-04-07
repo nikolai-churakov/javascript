@@ -49,45 +49,125 @@ const chess = {
             value: 'rook',
             img: '&#9814',
         },
+        'A2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'B2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'C2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'D2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'E2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'F2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'G2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
+        'H2': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9817',
+        },
         'A8': {
             color: 'black',
             value: 'rook',
-            img: '&#9814',
+            img: '&#9820',
         },
         'B8': {
             color: 'black',
             value: 'knight',
-            img: '&#9816',
+            img: '&#9822',
         },
         'C8': {
             color: 'black',
             value: 'bishop',
-            img: '&#9815',
-        },
-        'D8': {
-            color: 'black',
-            value: 'king',
-            img: '&#9812',
+            img: '&#9821',
         },
         'E8': {
             color: 'black',
+            value: 'king',
+            img: '&#9818',
+        },
+        'D8': {
+            color: 'black',
             value: 'queen',
-            img: '&#9813',
+            img: '&#9819',
         },
         'F8': {
             color: 'black',
             value: 'bishop',
-            img: '&#9815',
+            img: '&#9821',
         },
         'G8': {
             color: 'black',
             value: 'knight',
-            img: '&#9816',
+            img: '&#9822',
         },
         'H8': {
             color: 'black',
             value: 'rook',
-            img: '&#9814',
+            img: '&#9820',
+        },
+        'A7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'B7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'C7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'D7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'E7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'F7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'G7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
+        },
+        'H7': {
+            color: 'white',
+            value: 'pawn',
+            img: '&#9823',
         },
     },
 

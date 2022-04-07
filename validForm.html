@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Урок 5. задание 3 со звездочками</title>
-<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
--->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <style>
         .form-wrap {
             margin: auto;
@@ -13,21 +12,33 @@
             max-width: 800px;
             border-width: 2px;
         }
+        .is-invalid {
+            border-width: 2px;
+            border-color: crimson;
+        }
+        .is-valid {
+            border-width: 2px;
+            border-color: green;
+        }
     </style>
 </head>
 <body>
     <h3>Форма отправки данных на сервер с проверкой в js</h3>
-        <form class="form-wrap">
+        <div class="div-wrap">
+            <form class="form-wrap">
 
-            <input type="text" id="name" name="name" placeholder="Имя">
-            <input type="text" id="phone" name="phone" placeholder="Телефон">
-            <input type="password" id="password" name="password" placeholder="Пароль">
+                <input type="text" id="name" name="name" class="is-valid" placeholder="Имя">
+                <input type="text" id="phone" name="phone" placeholder="Телефон">
+                <input type="text" id="password" name="password" placeholder="Пароль">
+                <input type="text" id="password_repeat" name="password_repeat" placeholder="Повтор пароля">
 
-            <button type="submit" id="checkBtn" class="btn btn-primary">Отправить</button>
-        </form>
+                <button type="submit" id="checkBtn" class="btn btn-primary">Отправить</button>
+            </form>
 
-        <div class="alarmMessage" id="alarmMessage"></div>
+            <div class="alarmMessage" id="alarmMessage"></div>
+        </div>
 
-<script src="inspectForm.js"></script>
+<!--<script src="inspectForm.js"></script>-->
+    <script src="validForm_teacher.js"></script>
 </body>
 </html>

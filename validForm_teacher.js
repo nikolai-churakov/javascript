@@ -7,7 +7,7 @@ const validationMethods = {
     /**
      * Метод проверки поля по длине.
      * @param {HTMLInputElement} field - поле каторое надо проверить.
-     * @param args - массив с аргументами.
+     * @param {Array} args - массив с аргументами.
      * @return {string | null} - строку с ошибкой или nll если ошибки небыл.
      */
     length(field, args) {
@@ -63,9 +63,16 @@ const validationMethods = {
         return null;
     },
 
-    fieldsCompare() {
-
-
+    /**
+     * Проверяет совпадает ли у 2х полей значение.
+     * @param {HTMLInputElement} field - поле катьорое надо проверить.
+     * @param {Array} args - поле катьорое надо проверить.
+     * @return {string | null} - строку с ошибкой или nll если ошибки небыл.
+     */
+    fieldsCompare(field, args) {
+        return field.value !== document.querySelector(args[0]).value
+            ? 'Поля не совпадают.'
+            : null;
     },
 };
 
@@ -73,17 +80,107 @@ const form = {
     formEl: null,
     rules: null,
 
+    /**
+     * Инициализация формы.
+     */
     init() {
         this.formEl = document.querySelector('.form-wrap');
-        this.formEl.addEventListener('submit', e => this.formSubmit(e))
+        this.formEl.addEventListener('submit', e => this.formSubmit(e));
 
         this.rules = [
             {
                 selector: 'input[name="name"]',
                 methods: [
-                    'length'
+                    {name: 'length', args: ['>=', 1]},
+                    {name: 'length', args: ['<=', 50]},
                 ],
-            }
+            },
+            {
+                selector: 'input[name="phone"]',
+                methods: [
+                    {name: 'mustContainNumber'},
+                    {name: 'length', args: ['==', 11]},
+                ],
+            },
+            {
+                selector: 'input[name="password"]',
+                methods: [
+                    {name: 'length', args: ['>=', 5]},
+                    {name: 'length', args: ['<=', 50]},
+                ],
+            },
+            {
+                selector: 'input[name="password_repeat"]',
+                methods: [
+                    {name: 'fieldsCompare', args: ['input[name="password"]']},
+                ],
+            },
         ];
     },
-}
+
+    /**
+     * Метод каторый запускается перед отправкой формы.
+     * @param {Event} e -событие отправки формы.
+     */
+    formSubmit(e) {
+        if (!this.validate()) {
+            e.preventDefault();
+        }
+    },
+
+    /**
+     * Валидирует форму.
+     */
+    validate() {
+        let isValid = true;
+        for (let rule of this.rules) {
+            const inputEl = document.querySelector(rule.selector);
+            for (let method of rule.methods) {
+                const validFunction = validationMethods[method.name];
+                const errMessage = validFunction(inputEl, method.args);
+                if (errMessage) {
+                    this.setInValidField(inputEl, errMessage);
+                    isValid = false;
+                    break;
+                } else {
+                    this.setValidField(inputEl);
+                }
+            }
+        }
+
+        return isValid;
+    },
+
+    /**
+     * Устанавливает класс провала валидации и сообщает почему валидация провалена.
+     * @param {Element} inputEl - поле которое надо проверить.
+     * @param {string | null} message - сообщение об ошибке.
+     */
+    setInValidField(inputEl, message) {
+        const cl = inputEl.classList;
+        cl.remove('is-valid');
+        cl.add('is-invalid')
+
+        let hintWrap = inputEl.parentNode.querySelector('.alarmMessage');
+        if (!hintWrap) {
+            hintWrap = document.add('alarmMessage');
+            hintWrap.classList.add('alarmMessage');
+            inputEl.parentNode.appendChild(hintWrap);
+        }
+
+        hintWrap.textContent = message;
+    },
+
+    /**
+     * Устанавливает класс валидация, убирает сообщения о провале валидации если такое было.
+     * @param {Element} inputEl - поле которое надо проверить.
+     * @param {string | null} message - сообщение об ошибке.
+     */
+    setValidField() {
+        const cl = inputEl.classList;
+        cl.remove('is-valid');
+        cl.add('is-valid');
+    },
+};
+
+form.init();
