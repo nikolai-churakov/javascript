@@ -159,7 +159,7 @@ const form = {
     setInvalidField(inputEl, message) {
         const cl = inputEl.classList;
         cl.remove('is-valid');
-        cl.add('is-invalid')
+        cl.add('is-invalid');
 
           let hintWrap = inputEl.parentNode.querySelector('.alarmMessage');
         if (!hintWrap) {
@@ -179,7 +179,7 @@ const form = {
     setValidField() {
         const cl = inputEl.classList;
         cl.remove('is-valid');
-        cl.add('is-valid');
+        cl.add('is-invalid');
     },
 };
 
