@@ -5,14 +5,14 @@ let cart = {
         'brand': 'Common Projects',
         'model': 'Bball High',
         'color': 'White',
-        'count': 2,
+        'count': 1,
         'price': 549,
     },
     'ART020304232': {
             'brand': 'Maison Margiela',
             'model': 'Future Sneakers',
             'color': 'White',
-            'count': 1,
+            'count': 2,
             'price': 870,
         },
     'ART020304233': {
@@ -60,9 +60,8 @@ const deleteFunction = id => {
 
 
 const renderCart = (id) => {
-    console.log(cart);
-    const new_count = document.querySelector( '.count');
-    new_count.innerHTML = cart[id]['count'];
+    // const new_count = document.querySelector( '.count');
+    // new_count.innerHTML = cart[id]['count'];
 };
 
 
