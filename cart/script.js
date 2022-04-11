@@ -12,14 +12,14 @@ let cart = {
             'brand': 'Maison Margiela',
             'model': 'Future Sneakers',
             'color': 'White',
-            'count': 2,
+            'count': 1,
             'price': 870,
         },
     'ART020304233': {
         'brand': 'Our Legacy',
         'model': 'Brushed Scarf',
         'color': 'Brown',
-        'count': 6,
+        'count': 1,
         'price': 349,
     },
 };
@@ -61,6 +61,13 @@ const deleteFunction = id => {
 
 const renderCart = (id) => {
     console.log(cart[id]['count']);
-    let new_count = document.querySelector('.count');
-    new_count.innerHTML = cart[id]['count'];
+    console.log(id);
+    let new_count = document.getElementById('count_test1').innerHTML;
+    console.log(new_count);
+    // let new_count = document.querySelector(".count");
+    // "div.user-panel.main input[name=login]"
+    // < spanclassName = "count"data - id = "ART020304231" > 1 < /span>
+    //new_count.innerHTML = cart[id]['count'];
 };
+
+
