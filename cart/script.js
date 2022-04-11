@@ -33,6 +33,7 @@ document.onclick = event => {
         console.log(event.target.dataset.id);
         minusFunction(event.target.dataset.id);
     }
+
 };
 
 const plusFunction = id => {
@@ -65,10 +66,5 @@ const renderCart = (id) => {
 
 const totalPrice = (id, new_count) => {
     let cart_price = cart[id]['price'];
-    let totalPrice = cart_price * new_count;
-    console.log(totalPrice);
-    let ttt = document.querySelector(".total-price[data-id='" + id + "']").innerText = totalPrice;
-    console.log(ttt);
+    document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
 }
-
-
