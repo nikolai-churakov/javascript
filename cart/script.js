@@ -77,7 +77,8 @@ const totalPrice = (id, new_count) => {
     let cart_price = cart[id]['price'];
     let totalPrice = cart_price * new_count;
     console.log(totalPrice);
-    document.querySelector("total-price[data-id='" + id + "']").innerText = totalPrice;
+    let ttt= document.querySelectorAll(".total-price");
+    console.log(ttt);
     //.innerText = totalPrice;
     // document.querySelector(".total-price[data-id='" + id + "']").innerText = (new_total * cart[id]['price']);
 }
