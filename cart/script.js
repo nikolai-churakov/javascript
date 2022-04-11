@@ -51,7 +51,7 @@ const minusFunction = id => {
 }
 
 const deleteFunction = id => {
-    delete document.getElementById('test1');
+    // delete document.getElementById('test1');
     // delete document.querySelector( '.item[data-content="'+id+'"]');
     console.log(document.querySelector( '.item[data-content="'+id+'"]'));
     delete cart[id];
@@ -60,66 +60,7 @@ const deleteFunction = id => {
 
 
 const renderCart = (id) => {
-    // const new_count = document.querySelector( '.count');
-    // new_count.innerHTML = cart[id]['count'];
+    console.log(cart[id]['count']);
+    let new_count = document.querySelector('.count');
+    new_count.innerHTML = cart[id]['count'];
 };
-
-
-///// Теперь заставим работать кнопки количества приобретаемого товара:
-///$('.minus-btn').on('click', function(e) {
-//    e.preventDefault();
-//    let $this = $(this);
-//    let $input = $this.closest('div').find('input');
-//    let value = parseInt($input.val());
-// 
-//    if (value &gt; 1) {
-//        value = value - 1;
-//    } else {
-//        value = 0;
-//    }
-// 
-//  $input.val(value);
-// 
-//});
-// 
-// // Кнопки уменьшения и увеличения товара
-//$('.plus-btn').on('click', function(e) {
-//    e.preventDefault();
-//    let $this = $(this);
-//    let $input = $this.closest('div').find('input');
-//    let value = parseInt($input.val());
-// 
-//    if (value &lt; 100) {
-//        value = value + 1;
-//    } else {
-//        value =100;
-//    }
-// 
-//    $input.val(value);
-//});
-//
-//<input type="button" value="-" class="bminus">
-//<input type="text" id="counter" name="count" value="1" min="1" step="1" title="Кол-во">
-//<input type="button" value="+" class="bplus">
-//<script>
-//$(document).ready(function(){
-//$('.bminus').click(function(e){
-//e.preventDefault();
-//let $this = $(this);
-//let input = $('#counter');
-//let value = parseInt(input.val());
-//if(value > 1){value = value - 1;}
-//else{value = 0;}
-//input.val(value);
-//});
-//
-//$('.bplus').click(function(e){
-//e.preventDefault();
-//let $this = $(this);
-//let input = $('#counter');
-//let value = parseInt(input.val());
-//if(value < 100){value = value + 1;}
-//else{value = 100;}
-//input.val(value);
-//});
-//});
