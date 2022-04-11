@@ -2,13 +2,26 @@
 
 let cart = {
     'ART020304231': {
-        'name': 'Common Projects',
+        'brand': 'Common Projects',
+        'model': 'Bball High',
         'color': 'White',
         'count': 2,
         'price': 549,
     },
-    'ART020304232': 1,
-    'ART020304233': 1,
+    'ART020304232': {
+            'brand': 'Maison Margiela',
+            'model': 'Future Sneakers',
+            'color': 'White',
+            'count': 1,
+            'price': 870,
+        },
+    'ART020304233': {
+        'brand': 'Our Legacy',
+        'model': 'Brushed Scarf',
+        'color': 'Brown',
+        'count': 6,
+        'price': 349,
+    },
 };
 
 document.onclick = event => {
@@ -38,7 +51,7 @@ const minusFunction = id => {
 }
 
 const deleteFunction = id => {
-    delete document.getElementById(test1);
+    delete document.getElementById('test1');
     // delete document.querySelector( '.item[data-content="'+id+'"]');
     console.log(document.querySelector( '.item[data-content="'+id+'"]'));
     delete cart[id];
@@ -50,13 +63,9 @@ const renderCart = (id) => {
     console.log(cart);
     const new_count = document.querySelector( '.count');
     new_count.innerHTML = cart[id]['count'];
-}
+};
 
-// Анимация сердечка
-//Document.('.like-btn').onclick => {
-///   Document.toggleClass('is-active');
-///};
-///
+
 ///// Теперь заставим работать кнопки количества приобретаемого товара:
 ///$('.minus-btn').on('click', function(e) {
 //    e.preventDefault();
