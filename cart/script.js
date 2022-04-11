@@ -26,7 +26,7 @@ let cart = {
 
 document.onclick = event => {
     if (event.target.classList.contains('plus-btn')) {
-        console.log(event.target.dataset.id);
+        console.log("нажал добавить",event.target.dataset.id);
         plusFunction(event.target.dataset.id);
         // document.querySelector(this.dataset.id).innerHTML = 5;
     }
@@ -60,14 +60,26 @@ const deleteFunction = id => {
 
 
 const renderCart = (id) => {
-    console.log(cart[id]['count']);
-    console.log(id);
-    let new_count = document.getElementById('count_test1').innerHTML;
-    console.log(new_count);
+    // console.log(cart[id]['count']);
+    // console.log(id);
+    // document.querySelector('basket-count').innerText = this.count
+    let new_count = document.querySelector("span[data-id='" + id + "']").innerText = cart[id]['count'];
+    totalPrice(id, new_count);
+    // asd = cart[id]['count'];
+    // console.log(asd);
+}
     // let new_count = document.querySelector(".count");
     // "div.user-panel.main input[name=login]"
     // < spanclassName = "count"data - id = "ART020304231" > 1 < /span>
     //new_count.innerHTML = cart[id]['count'];
-};
+
+const totalPrice = (id, new_count) => {
+    let cart_price = cart[id]['price'];
+    let totalPrice = cart_price * new_count;
+    console.log(totalPrice);
+    document.querySelector("total-price[data-id='" + id + "']").innerText = totalPrice;
+    //.innerText = totalPrice;
+    // document.querySelector(".total-price[data-id='" + id + "']").innerText = (new_total * cart[id]['price']);
+}
 
 
