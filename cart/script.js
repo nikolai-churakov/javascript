@@ -38,6 +38,7 @@ const minusFunction = id => {
 }
 
 const deleteFunction = id => {
+    delete document.getElementById(test1);
     // delete document.querySelector( '.item[data-content="'+id+'"]');
     console.log(document.querySelector( '.item[data-content="'+id+'"]'));
     delete cart[id];
