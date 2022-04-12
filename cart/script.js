@@ -62,25 +62,27 @@ const deleteFunction = id => {
 }
 
 const likeFunction = id => {
-    document.querySelector(".like-btn[data-id='" + id + "']").toggleClass('is-active');
+    alert("Ну все ты лайкнул =)")
 }
 
-const totalPrice = (id, total_price) => {
-    let grand = 0;
-    // let grand = cart_price * new_count;
-    // document.getElementById('grand-total').innerText
-    console.log(document.querySelectorAll(".total-price"));
-    // console.log(document.querySelectorAll(".total-price").forEach((grandTotal) => {
-    //     let sum = 0;
-    //     console.log(1);
-    // }
-}
+// const totalPrice = (id, total_price) => {
+//     let grand = 0;
+//     // let grand = cart_price * new_count;
+//     // document.getElementById('grand-total').innerText
+//     console.log(document.querySelectorAll(".total-price"));
+//     console.log(document.querySelectorAll(".total-price").forEach((grandTotal) => {
+//         let sum = 0;
+//         console.log(1);
+// }
 
 const renderCart = (id) => {
     let cart_price = cart[id]['price'];
     let new_count = document.querySelector("span[data-id='" + id + "']").innerText = cart[id]['count'];
     let total_price = document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
-    totalPrice(id, total_price);
+    console.log(id, total_price);
+    let grand_total =+ total_price;
+    console.log(grand_total);
+    // totalPrice(id, total_price);
 }
 
 
