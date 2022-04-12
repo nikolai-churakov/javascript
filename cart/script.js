@@ -68,11 +68,11 @@ const likeFunction = id => {
 const renderCart = (id) => {
     let cart_price = cart[id]['price'];
     console.log(cart_price); // Цена одной позиции по артикулу
-
-
     let new_count = document.querySelector("span[data-id='" + id + "']").innerText = cart[id]['count'];
+    console.log(new_count); // Количество позиции по артикулу
     let total_price = document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
-    console.log(id, total_price);
+
+    console.log(id, total_price); // Артикул и Суммарная стоимость по одной позиции
     let grand_total =+ total_price;
     console.log(grand_total);
     // totalPrice(id, total_price);
