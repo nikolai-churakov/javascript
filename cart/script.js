@@ -37,7 +37,6 @@ document.onclick = event => {
     if (event.target.classList.contains('like-btn')) {
         likeFunction(event.target.dataset.id);
     }
-
 };
 
 const plusFunction = id => {
@@ -66,12 +65,34 @@ const likeFunction = id => {
     document.querySelector(".like-btn[data-id='" + id + "']").toggleClass('is-active');
 }
 
-const totalPrice = (id, new_count) => {
-    let cart_price = cart[id]['price'];
-    document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
+const totalPrice = (id, total_price) => {
+    let grand = 0;
+    // let grand = cart_price * new_count;
+    // document.getElementById('grand-total').innerText
+    console.log(document.querySelectorAll(".total-price"));
+    // console.log(document.querySelectorAll(".total-price").forEach((grandTotal) => {
+    //     let sum = 0;
+    //     console.log(1);
+    // }
 }
 
 const renderCart = (id) => {
+    let cart_price = cart[id]['price'];
     let new_count = document.querySelector("span[data-id='" + id + "']").innerText = cart[id]['count'];
-    totalPrice(id, new_count);
+    let total_price = document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
+    totalPrice(id, total_price);
 }
+
+
+    // document.getElementById("grand-total").innerText = cart_price * new_count;
+
+
+    // document.querySelector("span[data-id='" + id + "']").innerText = cart[id]['count'];
+    // let new_count = document.querySelector("span[data-id='" + id + "']").innerText = cart[id]['count'];
+// totalPrice(id, new_count);
+
+// isSumCounting(event) {
+//     const unitPrice = +event.target.dataset.price;
+//     this.sumPrice = this.sumPrice + unitPrice;
+//     document.getElementById('basket-price').innerText = this.sumPrice;
+// },
