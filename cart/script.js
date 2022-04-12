@@ -33,6 +33,14 @@ document.onclick = event => {
         console.log(event.target.dataset.id);
         minusFunction(event.target.dataset.id);
     }
+    if (event.target.classList.contains('delete-btn')) {
+        console.log("нажал удалить",event.target.dataset.id);
+        deleteFunction(event.target.dataset.id);
+    }
+    if (event.target.classList.contains('like-btn')) {
+        console.log("нажал лайк",event.target.dataset.id);
+        likeFunction(event.target.dataset.id);
+    }
 
 };
 
@@ -51,20 +59,24 @@ const minusFunction = id => {
 }
 
 const deleteFunction = id => {
-    console.log(document.querySelector( '.item[data-content="'+id+'"]'));
-    delete cart[id];
+    console.log(document.querySelector("div[data-id='" + id + "']"));
+    let toRemove = document.querySelector("div[data-id='" + id + "']");
+    toRemove.remove();
+    // delete cart[id];
     renderCart(id);
 }
 
+const likeFunction = id => {
+    document.querySelector(".like-btn[data-id='" + id + "']").toggleClass('is-active');
+}
+
+const totalPrice = (id, new_count) => {
+    let cart_price = cart[id]['price'];
+    document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
+}
 
 const renderCart = (id) => {
     let new_count = document.querySelector("span[data-id='" + id + "']").innerText = cart[id]['count'];
     totalPrice(id, new_count);
 
-}
-
-
-const totalPrice = (id, new_count) => {
-    let cart_price = cart[id]['price'];
-    document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
 }
