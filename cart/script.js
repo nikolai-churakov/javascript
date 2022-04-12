@@ -65,16 +65,6 @@ const likeFunction = id => {
     alert("Ну все ты лайкнул =)")
 }
 
-// const totalPrice = (id, total_price) => {
-//     let grand = 0;
-//     // let grand = cart_price * new_count;
-//     // document.getElementById('grand-total').innerText
-//     console.log(document.querySelectorAll(".total-price"));
-//     console.log(document.querySelectorAll(".total-price").forEach((grandTotal) => {
-//         let sum = 0;
-//         console.log(1);
-// }
-
 const renderCart = (id) => {
     let cart_price = cart[id]['price'];
     let new_count = document.querySelector("span[data-id='" + id + "']").innerText = cart[id]['count'];
@@ -84,6 +74,16 @@ const renderCart = (id) => {
     console.log(grand_total);
     // totalPrice(id, total_price);
 }
+
+// const totalPrice = (id, total_price) => {
+//     let grand = 0;
+//     // let grand = cart_price * new_count;
+//     // document.getElementById('grand-total').innerText
+//     console.log(document.querySelectorAll(".total-price"));
+//     console.log(document.querySelectorAll(".total-price").forEach((grandTotal) => {
+//         let sum = 0;
+//         console.log(1);
+// }
 
 
     // document.getElementById("grand-total").innerText = cart_price * new_count;
