@@ -26,19 +26,15 @@ let cart = {
 
 document.onclick = event => {
     if (event.target.classList.contains('plus-btn')) {
-        console.log("нажал добавить",event.target.dataset.id);
         plusFunction(event.target.dataset.id);
     }
     if (event.target.classList.contains('minus-btn')) {
-        console.log(event.target.dataset.id);
         minusFunction(event.target.dataset.id);
     }
     if (event.target.classList.contains('delete-btn')) {
-        console.log("нажал удалить",event.target.dataset.id);
         deleteFunction(event.target.dataset.id);
     }
     if (event.target.classList.contains('like-btn')) {
-        console.log("нажал лайк",event.target.dataset.id);
         likeFunction(event.target.dataset.id);
     }
 
@@ -78,5 +74,4 @@ const totalPrice = (id, new_count) => {
 const renderCart = (id) => {
     let new_count = document.querySelector("span[data-id='" + id + "']").innerText = cart[id]['count'];
     totalPrice(id, new_count);
-
 }
