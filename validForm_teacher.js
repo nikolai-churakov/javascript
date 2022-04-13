@@ -139,7 +139,7 @@ const form = {
                 const validFunction = validationMethods[method.name];
                 const errMessage = validFunction(inputEl, method.args);
                 if (errMessage) {
-                    this.setInValidField(inputEl, errMessage);
+                    this.setInvalidField(inputEl, errMessage);
                     isValid = false;
                     break;
                 } else {
@@ -156,14 +156,14 @@ const form = {
      * @param {Element} inputEl - поле которое надо проверить.
      * @param {string | null} message - сообщение об ошибке.
      */
-    setInValidField(inputEl, message) {
+    setInvalidField(inputEl, message) {
         const cl = inputEl.classList;
         cl.remove('is-valid');
-        cl.add('is-invalid')
+        cl.add('is-invalid');
 
-        let hintWrap = inputEl.parentNode.querySelector('.alarmMessage');
+          let hintWrap = inputEl.parentNode.querySelector('.alarmMessage');
         if (!hintWrap) {
-            hintWrap = document.add('alarmMessage');
+            hintWrap = document.createElement('div');
             hintWrap.classList.add('alarmMessage');
             inputEl.parentNode.appendChild(hintWrap);
         }
@@ -179,7 +179,7 @@ const form = {
     setValidField() {
         const cl = inputEl.classList;
         cl.remove('is-valid');
-        cl.add('is-valid');
+        cl.add('is-invalid');
     },
 };
 
