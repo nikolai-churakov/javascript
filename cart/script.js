@@ -74,10 +74,13 @@ const renderCart = (id) => {
     let arr = document.querySelectorAll(".total-price")
     console.log(arr[0].innerText); // Ноде лист из элементов new_count
     console.log(arr.length); // Ноде лист из элементов new_count
-
+    let sum = 0;
     for (let i = 0; i < arr.length; i++) {
-        console.log(arr[i].innerText);
+        sum += Number(arr[i].innerText);
+        // console.log(arr[i].innerText);
     }
+    console.log(sum);
+    let grand_total = document.getElementById('grand-total').innerText = sum;
 }
 // const grandTotal = (arr) => {
 //     for (let i = 0, i < arr.length, i++) {
