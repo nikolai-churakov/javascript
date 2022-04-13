@@ -62,7 +62,7 @@ const deleteFunction = id => {
 }
 
 const likeFunction = id => {
-    alert("Ну все ты лайкнул =)")
+    alert("Ну все ты лайкнул =)", id)
 }
 
 const renderCart = (id) => {
@@ -72,12 +72,15 @@ const renderCart = (id) => {
     console.log(new_count); // Количество позиции по артикулу
     let total_price = document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
 
-    let arr = document.querySelectorAll(".total-price");
-    console.log(arr); // Ноде лист из элементов new_count
-
-    arr.
-
-    let grand_total = document.getElementById('grand-total').innerText = 666;
+//     const unitPrice = +event.target.dataset.id;
+// //     this.sumPrice = this.sumPrice + unitPrice;
+//
+//
+//
+//     let arr = document.querySelectorAll(".total-price")
+//     console.log(arr); // Ноде лист из элементов new_count
+//
+//     let grand_total = document.getElementById('grand-total').innerText = 666;
 
 
 
