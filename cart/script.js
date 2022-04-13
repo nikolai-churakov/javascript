@@ -71,6 +71,19 @@ const renderCart = (id) => {
     let new_count = document.querySelector("span[data-id='" + id + "']").innerText = cart[id]['count'];
     console.log(new_count); // Количество позиции по артикулу
     let total_price = document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
+    let arr = document.querySelectorAll(".total-price")
+    console.log(arr[0].innerText); // Ноде лист из элементов new_count
+    console.log(arr.length); // Ноде лист из элементов new_count
+
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i].innerText);
+    }
+}
+// const grandTotal = (arr) => {
+//     for (let i = 0, i < arr.length, i++) {
+//     asd = arr[i].innerText
+//     }
+// }
 
 //     const unitPrice = +event.target.dataset.id;
 // //     this.sumPrice = this.sumPrice + unitPrice;
@@ -88,7 +101,6 @@ const renderCart = (id) => {
     // let grand_total =+ total_price;
     // console.log(grand_total);
     // totalPrice(id, total_price);
-}
 
 // const totalPrice = (id, total_price) => {
 //     let grand = 0;
