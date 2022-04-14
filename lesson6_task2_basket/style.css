@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
- 
+
 html,
 body {
   width: 100%;
@@ -10,6 +10,7 @@ body {
   background-color: #d3eec4;
   font-family: 'Roboto', sans-serif;
 }
+
 .shopping-cart {
   width: 750px;
   margin: 80px auto;
@@ -45,6 +46,7 @@ display: flex;
 border-top:  1px solid #E1E8EE;
 border-bottom:  1px solid #E1E8EE;
 }
+
 .buttons {
 position: relative;
 padding-top: 30px;
