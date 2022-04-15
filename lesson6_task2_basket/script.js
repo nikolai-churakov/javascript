@@ -31,10 +31,11 @@ let products = {
 }
 
 const renderProducts = () => {
-    let divTitle document.querySelector('.title');
+    let divTitle = document.querySelector('.title');
     let div = document.createElement('div');
     div.className = "item";
-
+    div.innerHTML = "ТОВАРЧИК 1"
+    divTitle.after(div);
 
 };
 
