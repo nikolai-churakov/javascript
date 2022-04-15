@@ -30,15 +30,48 @@ let products = {
     totalAmount: 1768
 }
 
-renderProducts();
+const renderProducts = () => {
+    let shoppingCart = document.querySelector('.shopping-cart');
+    let CardDiv = document.createElement('div');
+
+};
 
 const renderTotalAmount = () => {
     document.getElementById('grand-total').innerText  = products.totalAmount;
 };
 
+renderProducts();
 renderTotalAmount();
-let shoppingCart = document.querySelector('.shopping-cart');
-let CardDiv = document.createElement('div');
+
+
+// <div className="item" id="test1" data-id="ART020304231">
+//
+//     <div className="image">
+//         <img src="item-1.png" alt=""/>
+//     </div>
+//
+//     <div className="description">
+//         <span>Common Projects</span>
+//         <span>Bball High</span>
+//         <span>White</span>
+//     </div>
+//
+//     <div className="quantity">
+//         <div className="minus-btn" data-id="ART020304231"></div>
+//         <div className="plus-btn" data-id="ART020304231"></div>
+//     </div>
+//
+//     <div className="div-count">
+//         <span className="count" id="count_test1" data-id="ART020304231">1</span>
+//     </div>
+//
+//     <div className="total-price" data-id="ART020304231">549</div>
+//
+//     <div className="buttons">
+//         <span className="is-active like-btn" data-vendorCode="ART020304231"></span>
+//         <span className="delete-btn" data-id="ART020304231"></span>
+//     </div>
+// </div>
 
 // document.onclick = event => {
 //     if (event.target.classList.contains('plus-btn')) {
@@ -55,45 +88,45 @@ let CardDiv = document.createElement('div');
 //     }
 // };
 
-const plusFunction = id => {
-    products [id]['count']++;
-    renderCart(id);
-}
+// const plusFunction = id => {
+//     products [id]['count']++;
+//     renderCart(id);
+// }
+//
+// const minusFunction = id => {
+//     if (products [id]['count']-1 === 0) {
+//         deleteFunction(id);
+//         return true;
+//     }
+//     products [id]['count']--;
+//     renderCart(id);
+// }
+//
+// const deleteFunction = index => {
+//     products.totalAmount = products.totalAmount - products.productCards[index].count * products.productCards[index].price;
+//     products.productCards.splice(index,1);
+//     renderTotalAmount();
+//     document.getElementById(String(index)).delete.DIV;
+// }
+//
+// const likeFunction = id => {
+//     alert("Ну все ты лайкнул =)", id)
+// }
 
-const minusFunction = id => {
-    if (products [id]['count']-1 === 0) {
-        deleteFunction(id);
-        return true;
-    }
-    products [id]['count']--;
-    renderCart(id);
-}
-
-const deleteFunction = index => {
-    products.totalAmount = products.totalAmount - products.productCards[index].count * products.productCards[index].price;
-    products.productCards.splice(index,1);
-    renderTotalAmount();
-    document.getElementById(String(index)).delete.DIV;
-}
-
-const likeFunction = id => {
-    alert("Ну все ты лайкнул =)", id)
-}
-
-const renderCart = (id) => {
-    let totalSum = 0;
-    let cart_price = cart[id]['price']; // Цена одной позиции по артикулу
-    let new_count = document.querySelector("span[data-id='" + id + "']").innerText = products [id] ? products [id]['count'] : 0; // Количество позиции по артикулу
-    document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
-
-    let arr = document.querySelectorAll(".total-price")
-    let totalSum = 0;
-    document.querySelectorAll(".total-price").forEach((elem)=>{
-        console.log(totalSum, elem);
-        totalSum = totalSum + +elem.innerText;
-    })
-    console.log(totalSum);
-
-    console.log(cart);
-    document.getElementById('grand-total').innerText = totalSum;
-}
+// const renderCart = (id) => {
+//     let totalSum = 0;
+//     let cart_price = cart[id]['price']; // Цена одной позиции по артикулу
+//     let new_count = document.querySelector("span[data-id='" + id + "']").innerText = products [id] ? products [id]['count'] : 0; // Количество позиции по артикулу
+//     document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
+//
+//     let arr = document.querySelectorAll(".total-price")
+//     let totalSum = 0;
+//     document.querySelectorAll(".total-price").forEach((elem)=>{
+//         console.log(totalSum, elem);
+//         totalSum = totalSum + +elem.innerText;
+//     })
+//     console.log(totalSum);
+//
+//     console.log(cart);
+//     document.getElementById('grand-total').innerText = totalSum;
+// }
