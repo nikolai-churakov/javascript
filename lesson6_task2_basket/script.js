@@ -31,14 +31,22 @@ let products = {
 }
 
 const renderProducts = () => {
-    let shoppingCart = document.querySelector('.shopping-cart');
-    let CardDiv = document.createElement('div');
+    let divTitle document.querySelector('.title');
+    let div = document.createElement('div');
+    div.className = "item";
+
 
 };
 
 const renderTotalAmount = () => {
     document.getElementById('grand-total').innerText  = products.totalAmount;
 };
+
+// let div = document.createElement('div');
+// div.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообщение.";
+//
+// document.body.append(div);
+
 
 renderProducts();
 renderTotalAmount();
