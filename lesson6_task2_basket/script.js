@@ -72,12 +72,27 @@ const renderProducts = () => {
             btnPlus.className = "plus-btn";
             quantity.append(btnPlus);
 
-    // <div className="div-count">
-    //     //         <span className="count" id="count_test1" data-id="ART020304231">1</span>
-    //     //     </div>
-//
-//     <div className="total-price" data-id="ART020304231">549</div>
-//
+        let divCount = document.createElement('div');
+        divCount.className = "div-count";
+        divCount.innerText = "1";
+        quantity.after(divCount);
+
+            let spanCount = document.createElement('span');
+            spanCount.className = "count";
+            divCount.prepend(spanCount);
+
+        let divTotalPrice = document.createElement('div');
+        divTotalPrice.className = "total-price";
+        divTotalPrice.innerText = "549";
+        divCount.after(divTotalPrice);
+
+        let divButtons = document.createElement('div');
+        divButtons.className = "buttons";
+        divTotalPrice.after(divButtons);
+
+
+
+
 //     <div className="buttons">
 //         <span className="is-active like-btn" data-vendorCode="ART020304231"></span>
 //         <span className="delete-btn" data-id="ART020304231"></span>
