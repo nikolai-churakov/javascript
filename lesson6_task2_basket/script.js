@@ -31,12 +31,16 @@ let products = {
 }
 
 const renderProducts = () => {
-    let divTitle = document.querySelector('.title');
 
-    let div = document.createElement('div');
-    div.className = "item";
-    div.dataset.id = "item1";
-    divTitle.after(div);
+    console.log(products.productCards.length);
+
+    for (let i = 0; i < products.productCards.length; i++) {
+        let divTitle = document.querySelector('.title');
+
+        let div = document.createElement('div');
+        div.className = "item";
+        div.dataset.id = "item1";
+        divTitle.after(div);
 
         let img = document.createElement('img');
         img.className = "image";
@@ -48,38 +52,38 @@ const renderProducts = () => {
         description.className = "description";
         img.after(description);
 
-            let spanBrand = document.createElement('span');
-            spanBrand.innerText = "Common Projects";
-            description.prepend(spanBrand);
+        let spanBrand = document.createElement('span');
+        spanBrand.innerText = "Common Projects";
+        description.prepend(spanBrand);
 
-            let spanModel = document.createElement('span');
-            spanModel.innerText = "Bball High";
-            description.append(spanModel);
+        let spanModel = document.createElement('span');
+        spanModel.innerText = "Bball High";
+        description.append(spanModel);
 
-            let spanColor = document.createElement('span');
-            spanColor.innerText = "White";
-            description.append(spanColor);
+        let spanColor = document.createElement('span');
+        spanColor.innerText = "White";
+        description.append(spanColor);
 
         let quantity =  document.createElement('div');
         quantity.className = "quantity";
         description.after(quantity);
 
-            let btnMinus = document.createElement('div');
-            btnMinus.className= "minus-btn";
-            quantity.prepend(btnMinus);
+        let btnMinus = document.createElement('div');
+        btnMinus.className= "minus-btn";
+        quantity.prepend(btnMinus);
 
-            let btnPlus = document.createElement('div');
-            btnPlus.className = "plus-btn";
-            quantity.append(btnPlus);
+        let btnPlus = document.createElement('div');
+        btnPlus.className = "plus-btn";
+        quantity.append(btnPlus);
 
         let divCount = document.createElement('div');
         divCount.className = "div-count";
         divCount.innerText = "1";
         quantity.after(divCount);
 
-            let spanCount = document.createElement('span');
-            spanCount.className = "count";
-            divCount.prepend(spanCount);
+        let spanCount = document.createElement('span');
+        spanCount.className = "count";
+        divCount.prepend(spanCount);
 
         let divTotalPrice = document.createElement('div');
         divTotalPrice.className = "total-price";
@@ -90,14 +94,19 @@ const renderProducts = () => {
         divButtons.className = "buttons";
         divTotalPrice.after(divButtons);
 
+        let spanBtnLike = document.createElement('span');
+        spanBtnLike.className = "is-active like-btn";
+        divButtons.prepend(spanBtnLike);
+
+        let spanBtnDelete = document.createElement('span');
+        spanBtnDelete.className = "delete-btn";
+        divButtons.append(spanBtnDelete);
+    }
 
 
 
-//     <div className="buttons">
-//         <span className="is-active like-btn" data-vendorCode="ART020304231"></span>
-//         <span className="delete-btn" data-id="ART020304231"></span>
-//     </div>
-// </div>
+
+
 
 
 
