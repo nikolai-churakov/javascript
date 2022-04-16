@@ -46,7 +46,7 @@ const renderProducts = () => {
         let div = document.createElement('div');
         div.className = "item";
         div.dataset.id = "item1";
-        divTitle.after(div);
+        divTitle.after(div); // как добавитьу словия цикла чтобы корзина добавлялась вниз а не вверх
 
         let img = document.createElement('img');
         img.className = "image";
