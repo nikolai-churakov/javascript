@@ -7,6 +7,7 @@ let products = {
             brand: 'Common Projects',
             model: 'Bball High',
             color: 'White',
+            img: "item-1.png",
             count: 1,
             price: 549,
         },
@@ -15,7 +16,8 @@ let products = {
             brand: 'Maison Margiela',
             model: 'Future Sneakers',
             color: 'White',
-            count: 1,
+            img: 'item-2.png',
+            count: 2,
             price: 870,
         },
         {
@@ -23,7 +25,8 @@ let products = {
             brand: 'Our Legacy',
             model: 'Brushed Scarf',
             color: 'Brown',
-            count: 1,
+            img: 'item-3.png',
+            count: 3,
             price: 349,
         },
     ],
@@ -32,7 +35,7 @@ let products = {
 
 const renderProducts = () => {
 
-    console.log(products.productCards.length);
+    const product = products.productCards;
 
     for (let i = 0; i < products.productCards.length; i++) {
         let divTitle = document.querySelector('.title');
@@ -44,7 +47,7 @@ const renderProducts = () => {
 
         let img = document.createElement('img');
         img.className = "image";
-        img.src = "item-1.png";
+        img.src = product[i].img;
         let item = document.querySelector('.item');
         item.prepend(img);
 
@@ -52,38 +55,38 @@ const renderProducts = () => {
         description.className = "description";
         img.after(description);
 
-        let spanBrand = document.createElement('span');
-        spanBrand.innerText = "Common Projects";
-        description.prepend(spanBrand);
+            let spanBrand = document.createElement('span');
+            spanBrand.innerText = product[i].brand;
+            description.prepend(spanBrand);
 
-        let spanModel = document.createElement('span');
-        spanModel.innerText = "Bball High";
-        description.append(spanModel);
+            let spanModel = document.createElement('span');
+            spanModel.innerText = product[i].model;
+            description.append(spanModel);
 
-        let spanColor = document.createElement('span');
-        spanColor.innerText = "White";
-        description.append(spanColor);
+            let spanColor = document.createElement('span');
+            spanColor.innerText = product[i].color;
+            description.append(spanColor);
 
         let quantity =  document.createElement('div');
         quantity.className = "quantity";
         description.after(quantity);
 
-        let btnMinus = document.createElement('div');
-        btnMinus.className= "minus-btn";
-        quantity.prepend(btnMinus);
+            let btnMinus = document.createElement('div');
+            btnMinus.className= "minus-btn";
+            quantity.prepend(btnMinus);
 
-        let btnPlus = document.createElement('div');
-        btnPlus.className = "plus-btn";
-        quantity.append(btnPlus);
+            let btnPlus = document.createElement('div');
+            btnPlus.className = "plus-btn";
+            quantity.append(btnPlus);
 
         let divCount = document.createElement('div');
         divCount.className = "div-count";
-        divCount.innerText = "1";
+        divCount.innerText = product[i].count;
         quantity.after(divCount);
 
-        let spanCount = document.createElement('span');
-        spanCount.className = "count";
-        divCount.prepend(spanCount);
+            let spanCount = document.createElement('span');
+            spanCount.className = "count";
+            divCount.prepend(spanCount);
 
         let divTotalPrice = document.createElement('div');
         divTotalPrice.className = "total-price";
@@ -94,14 +97,14 @@ const renderProducts = () => {
         divButtons.className = "buttons";
         divTotalPrice.after(divButtons);
 
-        let spanBtnLike = document.createElement('span');
-        spanBtnLike.className = "is-active like-btn";
-        divButtons.prepend(spanBtnLike);
+            let spanBtnLike = document.createElement('span');
+            spanBtnLike.className = "is-active like-btn";
+            divButtons.prepend(spanBtnLike);
 
-        let spanBtnDelete = document.createElement('span');
-        spanBtnDelete.className = "delete-btn";
-        divButtons.append(spanBtnDelete);
-    }
+            let spanBtnDelete = document.createElement('span');
+            spanBtnDelete.className = "delete-btn";
+            divButtons.append(spanBtnDelete);
+        }
 
 
 
