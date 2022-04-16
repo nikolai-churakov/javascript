@@ -48,6 +48,24 @@ const renderProducts = () => {
     description.className = "description";
     img.after(description);
 
+    let spanBrand = document.createElement('span');
+    spanBrand.innerText = "Common Projects";
+    description.prepend(spanBrand);
+
+    let spanModel = document.createElement('span');
+    spanModel.innerText = "Bball High";
+    description.append(spanModel);
+
+    let spanColor = document.createElement('span');
+    spanColor.innerText = "White";
+    description.append(spanColor);
+
+    let quantity =  document.createElement('div');
+    quantity.className = "quantity";
+    description.after(quantity);
+
+
+
 
 
     //     <div className="description">
