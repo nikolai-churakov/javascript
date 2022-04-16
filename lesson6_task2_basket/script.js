@@ -37,6 +37,9 @@ const renderProducts = () => {
 
     const product = products.productCards;
 
+    /**
+     * Выводит товары пришедшие массимов {products} в HTML
+     */
     for (let i = 0; i < products.productCards.length; i++) {
         let divTitle = document.querySelector('.title');
 
