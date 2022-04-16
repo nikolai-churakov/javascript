@@ -35,7 +35,7 @@ const renderProducts = () => {
 
     let div = document.createElement('div');
     div.className = "item";
-    div.dataset = i
+    div.dataset.id = "item1";
     divTitle.after(div);
 
     let img = document.createElement('img');
@@ -43,6 +43,18 @@ const renderProducts = () => {
     img.src = "item-1.png";
     let item = document.querySelector('.item');
     item.prepend(img);
+
+    let description = document.createElement('div');
+    description.className = "description";
+    img.after(description);
+
+
+
+    //     <div className="description">
+//         <span>Common Projects</span>
+//         <span>Bball High</span>
+//         <span>White</span>
+//     </div>
 
 
 
