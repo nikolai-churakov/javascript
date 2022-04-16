@@ -38,41 +38,51 @@ const renderProducts = () => {
     div.dataset.id = "item1";
     divTitle.after(div);
 
-    let img = document.createElement('img');
-    img.className = "image";
-    img.src = "item-1.png";
-    let item = document.querySelector('.item');
-    item.prepend(img);
+        let img = document.createElement('img');
+        img.className = "image";
+        img.src = "item-1.png";
+        let item = document.querySelector('.item');
+        item.prepend(img);
 
-    let description = document.createElement('div');
-    description.className = "description";
-    img.after(description);
+        let description = document.createElement('div');
+        description.className = "description";
+        img.after(description);
 
-    let spanBrand = document.createElement('span');
-    spanBrand.innerText = "Common Projects";
-    description.prepend(spanBrand);
+            let spanBrand = document.createElement('span');
+            spanBrand.innerText = "Common Projects";
+            description.prepend(spanBrand);
 
-    let spanModel = document.createElement('span');
-    spanModel.innerText = "Bball High";
-    description.append(spanModel);
+            let spanModel = document.createElement('span');
+            spanModel.innerText = "Bball High";
+            description.append(spanModel);
 
-    let spanColor = document.createElement('span');
-    spanColor.innerText = "White";
-    description.append(spanColor);
+            let spanColor = document.createElement('span');
+            spanColor.innerText = "White";
+            description.append(spanColor);
 
-    let quantity =  document.createElement('div');
-    quantity.className = "quantity";
-    description.after(quantity);
+        let quantity =  document.createElement('div');
+        quantity.className = "quantity";
+        description.after(quantity);
 
+            let btnMinus = document.createElement('div');
+            btnMinus.className= "minus-btn";
+            quantity.prepend(btnMinus);
 
+            let btnPlus = document.createElement('div');
+            btnPlus.className = "plus-btn";
+            quantity.append(btnPlus);
 
-
-
-    //     <div className="description">
-//         <span>Common Projects</span>
-//         <span>Bball High</span>
-//         <span>White</span>
+    // <div className="div-count">
+    //     //         <span className="count" id="count_test1" data-id="ART020304231">1</span>
+    //     //     </div>
+//
+//     <div className="total-price" data-id="ART020304231">549</div>
+//
+//     <div className="buttons">
+//         <span className="is-active like-btn" data-vendorCode="ART020304231"></span>
+//         <span className="delete-btn" data-id="ART020304231"></span>
 //     </div>
+// </div>
 
 
 
