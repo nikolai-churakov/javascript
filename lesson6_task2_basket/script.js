@@ -35,8 +35,23 @@ const renderProducts = () => {
 
     let div = document.createElement('div');
     div.className = "item";
-    div.innerHTML = "ТОВАРЧИК 1"
+    div.dataset = i
     divTitle.after(div);
+
+    let img = document.createElement('img');
+    img.className = "image";
+    img.src = "item-1.png";
+    let item = document.querySelector('.item');
+    item.prepend(img);
+
+
+
+        //         <img src="item-1.png" alt=""/>
+        //     </div>
+
+    // <div className="image">
+    //     //         <img src="item-1.png" alt=""/>
+    //     //     </div>
 
     // my_div = document.getElementById("org_div1");
     // document.body.insertBefore(newDiv, my_div);
