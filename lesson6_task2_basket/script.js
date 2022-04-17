@@ -8,7 +8,7 @@ let products = {
             model: 'Bball High',
             color: 'White',
             img: "item-1.png",
-            count: 11,
+            count: 1,
             price: 549,
         },
         {
@@ -38,7 +38,7 @@ const product = products.productCards;
 const minusCount = i => {
     if (product[i].count - 1 === 0) {
         deleteFunction(i);
-        return i;
+        return true;
     }
     product[i].count = product[i].count - 1;
     document.querySelectorAll('.count')[i].innerText = product[i].count;
@@ -54,10 +54,19 @@ const deleteFunction = i => {
     // products.totalAmount = products.totalAmount - products.productCards[index].count * products.productCards[index].price;
     // products.productCards.splice(index,1);
     // renderTotalAmount();
-    // document.querySelectorAll('.item')[i].remove();
-    // document.getElementById('item0').remove();
-    // console.log(document.getElementsByTagName(vendorCode));
     document.querySelector(`[id="item${i}"]`).remove();
+};
+
+const renderTotalAmount = (i) => {
+    let arr = [];
+    // let total = product[i].count * product[i].price;
+    arr.push(product[i].count * product[i].price);
+    console.log(arr);
+    // console.log(arr.reduce(function(a, b) {
+    //     return a + b;
+    // }
+    // ));
+    // document.getElementById('grand-total').innerText = number(product[i].count * products[i].price);
 };
 
 
@@ -118,7 +127,7 @@ const renderProducts = () => {
 
         let divTotalPrice = document.createElement('div');
         divTotalPrice.className = "total-price";
-        divTotalPrice.innerText = "549";
+        divTotalPrice.innerText = Number(product[i].price);
         divCount.after(divTotalPrice);
 
         let divButtons = document.createElement('div');
@@ -133,14 +142,9 @@ const renderProducts = () => {
         spanBtnDelete.className = "delete-btn";
         divButtons.append(spanBtnDelete);
         spanBtnDelete.addEventListener("click", () => deleteFunction(i));
+
+        renderTotalAmount(i);
     }
-
-
-};
-
-const renderTotalAmount = () => {
-
-    document.getElementById('grand-total').innerText = products.totalAmount;
 };
 
 // let div = document.createElement('div');
@@ -150,7 +154,7 @@ const renderTotalAmount = () => {
 
 
 renderProducts();
-renderTotalAmount();
+// renderTotalAmount();
 
 
 // <div className="item" id="test1" data-id="ART020304231">
