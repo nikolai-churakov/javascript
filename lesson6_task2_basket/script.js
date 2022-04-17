@@ -50,8 +50,9 @@ const plusCount = i => {
     document.querySelectorAll('.count')[i].innerText = Number(product[i].count);
 };
 
-const deleteFunction = i => {
-    console.log(123);
+const deleteFunction = (i, id) => {
+    console.log(i);
+    console.log(id);
     // products.totalAmount = products.totalAmount - products.productCards[index].count * products.productCards[index].price;
     // products.productCards.splice(index,1);
     // renderTotalAmount();
@@ -130,6 +131,7 @@ const renderProducts = () => {
         let spanBtnDelete = document.createElement('span');
         spanBtnDelete.className = "delete-btn";
         divButtons.append(spanBtnDelete);
+        spanBtnDelete.addEventListener("click", () => deleteFunction(i, product[i].id ));
     }
 
 
