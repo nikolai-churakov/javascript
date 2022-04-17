@@ -36,30 +36,34 @@ let products = {
 const product = products.productCards;
 
 const minusCount = i => {
-    console.log(product[i].vendorCode);
     if (product[i].count - 1 === 0) {
         deleteFunction(product[i].id);
-        return true;
+        return i;
     }
     product[i].count = product[i].count - 1;
-    document.querySelectorAll('.count')[i].innerText = Number(product[i].count);
+    document.querySelectorAll('.count')[i].innerText = product[i].count;
 };
 
 const plusCount = i => {
     product[i].count = ++product[i].count;
-    document.querySelectorAll('.count')[i].innerText = Number(product[i].count);
+    document.querySelectorAll('.count')[i].innerText = product[i].count;
 };
 
-const deleteFunction = (i, id) => {
+const deleteFunction = (i, vendorCode) => {
     console.log(i);
-    console.log(id);
+    console.log(vendorCode);
     // products.totalAmount = products.totalAmount - products.productCards[index].count * products.productCards[index].price;
     // products.productCards.splice(index,1);
     // renderTotalAmount();
     console.log(document.querySelectorAll('.item')[i]);
     // document.querySelectorAll('.item')[i].remove();
-    document.getElementById('item0').remove();
-} ;
+    // document.getElementById('item0').remove();
+    // console.log(document.getElementsByTagName(vendorCode));
+    console.log(vendorCode);
+    document.querySelector(`[id="item${i}"]`).remove();
+};
+
+
 
 const renderProducts = () => {
     for (let i = products.productCards.length-1; i >= 0; i--) {
@@ -131,7 +135,7 @@ const renderProducts = () => {
         let spanBtnDelete = document.createElement('span');
         spanBtnDelete.className = "delete-btn";
         divButtons.append(spanBtnDelete);
-        spanBtnDelete.addEventListener("click", () => deleteFunction(i, product[i].id ));
+        spanBtnDelete.addEventListener("click", () => deleteFunction(i, product[i].vendorCode));
     }
 
 
