@@ -34,6 +34,8 @@ let products = {
 }
 
 const product = products.productCards;
+let arr = [];
+let grandTotal = 0;
 
 const minusCount = i => {
     if (product[i].count - 1 === 0) {
@@ -42,31 +44,31 @@ const minusCount = i => {
     }
     product[i].count = product[i].count - 1;
     document.querySelectorAll('.count')[i].innerText = product[i].count;
+
+    renderTotalAmount(i);
 };
 
 const plusCount = i => {
     product[i].count = ++product[i].count;
     document.querySelectorAll('.count')[i].innerText = product[i].count;
+
+    renderTotalAmount(i);
 };
 
 const deleteFunction = i => {
-
-    // products.totalAmount = products.totalAmount - products.productCards[index].count * products.productCards[index].price;
-    // products.productCards.splice(index,1);
-    // renderTotalAmount();
     document.querySelector(`[id="item${i}"]`).remove();
+
+    renderTotalAmount(i);
 };
 
 const renderTotalAmount = (i) => {
-    let arr = [];
-    // let total = product[i].count * product[i].price;
     arr.push(product[i].count * product[i].price);
-    console.log(arr);
-    // console.log(arr.reduce(function(a, b) {
-    //     return a + b;
-    // }
-    // ));
-    // document.getElementById('grand-total').innerText = number(product[i].count * products[i].price);
+    grandTotal = arr.reduce(function(a, b) {
+        return a + b;
+    });
+    products.totalAmount = grandTotal;
+    document.getElementById('grand-total').innerText = grandTotal;
+    console.log("переписал в базу сумму",products.totalAmount);
 };
 
 
@@ -146,12 +148,6 @@ const renderProducts = () => {
         renderTotalAmount(i);
     }
 };
-
-// let div = document.createElement('div');
-// div.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообщение.";
-//
-// document.body.append(div);
-
 
 renderProducts();
 // renderTotalAmount();
