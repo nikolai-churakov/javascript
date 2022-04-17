@@ -8,7 +8,7 @@ let products = {
             model: 'Bball High',
             color: 'White',
             img: "item-1.png",
-            count: 1,
+            count: 11,
             price: 549,
         },
         {
@@ -33,19 +33,40 @@ let products = {
     totalAmount: 1768
 }
 
+const product = products.productCards;
+
+const minusCount = i => {
+    console.log(product[i].vendorCode);
+    if (product[i].count - 1 === 0) {
+        deleteFunction(product[i].id);
+        return true;
+    }
+    product[i].count = product[i].count - 1;
+    document.querySelectorAll('.count')[i].innerText = Number(product[i].count);
+};
+
+const plusCount = i => {
+    product[i].count = ++product[i].count;
+    document.querySelectorAll('.count')[i].innerText = Number(product[i].count);
+};
+
+const deleteFunction = i => {
+    console.log(123);
+    // products.totalAmount = products.totalAmount - products.productCards[index].count * products.productCards[index].price;
+    // products.productCards.splice(index,1);
+    // renderTotalAmount();
+    console.log(document.querySelectorAll('.item')[i]);
+    // document.querySelectorAll('.item')[i].remove();
+    document.getElementById('item0').remove();
+} ;
+
 const renderProducts = () => {
-
-    const product = products.productCards;
-
-    /**
-     * Выводит товары пришедшие массимов {products} в HTML
-     */
-    for (let i = 0; i < products.productCards.length; i++) {
+    for (let i = products.productCards.length-1; i >= 0; i--) {
         let divTitle = document.querySelector('.title');
 
         let div = document.createElement('div');
         div.className = "item";
-        div.dataset.id = "item1";
+        div.id = `item${i}`;
         divTitle.after(div); // как добавитьу словия цикла чтобы корзина добавлялась вниз а не вверх
 
         let img = document.createElement('img');
@@ -58,38 +79,40 @@ const renderProducts = () => {
         description.className = "description";
         img.after(description);
 
-            let spanBrand = document.createElement('span');
-            spanBrand.innerText = product[i].brand;
-            description.prepend(spanBrand);
+        let spanBrand = document.createElement('span');
+        spanBrand.innerText = product[i].brand;
+        description.prepend(spanBrand);
 
-            let spanModel = document.createElement('span');
-            spanModel.innerText = product[i].model;
-            description.append(spanModel);
+        let spanModel = document.createElement('span');
+        spanModel.innerText = product[i].model;
+        description.append(spanModel);
 
-            let spanColor = document.createElement('span');
-            spanColor.innerText = product[i].color;
-            description.append(spanColor);
+        let spanColor = document.createElement('span');
+        spanColor.innerText = product[i].color;
+        description.append(spanColor);
 
-        let quantity =  document.createElement('div');
+        let quantity = document.createElement('div');
         quantity.className = "quantity";
         description.after(quantity);
 
-            let btnMinus = document.createElement('div');
-            btnMinus.className= "minus-btn";
-            quantity.prepend(btnMinus);
+        let btnMinus = document.createElement('div');
+        btnMinus.className = "minus-btn";
+        btnMinus.addEventListener("click", () => minusCount(i));
+        quantity.prepend(btnMinus);
 
-            let btnPlus = document.createElement('div');
-            btnPlus.className = "plus-btn";
-            quantity.append(btnPlus);
+        let btnPlus = document.createElement('div');
+        btnPlus.className = "plus-btn";
+        btnPlus.addEventListener("click", () => plusCount(i));
+        quantity.append(btnPlus);
 
         let divCount = document.createElement('div');
         divCount.className = "div-count";
-        divCount.innerText = product[i].count;
         quantity.after(divCount);
 
-            let spanCount = document.createElement('span');
-            spanCount.className = "count";
-            divCount.prepend(spanCount);
+        let spanCount = document.createElement('span');
+        spanCount.className = "count";
+        spanCount.innerText = Number(product[i].count);
+        divCount.prepend(spanCount);
 
         let divTotalPrice = document.createElement('div');
         divTotalPrice.className = "total-price";
@@ -100,36 +123,21 @@ const renderProducts = () => {
         divButtons.className = "buttons";
         divTotalPrice.after(divButtons);
 
-            let spanBtnLike = document.createElement('span');
-            spanBtnLike.className = "is-active like-btn";
-            divButtons.prepend(spanBtnLike);
+        let spanBtnLike = document.createElement('span');
+        spanBtnLike.className = "is-active like-btn";
+        divButtons.prepend(spanBtnLike);
 
-            let spanBtnDelete = document.createElement('span');
-            spanBtnDelete.className = "delete-btn";
-            divButtons.append(spanBtnDelete);
-        }
+        let spanBtnDelete = document.createElement('span');
+        spanBtnDelete.className = "delete-btn";
+        divButtons.append(spanBtnDelete);
+    }
 
-
-
-
-
-
-
-
-        //         <img src="item-1.png" alt=""/>
-        //     </div>
-
-    // <div className="image">
-    //     //         <img src="item-1.png" alt=""/>
-    //     //     </div>
-
-    // my_div = document.getElementById("org_div1");
-    // document.body.insertBefore(newDiv, my_div);
 
 };
 
 const renderTotalAmount = () => {
-    document.getElementById('grand-total').innerText  = products.totalAmount;
+
+    document.getElementById('grand-total').innerText = products.totalAmount;
 };
 
 // let div = document.createElement('div');
