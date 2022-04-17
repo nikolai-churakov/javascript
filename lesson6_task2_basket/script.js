@@ -37,7 +37,7 @@ const product = products.productCards;
 
 const minusCount = i => {
     if (product[i].count - 1 === 0) {
-        deleteFunction(product[i].id);
+        deleteFunction(i);
         return i;
     }
     product[i].count = product[i].count - 1;
@@ -49,17 +49,14 @@ const plusCount = i => {
     document.querySelectorAll('.count')[i].innerText = product[i].count;
 };
 
-const deleteFunction = (i, vendorCode) => {
-    console.log(i);
-    console.log(vendorCode);
+const deleteFunction = i => {
+
     // products.totalAmount = products.totalAmount - products.productCards[index].count * products.productCards[index].price;
     // products.productCards.splice(index,1);
     // renderTotalAmount();
-    console.log(document.querySelectorAll('.item')[i]);
     // document.querySelectorAll('.item')[i].remove();
     // document.getElementById('item0').remove();
     // console.log(document.getElementsByTagName(vendorCode));
-    console.log(vendorCode);
     document.querySelector(`[id="item${i}"]`).remove();
 };
 
@@ -135,7 +132,7 @@ const renderProducts = () => {
         let spanBtnDelete = document.createElement('span');
         spanBtnDelete.className = "delete-btn";
         divButtons.append(spanBtnDelete);
-        spanBtnDelete.addEventListener("click", () => deleteFunction(i, product[i].vendorCode));
+        spanBtnDelete.addEventListener("click", () => deleteFunction(i));
     }
 
 
