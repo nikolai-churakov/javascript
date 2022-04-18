@@ -48,21 +48,24 @@ const minusCount = i => {
     renderTotalAmount(i);
 };
 
-const plusCount = id => {
-    console.log(id);
-    // product[i].count = ++product[i].count;
-    // document.querySelectorAll('.count')[i].innerText = product[i].count;
+const plusCount = i => {
+    product[i].count = ++product[i].count;
+    console.log(product[i].count);
+    document.querySelectorAll('.count')[i].innerText = product[i].count;
 
     renderTotalAmount(i);
 };
 
 const deleteFunction = i => {
-    document.querySelector(`[id="item${i}"]`).remove();
+    product.splice([i]);
+    console.log('удаляем i элемент', product[i]);
+    // document.querySelector(`[id="item${i}"]`).remove();
 
+    renderProducts();
     renderTotalAmount(i);
 };
 
-const renderTotalAmount = (i) => {
+const renderTotalAmount = i => {
     arr.push(product[i].count * product[i].price);
     grandTotal = arr.reduce(function(a, b) {
         return a + b;
@@ -111,12 +114,14 @@ const renderProducts = () => {
 
         let btnMinus = document.createElement('div');
         btnMinus.className = "minus-btn";
+        div.id = product[i].vendorCode;
         btnMinus.addEventListener("click", () => minusCount(i));
         quantity.prepend(btnMinus);
 
         let btnPlus = document.createElement('div');
         btnPlus.className = "plus-btn";
-        btnPlus.addEventListener("click", () => plusCount(div.id));
+        div.id = product[i].vendorCode;
+        btnPlus.addEventListener("click", () => plusCount(i));
         quantity.append(btnPlus);
 
         let divCount = document.createElement('div');
@@ -125,6 +130,7 @@ const renderProducts = () => {
 
         let spanCount = document.createElement('span');
         spanCount.className = "count";
+        div.id = product[i].vendorCode;
         spanCount.innerText = Number(product[i].count);
         divCount.prepend(spanCount);
 
@@ -139,10 +145,12 @@ const renderProducts = () => {
 
         let spanBtnLike = document.createElement('span');
         spanBtnLike.className = "is-active like-btn";
+        div.id = product[i].vendorCode;
         divButtons.prepend(spanBtnLike);
 
         let spanBtnDelete = document.createElement('span');
         spanBtnDelete.className = "delete-btn";
+        div.id = product[i].vendorCode;
         divButtons.append(spanBtnDelete);
         spanBtnDelete.addEventListener("click", () => deleteFunction(i));
 
