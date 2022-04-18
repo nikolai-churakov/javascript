@@ -48,9 +48,10 @@ const minusCount = i => {
     renderTotalAmount(i);
 };
 
-const plusCount = i => {
-    product[i].count = ++product[i].count;
-    document.querySelectorAll('.count')[i].innerText = product[i].count;
+const plusCount = id => {
+    console.log(id);
+    // product[i].count = ++product[i].count;
+    // document.querySelectorAll('.count')[i].innerText = product[i].count;
 
     renderTotalAmount(i);
 };
@@ -79,7 +80,7 @@ const renderProducts = () => {
 
         let div = document.createElement('div');
         div.className = "item";
-        div.id = `item${i}`;
+        div.id = product[i].vendorCode;
         divTitle.after(div); // как добавитьу словия цикла чтобы корзина добавлялась вниз а не вверх
 
         let img = document.createElement('img');
@@ -115,7 +116,7 @@ const renderProducts = () => {
 
         let btnPlus = document.createElement('div');
         btnPlus.className = "plus-btn";
-        btnPlus.addEventListener("click", () => plusCount(i));
+        btnPlus.addEventListener("click", () => plusCount(div.id));
         quantity.append(btnPlus);
 
         let divCount = document.createElement('div');
