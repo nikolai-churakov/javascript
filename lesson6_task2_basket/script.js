@@ -17,7 +17,7 @@ let products = {
             model: 'Future Sneakers',
             color: 'White',
             img: 'item-2.png',
-            count: 2,
+            count: 1,
             price: 870,
         },
         {
@@ -26,7 +26,7 @@ let products = {
             model: 'Brushed Scarf',
             color: 'Brown',
             img: 'item-3.png',
-            count: 3,
+            count: 1,
             price: 349,
         },
     ],
@@ -34,48 +34,51 @@ let products = {
 }
 
 const product = products.productCards;
-let arr = [];
-let grandTotal = 0;
 
 const minusCount = i => {
-    if (product[i].count - 1 === 0) {
-        deleteFunction(i);
-        return true;
-    }
     product[i].count = product[i].count - 1;
-    document.querySelectorAll('.count')[i].innerText = product[i].count;
+    products.totalAmount = products.totalAmount - product[i].price;
 
-    renderTotalAmount(i);
+    if (product[i].count === 0) {
+        deleteFunction(i);
+
+        return;
+    }
+
+    document.getElementById(`count-${i}`).innerText = product[i].count;
+
+    document.getElementById("grand-total").innerText = products.totalAmount;
 };
 
 const plusCount = i => {
     product[i].count = ++product[i].count;
-    console.log(product[i].count);
-    document.querySelectorAll('.count')[i].innerText = product[i].count;
+    products.totalAmount = products.totalAmount + product[i].price;
 
-    renderTotalAmount(i);
+    document.getElementById(`count-${i}`).innerText = product[i].count;
+
+    document.getElementById("grand-total").innerText = products.totalAmount;
 };
 
 const deleteFunction = i => {
-    product.splice([i]);
-    console.log('удаляем i элемент', product[i]);
-    // document.querySelector(`[id="item${i}"]`).remove();
+    document.getElementById(i).remove();
 
-    renderProducts();
-    renderTotalAmount(i);
+    document.getElementById("grand-total").innerText = products.totalAmount - product[i].price * product[i].count;
 };
 
-const renderTotalAmount = i => {
-    arr.push(product[i].count * product[i].price);
-    grandTotal = arr.reduce(function(a, b) {
-        return a + b;
-    });
-    products.totalAmount = grandTotal;
-    document.getElementById('grand-total').innerText = grandTotal;
-    console.log("переписал в базу сумму",products.totalAmount);
-};
+const renderDeleteButton = (divTotalPrice, i) => {
+    let divButtons = document.createElement('div');
+    divButtons.className = "buttons";
+    divTotalPrice.after(divButtons);
 
+    let spanBtnLike = document.createElement('span');
+    spanBtnLike.className = "is-active like-btn";
+    divButtons.prepend(spanBtnLike);
 
+    let spanBtnDelete = document.createElement('span');
+    spanBtnDelete.className = "delete-btn";
+    divButtons.append(spanBtnDelete);
+    spanBtnDelete.addEventListener("click", () => deleteFunction(i));
+}
 
 const renderProducts = () => {
     for (let i = products.productCards.length-1; i >= 0; i--) {
@@ -83,7 +86,7 @@ const renderProducts = () => {
 
         let div = document.createElement('div');
         div.className = "item";
-        div.id = product[i].vendorCode;
+        div.id = i;
         divTitle.after(div); // как добавитьу словия цикла чтобы корзина добавлялась вниз а не вверх
 
         let img = document.createElement('img');
@@ -114,13 +117,11 @@ const renderProducts = () => {
 
         let btnMinus = document.createElement('div');
         btnMinus.className = "minus-btn";
-        div.id = product[i].vendorCode;
         btnMinus.addEventListener("click", () => minusCount(i));
         quantity.prepend(btnMinus);
 
         let btnPlus = document.createElement('div');
         btnPlus.className = "plus-btn";
-        div.id = product[i].vendorCode;
         btnPlus.addEventListener("click", () => plusCount(i));
         quantity.append(btnPlus);
 
@@ -130,7 +131,7 @@ const renderProducts = () => {
 
         let spanCount = document.createElement('span');
         spanCount.className = "count";
-        div.id = product[i].vendorCode;
+        spanCount.id = `count-${i}`;
         spanCount.innerText = Number(product[i].count);
         divCount.prepend(spanCount);
 
@@ -139,112 +140,10 @@ const renderProducts = () => {
         divTotalPrice.innerText = Number(product[i].price);
         divCount.after(divTotalPrice);
 
-        let divButtons = document.createElement('div');
-        divButtons.className = "buttons";
-        divTotalPrice.after(divButtons);
-
-        let spanBtnLike = document.createElement('span');
-        spanBtnLike.className = "is-active like-btn";
-        div.id = product[i].vendorCode;
-        divButtons.prepend(spanBtnLike);
-
-        let spanBtnDelete = document.createElement('span');
-        spanBtnDelete.className = "delete-btn";
-        div.id = product[i].vendorCode;
-        divButtons.append(spanBtnDelete);
-        spanBtnDelete.addEventListener("click", () => deleteFunction(i));
-
-        renderTotalAmount(i);
+        renderDeleteButton(divTotalPrice, i);
     }
+
+    document.getElementById("grand-total").innerText = products.totalAmount;
 };
 
 renderProducts();
-// renderTotalAmount();
-
-
-// <div className="item" id="test1" data-id="ART020304231">
-//
-//     <div className="image">
-//         <img src="item-1.png" alt=""/>
-//     </div>
-//
-//     <div className="description">
-//         <span>Common Projects</span>
-//         <span>Bball High</span>
-//         <span>White</span>
-//     </div>
-//
-//     <div className="quantity">
-//         <div className="minus-btn" data-id="ART020304231"></div>
-//         <div className="plus-btn" data-id="ART020304231"></div>
-//     </div>
-//
-//     <div className="div-count">
-//         <span className="count" id="count_test1" data-id="ART020304231">1</span>
-//     </div>
-//
-//     <div className="total-price" data-id="ART020304231">549</div>
-//
-//     <div className="buttons">
-//         <span className="is-active like-btn" data-vendorCode="ART020304231"></span>
-//         <span className="delete-btn" data-id="ART020304231"></span>
-//     </div>
-// </div>
-
-// document.onclick = event => {
-//     if (event.target.classList.contains('plus-btn')) {
-//         plusFunction(event.target.dataset.id);
-//     }
-//     if (event.target.classList.contains('minus-btn')) {
-//         minusFunction(event.target.dataset.id);
-//     }
-//     if (event.target.classList.contains('delete-btn')) {
-//         deleteFunction(event.target.dataset.id);
-//     }
-//     if (event.target.classList.contains('like-btn')) {
-//         likeFunction(event.target.dataset.id);
-//     }
-// };
-
-// const plusFunction = id => {
-//     products [id]['count']++;
-//     renderCart(id);
-// }
-//
-// const minusFunction = id => {
-//     if (products [id]['count']-1 === 0) {
-//         deleteFunction(id);
-//         return true;
-//     }
-//     products [id]['count']--;
-//     renderCart(id);
-// }
-//
-// const deleteFunction = index => {
-//     products.totalAmount = products.totalAmount - products.productCards[index].count * products.productCards[index].price;
-//     products.productCards.splice(index,1);
-//     renderTotalAmount();
-//     document.getElementById(String(index)).delete.DIV;
-// }
-//
-// const likeFunction = id => {
-//     alert("Ну все ты лайкнул =)", id)
-// }
-
-// const renderCart = (id) => {
-//     let totalSum = 0;
-//     let cart_price = cart[id]['price']; // Цена одной позиции по артикулу
-//     let new_count = document.querySelector("span[data-id='" + id + "']").innerText = products [id] ? products [id]['count'] : 0; // Количество позиции по артикулу
-//     document.querySelector(".total-price[data-id='" + id + "']").innerText = cart_price * new_count;
-//
-//     let arr = document.querySelectorAll(".total-price")
-//     let totalSum = 0;
-//     document.querySelectorAll(".total-price").forEach((elem)=>{
-//         console.log(totalSum, elem);
-//         totalSum = totalSum + +elem.innerText;
-//     })
-//     console.log(totalSum);
-//
-//     console.log(cart);
-//     document.getElementById('grand-total').innerText = totalSum;
-// }
