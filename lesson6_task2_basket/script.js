@@ -41,7 +41,6 @@ const minusCount = i => {
 
     if (product[i].count === 0) {
         deleteFunction(i);
-
         return;
     }
 
@@ -53,15 +52,13 @@ const minusCount = i => {
 const plusCount = i => {
     product[i].count = ++product[i].count;
     products.totalAmount = products.totalAmount + product[i].price;
-
     document.getElementById(`count-${i}`).innerText = product[i].count;
-
     document.getElementById("grand-total").innerText = products.totalAmount;
 };
 
 const deleteFunction = i => {
-    document.getElementById(i).remove();
 
+    document.getElementById(i).remove();
     document.getElementById("grand-total").innerText = products.totalAmount - product[i].price * product[i].count;
 };
 
