@@ -43,8 +43,8 @@ const minusCount = i => {
         deleteFunction(i);
         return;
     }
-
     document.getElementById(`count-${i}`).innerText = product[i].count;
+    document.getElementById(`total-${i}`).innerText = product[i].count * product[i].price;
 
     document.getElementById("grand-total").innerText = products.totalAmount;
 };
@@ -53,13 +53,17 @@ const plusCount = i => {
     product[i].count = ++product[i].count;
     products.totalAmount = products.totalAmount + product[i].price;
     document.getElementById(`count-${i}`).innerText = product[i].count;
+    document.getElementById(`total-${i}`).innerText = product[i].count * product[i].price;
+
     document.getElementById("grand-total").innerText = products.totalAmount;
 };
 
 const deleteFunction = i => {
-
-    document.getElementById(i).remove();
+    console.log(i);
+    console.log(product[i].price * product[i].count);
     document.getElementById("grand-total").innerText = products.totalAmount - product[i].price * product[i].count;
+    document.getElementById(i).remove();
+
 };
 
 const renderDeleteButton = (divTotalPrice, i) => {
@@ -134,6 +138,7 @@ const renderProducts = () => {
 
         let divTotalPrice = document.createElement('div');
         divTotalPrice.className = "total-price";
+        divTotalPrice.id = `total-${i}`;
         divTotalPrice.innerText = Number(product[i].price);
         divCount.after(divTotalPrice);
 
