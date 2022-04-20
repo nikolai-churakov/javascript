@@ -111,7 +111,7 @@ const gallery = {
     },
 
     switchImg(event) {
-        if (event.target.dataset.direction == 'left') {
+        if (event.target.dataset.direction === 'left') {
             this.switchImgLeft();
         } else this.switchImgRight();
     },
@@ -146,7 +146,7 @@ const gallery = {
         const divEl = document.querySelector(this.settings.previewSelector);
         const ArrayOfImg = divEl.querySelectorAll('img');
         for (let elem of ArrayOfImg) {
-            if (elem.dataset.full_img_url != undefined) {
+            if (elem.dataset.full_img_url !== undefined) {
                 this.settings.ImageSrc.push(elem.dataset.full_img_url);
             } else {
                 this.settings.ImageSrc.push(this.settings.emptyImageSrc);
