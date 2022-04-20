@@ -7,6 +7,7 @@ const gallery = {
         openedImageClass: 'galleryWrapper__image',
         openedImageScreenClass: 'galleryWrapper__screen',
         openedImageCloseBtnClass: 'galleryWrapper__close',
+
         openedImageCloseBtnSrc: 'img/close.jpg',
         rightBtnImage: 'img/arrow-right.png',
         leftBtnImage: 'img/arrow-left.png',
