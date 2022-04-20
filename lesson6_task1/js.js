@@ -7,8 +7,8 @@ const gallery = {
         openedImageClass: 'galleryWrapper__image',
         openedImageScreenClass: 'galleryWrapper__screen',
         openedImageCloseBtnClass: 'galleryWrapper__close',
-
         openedImageCloseBtnSrc: 'img/close.jpg',
+
         rightBtnImage: 'img/arrow-right.png',
         leftBtnImage: 'img/arrow-left.png',
         galleryBtnElementClass: 'galleryBtn',
@@ -24,8 +24,7 @@ const gallery = {
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
 
-        this.arrayConstraction(); 
-
+        this.arrayConstraction();
     },
 
     containerClickHandler(event) {
@@ -33,7 +32,6 @@ const gallery = {
             return
         }
 
-       
         this.openImage(event.target.dataset.full_img_url);
         console.log (event.target.dataset.full_img_url);
     },
