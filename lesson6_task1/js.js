@@ -9,9 +9,10 @@ const gallery = {
         openedImageCloseBtnClass: 'galleryWrapper__close',
         openedImageCloseBtnSrc: 'img/close.jpg',
 
+
+        galleryBtnElementClass: 'galleryBtn',
         rightBtnImage: 'img/arrow-right.png',
         leftBtnImage: 'img/arrow-left.png',
-        galleryBtnElementClass: 'galleryBtn',
         ImageSrc: [],
         maxImageSrc: null,
         emptyImageSrc: 'img/max/emptyImage.png'
@@ -113,10 +114,11 @@ const gallery = {
 
     switchImgLeft() {
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
+
+        console.log(this.settings.maxImageSrc);
+        console.log(currentNumImage);
         console.log('currentNumImage' + '=' + currentNumImage);
-        console.log('newNumImage' + '=' + newNumImage);
-        console.log(event.target);
-        let newNumImage = currentNumImage -1;
+        let newNumImage = currentNumImage - 1;
         if (newNumImage >= 0) {
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
         } else {             
@@ -129,7 +131,9 @@ const gallery = {
     switchImgRight() {
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
         let newNumImage = currentNumImage + 1;
-        if (newNumImage <= 4 ) {
+
+        console.log(this.settings.ImageSrc.length);
+        if (newNumImage <= this.settings.ImageSrc.length -1) {
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
         } else {             
             this.settings.maxImageSrc = this.settings.ImageSrc[0];
