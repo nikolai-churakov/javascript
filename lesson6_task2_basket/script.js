@@ -9,7 +9,7 @@ let products = {
             color: 'White',
             img: "item-1.png",
             count: 1,
-            price: 549,
+            price: 100,
         },
         {
             vendorCode: 'ART020304232',
@@ -18,7 +18,7 @@ let products = {
             color: 'White',
             img: 'item-2.png',
             count: 1,
-            price: 870,
+            price: 200,
         },
         {
             vendorCode: 'ART020304233',
@@ -27,10 +27,10 @@ let products = {
             color: 'Brown',
             img: 'item-3.png',
             count: 1,
-            price: 349,
+            price: 300,
         },
     ],
-    totalAmount: 1768
+    totalAmount: 600
 }
 
 const product = products.productCards;
@@ -59,9 +59,9 @@ const plusCount = i => {
 };
 
 const deleteFunction = i => {
-    console.log(i);
-    console.log(product[i].price * product[i].count);
-    document.getElementById("grand-total").innerText = products.totalAmount - product[i].price * product[i].count;
+    products.totalAmount = products.totalAmount - product[i].price * product[i].count;
+    document.getElementById("grand-total").innerText = products.totalAmount
+    console.log('3',products.totalAmount);
     document.getElementById(i).remove();
 
 };
