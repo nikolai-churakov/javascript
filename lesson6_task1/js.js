@@ -33,7 +33,6 @@ const gallery = {
         }
 
         this.openImage(event.target.dataset.full_img_url);
-        console.log (event.target.dataset.full_img_url);
     },
 
     openImage(src) {
@@ -63,9 +62,9 @@ const gallery = {
         const galleryWrapperElement = document.createElement('div');
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
-        const galleryScreesnElement = document.createElement('div');
-        galleryScreesnElement.classList.add(this.settings.openedImageScreenClass);
-        galleryWrapperElement.appendChild(galleryScreesnElement);
+        const galleryScreensElement = document.createElement('div');
+        galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
+        galleryWrapperElement.appendChild(galleryScreensElement);
 
         const closeImageElement = new Image();
         closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
