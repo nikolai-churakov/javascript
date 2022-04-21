@@ -32,7 +32,6 @@ const gallery = {
         if (event.target.tagName !== 'IMG') {
             return
         }
-
         this.openImage(event.target.dataset.full_img_url);
     },
 
@@ -55,7 +54,7 @@ const gallery = {
         return this.createScreenContainer();
     },
 
-    createScreenContainer() {
+    createScreenContainer()  {
         const galleryWrapperElement = document.createElement('div');
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
@@ -113,15 +112,15 @@ const gallery = {
     switchImgLeft() {
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
 
-        console.log(this.settings.maxImageSrc);
-        console.log(currentNumImage);
+        console.log(this.settings.maxImageSrc); // Num
+        console.log(currentNumImage); // -1
         console.log('currentNumImage' + '=' + currentNumImage);
         let newNumImage = currentNumImage - 1;
         if (newNumImage >= 0) {
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
-        } else {             
+        } else {
             this.settings.maxImageSrc = this.settings.ImageSrc[this.settings.ImageSrc.length - 1];
-        } 
+        }
         this.getScreenContainer()
             .querySelector(`.${this.settings.openedImageClass}`).src = this.settings.maxImageSrc;
     },
@@ -131,7 +130,8 @@ const gallery = {
         let newNumImage = currentNumImage + 1;
 
         console.log(this.settings.ImageSrc.length);
-        if (newNumImage <= this.settings.ImageSrc.length -1) {
+        if (newNumImage <= this.settings.ImageSrc.length -1 ) {
+
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
         } else {             
             this.settings.maxImageSrc = this.settings.ImageSrc[0];
@@ -144,11 +144,13 @@ const gallery = {
         const divEl = document.querySelector(this.settings.previewSelector);
         const ArrayOfImg = divEl.querySelectorAll('img');
         for (let elem of ArrayOfImg) {
+
             if (elem.dataset.full_img_url !== undefined) {
                 this.settings.ImageSrc.push(elem.dataset.full_img_url);
             } else {
                 this.settings.ImageSrc.push(this.settings.emptyImageSrc);
-            }    
-        } 
+            }
+        }
+        console.log(ArrayOfImg);
     }   
 }
