@@ -9,7 +9,7 @@ let products = {
             color: 'White',
             img: "item-1.png",
             count: 1,
-            price: 549,
+            price: 100,
         },
         {
             vendorCode: 'ART020304232',
@@ -18,7 +18,7 @@ let products = {
             color: 'White',
             img: 'item-2.png',
             count: 1,
-            price: 870,
+            price: 200,
         },
         {
             vendorCode: 'ART020304233',
@@ -27,10 +27,10 @@ let products = {
             color: 'Brown',
             img: 'item-3.png',
             count: 1,
-            price: 349,
+            price: 300,
         },
     ],
-    totalAmount: 1768
+    totalAmount: 600
 }
 
 const product = products.productCards;
@@ -43,8 +43,8 @@ const minusCount = i => {
         deleteFunction(i);
         return;
     }
-
     document.getElementById(`count-${i}`).innerText = product[i].count;
+    document.getElementById(`total-${i}`).innerText = product[i].count * product[i].price;
 
     document.getElementById("grand-total").innerText = products.totalAmount;
 };
@@ -53,13 +53,17 @@ const plusCount = i => {
     product[i].count = ++product[i].count;
     products.totalAmount = products.totalAmount + product[i].price;
     document.getElementById(`count-${i}`).innerText = product[i].count;
+    document.getElementById(`total-${i}`).innerText = product[i].count * product[i].price;
+
     document.getElementById("grand-total").innerText = products.totalAmount;
 };
 
 const deleteFunction = i => {
-
+    products.totalAmount = products.totalAmount - product[i].price * product[i].count;
+    document.getElementById("grand-total").innerText = products.totalAmount
+    console.log('3',products.totalAmount);
     document.getElementById(i).remove();
-    document.getElementById("grand-total").innerText = products.totalAmount - product[i].price * product[i].count;
+
 };
 
 const renderDeleteButton = (divTotalPrice, i) => {
@@ -134,6 +138,7 @@ const renderProducts = () => {
 
         let divTotalPrice = document.createElement('div');
         divTotalPrice.className = "total-price";
+        divTotalPrice.id = `total-${i}`;
         divTotalPrice.innerText = Number(product[i].price);
         divCount.after(divTotalPrice);
 

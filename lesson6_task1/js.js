@@ -8,9 +8,11 @@ const gallery = {
         openedImageScreenClass: 'galleryWrapper__screen',
         openedImageCloseBtnClass: 'galleryWrapper__close',
         openedImageCloseBtnSrc: 'img/close.jpg',
+
+
+        galleryBtnElementClass: 'galleryBtn',
         rightBtnImage: 'img/arrow-right.png',
         leftBtnImage: 'img/arrow-left.png',
-        galleryBtnElementClass: 'galleryBtn',
         ImageSrc: [],
         maxImageSrc: null,
         emptyImageSrc: 'img/max/emptyImage.png'
@@ -23,18 +25,14 @@ const gallery = {
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
 
-        this.arrayConstraction(); 
-
+        this.arrayConstraction();
     },
 
     containerClickHandler(event) {
         if (event.target.tagName !== 'IMG') {
             return
         }
-
-       
         this.openImage(event.target.dataset.full_img_url);
-        console.log (event.target.dataset.full_img_url);
     },
 
     openImage(src) {
@@ -44,10 +42,6 @@ const gallery = {
         } else {
             this.getScreenContainer().querySelector(`.${this.settings.openedImageClass}`).src = this.settings.emptyImageSrc;
         }
-
-        console.log(this.getScreenContainer().querySelector(`.${this.settings.openedImageClass}`));
-
-      
    },
 
     getScreenContainer() {
@@ -60,13 +54,13 @@ const gallery = {
         return this.createScreenContainer();
     },
 
-    createScreenContainer() {
+    createScreenContainer()  {
         const galleryWrapperElement = document.createElement('div');
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
-        const galleryScreesnElement = document.createElement('div');
-        galleryScreesnElement.classList.add(this.settings.openedImageScreenClass);
-        galleryWrapperElement.appendChild(galleryScreesnElement);
+        const galleryScreensElement = document.createElement('div');
+        galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
+        galleryWrapperElement.appendChild(galleryScreensElement);
 
         const closeImageElement = new Image();
         closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
@@ -93,9 +87,7 @@ const gallery = {
         rightBtn.dataset.direction = 'right';
         galleryBtnElement.appendChild(rightBtn);
 
-
         document.body.appendChild(galleryWrapperElement);
-
         return galleryWrapperElement;
     },
 
@@ -112,29 +104,34 @@ const gallery = {
     },
 
     switchImg(event) {
-        if (event.target.dataset.direction == 'left') {
+        if (event.target.dataset.direction === 'left') {
             this.switchImgLeft();
         } else this.switchImgRight();
     },
 
     switchImgLeft() {
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
+
+        console.log(this.settings.maxImageSrc); // Num
+        console.log(currentNumImage); // -1
         console.log('currentNumImage' + '=' + currentNumImage);
         let newNumImage = currentNumImage - 1;
         if (newNumImage >= 0) {
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
-        } else {             
+        } else {
             this.settings.maxImageSrc = this.settings.ImageSrc[this.settings.ImageSrc.length - 1];
-        } 
+        }
         this.getScreenContainer()
             .querySelector(`.${this.settings.openedImageClass}`).src = this.settings.maxImageSrc;
     },
 
     switchImgRight() {
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
-        console.log('currentNumImage' + '=' + currentNumImage);
         let newNumImage = currentNumImage + 1;
-        if (newNumImage <= 3) {
+
+        console.log(this.settings.ImageSrc.length);
+        if (newNumImage <= this.settings.ImageSrc.length -1 ) {
+
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
         } else {             
             this.settings.maxImageSrc = this.settings.ImageSrc[0];
@@ -147,11 +144,13 @@ const gallery = {
         const divEl = document.querySelector(this.settings.previewSelector);
         const ArrayOfImg = divEl.querySelectorAll('img');
         for (let elem of ArrayOfImg) {
-            if (elem.dataset.full_img_url != undefined) {
+
+            if (elem.dataset.full_img_url !== undefined) {
                 this.settings.ImageSrc.push(elem.dataset.full_img_url);
             } else {
                 this.settings.ImageSrc.push(this.settings.emptyImageSrc);
-            }    
-        } 
+            }
+        }
+        console.log(ArrayOfImg);
     }   
 }
