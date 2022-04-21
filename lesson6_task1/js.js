@@ -88,9 +88,7 @@ const gallery = {
         rightBtn.dataset.direction = 'right';
         galleryBtnElement.appendChild(rightBtn);
 
-
         document.body.appendChild(galleryWrapperElement);
-
         return galleryWrapperElement;
     },
 
