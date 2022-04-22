@@ -41,6 +41,7 @@ const gallery = {
             this.settings.maxImageSrc = src;
         } else {
             this.getScreenContainer().querySelector(`.${this.settings.openedImageClass}`).src = this.settings.emptyImageSrc;
+            this.settings.maxImageSrc = gallery.settings.emptyImageSrc;
         }
    },
 
@@ -126,14 +127,18 @@ const gallery = {
     },
 
     switchImgRight() {
-        let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
-        let newNumImage = currentNumImage + 1;
+        const currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
+        const newNumImage = currentNumImage + 1;
 
-        console.log(this.settings.ImageSrc.length);
+        console.log(currentNumImage ,this.settings.ImageSrc, this.settings.maxImageSrc);
+        console.log(newNumImage);
+
         if (newNumImage <= this.settings.ImageSrc.length -1 ) {
+            console.log(1);
 
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
-        } else {             
+        } else {
+            console.log(2);
             this.settings.maxImageSrc = this.settings.ImageSrc[0];
         } 
         this.getScreenContainer()
