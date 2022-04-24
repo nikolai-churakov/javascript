@@ -38,6 +38,7 @@ const gallery = {
     //     const img = new Image ();
     //     img.onload = () => this.openImage(event.target.dataset.full_img_url);
     //     img.onerror = () => this.openImage(event.settings.emptyImageSrc);
+    //    img.src = event.target.dataset.full_img_url;
     },
 
     openImage(src) {
