@@ -252,16 +252,38 @@ const snake = {
     getNextStepHeadPoint() {
         // Получаем в отдельную переменную голову змейки.
         const firstPoint = this.body[0];
+        const borderX = config.getColsCount() - 1;
+        const borderY = config.getRowsCount() - 1;
         // Возвращаем точку, где окажется голова змейки в зависимости от направления.
         switch (this.direction) {
             case 'up':
-                return {x: firstPoint.x, y: firstPoint.y - 1};
+                if (firstPoint.y > 0) {
+                    return {x: firstPoint.x, y: firstPoint.y - 1};
+                }
+                if (firstPoint.y === 0) {
+                    return {x: firstPoint.x, y: borderY};
+                }
             case 'right':
-                return {x: firstPoint.x + 1, y: firstPoint.y};
+                if (firstPoint.x < borderX) {
+                    return {x: firstPoint.x + 1, y: firstPoint.y};
+                }
+                if (firstPoint.x === borderX) {
+                    return {x: 0, y: firstPoint.y};
+                }
             case 'down':
-                return {x: firstPoint.x, y: firstPoint.y + 1};
+                if (firstPoint.y < borderY) {
+                    return {x: firstPoint.x, y: firstPoint.y + 1};
+                }
+                if (firstPoint.y === borderY) {
+                    return {x: firstPoint.x, y: 0};
+                }
             case 'left':
-                return {x: firstPoint.x - 1, y: firstPoint.y};
+                if (firstPoint.x > 0) {
+                    return {x: firstPoint.x - 1, y: firstPoint.y};
+                }
+                if (firstPoint.x === 0) {
+                    return {x: borderX, y: firstPoint.y};
+                }
         }
     },
 
