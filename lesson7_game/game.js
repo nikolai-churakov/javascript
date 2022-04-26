@@ -165,7 +165,8 @@ const map = {
         // Отображаем еду.
         foodCell.classList.add('food');
         // Добавляем элемент ячейки еды в массив занятых точек на карте.
-        this.usedCells.push(foodPoint);
+        // !ошибка была ниже вместо foodCell было foodPoint
+        this.usedCells.push(foodCell);
     },
 };
 
