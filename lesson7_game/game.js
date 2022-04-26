@@ -409,6 +409,9 @@ const game = {
         this.snake.init(this.getStartSnakeBody(), 'up');
         // Ставим еду на карту в случайную пустую ячейку.
         this.food.setCoordinates(this.getRandomFreeCoordinates());
+
+        // ! Добавил обнуление счетчика при reset.
+        document.getElementById('score').innerHTML = 'Cчёт игры:' + ' 0';
         // Отображаем все что нужно для игры.
         this.render();
     },
