@@ -470,6 +470,7 @@ const game = {
         }
         // Перемещаем змейку.
         this.snake.makeStep();
+        this.scoreCounting();
         // Отрисовываем что получилось после шага.
         this.render();
     },
@@ -637,6 +638,10 @@ const game = {
             nextHeadPoint.x >= 0 &&
             nextHeadPoint.y >= 0;
     },
+
+    scoreCounting() {
+        document.getElementById('score').innerHTML = 'Cчёт игры:' + ' ' + this.snake.getBody().length;
+    }
 };
 
 // При загрузке страницы инициализируем игру.
