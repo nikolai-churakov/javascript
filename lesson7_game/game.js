@@ -553,6 +553,7 @@ const game = {
      */
     newGameClickHandler() {
         // Ставим игру в начальное положение.
+        this.usedCells = [];
         this.reset();
     },
 
