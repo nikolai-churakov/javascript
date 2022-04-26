@@ -253,7 +253,7 @@ const snake = {
         // Получаем в отдельную переменную голову змейки.
         const firstPoint = this.body[0];
         const borderX = config.getColsCount() - 1;
-        const borderY = config.getRowsCount() - 1;
+        const borderY = config.getRowsCount() -1;
         // Возвращаем точку, где окажется голова змейки в зависимости от направления.
         switch (this.direction) {
             case 'up':
@@ -670,4 +670,4 @@ const game = {
 };
 
 // При загрузке страницы инициализируем игру.
-window.onload = game.init({speed: 4});
+window.onload = game.init({speed: 7});
