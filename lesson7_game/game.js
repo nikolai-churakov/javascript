@@ -181,6 +181,7 @@ const snake = {
     body: null,
     direction: null,
     lastStepDirection: null,
+    score: 0,
 
     /**
      * Инициализирует змейку, откуда она будет начинать и ее направление.
