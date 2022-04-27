@@ -434,6 +434,7 @@ const game = {
 
         // ! Добавил обнуление счетчика при reset.
         document.getElementById('score').innerHTML = 'Cчёт игры:' + ' 0';
+
         // Отображаем все что нужно для игры.
         this.render();
     },
@@ -444,8 +445,10 @@ const game = {
     play() {
         // Ставим статус в 'playing'.
         this.status.setPlaying();
+
         // Ставим интервал шагов змейки.
         this.tickInterval = setInterval(() => this.tickHandler(), 1000 / this.config.getSpeed());
+
         // Меняем название кнопки в меню на "Стоп" и делаем ее активной.
         this.setPlayButton('Стоп');
     },
