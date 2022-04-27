@@ -24,8 +24,23 @@ const gallery = {
         document
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
+            // .addEventListener('click', event =>  direction);
+            // const direction = this.getDirectionByCode(event.code);
 
         this.arrayConstraction();
+    },
+
+    getDirectionByCode(code) {
+        switch (code) {
+            case 'KeyD':
+            case 'ArrowRight':
+                return 'right';
+            case 'KeyA':
+            case 'ArrowLeft':
+                return 'left';
+            default:
+                return '';
+        }
     },
 
     containerClickHandler(event) {
