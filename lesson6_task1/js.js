@@ -50,7 +50,7 @@ const gallery = {
         // Открывает картинку с полученным из целевого тега (data-full+image_url аттрибутом).
         this.openImage(event.target.dataset.full_img_url);
 
-    //     const img = new Image ();
+
     //     img.onload = () => this.openImage(event.target.dataset.full_img_url);
     //     img.onerror = () => this.openImage(event.settings.emptyImageSrc);
     //    img.src = event.target.dataset.full_img_url;
