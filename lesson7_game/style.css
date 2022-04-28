@@ -9,6 +9,7 @@
     margin: 10px;
     color: white;
     background: #007b32;
+    border-radius: 20px;
     text-align: center;
     cursor: pointer;
 }

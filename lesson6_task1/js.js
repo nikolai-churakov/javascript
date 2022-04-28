@@ -35,7 +35,7 @@ const gallery = {
         // Открывает картинку с полученным из целевого тега (data-full+image_url аттрибутом).
         this.openImage(event.target.dataset.full_img_url);
 
-    //     const img = new Image ();
+
     //     img.onload = () => this.openImage(event.target.dataset.full_img_url);
     //     img.onerror = () => this.openImage(event.settings.emptyImageSrc);
     //    img.src = event.target.dataset.full_img_url;
@@ -111,9 +111,26 @@ const gallery = {
     },
 
     switchImg(event) {
-        if (event.target.dataset.direction === 'left') {
+        const direction = this.getDirectionByCode(event.code);
+
+        if (event.target.dataset.direction === 'left' && direction  === 'left') {
             this.switchImgLeft();
         } else this.switchImgRight();
+
+
+    },
+
+    getDirectionByCode(code) {
+        switch (code) {
+            case 'KeyD':
+            case 'ArrowRight':
+                return 'right';
+            case 'KeyA':
+            case 'ArrowLeft':
+                return 'left';
+            default:
+                return '';
+        }
     },
 
     switchImgLeft() {

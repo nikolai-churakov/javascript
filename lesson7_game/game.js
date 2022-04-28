@@ -225,8 +225,10 @@ const snake = {
     makeStep() {
         // Записываем направление движения, которое сейчас произойдет как направление прошлого шага.
         this.lastStepDirection = this.direction;
+
         // Вставляем следующую точку в начало массива.
         this.body.unshift(this.getNextStepHeadPoint());
+
         // Удаляем последний лишний элемент.
         this.body.pop();
     },
@@ -325,8 +327,7 @@ const food = {
         this.y = point.y;
     },
 
-    /**
-     * Определяет соответствует ли точка на которой находится еда той точке что была передана.
+    /*** Определяет соответствует ли точка на которой находится еда той точке что была передана.
      * @param {{x: int, y: int}} point Точка, для проверки соответствия точке еды.
      * @returns {boolean} true, если точки совпали, иначе false.
      */
@@ -434,6 +435,7 @@ const game = {
 
         // ! Добавил обнуление счетчика при reset.
         document.getElementById('score').innerHTML = 'Cчёт игры:' + ' 0';
+
         // Отображаем все что нужно для игры.
         this.render();
     },
@@ -444,8 +446,10 @@ const game = {
     play() {
         // Ставим статус в 'playing'.
         this.status.setPlaying();
+
         // Ставим интервал шагов змейки.
         this.tickInterval = setInterval(() => this.tickHandler(), 1000 / this.config.getSpeed());
+
         // Меняем название кнопки в меню на "Стоп" и делаем ее активной.
         this.setPlayButton('Стоп');
     },
