@@ -24,23 +24,8 @@ const gallery = {
         document
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
-            // const direction = this.getDirectionByCode(event.code);
-
 
         this.arrayConstraction();
-    },
-
-    getDirectionByCode(code) {
-        switch (code) {
-            case 'KeyD':
-            case 'ArrowRight':
-                return 'right';
-            case 'KeyA':
-            case 'ArrowLeft':
-                return 'left';
-            default:
-                return '';
-        }
     },
 
     containerClickHandler(event) {
@@ -126,9 +111,26 @@ const gallery = {
     },
 
     switchImg(event) {
-        if (event.target.dataset.direction === 'left') {
+        const direction = this.getDirectionByCode(event.code);
+
+        if (event.target.dataset.direction === 'left' && direction  === 'left') {
             this.switchImgLeft();
         } else this.switchImgRight();
+
+
+    },
+
+    getDirectionByCode(code) {
+        switch (code) {
+            case 'KeyD':
+            case 'ArrowRight':
+                return 'right';
+            case 'KeyA':
+            case 'ArrowLeft':
+                return 'left';
+            default:
+                return '';
+        }
     },
 
     switchImgLeft() {
