@@ -18,5 +18,5 @@ function Teacher (name, yearOfBirth, subject) {
 }
 
 let Nick = new  Person('Nick', 1987);
-let Ann = new Person ('Ann', 1991);
+let Ann = new Teacher ('Ann', 1991, 'math');
 
