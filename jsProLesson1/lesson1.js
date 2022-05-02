@@ -7,16 +7,19 @@ function Person (name, yearOfBirth) {
 }
 
 Person.prototype.calcAge =  function () {
-    return console.log(new Date().getFullYear() - this.yearOfBirth)
+    console.log(new Date().getFullYear() - this.yearOfBirth)
 };
 
 Person.prototype.lastName = 'Smith';
 
-function Teacher (name, yearOfBirth, subject) {
-    Person.call(name, yearOfBirth);
+function Teacher(name, yearOfBirth, subject) {
+    Person.call(this, name, yearOfBirth);
     this.subject = subject;
 }
 
+Teacher.prototype = Object.create(Person.prototype);
+Teacher.prototype.constructor = Teacher;
+
 let Nick = new  Person('Nick', 1987);
-let Ann = new Teacher ('Ann', 1991, 'math');
+let Ann = new Teacher('Ann', 1991, 'math');
 
