@@ -25,4 +25,19 @@
 
 //ES6
 
+class Person {
+    constructor(name, yearOfBirth) {
+        this.name =  name;
+        this.yearOfBirth = yearOfBirth;
+    }
+    calcAge() {
+        console.log(new Date().getFullYear() - this.yearOfBirth);
+    }
+}
 
+class Teacher extends Person {
+    constructor(name, yearOfBirth, subject) {
+        super(name, yearOfBirth); // Вызов конструктора родителя
+    }
+
+}
