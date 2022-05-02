@@ -1,18 +1,18 @@
 "use strict"
 
 //ES5
-
+/**
+ * Объект ООП
+ * @param name
+ * @param yearOfBirth
+ * @constructor
+ */
 function Person (name, yearOfBirth) {
     this.name =  name;
+    this.yearOfBirth = yearOfBirth;
     this.calcAge = function () {
-        return console.log(new Date() - this.yearOfBirth)
+        return console.log(new Date().getFullYear() - this.yearOfBirth)
     }
 }
 
-
-
-//
-// let person = {
-//     name: name,
-//     yearOfBirth: yearOfBirth,
-// };
+let Nick = new  Person('Nick', 1987);
