@@ -36,6 +36,12 @@ class Person {
     sayHi(){
         return `${this.name}  says hi`;
     }
+    static triple(x) {
+        if (x === undefined) {
+            x =2;
+        }
+        return x * 3
+    }
 }
 
 class Teacher extends Person {
@@ -47,5 +53,6 @@ class Teacher extends Person {
         return `${super.sayHi()} as teacher`;
     }
 }
-let Nick = new  Person('Nick', 1987);
-let Ann = new Teacher('Ann', 1991, 'math');
+let nick = new Person('Nick', 1987);
+let ann = new Teacher('Ann', 1991, 'math');
+console.log(Teacher.triple(4));
