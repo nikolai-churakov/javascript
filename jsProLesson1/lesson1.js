@@ -16,3 +16,4 @@ function Person (name, yearOfBirth) {
 }
 
 let Nick = new  Person('Nick', 1987);
+let Ann = new Person ('Ann', 1991);
