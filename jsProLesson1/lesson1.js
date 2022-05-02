@@ -33,11 +33,19 @@ class Person {
     calcAge() {
         console.log(new Date().getFullYear() - this.yearOfBirth);
     }
+    sayHi(){
+        return `${this.name}  says hi`;
+    }
 }
 
 class Teacher extends Person {
     constructor(name, yearOfBirth, subject) {
         super(name, yearOfBirth); // Вызов конструктора родителя
+        this.subject = subject;
     }
-
+    sayHi() {
+        return `${super.sayHi()} as teacher`;
+    }
 }
+let Nick = new  Person('Nick', 1987);
+let Ann = new Teacher('Ann', 1991, 'math');
