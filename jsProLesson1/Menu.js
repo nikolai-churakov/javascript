@@ -16,24 +16,11 @@ class Menu {
     }
 }
 
-// const removeAll = () => {
-//     document.getElementBYId('buttonCheck').onclick = removeElement;
-// }
-//     getDirectionByCode(code) {
-//         switch (code) {
-//             case 'Delete':
-//             case 'Backspace':
-//                 return document.getElementById('menuBlock').remove();
-//
-//             default:
-//                 return '';
-//         }
-// }
-// removeAll();
-// document.getElementById('menuBlock').event.key.backspace
-
 document.addEventListener('keydown', function(event) {
-    if (event.code === 'delete' && event.code === 'Backspace') {
-        console.log('Отменить!');
+    if (event.code == 'Delete' || event.code == 'Backspace') {
+        console.log('Меню удалилось.');
+        document.getElementById('menuBlock').remove();
+    } else {
+        console.log('На эту клавишу события не предусмотренно.');
     }
-})
+});
