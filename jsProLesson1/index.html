@@ -5,12 +5,25 @@
     <title>Title</title>
 </head>
 <body>
-
-<div id="menuBlock">
-
-</div>
+<div id="menuBlock"></div>
 <script src="lesson1.js"></script>
 <script src="Menu.js"></script>
-<script src="MenuItem.js.js"></script>
+<script src="MenuItem.js"></script>
+
+<script>
+    window.onload = () => {
+    //    DOM ready
+        let menuBlock =  document.getElementById('menuBlock');
+
+        let menu = new Menu('my', 'my', [
+            new MenuItem('/', 'Home'),
+            new MenuItem('/about', 'About'),
+            new MenuItem('/blog', 'Blog'),
+         new MenuItem('/services', 'Services'),
+        ]);
+
+        menuBlock.innerHTML = menu.render();
+    }
+</script>
 </body>
 </html>
