@@ -7,7 +7,10 @@ class Menu {
     render(){
         let result = `<ul class="${this.className}" id="${this.id}">`;
         for (let i=0; i < this.items.length; i++) {
-            result += this.item[i].render()
+            if(this.items[i] instanceof  MenuItem) {
+                result += this.items[i].render()
+            }
         }
+        result += `</ul>`;
     }
 }
