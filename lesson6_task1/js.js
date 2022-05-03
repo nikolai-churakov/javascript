@@ -155,17 +155,6 @@ const gallery = {
             .querySelector(`.${this.settings.openedImageClass}`).src = this.settings.maxImageSrc;
     },
 
-    document.addEventListener('keydown', function (event) {
-        if (event.code == 'ArrowRight' || event.code == 'KeyD') {
-            console.log('Прокрутка вправо.');
-            this.switchImgRight();
-        }
-        if (event.code == 'ArrowLeft' || event.code == 'KeyA') {
-            console.log('Прокрутка в лево.');
-            this.switchImgLeft();
-        }
-    }),
-
     arrayConstraction() {
         const divEl = document.querySelector(this.settings.previewSelector);
         const ArrayOfImg = divEl.querySelectorAll('img');
@@ -180,5 +169,21 @@ const gallery = {
         console.log(ArrayOfImg);
     },
 }
+
+    document.addEventListener('keydown', function (event) {
+    console.log(123);
+    if (event.code == 'ArrowRight' || event.code == 'KeyD' || event.code == 'Space') {
+        console.log('Прокрутка вправо.');
+        gallery.switchImgRight();
+    }
+    if (event.code == 'ArrowLeft' || event.code == 'KeyA') {
+        console.log('Прокрутка в лево.');
+        gallery.switchImgLeft();
+    }
+    if (event.code == 'Escape') {
+        console.log('Закрыл галерею. Больших изображений.');
+        gallery.close();
+    }
+})
 
 // document.getElementById('menuBlock').remove();
