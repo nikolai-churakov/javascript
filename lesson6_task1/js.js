@@ -172,15 +172,15 @@ const gallery = {
 
     document.addEventListener('keydown', function (event) {
     console.log(123);
-    if (event.code == 'ArrowRight' || event.code == 'KeyD' || event.code == 'Space') {
+    if (event.code === 'ArrowRight' || event.code === 'KeyD' || event.code === 'Space') {
         console.log('Прокрутка вправо.');
         gallery.switchImgRight();
     }
-    if (event.code == 'ArrowLeft' || event.code == 'KeyA') {
+    if (event.code === 'ArrowLeft' || event.code === 'KeyA') {
         console.log('Прокрутка в лево.');
         gallery.switchImgLeft();
     }
-    if (event.code == 'Escape') {
+    if (event.code === 'Escape') {
         console.log('Закрыл галерею. Больших изображений.');
         gallery.close();
     }
