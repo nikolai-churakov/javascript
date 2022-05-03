@@ -9,6 +9,8 @@
 <script src="lesson1.js"></script>
 <script src="Menu.js"></script>
 <script src="MenuItem.js"></script>
+<!--<script src="SubMenu.js.js"></script>-->
+
 
 <script>
     window.onload = () => {
@@ -17,9 +19,10 @@
 
         let menu = new Menu('my', 'my', [
             new MenuItem('/', 'Home'),
+            new MenuItem('/', 'Catalog'),
             new MenuItem('/about', 'About'),
             new MenuItem('/blog', 'Blog'),
-         new MenuItem('/services', 'Services'),
+            new MenuItem('/services', 'Services'),
         ]);
 
         menuBlock.innerHTML = menu.render();
