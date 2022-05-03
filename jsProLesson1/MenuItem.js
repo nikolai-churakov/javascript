@@ -4,6 +4,6 @@ class  MenuItem {
         this.title = title;
     }
     render(){
-        return `<li><a href="${this.href}">${this.title}</a></li>`
+        return `<li><a href="${this.href}">${this.title}</a></li>`;
     }
 }
