@@ -15,7 +15,6 @@ class Menu {
         return result;
     }
 }
-
 document.addEventListener('keydown', function(event) {
     if (event.code == 'Delete' || event.code == 'Backspace') {
         console.log('Меню удалилось.');
