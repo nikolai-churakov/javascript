@@ -36,7 +36,7 @@ class Person {
     sayHi(){
         return `${this.name}  says hi`;
     }
-    static triple(x) {
+    static triple(x) { // Наследуется но не переходит к объекту
         if (x === undefined) {
             x =2;
         }
