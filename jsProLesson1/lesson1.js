@@ -53,6 +53,7 @@ class Teacher extends Person {
         return `${super.sayHi()} as teacher`;
     }
 }
+
 let nick = new Person('Nick', 1987);
 let ann = new Teacher('Ann', 1991, 'math');
-console.log(Teacher.triple(4));
+console.log(Teacher.triple(6));
