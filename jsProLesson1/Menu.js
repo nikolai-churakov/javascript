@@ -4,6 +4,7 @@ class Menu {
         this.className = className;
         this.items = items;
     }
+
     render(){
         let result = `<ul class="${this.className}" id="${this.id}">`;
         for (let i=0; i < this.items.length; i++) {
