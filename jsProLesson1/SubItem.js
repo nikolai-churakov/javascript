@@ -1,4 +1,4 @@
-class Submenu extends Menu {
+class SubItem extends Menu {
     constructor (id, className, items, subId, subClassName, subItems, subTitle) {
         super(id, className, items);
         this.subId = subId;
