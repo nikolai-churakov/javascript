@@ -1,4 +1,4 @@
-class  MenuItem {
+class MenuItem {
     constructor(href, title) {
         this.href = href;
         this.title = title;
