@@ -3,7 +3,6 @@ class Menu {
         this.id = id;
         this.className = className;
         this.items = items;
-        this.subItems = subItems;
     }
 
     render(){
@@ -11,18 +10,15 @@ class Menu {
         for (let i=0; i < this.items.length; i++) {
             if(this.items[i] instanceof MenuItem) {
                 result += this.items[i].render();
-            //     for (let j=0; j < this.subItems.length; j++) {
-            //         result += `${this.items[i][j].render()}`;
-            //     }
-            //     result += `</ul>`;
             }
         }
         result += `</ul>`;
         return result;
     }
 }
+
 document.addEventListener('keydown', function(event) {
-    if (event.code == 'Delete' || event.code == 'Backspace') {
+    if (event.code === 'Delete' || event.code === 'Backspace') {
         console.log('Меню удалилось.');
         document.getElementById('menuBlock').remove();
     } else {
