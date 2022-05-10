@@ -8,15 +8,15 @@
 <div id="menuBlock"></div>
 <!--<script src="lesson1.js"></script>-->
 
+<script src="SubItem.js"></script>
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
-<script src="SubItem.js"></script>
+
 
 <script>
     window.onload = () => {
     //    DOM ready
         let menuBlock =  document.getElementById('menuBlock');
-        // let subMenuBlock = document.getElementById('submenu-block');
 
         let menu = new Menu('my', 'my', [
             new MenuItem('/', 'Home'),
@@ -26,39 +26,7 @@
             new MenuItem('/services', 'Services'),
         ]);
 
-        let subMenu = new SubItem('my', 'my',
-
-            [
-                new MenuItem('#', 'Men'),
-                new MenuItem('#', 'Woman'),
-                new MenuItem('#', 'Kids'),
-
-            ],
-            'dva', 'tri',
-            [
-                [new MenuItem('#', 'Man'),
-                 new MenuItem('#', 'Woman'),
-                 new MenuItem('#', 'Kids')],
-
-                [new MenuItem('#', 'Moscow'),
-                 new MenuItem('#', 'London'),
-                 new MenuItem('#', 'California')],
-
-
-                [new MenuItem('#', 'My'),
-                    new MenuItem('#', 'Village'),
-                    new MenuItem('#', 'Office')],
-
-            ],
-            [
-                'Catalog', 'Contacts', 'About',
-            ]);
-
-        // subMenuBlock.innerHTML = subMenu.render();
         menuBlock.innerHTML = menu.render();
-        menuBlock.innerHTML = subMenu.render();
-
-
     }
 </script>
 </body>
