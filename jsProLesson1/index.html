@@ -6,9 +6,7 @@
 </head>
 <body>
 <div id="menuBlock"></div>
-<div id="submenu-block"></div>
 <!--<script src="lesson1.js"></script>-->
-
 
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
@@ -18,7 +16,7 @@
     window.onload = () => {
     //    DOM ready
         let menuBlock =  document.getElementById('menuBlock');
-        let subMenuBlock = document.getElementById('submenu-block');
+        // let subMenuBlock = document.getElementById('submenu-block');
 
         let menu = new Menu('my', 'my', [
             new MenuItem('/', 'Home'),
@@ -38,23 +36,29 @@
             ],
             'sub', 'sub',
             [
-                [new MenuItem('#', 'subHome'),
-                    new MenuItem('#', 'subHome1'),
-                    new MenuItem('#', 'subHome2')],
-                [new MenuItem('#', 'subBlog1'),
-                    new MenuItem('#', 'subBlog2'),
-                    new MenuItem('#', 'subBlog3')],
-                [new MenuItem('#', 'subServices1'),
-                    new MenuItem('#', 'subServices2'),
-                    new MenuItem('#', 'subServices3')],
+                [new MenuItem('#', 'Man'),
+                 new MenuItem('#', 'Woman'),
+                 new MenuItem('#', 'Kids')],
+
+                [new MenuItem('#', 'Moscow'),
+                 new MenuItem('#', 'London'),
+                 new MenuItem('#', 'California')],
+
+
+                [new MenuItem('#', 'My'),
+                    new MenuItem('#', 'Village'),
+                    new MenuItem('#', 'Office')],
 
             ],
             [
-                'Home', 'Blog', 'Services'
+                'Catalog', 'Contacts', 'About',
             ]);
 
+        // subMenuBlock.innerHTML = subMenu.render();
         menuBlock.innerHTML = menu.render();
-        subMenuBlock.innerHTML = subMenu.render();
+        // menuBlock.innerHTML = subMenu.render();
+
+
     }
 </script>
 </body>
