@@ -1,4 +1,4 @@
-class SubItem {
+class SubMenu {
     constructor(href, title) {
         this.href = href;
         this.title = title;
