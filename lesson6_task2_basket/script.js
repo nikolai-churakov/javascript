@@ -67,6 +67,7 @@ const deleteFunction = i => {
 };
 
 const renderDeleteButton = (divTotalPrice, i) => {
+
     let divButtons = document.createElement('div');
     divButtons.className = "buttons";
     divTotalPrice.after(divButtons);

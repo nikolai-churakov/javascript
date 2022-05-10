@@ -18,9 +18,9 @@ const gallery = {
         emptyImageSrc: 'img/max/emptyImage.png'
     },
 
-    init (userSetting = {}) {
+    init(userSetting = {}) {
         Object.assign(this.settings, userSetting);
- 
+
         document
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
@@ -36,9 +36,9 @@ const gallery = {
         this.openImage(event.target.dataset.full_img_url);
 
 
-    //     img.onload = () => this.openImage(event.target.dataset.full_img_url);
-    //     img.onerror = () => this.openImage(event.settings.emptyImageSrc);
-    //    img.src = event.target.dataset.full_img_url;
+        //     img.onload = () => this.openImage(event.target.dataset.full_img_url);
+        //     img.onerror = () => this.openImage(event.settings.emptyImageSrc);
+        //    img.src = event.target.dataset.full_img_url;
     },
 
     openImage(src) {
@@ -49,19 +49,19 @@ const gallery = {
             this.getScreenContainer().querySelector(`.${this.settings.openedImageClass}`).src = this.settings.emptyImageSrc;
             this.settings.maxImageSrc = gallery.settings.emptyImageSrc;
         }
-   },
+    },
 
     getScreenContainer() {
         const galleryWrapperElement = document.querySelector(`.${this.settings.openedImageWrapperClass}`);
 
-        if(galleryWrapperElement) {
+        if (galleryWrapperElement) {
             return galleryWrapperElement
         }
 
         return this.createScreenContainer();
     },
 
-    createScreenContainer()  {
+    createScreenContainer() {
         const galleryWrapperElement = document.createElement('div');
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
@@ -83,12 +83,12 @@ const gallery = {
         galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
         galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
         galleryWrapperElement.appendChild(galleryBtnElement);
-        
+
         const leftBtn = new Image();
         leftBtn.src = this.settings.leftBtnImage;
         leftBtn.dataset.direction = 'left';
         galleryBtnElement.appendChild(leftBtn);
-        
+
         const rightBtn = new Image();
         rightBtn.src = this.settings.rightBtnImage;
         rightBtn.dataset.direction = 'right';
@@ -105,7 +105,7 @@ const gallery = {
 
     arrowClick(event) {
         if (event.target.tagName !== 'IMG') {
-            return 
+            return
         }
         this.switchImg(event);
     },
@@ -113,24 +113,11 @@ const gallery = {
     switchImg(event) {
         const direction = this.getDirectionByCode(event.code);
 
-        if (event.target.dataset.direction === 'left' && direction  === 'left') {
+        if (event.target.dataset.direction === 'left' && direction === 'left') {
             this.switchImgLeft();
         } else this.switchImgRight();
 
 
-    },
-
-    getDirectionByCode(code) {
-        switch (code) {
-            case 'KeyD':
-            case 'ArrowRight':
-                return 'right';
-            case 'KeyA':
-            case 'ArrowLeft':
-                return 'left';
-            default:
-                return '';
-        }
     },
 
     switchImgLeft() {
@@ -153,17 +140,17 @@ const gallery = {
         const currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
         const newNumImage = currentNumImage + 1;
 
-        console.log(currentNumImage ,this.settings.ImageSrc, this.settings.maxImageSrc);
+        console.log(currentNumImage, this.settings.ImageSrc, this.settings.maxImageSrc);
         console.log(newNumImage);
 
-        if (newNumImage <= this.settings.ImageSrc.length -1 ) {
+        if (newNumImage <= this.settings.ImageSrc.length - 1) {
             console.log(1);
 
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
         } else {
             console.log(2);
             this.settings.maxImageSrc = this.settings.ImageSrc[0];
-        } 
+        }
         this.getScreenContainer()
             .querySelector(`.${this.settings.openedImageClass}`).src = this.settings.maxImageSrc;
     },
@@ -180,5 +167,23 @@ const gallery = {
             }
         }
         console.log(ArrayOfImg);
-    }   
+    },
 }
+
+    document.addEventListener('keydown', function (event) {
+    console.log(123);
+    if (event.code === 'ArrowRight' || event.code === 'KeyD' || event.code === 'Space') {
+        console.log('Прокрутка вправо.');
+        gallery.switchImgRight();
+    }
+    if (event.code === 'ArrowLeft' || event.code === 'KeyA') {
+        console.log('Прокрутка в лево.');
+        gallery.switchImgLeft();
+    }
+    if (event.code === 'Escape') {
+        console.log('Закрыл галерею. Больших изображений.');
+        gallery.close();
+    }
+})
+
+// document.getElementById('menuBlock').remove();
