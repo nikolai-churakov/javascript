@@ -6,16 +6,19 @@
 </head>
 <body>
 <div id="menuBlock"></div>
+<div id="submenu-block"></div>
 <!--<script src="lesson1.js"></script>-->
 
-<!--<script src="SubMenu.js"></script>-->
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
+<script src="SubMenu.js"></script>
 
 <script>
     window.onload = () => {
     //    DOM ready
         let menuBlock =  document.getElementById('menuBlock');
+        let submenuBlock = document.getElementById('submenu-block');
+
 
         let menu = new Menu('idMyMenu', 'className', [  // id, className
             new MenuItem('/', 'Home'),
@@ -25,16 +28,37 @@
             new MenuItem('/services', 'Services'),
         ]);
 
-        // let sybMenu = new Fenu ('my2', 'my2', [
-        //     new SubMenu('/', '123'),
-        //     new SubMenu('/', '123'),
-        //     new SubMenu('/about', 'A23'),
-        //     new SubMenu('/blog', 'B132g'),
-        //     new SubMenu('/services', '13es'),
-        // ]);
+        let submenu = new Submenu('my', 'my',
+
+            [
+                new MenuItem('#', 'Home1'),
+                new MenuItem('#', 'Blog1'),
+                new MenuItem('#', 'Services1'),
+
+            ],
+            'sub', 'sub',
+            [
+                [new MenuItem('#', 'subHome'),
+                    new MenuItem('#', 'subHome1'),
+                    new MenuItem('#', 'subHome2')],
+                [new MenuItem('#', 'subBlog1'),
+                    new MenuItem('#', 'subBlog2'),
+                    new MenuItem('#', 'subBlog3')],
+                [new MenuItem('#', 'subServices1'),
+                    new MenuItem('#', 'subServices2'),
+                    new MenuItem('#', 'subServices3')],
+
+            ],
+            [
+                'Home', 'Blog', 'Services'
+            ]);
+
 
         menuBlock.innerHTML = menu.render();
-        menuBlock.innerHTML = subMenu.render();
+        submenuBlock.innerHTML = submenu.render();
+
+        menuBlock.innerHTML = menu.render();
+        menuBlock.innerHTML = submenu.render();
     }
 </script>
 </body>
