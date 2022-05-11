@@ -5,59 +5,65 @@
     <title>Title</title>
 </head>
 <body>
+<h3>Вариант меню 1</h3>
+<h4>Удаление по клавише delete / backspace</h4>
 <div id="menuBlock"></div>
+
+<h3> Вариант меню 2. (extends Menu)</h3>
+<h4>Удаление по клавише q</h4>
+<div id="submenu-block"></div>
 <!--<script src="lesson1.js"></script>-->
 
+<script src="MenuSubItem.js"></script>  <!-- Второй уровень массива объектов меню-->>
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
-<script src="SubItem.js"></script>
+<script src="SubMenu.js"></script>
 
 <script>
     window.onload = () => {
     //    DOM ready
         let menuBlock =  document.getElementById('menuBlock');
-        // let subMenuBlock = document.getElementById('submenu-block');
+        let subMenuBlock = document.getElementById('submenu-block');
 
-        let menu = new Menu('my', 'my', [
+
+        let menu = new Menu('idMyMenu', 'className', [  // id, className
             new MenuItem('/', 'Home'),
             new MenuItem('/', 'Catalog'),
+                new MenuSubItem('/git.ru', 'Man'),
+                new MenuSubItem('/git.ru', 'Woman'),
+                new MenuSubItem('/git.ru', 'Kids'),
             new MenuItem('/about', 'About'),
             new MenuItem('/blog', 'Blog'),
             new MenuItem('/services', 'Services'),
+                new MenuSubItem('/git.ru', 'Moscow'),
+                new MenuSubItem('/git.ru', 'Podolsk'),
+                new MenuSubItem('/git.ru', 'Vidnoe'),
         ]);
 
-        let subMenu = new SubItem('my', 'my',
-
+        let submenu = new Submenu('id=my', 'class=my',
             [
-                new MenuItem('#', 'Men'),
-                new MenuItem('#', 'Woman'),
-                new MenuItem('#', 'Kids'),
-
-            ],
-            'dva', 'tri',
-            [
-                [new MenuItem('#', 'Man'),
-                 new MenuItem('#', 'Woman'),
-                 new MenuItem('#', 'Kids')],
-
-                [new MenuItem('#', 'Moscow'),
-                 new MenuItem('#', 'London'),
-                 new MenuItem('#', 'California')],
-
-
-                [new MenuItem('#', 'My'),
-                    new MenuItem('#', 'Village'),
-                    new MenuItem('#', 'Office')],
-
+                'Catalog', 'FAQ', 'About' // subTitle
             ],
             [
-                'Catalog', 'Contacts', 'About',
+                [new MenuItem('#', 'Men'), // 0, subItems
+                    new MenuItem('#', 'Woman'),
+                    new MenuItem('#', 'Kids')],
+
+                [new MenuItem('#', 'How to buy?'), // 1, subItems
+                    // new MenuItem('#', 'Money back'),
+                    new MenuItem('#', 'Warranty')],
+
+                [new MenuItem('#', '666'), // 2, subItems
+                    new MenuItem('#', '777'),
+                    new MenuItem('#', '777'),
+                    new MenuItem('#', '777'),
+                    new MenuItem('#', '777')],
+
             ]);
 
-        // subMenuBlock.innerHTML = subMenu.render();
-        menuBlock.innerHTML = menu.render();
-        menuBlock.innerHTML = subMenu.render();
 
+        // menuBlock.innerHTML = menu.render();
+        subMenuBlock.innerHTML = submenu.render();
 
     }
 </script>
