@@ -5,7 +5,12 @@
     <title>Title</title>
 </head>
 <body>
+<h3>Вариант меню 1</h3>
+<h4>Удаление по клавише delete / backspace</h4>
 <div id="menuBlock"></div>
+
+<h3> Вариант меню 2. (extends Menu)</h3>
+<h4>Удаление по клавише q</h4>
 <div id="submenu-block"></div>
 <!--<script src="lesson1.js"></script>-->
 
@@ -37,22 +42,25 @@
                 new MenuSubItem('/git.ru', 'SubElement'),
         ]);
 
-
-        let submenu = new Submenu('2', '1', [1, 2, 3,], 'subMenu',
+        let submenu = new Submenu('id=my', 'class=my',
+            [
+                'Catalog', 'FAQ', 'About' // subTitle
+            ],
             [
                 [new MenuItem('#', 'Men'), // 0, subItems
                     new MenuItem('#', 'Woman'),
                     new MenuItem('#', 'Kids')],
+
                 [new MenuItem('#', 'How to buy?'), // 1, subItems
-                    new MenuItem('#', 'Money back'),
+                    // new MenuItem('#', 'Money back'),
                     new MenuItem('#', 'Warranty')],
+
                 [new MenuItem('#', '666'), // 2, subItems
+                    new MenuItem('#', '777'),
+                    new MenuItem('#', '777'),
                     new MenuItem('#', '777'),
                     new MenuItem('#', '777')],
 
-            ],
-            [
-                'Catalog', 'FAQ', 'About' // subTitle
             ]);
 
 

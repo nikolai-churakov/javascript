@@ -44,6 +44,8 @@ document.addEventListener('keydown', function(event) {
     if (event.code === 'Delete' || event.code === 'Backspace') {
         console.log('Меню удалилось.');
         document.getElementById('menuBlock').remove();
+    } else if (event.code === 'KeyQ'){
+        document.getElementById('submenu-block').remove();
     } else {
         console.log('На эту клавишу события не предусмотренно.');
     }
