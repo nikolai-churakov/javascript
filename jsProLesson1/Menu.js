@@ -1,8 +1,10 @@
 class Menu {
-    constructor(id, className, items) {
+    constructor(id, className, items, subItems) {
         this.id = id;
         this.className = className;
         this.items = items;
+
+        this.subItems = subItems;
     }
 
     render() {
@@ -13,6 +15,7 @@ class Menu {
             }
         }
         result += `</ul>`;
+        console.log(this.subItems);
         return result;
     }
 }
