@@ -9,10 +9,12 @@
 <div id="submenu-block"></div>
 <!--<script src="lesson1.js"></script>-->
 
-<script src="SubMenu.js"></script>
+
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
 
+
+<!--<script src="SubMenu.js"></script>-->
 
 <script>
     window.onload = () => {
@@ -29,26 +31,26 @@
             new MenuItem('/services', 'Services'),
         ]);
 
-        let submenu = new Submenu('2', '1', [1, 2, 3,], 'subMenu', 'my',
-            [
-                [new MenuItem('#', 'Men'), // 0, subItems
-                    new MenuItem('#', 'Woman'),
-                    new MenuItem('#', 'Kids')],
-                [new MenuItem('#', 'How to buy?'), // 1, subItems
-                    new MenuItem('#', 'Money back'),
-                    new MenuItem('#', 'Warranty')],
-                [new MenuItem('#', '666'), // 2, subItems
-                    new MenuItem('#', '777'),
-                    new MenuItem('#', '777')],
+        // let submenu = new Submenu('2', '1', [1, 2, 3,], 'subMenu', 'my',
+        //     [
+        //         [new MenuItem('#', 'Men'), // 0, subItems
+        //             new MenuItem('#', 'Woman'),
+        //             new MenuItem('#', 'Kids')],
+        //         [new MenuItem('#', 'How to buy?'), // 1, subItems
+        //             new MenuItem('#', 'Money back'),
+        //             new MenuItem('#', 'Warranty')],
+        //         [new MenuItem('#', '666'), // 2, subItems
+        //             new MenuItem('#', '777'),
+        //             new MenuItem('#', '777')],
+        //
+        //     ],
+        //     [
+        //         'Catalog', 'FAQ', 'About' // subTitle
+        //     ]);
 
-            ],
-            [
-                'Catalog', 'FAQ', 'About' // subTitle
-            ]);
 
-
-        // menuBlock.innerHTML = menu.render();
-        submenuBlock.innerHTML = submenu.render();
+        menuBlock.innerHTML = menu.render();
+        // submenuBlock.innerHTML = submenu.render();
 
     }
 </script>

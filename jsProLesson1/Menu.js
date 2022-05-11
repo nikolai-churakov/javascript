@@ -5,7 +5,7 @@ class Menu {
         this.items = items;
     }
 
-    render(){
+    render() {
         let result = `<ul class="${this.className}" id="${this.id}">`;
         for (let i=0; i < this.items.length; i++) {
             if(this.items[i] instanceof MenuItem) {
@@ -16,6 +16,21 @@ class Menu {
         return result;
     }
 }
+
+//     render() {
+//
+//         let result = `<ul class="${this.className}" id="${this.id}">`;
+//         for (let i = 0; i < this.items.length; i++){
+//             result += `<li id = "${this.id}"><a href="${this.href}" >${this.subTitle[i]}</a><ul>`;
+//             for (let j = 0; j < this.items.length; j++) {
+//                 result += `${this.subItems[i][j].render()}`;
+//             }
+//             result += `</li></ul>`;
+//         }
+//         result += `</li></ul>`;
+//         return result
+//     }
+// }
 
 document.addEventListener('keydown', function(event) {
     if (event.code === 'Delete' || event.code === 'Backspace') {
