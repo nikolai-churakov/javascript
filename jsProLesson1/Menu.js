@@ -14,7 +14,6 @@ class Menu {
                 result += this.items[i].render();
 
             } else if(this.items[i] instanceof MenuSubItem) {
-
                 result += this.items[i].render();
 
             }
