@@ -24,11 +24,18 @@
         let menu = new Menu('idMyMenu', 'className', [  // id, className
             new MenuItem('/', 'Home'),
             new MenuItem('/', 'Catalog'),
+                new MenuSubItem('/git.ru', 'Man'),
+                new MenuSubItem('/git.ru', 'Woman'),
+                new MenuSubItem('/git.ru', 'Kids'),
             new MenuItem('/about', 'About'),
             new MenuItem('/blog', 'Blog'),
             new MenuItem('/services', 'Services'),
-        ]);
+            new MenuItem('/services', 'Services'),
 
+                new MenuSubItem('/git.ru', 'SubElement'),
+                new MenuSubItem('/git.ru', 'SubElement'),
+                new MenuSubItem('/git.ru', 'SubElement'),
+        ]);
 
 
         let submenu = new Submenu('2', '1', [1, 2, 3,], 'subMenu', 'my',
