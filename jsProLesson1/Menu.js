@@ -1,5 +1,5 @@
 class Menu {
-    constructor(id, className, items, subItems) {
+    constructor(id, className, items) {
         this.id = id;
         this.className = className;
         this.items = items;

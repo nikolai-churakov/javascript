@@ -28,29 +28,21 @@
             new MenuItem('/services', 'Services'),
         ]);
 
-        let submenu = new Submenu('my', 'my',
-
+        let submenu = new Submenu('2', '1', [1, 2, 3,], 'subMenu', 'my',
             [
-                new MenuItem('#', 'Home1'),
-                new MenuItem('#', 'Blog1'),
-                new MenuItem('#', 'Services1'),
-
-            ],
-            'sub', 'sub',
-            [
-                [new MenuItem('#', 'subHome'),
-                    new MenuItem('#', 'subHome1'),
-                    new MenuItem('#', 'subHome2')],
-                [new MenuItem('#', 'subBlog1'),
-                    new MenuItem('#', 'subBlog2'),
-                    new MenuItem('#', 'subBlog3')],
-                [new MenuItem('#', 'subServices1'),
-                    new MenuItem('#', 'subServices2'),
-                    new MenuItem('#', 'subServices3')],
+                [new MenuItem('#', 'Men'), // 0, subItems
+                    new MenuItem('#', 'Woman'),
+                    new MenuItem('#', 'Kids')],
+                [new MenuItem('#', 'How to buy?'), // 1, subItems
+                    new MenuItem('#', 'Money back'),
+                    new MenuItem('#', 'Warranty')],
+                [new MenuItem('#', '666'), // 2, subItems
+                    new MenuItem('#', '777'),
+                    new MenuItem('#', '777')],
 
             ],
             [
-                'Home', 'Blog', 'Services'
+                'Catalog', 'FAQ', 'About' // subTitle
             ]);
 
 
