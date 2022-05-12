@@ -14,7 +14,7 @@
 <div id="submenu-block"></div>
 <!--<script src="lesson1.js"></script>-->
 
-<script src="MenuSubItem.js"></script>  <!-- Второй уровень массива объектов меню-->>
+<script src="MenuSubItem.js"></script>
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
 <script src="SubMenu.js"></script>
@@ -25,8 +25,7 @@
         let menuBlock =  document.getElementById('menuBlock');
         let subMenuBlock = document.getElementById('submenu-block');
 
-
-        let menu = new Menu('idMyMenu', 'className', [  // id, className
+        let menu = new Menu('idMyMenu', 'className', [
             new MenuItem('/', 'Home'),
             new MenuItem('/', 'Catalog'),
                 new MenuSubItem('/git.ru', 'Man'),
@@ -45,26 +44,21 @@
                 'Catalog', 'FAQ', 'About' // subTitle
             ],
             [
-                [new MenuItem('#', 'Men'), // 0, subItems
+                [new MenuItem('#', 'Men'),
                     new MenuItem('#', 'Woman'),
                     new MenuItem('#', 'Kids')],
 
-                [new MenuItem('#', 'How to buy?'), // 1, subItems
-                    // new MenuItem('#', 'Money back'),
+                [new MenuItem('#', 'How to buy?'),
                     new MenuItem('#', 'Warranty')],
 
-                [new MenuItem('#', '666'), // 2, subItems
+                [new MenuItem('#', '666'),
                     new MenuItem('#', '777'),
                     new MenuItem('#', '777'),
                     new MenuItem('#', '777'),
                     new MenuItem('#', '777')],
-
             ]);
-
-
         // menuBlock.innerHTML = menu.render();
         subMenuBlock.innerHTML = submenu.render();
-
     }
 </script>
 </body>
