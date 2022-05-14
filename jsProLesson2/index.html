@@ -6,11 +6,19 @@
 </head>
 <body>
     <script>
-        let userJson = '{"name": Anna, "age": 25, "isAdmin": true}';
+        let userJson = '{"name": "Anna", "age": 25, "isAdmin": true}';
         console.log(userJson);
-
         let user = JSON.parse(userJson);
         console.log(user);
+        user.dateCreate = '2022-05-14';
+        user.address = {
+            city: 'Ekb',
+            postalCode: '117042',
+        }
+        console.log(user);
+
+        let jsonUser = JSON.stringify(user, ['name', 'address', 'city'], 4);
+        console.log(jsonUser);
 
     </script>
 </body>
