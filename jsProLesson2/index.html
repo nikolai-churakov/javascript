@@ -14,15 +14,16 @@
         user.address = {
             city: 'Ekb',
             postalCode: '117042',
-        }
+        };
         console.log(user);
 
-        let jsonUser = JSON.stringify(user, ['name', 'address', 'city'], 4);
+        let jsonUser = JSON.stringify(user);
         console.log(jsonUser);
+        console.log("--------------");
 
         let a = JSON.parse(jsonUser, (key, value) => {
            console.log(key, value);
-           if ( key === 'dateCreate') {
+           if (key === 'dateCreate') {
                value = new Date(value);
            }
            return value;
