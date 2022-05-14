@@ -20,6 +20,13 @@
         let jsonUser = JSON.stringify(user, ['name', 'address', 'city'], 4);
         console.log(jsonUser);
 
+        let a = JSON.parse(jsonUser, (key, value) => {
+           console.log(key, value);
+           if ( key === 'dateCreate') {
+               value = new Data(value);
+           }
+           return value;
+        });
     </script>
 </body>
 </html>
