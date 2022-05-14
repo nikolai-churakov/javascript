@@ -23,7 +23,7 @@
         let a = JSON.parse(jsonUser, (key, value) => {
            console.log(key, value);
            if ( key === 'dateCreate') {
-               value = new Data(value);
+               value = new Date(value);
            }
            return value;
         });
