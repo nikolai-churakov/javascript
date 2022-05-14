@@ -5,6 +5,7 @@
     <title>AJAX</title>
 </head>
 <body>
+<button id="getData">Async get data</button>
     <script>
         // let userJson = '{"name": "Anna", "age": 25, "isAdmin": true}';
         // console.log(userJson);
@@ -28,6 +29,15 @@
         //    }
         //    return value;
         // });
+
+        /ES5
+
+        window.onload () => {
+            document.getElementById('getData').addEventListener('click', () => {
+               let xhr = new XMLHttpRequest();
+               xhr.open('GET', 'tel.json', true); // true - async, false - sync
+            });
+        }
 
 
     </script>
