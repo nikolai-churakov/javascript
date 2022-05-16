@@ -36,7 +36,6 @@
             document.getElementById('getData').addEventListener('click', () => {
                let xhr = new XMLHttpRequest();
                xhr.open('GET', 'tel.json', true); // true - async, false - sync
-                xhr.open('GET', 'tel.json', true);
 
                 xhr.onreadystatechange = () => {
                     console.log(xhr.readyState);
