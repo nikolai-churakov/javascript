@@ -12,13 +12,13 @@
           //     .then(result => result.json())
           //     .then(data => resolve(data))
           //     .catch(error => reject(error));
-            reject([532, 435, 543]);
+            resolve([532, 435, 543]);
       }, 1500)
   });
 
   getData
       .then(IDs => console.log(IDs))
-      .catch(error => console.log(`error ${error}`));
+
 
 
 </script>
