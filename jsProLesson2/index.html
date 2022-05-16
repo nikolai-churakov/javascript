@@ -32,7 +32,7 @@
 
         //ES5
 
-        window.onload () => {
+        window.onload = () => {
             document.getElementById('getData').addEventListener('click', () => {
                let xhr = new XMLHttpRequest();
                xhr.open('GET', 'tel.json', true); // true - async, false - sync
@@ -44,12 +44,12 @@
                     }
 
                     if (xhr.status !== 200) {
-                        console.log('Ошибка при получении данных', xhr.status, xhr.status)
+                        console.log('Ошибка при получении данных', xhr.status, xhr.status);
                     } else {
-                        console.log('ok', xhr.responseText)
+                        console.log('ok', xhr.responseText);
                     }
                 };
-
+                    xhr.send();
             });
         }
 
