@@ -36,6 +36,21 @@
             document.getElementById('getData').addEventListener('click', () => {
                let xhr = new XMLHttpRequest();
                xhr.open('GET', 'tel.json', true); // true - async, false - sync
+                xhr.open('GET', 'tel.json', true);
+
+                xhr.onreadystatechange = () => {
+                    console.log(xhr.readyState);
+                    if (xhr.readyState !== 4) {
+                        return
+                    }
+
+                    if (xhr.status !== 200) {
+                        console.log('Ошибка при получении данных', xhr.status, xhr.status)
+                    } else {
+                        console.log('ok', xhr.responseText)
+                    }
+                };
+
             });
         }
 
