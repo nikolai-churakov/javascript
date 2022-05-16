@@ -36,8 +36,7 @@
         window.onload = () => {
             document.getElementById('getData').addEventListener('click', () => {
 
-
-                //ES5
+               //ES5
                //  let xhr = new XMLHttpRequest();
                // xhr.open('GET', 'tel.json', true); // true - async, false - sync
                //
@@ -61,12 +60,21 @@
 
 
 
-                    //ES6
+                //ES6
+                let dataBlock = document.getElementById('ajax-block');
+                fetch('tel.json')
+                    .then(result => {
+                        console.log(result);
+                        return result.json()  // асинхронная операция
+                        })
+                    .then(data => {
+                        console.log(data);
+                        dataBlock.innerText = `Телефон ${data.tel} (${data.title})`;
+                    })
+                        // .catch()
+
             });
         }
-
-
-
 
     </script>
 </body>
