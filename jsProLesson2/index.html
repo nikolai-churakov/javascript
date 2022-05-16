@@ -5,6 +5,7 @@
     <title>AJAX</title>
 </head>
 <body>
+<div id="ajax-block"></div>
 <button id="getData">Async get data</button>
     <script>
         // let userJson = '{"name": "Anna", "age": 25, "isAdmin": true}';
@@ -47,6 +48,10 @@
                         console.log('Ошибка при получении данных', xhr.status, xhr.status);
                     } else {
                         console.log('ok', xhr.responseText);
+                        let data = JSON.parse(xhr.responseText);
+                        let dataBlock = document.getElementById('ajax-block');
+                        dataBlock.innerText = `Телефон ${data.tel} (${data.title})`;
+
                     }
                 };
                     xhr.send();
