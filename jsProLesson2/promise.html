@@ -8,10 +8,10 @@
 <script>
   let getData = new Promise((resolve, reject) => {
       setTimeout(() => {
-          fetch('some.json')
-              .then(result => result.json())
-              .then(data => resolve(data))
-              .catch(error => reject(error));
+          // fetch('some.json')
+          //     .then(result => result.json())
+          //     .then(data => resolve(data))
+          //     .catch(error => reject(error));
             reject([532, 435, 543]);
       }, 1500)
   });
