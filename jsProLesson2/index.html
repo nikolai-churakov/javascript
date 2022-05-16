@@ -31,30 +31,37 @@
         //    return value;
         // });
 
-        //ES5
+
 
         window.onload = () => {
             document.getElementById('getData').addEventListener('click', () => {
-               let xhr = new XMLHttpRequest();
-               xhr.open('GET', 'tel.json', true); // true - async, false - sync
 
-                xhr.onreadystatechange = () => {
-                    console.log(xhr.readyState);
-                    if (xhr.readyState !== 4) {
-                        return
-                    }
 
-                    if (xhr.status !== 200) {
-                        console.log('Ошибка при получении данных', xhr.status, xhr.status);
-                    } else {
-                        console.log('ok', xhr.responseText);
-                        let data = JSON.parse(xhr.responseText);
-                        let dataBlock = document.getElementById('ajax-block');
-                        dataBlock.innerText = `Телефон ${data.tel} (${data.title})`;
-
-                    }
-                };
+                //ES5
+               //  let xhr = new XMLHttpRequest();
+               // xhr.open('GET', 'tel.json', true); // true - async, false - sync
+               //
+               //  xhr.onreadystatechange = () => {
+               //      console.log(xhr.readyState);
+               //      if (xhr.readyState !== 4) {
+               //          return
+               //      }
+               //
+               //      if (xhr.status !== 200) {
+               //          console.log('Ошибка при получении данных', xhr.status, xhr.status);
+               //      } else {
+               //          console.log('ok', xhr.responseText);
+               //          let data = JSON.parse(xhr.responseText);
+               //          let dataBlock = document.getElementById('ajax-block');
+               //          dataBlock.innerText = `Телефон ${data.tel} (${data.title})`;
+               //
+               //      }
+               //  };
                     xhr.send();
+
+
+
+                    //ES6
             });
         }
 
