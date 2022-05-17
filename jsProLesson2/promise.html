@@ -29,11 +29,13 @@
   };
 
   getData
+
       .then(IDs => {
           console.log(IDs);
           return getJob(IDs[1])
       })
       .then(job => console.log(job));
+
 
 </script>
 </body>
