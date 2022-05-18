@@ -28,14 +28,23 @@
       })
   };
 
-  getData
+  // getData
+  //     .then(IDs => {
+  //
+  //         console.log(IDs);
+  //         return getJob(IDs[1])
+  //     })
+  //     .then(job => console.log(job));
 
-      .then(IDs => {
-
-          console.log(IDs);
-          return getJob(IDs[1])
-      })
-      .then(job => console.log(job));
+  async function getDataAW() {
+      let IDs = await getData;
+      console.log(IDs);
+      let job = await getJob(IDs[2]);
+      console.log(job);
+      return job
+  }
+  let a = getDataAW();
+  console.log(a);
 
 
 </script>
