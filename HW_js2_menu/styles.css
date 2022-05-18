@@ -1,0 +1,27 @@
+*,*:before, *:after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    background-color: gray(51);
+    font-family: Arial, "Helvetica Neur", Helvetica, sans-serif;
+    color: white;
+    font-size: 25px;
+}
+
+.wrapper{
+    height: 100%;
+    padding: 50px;
+}
+
+.menu{}
+.menuList{}
+.menuLink{}
+.submenuList{}
+.subMenuLink{}
+.subSubMenuList{}
+.subSubMenuLink{}
