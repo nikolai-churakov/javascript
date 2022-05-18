@@ -30,6 +30,10 @@ html, body{
     margin: 0 10px 0 0;
 }
 
+.menuList>li:hover .submenuList{
+    display: block;
+}
+
 .menuList{
     display: flex;
 }
@@ -38,6 +42,7 @@ html, body{
 }
 
 .submenuList{
+    display: none;
     position: absolute;
     left: 0;
     top: 40px;
