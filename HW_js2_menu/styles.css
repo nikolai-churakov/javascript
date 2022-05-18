@@ -26,12 +26,23 @@ html, body{
 .menu li{
     list-style: none;
 }
+.menuList>li{
+    margin: 0 10px 0 0;
+}
 
+.menuList{
+    display: flex;
+}
+.menuLink{
+    color: white;
+}
 
-
-.menuList{}
-.menuLink{}
-.submenuList{}
+.submenuList{
+    position: absolute;
+    left: 0;
+    top: 20px;
+    background-color: black;
+}
 .subMenuLink{}
 .subSubMenuList{}
 .subSubMenuLink{}
