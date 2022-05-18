@@ -26,6 +26,7 @@ html, body{
 .menu li{
     list-style: none;
 }
+
 .menuList>li{
     margin: 0 10px 0 0;
 }
@@ -34,12 +35,15 @@ html, body{
     display: block;
 }
 
+.menuLink{
+    color: white;
+    background-color: black;
+}
+
 .menuList{
     display: flex;
 }
-.menuLink{
-    color: white;
-}
+
 
 .submenuList{
     display: none;
@@ -47,6 +51,7 @@ html, body{
     left: 0;
     top: 40px;
     background-color: black;
+    color: darkred;
 }
 .subMenuLink{}
 .subSubMenuList{}
