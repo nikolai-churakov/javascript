@@ -17,8 +17,18 @@ html, body{
     height: 100%;
     padding: 50px;
 }
-
 .menu{}
+
+.menu a{
+    text-decoration: none;
+}
+
+.menu li{
+    list-style: none;
+}
+
+
+
 .menuList{}
 .menuLink{}
 .submenuList{}
