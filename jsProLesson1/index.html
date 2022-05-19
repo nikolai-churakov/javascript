@@ -7,58 +7,46 @@
 <body>
 <h3>Вариант меню 1</h3>
 <h4>Удаление по клавише delete / backspace</h4>
+
 <div id="menuBlock"></div>
+<button id="del-btn" onclick="">Удалить меню</button>
 
-<h3> Вариант меню 2. (extends Menu)</h3>
-<h4>Удаление по клавише q</h4>
-<div id="submenu-block"></div>
 <!--<script src="lesson1.js"></script>-->
-
-<script src="MenuSubItem.js"></script>
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
-<script src="SubMenu.js"></script>
 
 <script>
     window.onload = () => {
     //    DOM ready
         let menuBlock =  document.getElementById('menuBlock');
-        let subMenuBlock = document.getElementById('submenu-block');
 
-        let menu = new Menu('idMyMenu', 'className', [
+        let menu = new Menu('my', 'my', [
             new MenuItem('/', 'Home'),
-            new MenuItem('/', 'Catalog'),
-                new MenuSubItem('/git.ru', 'Man'),
-                new MenuSubItem('/git.ru', 'Woman'),
-                new MenuSubItem('/git.ru', 'Kids'),
-            new MenuItem('/about', 'About'),
-            new MenuItem('/blog', 'Blog'),
+            new SubMenu('/blog', 'Blog', 'me', 'me', [
+                new MenuItem('/', 'Home'),
+                new MenuItem('/blog', 'Blog'),
+                new MenuItem('/services', 'Services')
+            ]),
             new MenuItem('/services', 'Services'),
-                new MenuSubItem('/git.ru', 'Moscow'),
-                new MenuSubItem('/git.ru', 'Podolsk'),
-                new MenuSubItem('/git.ru', 'Vidnoe'),
+            new SubMenu('my', 'my', 'me', 'me', [
+                new MenuItem('/', 'Home'),
+                new SubMenu('/blog', 'Blog', 'me', 'me', [
+                    new MenuItem('/', 'Home'),
+                    new SubMenu('/blog', 'Blog', 'me', 'me', [
+                        new MenuItem('/', 'Home'),
+                        new MenuItem('/blog', 'Blog'),
+                        new MenuItem('/services', 'Services')
+                    ]),
+                    new MenuItem('/services', 'Services')
+                ]),
+                new MenuItem('/services', 'Services')
+            ])
         ]);
-
-        let submenu = new Submenu('id=my', 'class=my',
-            [
-                'Catalog', 'FAQ', 'About' // subTitle
-            ],
-            [
-                [new MenuItem('#', 'Men'),
-                    new MenuItem('#', 'Woman'),
-                    new MenuItem('#', 'Kids')],
-
-                [new MenuItem('#', 'How to buy?'),
-                    new MenuItem('#', 'Warranty')],
-
-                [new MenuItem('#', '666'),
-                    new MenuItem('#', '777'),
-                    new MenuItem('#', '777'),
-                    new MenuItem('#', '777'),
-                    new MenuItem('#', '777')],
-            ]);
-        // menuBlock.innerHTML = menu.render();
-        subMenuBlock.innerHTML = submenu.render();
+        menuBlock.innerHTML = menu.render();
+        let delBtn = document.getElementById('del-btn');
+        delBtn.addEventListener('click', () => {
+            menu.remove();
+        })
     }
 </script>
 </body>
