@@ -8,7 +8,7 @@
 html, body{
     height: 100%;
     background-color: gray;
-    font-family: Arial, "Helvetica Neur", Helvetica, sans-serif;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: white;
     font-size: 25px;
 }
@@ -18,9 +18,11 @@ html, body{
     padding: 50px;
 }
 .menu{}
-
 .menu a{
     text-decoration: none;
+}
+.menu a.parent{
+    margin: 0px 30px 0px 0px;
 }
 
 .menu li{
@@ -28,21 +30,20 @@ html, body{
     list-style: none;
 }
 
+.menuList{
+    display: flex;
+}
+
 .menuList>li{
-    margin: 0px 10px 0px 0px;
+    margin: 0px 30px 0px 0px;
 }
 
 .menuList>li:hover .subMenuList{
     display: block;
 }
 
-.menuList{
-    display: flex;
-}
-
 .menuLink{
     color: white;
-
 }
 
 .subMenuList{
@@ -70,7 +71,7 @@ html, body{
 .subSubMenuList{
     display: none;
     position: absolute;
-    top: o;
+    top: 10px;
     left: 100%;
     padding: 0px 0px 0px 5px;
     min-width: 300px;
