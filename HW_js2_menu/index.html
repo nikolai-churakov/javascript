@@ -8,7 +8,10 @@
 </head>
 <body>
 
-<div id="menuBlock"></div>
+<div class="wrapper">
+    <div class="menu" id="menuBlock"></div>
+</div>
+
 <button id="del-btn" onclick="">Удалить меню</button>
 
 <div class="wrapper">
@@ -67,28 +70,38 @@
         //    DOM ready
         let menuBlock =  document.getElementById('menuBlock');
 
-        let menu = new Menu('my', 'menuList', [
-            new MenuItem('/', 'Home'),
-            new SubMenu('/blog', 'Blog', 'me', 'me', [
-                new MenuItem('/', 'Home'),
-                new MenuItem('/blog', 'Blog'),
-                new MenuItem('/services', 'Services')
-            ]),
-            new MenuItem('/services', 'Services'),
-            new SubMenu('id', 'subMenuList', 'me', 'me', [
-                new MenuItem('/', 'Home'),
-                new SubMenu('/blog', 'Blog', 'me', 'me', [
-                    new MenuItem('/', 'Home'),
-                    new SubMenu('/blog', 'Blog', 'me', 'me', [
-                        new MenuItem('/', 'Home'),
-                        new MenuItem('/blog', 'Blog'),
-                        new MenuItem('/services', 'Services')
+        let menu = new Menu('menuBlock-ul', 'menuBlock-ul',
+            [
+                new MenuItem('#', 'Войти', 'menuBlock-li', 'menuBlock-li'),
+                new MenuItem('#', 'Заказы', 'menuBlock-li', 'menuBlock-li'),
+                new MenuItem('#', 'Избранное', 'menuBlock-li', 'menuBlock-li'),
+                new Submenu('my', 'Помощь', 'subLi', 'subMenuBlock-ul', 'subMenuBlock-ul', [
+                    new MenuItem('#', 'Статус заказа', 'subMenuBlock-li', 'subMenuBlock-li'),
+                    new MenuItem('#', 'Изменение заказа', 'subMenuBlock-li', 'subMenuBlock-li'),
+                    new MenuItem('#', 'Доставка', 'subMenuBlock-li', 'subMenuBlock-li'),
+                    new Submenu('my', 'Оплата', 'subLi', 'subMenuBlockDelivery-ul', 'subMenuBlockDelivery-ul', [
+                        new MenuItem('#', 'Способы оплаты', 'subMenuBlockDelivery-li', 'subMenuBlockDelivery-li'),
+                        new MenuItem('#', 'Выписки и чеки', 'subMenuBlockDelivery-li', 'subMenuBlockDelivery-li'),
+                        new MenuItem('#', 'Проблемы при оплате', 'subMenuBlockDelivery-li', 'subMenuBlockDelivery-li'),
                     ]),
-                    new MenuItem('/services', 'Services')
                 ]),
-                new MenuItem('/services', 'Services')
-            ])
-        ]);
+            ]);
+        // let menu = new Menu('my', 'menuList', [
+        //     new MenuItem('/', 'Home', 'menuLink'),
+        //
+        //         new SubMenu('/blog', 'Каталог', 'subMenuLink', 'me', [
+        //             new MenuItem('/', 'Мужское'),
+        //             new MenuItem('/blog', 'Женское'),
+        //             new MenuItem('/services', 'Детское')
+        //     ]),
+        //     new MenuItem('/services', 'Services', 'menuLink'),
+        //     new SubMenu('id', 'О нас', 'me', 'subMenuList', [
+        //         new SubMenu('/blog', 'Blog', 'me', 'me', [
+        //             new MenuItem('/', 'Home', 'menuLink'),
+        //             new MenuItem('/services', 'Services')
+        //         ]),
+        //     ]),
+        // ]);
         menuBlock.innerHTML = menu.render();
         let delBtn = document.getElementById('del-btn');
         delBtn.addEventListener('click', () => {

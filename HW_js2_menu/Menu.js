@@ -6,6 +6,7 @@ class Menu {
     }
     render() {
         let result = `<ul class="${this.className}" id="${this.id}">`;
+        console.log(this.items);
         for (let i=0; i < this.items.length; i++) {
             if(this.items[i] instanceof MenuItem || this.items[i] instanceof SubMenu) {
                 result += this.items[i].render()
@@ -22,13 +23,14 @@ class Menu {
     }
 }
 class SubMenu extends Menu {
-    constructor(href, title, id, className, items) {
-        super(id, className, items);
+    constructor(href, subTitle, subClassName, items, id, className) {
+        super(id,className, items);
         this.href = href;
-        this.title = title;
+        this.subTitle = subTitle;
+        this.subClassName = subClassName;
     }
     render(){
-        return `<li><a href="${this.href}">${this.title}</a>${super.render()}</li>`
+        return `<li><a class="${this.subClassName}" href="${this.href}">${this.subTitle}</a>${super.render()}</li>`
     }
 }
 
