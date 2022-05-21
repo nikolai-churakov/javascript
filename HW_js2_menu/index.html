@@ -11,7 +11,6 @@
 <div id="menuBlock"></div>
 <button id="del-btn" onclick="">Удалить меню</button>
 
-
 <div class="wrapper">
     <nav class="menu">
         <ul class="menuList">
@@ -55,16 +54,20 @@
                 <a href="" class="menuLink"> Первый уровень</a>
             </li>
         </ul>
-
         </nav>
     </div>
+
+<script src="mobil.js"></script>
+
+<script src="MenuItem.js"></script>
+<script src="Menu.js"></script>
 
 <script>
     window.onload = () => {
         //    DOM ready
         let menuBlock =  document.getElementById('menuBlock');
 
-        let menu = new Menu('my', 'my', [
+        let menu = new Menu('my', 'menuList', [
             new MenuItem('/', 'Home'),
             new SubMenu('/blog', 'Blog', 'me', 'me', [
                 new MenuItem('/', 'Home'),
@@ -72,7 +75,7 @@
                 new MenuItem('/services', 'Services')
             ]),
             new MenuItem('/services', 'Services'),
-            new SubMenu('my', 'my', 'me', 'me', [
+            new SubMenu('id', 'subMenuList', 'me', 'me', [
                 new MenuItem('/', 'Home'),
                 new SubMenu('/blog', 'Blog', 'me', 'me', [
                     new MenuItem('/', 'Home'),
@@ -93,9 +96,5 @@
         })
     }
 </script>
-
-<script src="mobil.js"></script>
-<script src="MenuItem.js"></script>
-<script src="Menu.js"></script>
 </body>
 </html>
