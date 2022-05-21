@@ -22,7 +22,7 @@ html, body{
     text-decoration: none;
 }
 .menu a.parent{
-    margin: 0px 30px 0px 0px;
+    margin: 0 30px 0 0;
 }
 
 .menu li{
@@ -35,7 +35,7 @@ html, body{
 }
 
 .menuList>li{
-    margin: 0px 30px 0px 0px;
+    margin: 0 30px 0 0;
 }
 
 .menuLink{
@@ -48,7 +48,7 @@ html, body{
     position: absolute;
     left: 0;
     top: 20px;
-    padding: 20px 0px 0px 0px;
+    padding: 20px 0 0 0;
 }
 
 .subMenuList>li{
@@ -66,7 +66,7 @@ html, body{
     position: absolute;
     top: 0;
     left: 100%;
-    padding: 0px 0px 0px 5px;
+    padding: 0 0 0 5px;
     min-width: 300px;
 }
 
@@ -130,7 +130,7 @@ body.touch .arrow {
         display: block;
     }
     .menuList>li{
-        margin: 0px 0px 10px 0px;
+        margin: 0 0 10px 0;
     }
     .subMenuList{
         position: relative;
@@ -138,7 +138,7 @@ body.touch .arrow {
         top: 0;
     }
     .subSubMenuList{
-        padding: 0px 5px;
+        padding: 0 5px;
         position: relative;
         left: 0;
         top: 0;
