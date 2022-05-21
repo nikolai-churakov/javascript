@@ -7,6 +7,11 @@
     <title>Menu</title>
 </head>
 <body>
+
+<div id="menuBlock"></div>
+<button id="del-btn" onclick="">Удалить меню</button>
+
+
 <div class="wrapper">
     <nav class="menu">
         <ul class="menuList">
@@ -53,7 +58,43 @@
 
         </nav>
     </div>
-<script src="script.js"></script>
+
+<script>
+    window.onload = () => {
+        //    DOM ready
+        let menuBlock =  document.getElementById('menuBlock');
+
+        let menu = new Menu('my', 'my', [
+            new MenuItem('/', 'Home'),
+            new SubMenu('/blog', 'Blog', 'me', 'me', [
+                new MenuItem('/', 'Home'),
+                new MenuItem('/blog', 'Blog'),
+                new MenuItem('/services', 'Services')
+            ]),
+            new MenuItem('/services', 'Services'),
+            new SubMenu('my', 'my', 'me', 'me', [
+                new MenuItem('/', 'Home'),
+                new SubMenu('/blog', 'Blog', 'me', 'me', [
+                    new MenuItem('/', 'Home'),
+                    new SubMenu('/blog', 'Blog', 'me', 'me', [
+                        new MenuItem('/', 'Home'),
+                        new MenuItem('/blog', 'Blog'),
+                        new MenuItem('/services', 'Services')
+                    ]),
+                    new MenuItem('/services', 'Services')
+                ]),
+                new MenuItem('/services', 'Services')
+            ])
+        ]);
+        menuBlock.innerHTML = menu.render();
+        let delBtn = document.getElementById('del-btn');
+        delBtn.addEventListener('click', () => {
+            menu.remove();
+        })
+    }
+</script>
+
+<script src="mobil.js"></script>
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
 </body>
