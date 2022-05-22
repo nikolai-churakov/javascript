@@ -7,10 +7,8 @@
 
 html, body{
     height: 100%;
-    background-color: gray;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    color: white;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .wrapper{
