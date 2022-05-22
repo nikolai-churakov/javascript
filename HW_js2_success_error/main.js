@@ -2,7 +2,8 @@ class Request {
 
     init() {
         this.successRequest();
-        this.errorRequest()
+        this.errorRequest();
+        this.AboutMe();
     }
 
     successRequest() {
@@ -29,7 +30,17 @@ class Request {
         })
     }
 
-    AboutMe()
+    AboutMe() {
+        document.getElementById('aboutMe').addEventListener('click', () =>  {
+            let getInfo = new XMLHttpRequest();
+            getInfo.open('GET', 'help.json', true);
+            getInfo.onload = () => {
+                let data = JSON.parse(getInfo.responseText);
+                console.log(data);
+            }
+            getInfo.send();
+        })
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
