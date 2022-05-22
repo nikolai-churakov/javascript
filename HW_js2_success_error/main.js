@@ -28,6 +28,8 @@ class Request {
             xhr.send();
         })
     }
+
+    AboutMe()
 }
 
 document.addEventListener('DOMContentLoaded', () => {
