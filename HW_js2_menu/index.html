@@ -3,64 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style2.css">
     <title>Menu</title>
 </head>
 <body>
-
-<div class="wrapper">
-    <div class="menu" id="menuBlock"></div>
+<div id="wrap" class="wrap">
+    <div id="menuBlock" class="menuBlock"></div>
 </div>
 
 <button id="del-btn" onclick="">Удалить меню</button>
 
-<div class="wrapper">
-    <nav class="menu">
-        <ul class="menuList">
-            <li>
-                <a href="" class="menuLink"> Первый уровень</a>
-                <span class="subMenuArrow arrow"></span>
-                <ul class="subMenuList">
-                    <li>
-                        <a href="" class="subMenuLink"> Второй уровень</a>
-                        <span class="subMenuArrow arrow"></span>
-                        <ul class="subSubMenuList">
-                            <li>
-                                <a href="" class="subSubMenuLink"> Третий уровень</a>
-                            </li>
-                            <li>
-                                <a href="" class="subSubMenuLink"> Третий уровень</a>
-                            </li>
-                            <li>
-                                <a href="" class="subSubMenuLink"> Третий уровень</a>
-                            </li>
-                            <li>
-                                <a href="" class="subSubMenuLink"> Третий уровень</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="" class="subMenuLink"> Второй уровень</a>
-                    </li>
-                    <li>
-                        <a href="" class="subMenuLink"> Второй уровень</a>
-                    </li>
-                    <li>
-                        <a href="" class="subMenuLink"> Второй уровень</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="" class="menuLink"> Первый уровень</a>
-            </li>
-            <li>
-                <a href="" class="menuLink"> Первый уровень</a>
-            </li>
-        </ul>
-        </nav>
-    </div>
+<!--<div class="wrapper">-->
+<!--    <nav class="menu">-->
+<!--        <ul class="menuList">-->
+<!--            <li>-->
+<!--                <a href="" class="menuLink"> Первый уровень</a>-->
+<!--                <span class="subMenuArrow arrow"></span>-->
+<!--                <ul class="subMenuList">-->
+<!--                    <li>-->
+<!--                        <a href="" class="subMenuLink"> Второй уровень</a>-->
+<!--                        <span class="subMenuArrow arrow"></span>-->
+<!--                        <ul class="subSubMenuList">-->
+<!--                            <li>-->
+<!--                                <a href="" class="subSubMenuLink"> Третий уровень</a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="" class="subSubMenuLink"> Третий уровень</a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="" class="subSubMenuLink"> Третий уровень</a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="" class="subSubMenuLink"> Третий уровень</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="" class="subMenuLink"> Второй уровень</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="" class="subMenuLink"> Второй уровень</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="" class="subMenuLink"> Второй уровень</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="" class="menuLink"> Первый уровень</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="" class="menuLink"> Первый уровень</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        </nav>-->
+<!--    </div>-->
 
-<script src="mobil.js"></script>
+<!--<script src="mobil.js"></script>-->
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
 <script src="Submenu.js"></script>
@@ -86,22 +85,7 @@
                     ]),
                 ]),
             ]);
-        // let menu = new Menu('my', 'menuList', [
-        //     new MenuItem('/', 'Home', 'menuLink'),
-        //
-        //         new SubMenu('/blog', 'Каталог', 'subMenuLink', 'me', [
-        //             new MenuItem('/', 'Мужское'),
-        //             new MenuItem('/blog', 'Женское'),
-        //             new MenuItem('/services', 'Детское')
-        //     ]),
-        //     new MenuItem('/services', 'Services', 'menuLink'),
-        //     new SubMenu('id', 'О нас', 'me', 'subMenuList', [
-        //         new SubMenu('/blog', 'Blog', 'me', 'me', [
-        //             new MenuItem('/', 'Home', 'menuLink'),
-        //             new MenuItem('/services', 'Services')
-        //         ]),
-        //     ]),
-        // ]);
+
         menuBlock.innerHTML = menu.render();
         let delBtn = document.getElementById('del-btn');
         delBtn.addEventListener('click', () => {
