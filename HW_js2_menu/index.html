@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="style2.css">
     <title>Menu</title>
+
 </head>
 <body>
+<h3>Удаление по по backspace or Delete buttons</h3>
+<h3>Меню из урока 1. с добавлением классов</h3>
+
 <div id="wrap" class="wrap">
     <div id="menuBlock" class="menuBlock"></div>
 </div>
@@ -59,14 +63,13 @@
 <!--        </nav>-->
 <!--    </div>-->
 
-<!--<script src="mobil.js"></script>-->
+<script src="mobil.js"></script>
 <script src="MenuItem.js"></script>
 <script src="Menu.js"></script>
 <script src="Submenu.js"></script>
 
 <script>
     window.onload = () => {
-        //    DOM ready
         let menuBlock =  document.getElementById('menuBlock');
 
         let menu = new Menu('menuBlock-ul', 'menuBlock-ul',
