@@ -9,7 +9,7 @@
 </head>
 <body>
 <h3>Удаление по по backspace or Delete buttons</h3>
-<h3>Меню из урока 1. с добавлением классов</h3>
+<h3>Меню из урока 1 с дополнениями</h3>
 
 <div id="wrap" class="wrap">
     <div id="menuBlock" class="menuBlock"></div>
@@ -74,11 +74,12 @@
 
         let menu = new Menu('menuBlock-ul', 'menuBlock-ul',
             [
-                new MenuItem('#', 'Войти', 'menuBlock-li', 'menuBlock-li'),
-                new MenuItem('#', 'Заказы', 'menuBlock-li', 'menuBlock-li'),
+                new MenuItem('#', 'Главная', 'menuBlock-li', 'menuBlock-li'),
+                new MenuItem('#', 'Каталог', 'menuBlock-li', 'menuBlock-li'),
+                new MenuItem('#', 'О нас', 'menuBlock-li', 'menuBlock-li'),
                 new MenuItem('#', 'Избранное', 'menuBlock-li', 'menuBlock-li'),
-                new Submenu('my', 'Помощь', 'subLi', 'subMenuBlock-ul', 'subMenuBlock-ul', [
-                    new MenuItem('#', 'Статус заказа', 'subMenuBlock-li', 'subMenuBlock-li'),
+                new Submenu('my', 'Корзина', 'subLi', 'subMenuBlock-ul', 'subMenuBlock-ul', [
+                    new MenuItem('#', 'Товары в корзине', 'subMenuBlock-li', 'subMenuBlock-li'),
                     new MenuItem('#', 'Изменение заказа', 'subMenuBlock-li', 'subMenuBlock-li'),
                     new MenuItem('#', 'Доставка', 'subMenuBlock-li', 'subMenuBlock-li'),
                     new Submenu('my', 'Оплата', 'subLi', 'subMenuBlockDelivery-ul', 'subMenuBlockDelivery-ul', [
