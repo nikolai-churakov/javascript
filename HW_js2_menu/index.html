@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="style2.css">
+    <title>Menu</title>
+
+</head>
+<body>
+<h3>Удаление по по backspace or Delete buttons</h3>
+<h3>Меню из урока 1 с дополнениями</h3>
+
+<div id="wrap" class="wrap">
+    <div id="menuBlock" class="menuBlock"></div>
+</div>
+
+<button id="del-btn" onclick="">Удалить меню</button>
+
+<!--<div class="wrapper">-->
+<!--    <nav class="menu">-->
+<!--        <ul class="menuList">-->
+<!--            <li>-->
+<!--                <a href="" class="menuLink"> Первый уровень</a>-->
+<!--                <span class="subMenuArrow arrow"></span>-->
+<!--                <ul class="subMenuList">-->
+<!--                    <li>-->
+<!--                        <a href="" class="subMenuLink"> Второй уровень</a>-->
+<!--                        <span class="subMenuArrow arrow"></span>-->
+<!--                        <ul class="subSubMenuList">-->
+<!--                            <li>-->
+<!--                                <a href="" class="subSubMenuLink"> Третий уровень</a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="" class="subSubMenuLink"> Третий уровень</a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="" class="subSubMenuLink"> Третий уровень</a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="" class="subSubMenuLink"> Третий уровень</a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="" class="subMenuLink"> Второй уровень</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="" class="subMenuLink"> Второй уровень</a>-->
+<!--                    </li>-->
+<!--                    <li>-->
+<!--                        <a href="" class="subMenuLink"> Второй уровень</a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="" class="menuLink"> Первый уровень</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="" class="menuLink"> Первый уровень</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        </nav>-->
+<!--    </div>-->
+
+<script src="mobil.js"></script>
+<script src="MenuItem.js"></script>
+<script src="Menu.js"></script>
+<script src="Submenu.js"></script>
+
+<script>
+    window.onload = () => {
+        let menuBlock =  document.getElementById('menuBlock');
+
+        let menu = new Menu('menuBlock-ul', 'menuBlock-ul',
+            [
+                new MenuItem('#', 'Главная', 'menuBlock-li', 'menuBlock-li'),
+                new MenuItem('#', 'Каталог', 'menuBlock-li', 'menuBlock-li'),
+                new MenuItem('#', 'О нас', 'menuBlock-li', 'menuBlock-li'),
+                new MenuItem('#', 'Избранное', 'menuBlock-li', 'menuBlock-li'),
+                new Submenu('my', 'Корзина', 'subLi', 'subMenuBlock-ul', 'subMenuBlock-ul', [
+                    new MenuItem('#', 'Товары в корзине', 'subMenuBlock-li', 'subMenuBlock-li'),
+                    new MenuItem('#', 'Изменение заказа', 'subMenuBlock-li', 'subMenuBlock-li'),
+                    new MenuItem('#', 'Доставка', 'subMenuBlock-li', 'subMenuBlock-li'),
+                    new Submenu('my', 'Оплата', 'subLi', 'subMenuBlockDelivery-ul', 'subMenuBlockDelivery-ul', [
+                        new MenuItem('#', 'Способы оплаты', 'subMenuBlockDelivery-li', 'subMenuBlockDelivery-li'),
+                        new MenuItem('#', 'Выписки и чеки', 'subMenuBlockDelivery-li', 'subMenuBlockDelivery-li'),
+                        new MenuItem('#', 'Проблемы при оплате', 'subMenuBlockDelivery-li', 'subMenuBlockDelivery-li'),
+                    ]),
+                ]),
+            ]);
+
+        menuBlock.innerHTML = menu.render();
+        let delBtn = document.getElementById('del-btn');
+        delBtn.addEventListener('click', () => {
+            menu.remove();
+        })
+    }
+</script>
+</body>
+</html>

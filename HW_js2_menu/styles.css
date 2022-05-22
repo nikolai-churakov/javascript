@@ -1,0 +1,152 @@
+*,*:before, *:after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.wrapper{
+    height: 100%;
+    padding: 50px;
+}
+.menu{}
+.menu a{
+    text-decoration: none;
+}
+.menu a.parent{
+    margin: 0 30px 0 0;
+}
+
+.menu li{
+    position: relative;
+    list-style: none;
+}
+
+.menuList{
+    display: flex;
+}
+
+.menuList>li{
+    margin: 0 30px 0 0;
+}
+
+.menuLink{
+    color: white;
+}
+
+.subMenuList{
+    display: none;
+    min-width: 300px;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    padding: 20px 0 0 0;
+}
+
+.subMenuList>li{
+    background-color: white;
+}
+
+.subMenuLink{
+    min-width: 300px;
+    color: black;
+    display: inline-block;
+    padding: 5px 10px;
+}
+.subSubMenuList{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    padding: 0 0 0 5px;
+    min-width: 300px;
+}
+
+.subSubMenuList>li{
+    background-color: black;
+}
+
+.subSubMenuLink{
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+.arrow {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #fff;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+.arrow.active{
+    transform: rotate(-180deg);
+}
+
+.subMenuArrow.arrow {
+    right: 10px;
+    border-left: 10px solid #000;
+    border-right: none;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.menuArrow {}
+
+body.mouse .menuList>li:hover .subMenuList {
+    display: block;
+}
+body.mouse .subMenuList>li:hover .subSubMenuList {
+    display: block;
+}
+
+body.touch .subMenuList.open{
+    display: block;
+}
+body.touch .subSubMenuList.open{
+    display: block;
+}
+body.touch .arrow {
+    display: block;
+}
+
+@media (max-width:767px){
+    .wrapper{
+        padding: 15px;
+    }
+    .menuList {
+        display: block;
+    }
+    .menuList>li{
+        margin: 0 0 10px 0;
+    }
+    .subMenuList{
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+    .subSubMenuList{
+        padding: 0 5px;
+        position: relative;
+        left: 0;
+        top: 0;
+    }
+    .subMenuArrow.arrow {
+        right: 10px;
+        top: 15px;
+        border-bottom: none;
+        border-left: 10px solid transparent;
+        border-top: 10px solid #000;
+        border-right: 10px solid transparent;
+    }
+}

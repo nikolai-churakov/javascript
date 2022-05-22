@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+</head>
+<body>
+<div id="ajax-block"></div>
+<button id="getData">Async get data</button>
+    <script>
+        // let userJson = '{"name": "Anna", "age": 25, "isAdmin": true}';
+        // console.log(userJson);
+        // let user = JSON.parse(userJson);
+        // console.log(user);
+        // user.dateCreate = '2022-05-14';
+        // user.address = {
+        //     city: 'Ekb',
+        //     postalCode: '117042',
+        // };
+        // console.log(user);
+        //
+        // let jsonUser = JSON.stringify(user);
+        // console.log(jsonUser);
+        // console.log("--------------");
+        //
+        // let a = JSON.parse(jsonUser, (key, value) => {
+        //    console.log(key, value);
+        //    if (key === 'dateCreate') {
+        //        value = new Date(value);
+        //    }
+        //    return value;
+        // });
+
+
+
+        window.onload = () => {
+            document.getElementById('getData').addEventListener('click', () => {
+
+               //ES5
+               //  let xhr = new XMLHttpRequest();
+               // xhr.open('GET', 'tel.json', true); // true - async, false - sync
+               //
+               //  xhr.onreadystatechange = () => {
+               //      console.log(xhr.readyState);
+               //      if (xhr.readyState !== 4) {
+               //          return
+               //      }
+               //
+               //      if (xhr.status !== 200) {
+               //          console.log('Ошибка при получении данных', xhr.status, xhr.status);
+               //      } else {
+               //          console.log('ok', xhr.responseText);
+               //          let data = JSON.parse(xhr.responseText);
+               //          let dataBlock = document.getElementById('ajax-block');
+               //          dataBlock.innerText = `Телефон ${data.tel} (${data.title})`;
+               //
+               //      }
+               //  };
+               //      xhr.send();
+
+
+
+                //ES6
+                let dataBlock = document.getElementById('ajax-block');
+                fetch('tel.json')
+                    .then(result => {
+                        console.log(result);
+                        return result.json()  // асинхронная операция
+                        })
+                    .then(data => {
+                        console.log(data);
+                        dataBlock.innerText = `Телефон ${data.tel} (${data.title})`;
+                    })
+                        // .catch()
+            });
+        }
+
+    </script>
+</body>
+</html>
