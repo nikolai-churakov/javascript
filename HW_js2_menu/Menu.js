@@ -18,6 +18,12 @@ class Menu {
         return result
     }
 
+
+    remove(){
+        document.getElementById(`${this.id}`).remove();
+    }
+}
+
     document.addEventListener('keydown', function(event) {
         let menuEl = document.getElementById('menuBlock');
         if (menuEl) {
