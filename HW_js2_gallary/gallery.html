@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .galleryWrapper {
+            color: cornsilk;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+
+        }
+
+        .galleryWrapper_close {
+            z-index: 101;
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 300px;
+        }
+
+        .galleryBtn {
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="galleryPreviewsContainer">
+        <img src="img/min/1.jpg" data-full_img_url = "img/max/1.jpg" alt="Картинка1">
+        <img src="img/min/2.jpg" data-full_img_url = "img/max/2.jpg" alt="Картинка2">
+        <img src="img/min/3.jpg" data-full_img_url = "img/max/3.jpg" alt="Картинка3">
+        <img src="img/min/4.jpg" data-full_img_url = "img/max/4.jpg" alt="Картинка4">
+        <img src="img/min/5.jpg" data-full_img_url = "img/max/5.jpg"  alt="Картинка5">
+    </div>
+    <script src="js.js"></script>
+    <script>
+        gallery.init({previewSelector: '.galleryPreviewsContainer'});
+    </script>
+</body>
+</html>
