@@ -8,7 +8,7 @@ class Request {
     successRequest() {
         document.getElementById('success').addEventListener('click', () => {
             let xhr = new XMLHttpRequest();
-            xhr.open('GET', '../success.json', true);
+            xhr.open('GET', 'success.json', true);
             xhr.onload = () => {
                 let data = JSON.parse(xhr.responseText);
                 console.log(data);
@@ -20,7 +20,7 @@ class Request {
     errorRequest() {
         document.getElementById('error').addEventListener('click', () => {
             let xhr = new XMLHttpRequest();
-            xhr.open('GET', '../error.json', true);
+            xhr.open('GET', 'error.json', true);
             xhr.onload = () => {
                 let data = JSON.parse(xhr.responseText);
                 console.log(data);
