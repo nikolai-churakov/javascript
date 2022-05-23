@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const gallery = {
     settings: {
@@ -8,7 +8,6 @@ const gallery = {
         openedImageScreenClass: 'galleryWrapper__screen',
         openedImageCloseBtnClass: 'galleryWrapper__close',
         openedImageCloseBtnSrc: 'img/close.jpg',
-
 
         galleryBtnElementClass: 'galleryBtn',
         rightBtnImage: 'img/arrow-right.png',
@@ -25,7 +24,9 @@ const gallery = {
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
 
-        this.arrayConstraction();
+
+        this.imgConstruction(); // Доступ через json
+        this.arrayConstraction(); // Было прямой доступ
     },
 
     containerClickHandler(event) {
@@ -115,11 +116,13 @@ const gallery = {
     switchImg(event) {
         if (event.target.dataset.direction === 'left') {
             this.switchImgLeft();
+
         } else this.switchImgRight();
     },
 
     switchImgLeft() {
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
+        console.log(this.settings.ImageSrc);
         let newNumImage = currentNumImage - 1;
         if (newNumImage >= 0) {
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
@@ -143,9 +146,36 @@ const gallery = {
             .querySelector(`.${this.settings.openedImageClass}`).src = this.settings.maxImageSrc;
     },
 
+    imgConstruction() {
+        document.getElementById('jsonBtn').addEventListener('click', () => {
+            let div2 = document.getElementById('galleryPreviewsContainer');
+            let imgArr = [];
+            for (let i = 0; i < 5; i++){
+                let img = new Image();
+                div2.appendChild(img);
+                imgArr.push(img);
+            }
+            console.log(imgArr);
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', 'gallery.json', true);
+            xhr.onload = () => {
+                let data = JSON.parse(xhr.responseText);
+                for (let i = 0; i < 5; i++){
+                    imgArr[i].src = data[i].src;
+                    imgArr[i].dataset.full_img_url = data[i].full_img_url;
+                    imgArr[i].alt = data[i].alt;
+                }
+            }
+            xhr.send();
+            document.getElementById('jsonBtn').remove();
+            return imgArr;
+        })
+    },
+
     arrayConstraction() {
         const divEl = document.querySelector(this.settings.previewSelector);
         const ArrayOfImg = divEl.querySelectorAll('img');
+        console.log(divEl);
         for (let elem of ArrayOfImg) {
 
             if (elem.dataset.full_img_url !== undefined) {
@@ -154,6 +184,7 @@ const gallery = {
                 this.settings.ImageSrc.push(this.settings.emptyImageSrc);
             }
         }
+        console.log(ArrayOfImg);
     },
 }
 
@@ -168,4 +199,3 @@ document.addEventListener('keydown', function (event) {
         gallery.close();
     }
 })
-document.getElementById('menuBlock').remove();
