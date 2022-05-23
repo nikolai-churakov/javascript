@@ -24,8 +24,9 @@ const gallery = {
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
 
-        this.arrayConstraction(); // Было прямой доступ
+
         this.imgConstruction(); // Доступ через json
+        this.arrayConstraction(); // Было прямой доступ
     },
 
     containerClickHandler(event) {
