@@ -111,12 +111,11 @@ const gallery = {
     },
 
     switchImg(event) {
-        const direction = this.getDirectionByCode(event.code);
+        // const direction = this.getDirectionByCode(event.code);
 
         if (event.target.dataset.direction === 'left' && direction === 'left') {
             this.switchImgLeft();
         } else this.switchImgRight();
-
 
     },
 
@@ -186,4 +185,4 @@ const gallery = {
     }
 })
 
-// document.getElementById('menuBlock').remove();
+document.getElementById('menuBlock').remove();
