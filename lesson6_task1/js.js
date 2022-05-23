@@ -168,4 +168,3 @@ document.addEventListener('keydown', function (event) {
         gallery.close();
     }
 })
-document.getElementById('menuBlock').remove();
