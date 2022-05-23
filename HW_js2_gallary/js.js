@@ -24,7 +24,7 @@ const gallery = {
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
 
-        // this.arrayConstraction(); // Было прямой доступ
+        this.arrayConstraction(); // Было прямой доступ
         this.imgConstruction(); // Доступ через json
     },
 
@@ -121,6 +121,7 @@ const gallery = {
 
     switchImgLeft() {
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
+        console.log(this.settings.ImageSrc);
         let newNumImage = currentNumImage - 1;
         if (newNumImage >= 0) {
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
