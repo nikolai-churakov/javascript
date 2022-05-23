@@ -168,9 +168,8 @@ const gallery = {
             }
             xhr.send();
             document.getElementById('jsonBtn').remove();
-
+            return imgArr;
         })
-        return imgArr;
     },
 
     arrayConstraction() {
