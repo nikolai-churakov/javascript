@@ -161,16 +161,16 @@ const gallery = {
         document.getElementById('jsonBtn').addEventListener('click', () => {
             let div2 = document.getElementById('galleryPreviewsContainer');
             let imgArr = [];
-            for (let i = 0; i < imgArr.length; i++){
+            for (let i = 0; i < 5; i++){
                 let img = new Image();
                 div2.appendChild(img);
                 imgArr.push(img);
             }
             let xhr = new XMLHttpRequest();
-            xhr.open('GET', '../gallery.json', true);
+            xhr.open('GET', 'gallery.json', true);
             xhr.onload = () => {
                 let data = JSON.parse(xhr.responseText);
-                for (let i = 0; i < imgArr.length; i++){
+                for (let i = 0; i < 5; i++){
                     imgArr[i].src = data[i].src;
                     imgArr[i].dataset.full_img_url = data[i].full_img_url;
                     imgArr[i].alt = data[i].alt;
