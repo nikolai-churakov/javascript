@@ -35,7 +35,6 @@ const gallery = {
         // Открывает картинку с полученным из целевого тега (data-full+image_url аттрибутом).
         this.openImage(event.target.dataset.full_img_url);
 
-
         //     img.onload = () => this.openImage(event.target.dataset.full_img_url);
         //     img.onerror = () => this.openImage(event.settings.emptyImageSrc);
         //    img.src = event.target.dataset.full_img_url;
@@ -111,21 +110,14 @@ const gallery = {
     },
 
     switchImg(event) {
-        const direction = this.getDirectionByCode(event.code);
-
-        if (event.target.dataset.direction === 'left' && direction === 'left') {
+        if (event.target.dataset.direction === 'left') {
             this.switchImgLeft();
+
         } else this.switchImgRight();
-
-
     },
 
     switchImgLeft() {
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
-
-        console.log(this.settings.maxImageSrc); // Num
-        console.log(currentNumImage); // -1
-        console.log('currentNumImage' + '=' + currentNumImage);
         let newNumImage = currentNumImage - 1;
         if (newNumImage >= 0) {
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
@@ -140,15 +132,9 @@ const gallery = {
         const currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
         const newNumImage = currentNumImage + 1;
 
-        console.log(currentNumImage, this.settings.ImageSrc, this.settings.maxImageSrc);
-        console.log(newNumImage);
-
         if (newNumImage <= this.settings.ImageSrc.length - 1) {
-            console.log(1);
-
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
         } else {
-            console.log(2);
             this.settings.maxImageSrc = this.settings.ImageSrc[0];
         }
         this.getScreenContainer()
@@ -166,18 +152,14 @@ const gallery = {
                 this.settings.ImageSrc.push(this.settings.emptyImageSrc);
             }
         }
-        console.log(ArrayOfImg);
     },
 }
 
-    document.addEventListener('keydown', function (event) {
-    console.log(123);
+document.addEventListener('keydown', function (event) {
     if (event.code === 'ArrowRight' || event.code === 'KeyD' || event.code === 'Space') {
-        console.log('Прокрутка вправо.');
         gallery.switchImgRight();
     }
     if (event.code === 'ArrowLeft' || event.code === 'KeyA') {
-        console.log('Прокрутка в лево.');
         gallery.switchImgLeft();
     }
     if (event.code === 'Escape') {
@@ -186,4 +168,4 @@ const gallery = {
     }
 })
 
-// document.getElementById('menuBlock').remove();
+document.getElementById('menuBlock').remove();
