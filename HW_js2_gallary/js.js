@@ -146,19 +146,6 @@ const gallery = {
             .querySelector(`.${this.settings.openedImageClass}`).src = this.settings.maxImageSrc;
     },
 
-    arrayConstraction() {
-        const divEl = document.querySelector(this.settings.previewSelector);
-        const ArrayOfImg = divEl.querySelectorAll('img');
-        for (let elem of ArrayOfImg) {
-
-            if (elem.dataset.full_img_url !== undefined) {
-                this.settings.ImageSrc.push(elem.dataset.full_img_url);
-            } else {
-                this.settings.ImageSrc.push(this.settings.emptyImageSrc);
-            }
-        }
-    },
-
     imgConstruction() {
         document.getElementById('jsonBtn').addEventListener('click', () => {
             let div2 = document.getElementById('galleryPreviewsContainer');
@@ -183,7 +170,23 @@ const gallery = {
             document.getElementById('jsonBtn').remove();
 
         })
-    }
+        return imgArr;
+    },
+
+    arrayConstraction() {
+        const divEl = document.querySelector(this.settings.previewSelector);
+        const ArrayOfImg = divEl.querySelectorAll('img');
+        console.log(divEl);
+        for (let elem of ArrayOfImg) {
+
+            if (elem.dataset.full_img_url !== undefined) {
+                this.settings.ImageSrc.push(elem.dataset.full_img_url);
+            } else {
+                this.settings.ImageSrc.push(this.settings.emptyImageSrc);
+            }
+        }
+        console.log(ArrayOfImg);
+    },
 }
 
 document.addEventListener('keydown', function (event) {
