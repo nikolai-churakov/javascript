@@ -98,7 +98,10 @@ const gallery = {
     },
 
     close() {
-        document.querySelector(`.${this.settings.openedImageWrapperClass}`).remove();
+        let el = document.querySelector(`.${this.settings.openedImageWrapperClass}`);
+        if (el) {
+            el.remove();
+        }
     },
 
 
@@ -163,9 +166,6 @@ document.addEventListener('keydown', function (event) {
         gallery.switchImgLeft();
     }
     if (event.code === 'Escape') {
-        console.log('Закрыл галерею. Больших изображений.');
         gallery.close();
     }
 })
-
-document.getElementById('menuBlock').remove();
