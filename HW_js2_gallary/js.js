@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const gallery = {
     settings: {
@@ -8,7 +8,6 @@ const gallery = {
         openedImageScreenClass: 'galleryWrapper__screen',
         openedImageCloseBtnClass: 'galleryWrapper__close',
         openedImageCloseBtnSrc: 'img/close.jpg',
-
 
         galleryBtnElementClass: 'galleryBtn',
         rightBtnImage: 'img/arrow-right.png',
@@ -25,7 +24,8 @@ const gallery = {
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
 
-        this.arrayConstraction();
+        // this.arrayConstraction(); // Было прямой доступ
+        this.imgConstruction(); // Доступ через json
     },
 
     containerClickHandler(event) {
@@ -156,6 +156,29 @@ const gallery = {
             }
         }
     },
+
+    imgConstruction() {
+        document.getElementById('jsonBtn').addEventListener('click', () => {
+            let div2 = document.getElementById('galleryPreviewsContainer');
+            let imgArr = [];
+            for (let i = 0; i < imgArr.length; i++){
+                let img = new Image();
+                div2.appendChild(img);
+                imgArr.push(img);
+            }
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', '../gallery.json', true);
+            xhr.onload = () => {
+                let data = JSON.parse(xhr.responseText);
+                for (let i = 0; i < imgArr.length; i++){
+                    imgArr[i].src = data[i].src;
+                    imgArr[i].dataset.full_img_url = data[i].full_img_url;
+                    imgArr[i].alt = data[i].alt;
+                }
+            }
+            xhr.send();
+        })
+    }
 }
 
 document.addEventListener('keydown', function (event) {
