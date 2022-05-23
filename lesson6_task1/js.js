@@ -115,7 +115,6 @@ const gallery = {
     switchImg(event) {
         if (event.target.dataset.direction === 'left') {
             this.switchImgLeft();
-
         } else this.switchImgRight();
     },
 
@@ -169,3 +168,4 @@ document.addEventListener('keydown', function (event) {
         gallery.close();
     }
 })
+document.getElementById('menuBlock').remove();
