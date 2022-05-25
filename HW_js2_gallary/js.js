@@ -124,6 +124,7 @@ const gallery = {
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
         console.log(this.settings.ImageSrc);
         let newNumImage = currentNumImage - 1;
+
         if (newNumImage >= 0) {
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
         } else {

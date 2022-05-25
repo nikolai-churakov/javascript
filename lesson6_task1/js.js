@@ -121,6 +121,7 @@ const gallery = {
     switchImgLeft() {
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
         let newNumImage = currentNumImage - 1;
+
         if (newNumImage >= 0) {
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
         } else {
