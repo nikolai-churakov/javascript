@@ -1,10 +1,34 @@
-class Request {
 
-    init() {
-        this.successRequest();
-        this.errorRequest();
-        this.AboutMe();
-    }
+
+
+document.getElementById('success').addEventListener('click', () => {
+
+    // let gerData = new Promise((resolve, reject) => {
+    //
+    //
+    // }
+
+    fetch('success.json')
+        .then((response) => {
+            console.log('all right');
+            return response.json()
+        })
+        .then((data) => {
+            console.log(data);
+            success.innerText = `Телефон ${}`
+
+        })
+        // .catch(
+        //     console.log('error');
+        // );
+})
+
+// class Request {
+// init() {
+//     this.successRequest();
+//     this.errorRequest();
+//     this.AboutMe();
+// }
 
 //     successRequest() {
 //         document.getElementById('success').addEventListener('click', () => {
@@ -43,8 +67,8 @@ class Request {
 //     }
 // }
 
-document.addEventListener('DOMContentLoaded', () => {
-    let req = new Request();
-    req.init();
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//     let req = new Request();
+//     req.init();
+// });
 
