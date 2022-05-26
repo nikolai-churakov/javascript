@@ -8,19 +8,27 @@ document.getElementById('success').addEventListener('click', () => {
     //
     // }
 
-    fetch('success.json')
-        .then((response) => {
+let dataBlock = document.getElementById('infoBox');
+
+    fetch('succes1s.json')
+        .then(result => {
             console.log('all right');
-            return response.json()
+            console.log(result);
+            return result.json()
         })
-        .then((data) => {
+        .then(data => {
             console.log(data);
-            success.innerText = `Телефон ${tel}`
+            dataBlock.innerText = `Телефон (${data.tel})`;
 
         })
-        // .catch(
-        //     console.log('error');
-        // );
+        .catch(result => {
+            console.log(error);
+            return result.json()
+        })
+        .then(error => {
+            console.log(error);
+            console.log(`Error response answer:${error}`)
+        })
 })
 
 // class Request {
