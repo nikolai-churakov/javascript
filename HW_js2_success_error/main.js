@@ -15,7 +15,7 @@ document.getElementById('success').addEventListener('click', () => {
         })
         .then((data) => {
             console.log(data);
-            success.innerText = `Телефон ${}`
+            success.innerText = `Телефон ${tel}`
 
         })
         // .catch(
