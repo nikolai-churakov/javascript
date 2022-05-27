@@ -9,8 +9,17 @@ window.onload = () => {
         fetch(request)
             .then(result => result.json())
             .then(data => console.log(data.result))
-
-    })
+    }),
+    AboutMe() {
+        document.getElementById('aboutMe').addEventListener('click', () =>  {
+            let getInfo = new XMLHttpRequest();
+            getInfo.open('GET', 'help.json', true);
+            getInfo.onload = () => {
+                let data = JSON.parse(getInfo.responseText);
+                console.log(data);
+            }
+            getInfo.send();
+        })
 }
 
 // document.getElementById('success').addEventListener('click', () => {
@@ -57,31 +66,7 @@ window.onload = () => {
 //             xhr.send();
 //         })
 //     }
-//
-//     errorRequest() {
-//         document.getElementById('error').addEventListener('click', () => {
-//             let xhr = new XMLHttpRequest();
-//             xhr.open('GET', 'error.json', true);
-//             xhr.onload = () => {
-//                 let data = JSON.parse(xhr.responseText);
-//                 console.log(data);
-//             }
-//             xhr.send();
-//         })
-//     }
-//
-//     AboutMe() {
-//         document.getElementById('aboutMe').addEventListener('click', () =>  {
-//             let getInfo = new XMLHttpRequest();
-//             getInfo.open('GET', 'help.json', true);
-//             getInfo.onload = () => {
-//                 let data = JSON.parse(getInfo.responseText);
-//                 console.log(data);
-//             }
-//             getInfo.send();
-//         })
-//     }
-// }
+
 
 // document.addEventListener('DOMContentLoaded', () => {
 //     let req = new Request();
