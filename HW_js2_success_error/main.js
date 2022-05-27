@@ -3,15 +3,15 @@ window.onload = () => {
     buttonSendForm.addEventListener('click', e => {
         e.preventDefault();
         let request = 'error.json';
-        if (document.getElementById('input').value){
+        if (document.getElementById('input').value) {
             request = 'success.json';
         }
         fetch(request)
             .then(result => result.json())
             .then(data => console.log(data.result))
     });
-    AboutMe() {
-        document.getElementById('aboutMe').addEventListener('click', () =>  {
+
+        document.getElementById('aboutMe').addEventListener('click', () => {
             let getInfo = new XMLHttpRequest();
             getInfo.open('GET', 'help.json', true);
             getInfo.onload = () => {
@@ -19,50 +19,5 @@ window.onload = () => {
                 console.log(data);
             }
             getInfo.send();
-        }
-    }
-
-// document.getElementById('success').addEventListener('click', () => {
-
-    // let gerData = new Promise((resolve, reject) => {
-    //
-    //
-    // }
-
-// let dataBlock = document.getElementById('infoBox');
-//
-//     fetch('succes1s.json')
-//         .then(result => {
-//             console.log('all right');
-//             console.log(result);
-//             return result.json()
-//         })
-//         .then(data => {
-//             console.log(data);
-//             dataBlock.innerText = `Телефон (${data.tel})`;
-//
-//         })
-//         .catch(error => {
-//             console.log(error);
-//             console.log(data);
-//         })
-// })
-
-//     successRequest() {
-//         document.getElementById('success').addEventListener('click', () => {
-//             let xhr = new XMLHttpRequest();
-//             xhr.open('GET', 'success.json', true);
-//             xhr.onload = () => {
-//                 let data = JSON.parse(xhr.responseText);
-//                 console.log(data);
-//             }
-//             xhr.send();
-//         })
-//     }
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     let req = new Request();
-//     req.init();
-// });
-
+        })
+}
