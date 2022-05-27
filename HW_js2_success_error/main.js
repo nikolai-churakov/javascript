@@ -9,7 +9,7 @@ window.onload = () => {
         fetch(request)
             .then(result => result.json())
             .then(data => console.log(data.result))
-    }),
+    });
     AboutMe() {
         document.getElementById('aboutMe').addEventListener('click', () =>  {
             let getInfo = new XMLHttpRequest();
@@ -19,8 +19,8 @@ window.onload = () => {
                 console.log(data);
             }
             getInfo.send();
-        })
-}
+        }
+    }
 
 // document.getElementById('success').addEventListener('click', () => {
 
@@ -47,13 +47,6 @@ window.onload = () => {
 //             console.log(data);
 //         })
 // })
-
-// class Request {
-// init() {
-//     this.successRequest();
-//     this.errorRequest();
-//     this.AboutMe();
-// }
 
 //     successRequest() {
 //         document.getElementById('success').addEventListener('click', () => {
