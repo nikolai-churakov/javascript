@@ -21,13 +21,9 @@ let dataBlock = document.getElementById('infoBox');
             dataBlock.innerText = `Телефон (${data.tel})`;
 
         })
-        .catch(result => {
+        .catch(error => {
             console.log(error);
-            return result.json()
-        })
-        .then(error => {
-            console.log(error);
-            console.log(`Error response answer:${error}`)
+            console.log(data);
         })
 })
 
