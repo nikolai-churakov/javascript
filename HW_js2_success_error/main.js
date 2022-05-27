@@ -19,5 +19,18 @@ window.onload = () => {
                 console.log(data);
             }
             getInfo.send();
+        });
+
+        let btnSendAge = document.getElementById('btnSendAge');
+        btnSendAge.addEventListener('click', e => {
+            e.preventDefault();
+         let response = fetch('help.json');
+            console.log(response);
+         if (response.ok) {
+             console.log("if");
+             let data2 = response.json();
+         } else {
+             console.log("Error load" +response);
+         }
         })
 }
