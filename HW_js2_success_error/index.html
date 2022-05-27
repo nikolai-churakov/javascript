@@ -14,11 +14,20 @@
         font-size: 9pt;
         border-radius: 4px;
     }
+    .flex {
+        display: flex;
+        justify-content: flex-start;
+    }
 </style>
+<div class="flex">
 <label>You request <input id="input"> </label>
     <button id="success">Send form</button>
     <button id="aboutMe">About me</button>
-    <div id="infoBox"></div>
+</div>
+<div class="flex">
+<label>You age<input id="inputAge"> </label>
+    <button id="btnSendAge">Send age</button>
+</div>
     <script src="main.js"></script>
 </body>
 </html>
