@@ -22,13 +22,12 @@ window.onload = () => {
         });
 
         let btnSendAge = document.getElementById('btnSendAge');
-        btnSendAge.addEventListener('click', e => {
-            e.preventDefault();
-         let response = fetch('help.json');
+        btnSendAge.addEventListener('click',async () => {
+         let response = await fetch('1.json');
             console.log(response);
          if (response.ok) {
-             console.log("if");
-             let data2 = response.json();
+             console.log(response.ok);
+             let data2 = await response.json();
          } else {
              console.log("Error load" +response);
          }
