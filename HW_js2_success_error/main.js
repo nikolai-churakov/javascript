@@ -23,13 +23,16 @@ window.onload = () => {
 
         let btnSendAge = document.getElementById('downloadJSON');
         btnSendAge.addEventListener('click',async () => {
-         let response = await fetch('help.json');
+            let response = await fetch('helpz.json');
             console.log(response);
-         if (response.ok) {
-             console.log(response.ok);
-             let data2 = await response.json();
-             console.log(data2);
-         } else {
+            if (response.ok) {
+                console.log(`OK OK OK ${response.statusText}`);
+                console.log(response.ok);
+                let data2 = await response.json();
+                console.log(data2);
+            } else if (response.status === 404) {
+                console.log(`Server error status = ${response.status}`)
+        }else {
              console.log("Error load" +response);
          }
         })
