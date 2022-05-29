@@ -33,7 +33,7 @@ window.onload = () => {
             } else if (response.status === 404) {
                 console.log(`Server error status = ${response.status}`)
         }else {
-             console.log("Error load" +response);
+             console.log("all error, not a 404" +response);
          }
         })
 }
