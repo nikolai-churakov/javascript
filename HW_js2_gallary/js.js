@@ -26,7 +26,7 @@ const gallery = {
 
 
         this.imgConstruction(); // Доступ через json
-        this.arrayConstraction(); // Было прямой доступ
+        // this.arrayConstraction(); // Было прямой доступ
     },
 
     containerClickHandler(event) {
@@ -104,7 +104,6 @@ const gallery = {
             el.remove();
         }
     },
-
 
     arrowClick(event) {
         if (event.target.tagName !== 'IMG') {
