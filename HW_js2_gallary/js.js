@@ -156,7 +156,6 @@ const gallery = {
                 div2.appendChild(img);
                 imgArr.push(img);
             }
-            console.log(imgArr);
             let xhr = new XMLHttpRequest();
             xhr.open('GET', 'gallery.json', true);
             xhr.onload = () => {
