@@ -147,25 +147,43 @@ const gallery = {
     },
 
     imgConstruction() {
-        document.getElementById('jsonBtn').addEventListener('click', () => {
+        document.getElementById('jsonBtn').addEventListener('click', async () => {
             let div2 = document.getElementById('galleryPreviewsContainer');
             let imgArr = [];
-            for (let i = 0; i < 5; i++){
+            for (let i = 0; i < 5; i++) {
                 let img = new Image();
                 div2.appendChild(img);
                 imgArr.push(img);
             }
-            let xhr = new XMLHttpRequest();
-            xhr.open('GET', 'gallery.json', true);
-            xhr.onload = () => {
-                let data = JSON.parse(xhr.responseText);
-                for (let i = 0; i < 5; i++){
-                    imgArr[i].src = data[i].src;
-                    imgArr[i].dataset.full_img_url = data[i].full_img_url;
-                    imgArr[i].alt = data[i].alt;
-                }
+            let response = await fetch('gallery.json');
+            if (response.ok) {
+                console.log(`response.statusText: ${response.statusText}`);
+                let data2 = await response.json();
+                console.log(data2);
+            } else {
+                console.log(`Server error status = ${response.status}`);
             }
-            xhr.send();
+            console.log(`111 parse`);
+            console.log(data2);
+            let data = await JSON.parse(response);
+                for (let i = 0; i < 5; i++){
+                        imgArr[i].src = data[i].src;
+                        imgArr[i].dataset.full_img_url = data[i].full_img_url;
+                        imgArr[i].alt = data[i].alt;
+        }
+            console.log(imgArr);
+
+            // let xhr = new XMLHttpRequest();
+            // xhr.open('GET', 'gallery.json', true);
+            // xhr.onload = () => {
+            //     let data = JSON.parse(xhr.responseText);
+            // for (let i = 0; i < 5; i++){
+            //     imgArr[i].src = data[i].src;
+            //     imgArr[i].dataset.full_img_url = data[i].full_img_url;
+            //     imgArr[i].alt = data[i].alt;
+            //     }
+            // }
+            // xhr.send();
             document.getElementById('jsonBtn').remove();
             return imgArr;
         })
