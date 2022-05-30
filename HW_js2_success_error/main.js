@@ -23,7 +23,7 @@ window.onload = () => {
 
         let btnSendAge = document.getElementById('downloadJSON');
         btnSendAge.addEventListener('click',async () => {
-            let response = await fetch('helpz.json');
+            let response = await fetch('help.json');
             console.log(response);
             if (response.ok) {
                 console.log(`OK OK OK ${response.statusText}`);
