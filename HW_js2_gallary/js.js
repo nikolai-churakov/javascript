@@ -155,7 +155,10 @@ const gallery = {
                 div2.appendChild(img);
                 imgArr.push(img);
             }
-            let response = await fetch('gallery.json');
+            let response = await fetch('gallery.json')
+                .then( console.log(11123) )
+                .then()
+                .then()
             if (response.ok) {
                 console.log(`response.statusText: ${response.statusText}`);
                 let data2 = await response.json();
