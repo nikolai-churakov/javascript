@@ -65,29 +65,13 @@ const gallery = {
         const galleryWrapperElement = document.createElement('div');
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
-        const galleryScreensElement = document.createElement('div');
-        galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
-        galleryWrapperElement.appendChild(galleryScreensElement);
-
-        const closeImageElement = new Image();
-        closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
-        closeImageElement.src = this.settings.openedImageCloseBtnSrc;
-        closeImageElement.addEventListener('click', () => this.close());
-        galleryWrapperElement.appendChild(closeImageElement);
-
-        const image = new Image();
-        image.classList.add(this.settings.openedImageClass);
-        galleryWrapperElement.appendChild(image);
-
-        const galleryBtnElement = document.createElement('div');
-        galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
-        galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
-        galleryWrapperElement.appendChild(galleryBtnElement);
+        galleryScreensElement(galleryWrapperElement);
 
         const leftBtn = new Image();
         leftBtn.src = this.settings.leftBtnImage;
         leftBtn.dataset.direction = 'left';
         galleryBtnElement.appendChild(leftBtn);
+
 
         const rightBtn = new Image();
         rightBtn.src = this.settings.rightBtnImage;
@@ -96,6 +80,41 @@ const gallery = {
 
         document.body.appendChild(galleryWrapperElement);
         return galleryWrapperElement;
+    },
+
+    galleryScreensElement(galleryWrapperElement) {
+        const galleryScreensElement = document.createElement('div');
+        galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
+        galleryWrapperElement.appendChild(galleryScreensElement);
+
+        creatCloseImageElement(galleryWrapperElement);
+    },
+
+    creatCloseImageElement(galleryWrapperElement) {
+        const closeImageElement = new Image();
+        closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
+        closeImageElement.src = this.settings.openedImageCloseBtnSrc;
+        closeImageElement.addEventListener('click', () => this.close());
+        galleryWrapperElement.appendChild(closeImageElement);
+        creatImg(galleryWrapperElement);
+    },
+
+    creatImg(galleryWrapperElement) {
+        const image = new Image();
+        image.classList.add(this.settings.openedImageClass);
+        galleryWrapperElement.appendChild(image);
+        creatGalleryBtnElement(galleryWrapperElement);
+    },
+
+    creatGalleryBtnElement(galleryWrapperElement) {
+        const galleryBtnElement = document.createElement('div');
+        galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
+        galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
+        galleryWrapperElement.appendChild(galleryBtnElement);
+    },
+
+    creatLeftBtn () {
+
     },
 
     close() {
@@ -156,24 +175,41 @@ const gallery = {
                 imgArr.push(img);
             }
             let response = await fetch('gallery.json')
-                .then( console.log(11123) )
-                .then()
-                .then()
-            if (response.ok) {
-                console.log(`response.statusText: ${response.statusText}`);
-                let data2 = await response.json();
-                console.log(data2);
-            } else {
-                console.log(`Server error status = ${response.status}`);
-            }
-            console.log(`111 parse`);
-            console.log(data2);
-            let data = await JSON.parse(response);
-                for (let i = 0; i < 5; i++){
-                        imgArr[i].src = data[i].src;
-                        imgArr[i].dataset.full_img_url = data[i].full_img_url;
-                        imgArr[i].alt = data[i].alt;
-        }
+                .then(result => {
+                    console.log(`tut aaa ${result}`);
+                    return result.json()
+                })
+                .then(data => {
+                    console.log(data);
+                    let ArrData = JSON.parse(data);
+                    console.log(ArrData);
+                    return ArrData;
+                })
+                // .then(arrData => {
+                //     console.log(`arrData ${arrData}`);
+                //     // for (let i = 0; i < 5; i++) {
+                //     //     imgArr[i].src = arrData[i].src;
+                //     //     imgArr[i].dataset.full_img_url = arrData[i].full_img_url;
+                //     //     imgArr[i].alt = arrData[i].alt;
+                //     // }
+                //     // console.log(`arrData ${arrData}`);
+                //     return arrData;
+                // })
+            // if (response.ok) {
+            //     console.log(`response.statusText: ${response.statusText}`);
+            //     // let data2 = await response.json();
+            //     console.log(data2);
+            // } else {
+            //     console.log(`Server error status = ${response.status}`);
+            // }
+            // console.log(`111 parse`);
+            // console.log(data2);
+            // let data = await JSON.parse(response);
+            //     for (let i = 0; i < 5; i++){
+            //             imgArr[i].src = data[i].src;
+            //             imgArr[i].dataset.full_img_url = data[i].full_img_url;
+            //             imgArr[i].alt = data[i].alt;
+        // }
             console.log(imgArr);
 
             // let xhr = new XMLHttpRequest();
@@ -188,7 +224,7 @@ const gallery = {
             // }
             // xhr.send();
             document.getElementById('jsonBtn').remove();
-            return imgArr;
+            // return imgArr;
         })
     },
 
