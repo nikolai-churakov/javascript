@@ -62,33 +62,22 @@ const gallery = {
     },
 
     createScreenContainer() {
-        const galleryWrapperElement = document.createElement('div');
-        galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
-
-        galleryScreensElement(galleryWrapperElement);
-
-        const leftBtn = new Image();
-        leftBtn.src = this.settings.leftBtnImage;
-        leftBtn.dataset.direction = 'left';
-        galleryBtnElement.appendChild(leftBtn);
-
-
-        const rightBtn = new Image();
-        rightBtn.src = this.settings.rightBtnImage;
-        rightBtn.dataset.direction = 'right';
-        galleryBtnElement.appendChild(rightBtn);
+        this.creatGalleryWrapperElement();
+        this.creatCloseImageElement();
+        this.creatImg();
+        this.creatGalleryBtnElement();
+        this.creatLeftBtn();
+        this.creatRightBtn();
 
         document.body.appendChild(galleryWrapperElement);
         return galleryWrapperElement;
     },
 
-    galleryScreensElement(galleryWrapperElement) {
-        const galleryScreensElement = document.createElement('div');
-        galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
-        galleryWrapperElement.appendChild(galleryScreensElement);
-
-        creatCloseImageElement(galleryWrapperElement);
+    creatGalleryWrapperElement () {
+        const galleryWrapperElement = document.createElement('div');
+        galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
     },
+
 
     creatCloseImageElement(galleryWrapperElement) {
         const closeImageElement = new Image();
@@ -111,10 +100,21 @@ const gallery = {
         galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
         galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
         galleryWrapperElement.appendChild(galleryBtnElement);
+        creatLeftBtn (galleryBtnElement);
     },
 
-    creatLeftBtn () {
-
+    creatLeftBtn (galleryBtnElement) {
+        const leftBtn = new Image();
+        leftBtn.src = this.settings.leftBtnImage;
+        leftBtn.dataset.direction = 'left';
+        galleryBtnElement.appendChild(leftBtn);
+        creatRightBtn (galleryBtnElement);
+    },
+    creatRightBtn (galleryBtnElement) {
+        const rightBtn = new Image();
+        rightBtn.src = this.settings.rightBtnImage;
+        rightBtn.dataset.direction = 'right';
+        galleryBtnElement.appendChild(rightBtn);
     },
 
     close() {
