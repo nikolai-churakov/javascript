@@ -70,7 +70,7 @@ const gallery = {
         this.creatRightBtn();
 
         document.body.appendChild(galleryWrapperElement);
-        return galleryWrapperElement;
+        return galleryWrapperElement1;
     },
 
     creatGalleryWrapperElement () {
