@@ -36,6 +36,8 @@ const gallery = {
                 img.dataset.full_img_url = imageLink.full_img_url;
                 img.alt = imageLink.alt;
 
+                this.settings.ImageSrc.push(imageLink.full_img_url);
+
                 div2.appendChild(img);
             })
 
