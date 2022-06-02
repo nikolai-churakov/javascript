@@ -24,8 +24,24 @@ const gallery = {
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
 
+        document.getElementById('jsonBtn').addEventListener('click', async () => {
+            let div2 = document.getElementById('galleryPreviewsContainer');
 
-        this.imgConstruction(); // Доступ через json
+            const response = await fetch('gallery.json');
+            const imagesLinks = await response.json();
+
+            imagesLinks.forEach((imageLink) => {
+                const img = new Image();
+                img.src = imageLink.src;
+                img.dataset.full_img_url = imageLink.full_img_url;
+                img.alt = imageLink.alt;
+
+                div2.appendChild(img);
+            })
+
+            document.getElementById('jsonBtn').remove();
+        })
+
         // this.arrayConstraction(); // Было прямой доступ
     },
 
@@ -33,12 +49,7 @@ const gallery = {
         if (event.target.tagName !== 'IMG') {
             return
         }
-        // Открывает картинку с полученным из целевого тега (data-full+image_url аттрибутом).
         this.openImage(event.target.dataset.full_img_url);
-
-        //     img.onload = () => this.openImage(event.target.dataset.full_img_url);
-        //     img.onerror = () => this.openImage(event.settings.emptyImageSrc);
-        //    img.src = event.target.dataset.full_img_url;
     },
 
     openImage(src) {
@@ -62,12 +73,44 @@ const gallery = {
     },
 
     createScreenContainer() {
-        this.creatGalleryWrapperElement();
-        this.creatCloseImageElement();
-        this.creatImg();
-        this.creatGalleryBtnElement();
-        this.creatLeftBtn();
-        this.creatRightBtn();
+        // this.creatGalleryWrapperElement();
+        // this.creatCloseImageElement();
+        // this.creatImg();
+        // this.creatGalleryBtnElement();
+        // this.creatLeftBtn();
+        // this.creatRightBtn();
+
+        const galleryWrapperElement = document.createElement('div');
+        galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
+
+        const galleryScreensElement = document.createElement('div');
+        galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
+        galleryWrapperElement.appendChild(galleryScreensElement);
+
+        const closeImageElement = new Image();
+        closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
+        closeImageElement.src = this.settings.openedImageCloseBtnSrc;
+        closeImageElement.addEventListener('click', () => this.close());
+        galleryWrapperElement.appendChild(closeImageElement);
+
+        const image = new Image();
+        image.classList.add(this.settings.openedImageClass);
+        galleryWrapperElement.appendChild(image);
+
+        const galleryBtnElement = document.createElement('div');
+        galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
+        galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
+        galleryWrapperElement.appendChild(galleryBtnElement);
+
+        const leftBtn = new Image();
+        leftBtn.src = this.settings.leftBtnImage;
+        leftBtn.dataset.direction = 'left';
+        galleryBtnElement.appendChild(leftBtn);
+
+        const rightBtn = new Image();
+        rightBtn.src = this.settings.rightBtnImage;
+        rightBtn.dataset.direction = 'right';
+        galleryBtnElement.appendChild(rightBtn);
 
         document.body.appendChild(galleryWrapperElement);
         return galleryWrapperElement;
@@ -77,7 +120,6 @@ const gallery = {
         const galleryWrapperElement = document.createElement('div');
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
     },
-
 
     creatCloseImageElement(galleryWrapperElement) {
         const closeImageElement = new Image();
@@ -110,6 +152,7 @@ const gallery = {
         galleryBtnElement.appendChild(leftBtn);
         creatRightBtn (galleryBtnElement);
     },
+
     creatRightBtn (galleryBtnElement) {
         const rightBtn = new Image();
         rightBtn.src = this.settings.rightBtnImage;
@@ -139,8 +182,12 @@ const gallery = {
     },
 
     switchImgLeft() {
+        console.log(111, this.settings);
+
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
-        console.log(this.settings.ImageSrc);
+
+
+
         let newNumImage = currentNumImage - 1;
 
         if (newNumImage >= 0) {
@@ -163,69 +210,6 @@ const gallery = {
         }
         this.getScreenContainer()
             .querySelector(`.${this.settings.openedImageClass}`).src = this.settings.maxImageSrc;
-    },
-
-    imgConstruction() {
-        document.getElementById('jsonBtn').addEventListener('click', async () => {
-            let div2 = document.getElementById('galleryPreviewsContainer');
-            let imgArr = [];
-            for (let i = 0; i < 5; i++) {
-                let img = new Image();
-                div2.appendChild(img);
-                imgArr.push(img);
-            }
-            let response = await fetch('gallery.json')
-                .then(result => {
-                    console.log(`tut aaa ${result}`);
-                    return result.json()
-                })
-                .then(data => {
-                    console.log(data);
-                    let ArrData = JSON.parse(data);
-                    console.log(ArrData);
-                    return ArrData;
-                })
-                // .then(arrData => {
-                //     console.log(`arrData ${arrData}`);
-                //     // for (let i = 0; i < 5; i++) {
-                //     //     imgArr[i].src = arrData[i].src;
-                //     //     imgArr[i].dataset.full_img_url = arrData[i].full_img_url;
-                //     //     imgArr[i].alt = arrData[i].alt;
-                //     // }
-                //     // console.log(`arrData ${arrData}`);
-                //     return arrData;
-                // })
-            // if (response.ok) {
-            //     console.log(`response.statusText: ${response.statusText}`);
-            //     // let data2 = await response.json();
-            //     console.log(data2);
-            // } else {
-            //     console.log(`Server error status = ${response.status}`);
-            // }
-            // console.log(`111 parse`);
-            // console.log(data2);
-            // let data = await JSON.parse(response);
-            //     for (let i = 0; i < 5; i++){
-            //             imgArr[i].src = data[i].src;
-            //             imgArr[i].dataset.full_img_url = data[i].full_img_url;
-            //             imgArr[i].alt = data[i].alt;
-        // }
-            console.log(imgArr);
-
-            // let xhr = new XMLHttpRequest();
-            // xhr.open('GET', 'gallery.json', true);
-            // xhr.onload = () => {
-            //     let data = JSON.parse(xhr.responseText);
-            // for (let i = 0; i < 5; i++){
-            //     imgArr[i].src = data[i].src;
-            //     imgArr[i].dataset.full_img_url = data[i].full_img_url;
-            //     imgArr[i].alt = data[i].alt;
-            //     }
-            // }
-            // xhr.send();
-            document.getElementById('jsonBtn').remove();
-            // return imgArr;
-        })
     },
 
     arrayConstraction() {
