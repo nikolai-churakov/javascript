@@ -75,52 +75,46 @@ const gallery = {
     },
 
     createScreenContainer() {
-        this.creatGalleryWrapperElement();
-        this.creatCloseImageElement();
-        this.creatImg();
-        this.creatGalleryBtnElement();
-        this.creatLeftBtn();
-        this.creatRightBtn();
+        const galleryWrapperElement = document.createElement('div');
+        galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
-        // const galleryWrapperElement = document.createElement('div');
-        // galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
-        //
-        // const galleryScreensElement = document.createElement('div');
-        // galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
-        // galleryWrapperElement.appendChild(galleryScreensElement);
-        //
-        // const closeImageElement = new Image();
-        // closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
-        // closeImageElement.src = this.settings.openedImageCloseBtnSrc;
-        // closeImageElement.addEventListener('click', () => this.close());
-        // galleryWrapperElement.appendChild(closeImageElement);
-        //
-        // const image = new Image();
-        // image.classList.add(this.settings.openedImageClass);
-        // galleryWrapperElement.appendChild(image);
-        //
-        // const galleryBtnElement = document.createElement('div');
-        // galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
-        // galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
-        // galleryWrapperElement.appendChild(galleryBtnElement);
-        //
-        // const leftBtn = new Image();
-        // leftBtn.src = this.settings.leftBtnImage;
-        // leftBtn.dataset.direction = 'left';
-        // galleryBtnElement.appendChild(leftBtn);
-        //
-        // const rightBtn = new Image();
-        // rightBtn.src = this.settings.rightBtnImage;
-        // rightBtn.dataset.direction = 'right';
-        // galleryBtnElement.appendChild(rightBtn);
+        this.creatGalleryScreensElement(galleryWrapperElement);
+
+
+
+        const closeImageElement = new Image();
+        closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
+        closeImageElement.src = this.settings.openedImageCloseBtnSrc;
+        closeImageElement.addEventListener('click', () => this.close());
+        galleryWrapperElement.appendChild(closeImageElement);
+
+        const image = new Image();
+        image.classList.add(this.settings.openedImageClass);
+        galleryWrapperElement.appendChild(image);
+
+        const galleryBtnElement = document.createElement('div');
+        galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
+        galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
+        galleryWrapperElement.appendChild(galleryBtnElement);
+
+        const leftBtn = new Image();
+        leftBtn.src = this.settings.leftBtnImage;
+        leftBtn.dataset.direction = 'left';
+        galleryBtnElement.appendChild(leftBtn);
+
+        const rightBtn = new Image();
+        rightBtn.src = this.settings.rightBtnImage;
+        rightBtn.dataset.direction = 'right';
+        galleryBtnElement.appendChild(rightBtn);
 
         document.body.appendChild(galleryWrapperElement);
         return galleryWrapperElement;
     },
 
-    creatGalleryWrapperElement () {
-        const galleryWrapperElement = document.createElement('div');
-        galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
+    creatGalleryScreensElement (galleryWrapperElement) {
+        const galleryScreensElement = document.createElement('div');
+        galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
+        galleryWrapperElement.appendChild(galleryScreensElement);
     },
 
     creatCloseImageElement(galleryWrapperElement) {
