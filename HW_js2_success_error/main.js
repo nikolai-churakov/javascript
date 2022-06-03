@@ -1,37 +1,17 @@
-class Request {
+window.onload = () => {
+    let buttonSendForm = document.getElementById('success');
+    buttonSendForm.addEventListener('click', e => {
+        e.preventDefault();
+        let request = 'error.json';
+        if (document.getElementById('input').value) {
+            request = 'success.json';
+        }
+        fetch(request)
+            .then(result => result.json())
+            .then(data => console.log(data.result))
+    });
 
-    init() {
-        this.successRequest();
-        this.errorRequest();
-        this.AboutMe();
-    }
-
-    successRequest() {
-        document.getElementById('success').addEventListener('click', () => {
-            let xhr = new XMLHttpRequest();
-            xhr.open('GET', 'success.json', true);
-            xhr.onload = () => {
-                let data = JSON.parse(xhr.responseText);
-                console.log(data);
-            }
-            xhr.send();
-        })
-    }
-
-    errorRequest() {
-        document.getElementById('error').addEventListener('click', () => {
-            let xhr = new XMLHttpRequest();
-            xhr.open('GET', 'error.json', true);
-            xhr.onload = () => {
-                let data = JSON.parse(xhr.responseText);
-                console.log(data);
-            }
-            xhr.send();
-        })
-    }
-
-    AboutMe() {
-        document.getElementById('aboutMe').addEventListener('click', () =>  {
+        document.getElementById('aboutMe').addEventListener('click', () => {
             let getInfo = new XMLHttpRequest();
             getInfo.open('GET', 'help.json', true);
             getInfo.onload = () => {
@@ -39,12 +19,21 @@ class Request {
                 console.log(data);
             }
             getInfo.send();
+        });
+
+        let btnSendAge = document.getElementById('downloadJSON');
+        btnSendAge.addEventListener('click',async () => {
+            let response = await fetch('help.json');
+            console.log(response);
+            if (response.ok) {
+                console.log(`OK OK OK ${response.statusText}`);
+                console.log(response.ok);
+                let data2 = await response.json();
+                console.log(data2);
+            } else if (response.status === 404) {
+                console.log(`Server error status = ${response.status}`)
+        }else {
+             console.log("all error, not a 404" +response);
+         }
         })
-    }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    let req = new Request();
-    req.init();
-})
-

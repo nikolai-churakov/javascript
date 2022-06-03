@@ -24,21 +24,32 @@ const gallery = {
             .querySelector(this.settings.previewSelector)
             .addEventListener('click', event => this.containerClickHandler(event));
 
+        document.getElementById('jsonBtn').addEventListener('click', async () => {
+            let div2 = document.getElementById('galleryPreviewsContainer');
 
-        this.imgConstruction(); // Доступ через json
-        this.arrayConstraction(); // Было прямой доступ
+            const response = await fetch('gallery.json');
+            const imagesLinks = await response.json();
+
+            imagesLinks.forEach((imageLink) => {
+                const img = new Image();
+                img.src = imageLink.src;
+                img.dataset.full_img_url = imageLink.full_img_url;
+                img.alt = imageLink.alt;
+
+                this.settings.ImageSrc.push(imageLink.full_img_url);
+
+                div2.appendChild(img);
+            })
+
+            document.getElementById('jsonBtn').remove();
+        })
     },
 
     containerClickHandler(event) {
         if (event.target.tagName !== 'IMG') {
             return
         }
-        // Открывает картинку с полученным из целевого тега (data-full+image_url аттрибутом).
         this.openImage(event.target.dataset.full_img_url);
-
-        //     img.onload = () => this.openImage(event.target.dataset.full_img_url);
-        //     img.onerror = () => this.openImage(event.settings.emptyImageSrc);
-        //    img.src = event.target.dataset.full_img_url;
     },
 
     openImage(src) {
@@ -65,9 +76,7 @@ const gallery = {
         const galleryWrapperElement = document.createElement('div');
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
-        const galleryScreensElement = document.createElement('div');
-        galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
-        galleryWrapperElement.appendChild(galleryScreensElement);
+        this.creatGalleryScreensElement(galleryWrapperElement);
 
         const closeImageElement = new Image();
         closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
@@ -98,13 +107,57 @@ const gallery = {
         return galleryWrapperElement;
     },
 
+    creatGalleryScreensElement (galleryWrapperElement) {
+        const galleryScreensElement = document.createElement('div');
+        galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
+        galleryWrapperElement.appendChild(galleryScreensElement);
+    },
+
+    creatCloseImageElement(galleryWrapperElement) {
+        const closeImageElement = new Image();
+        closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
+        closeImageElement.src = this.settings.openedImageCloseBtnSrc;
+        closeImageElement.addEventListener('click', () => this.close());
+        galleryWrapperElement.appendChild(closeImageElement);
+        creatImg(galleryWrapperElement);
+    },
+
+    creatImg(galleryWrapperElement) {
+        const image = new Image();
+        image.classList.add(this.settings.openedImageClass);
+        galleryWrapperElement.appendChild(image);
+        creatGalleryBtnElement(galleryWrapperElement);
+    },
+
+    creatGalleryBtnElement(galleryWrapperElement) {
+        const galleryBtnElement = document.createElement('div');
+        galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
+        galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
+        galleryWrapperElement.appendChild(galleryBtnElement);
+        creatLeftBtn (galleryBtnElement);
+    },
+
+    creatLeftBtn (galleryBtnElement) {
+        const leftBtn = new Image();
+        leftBtn.src = this.settings.leftBtnImage;
+        leftBtn.dataset.direction = 'left';
+        galleryBtnElement.appendChild(leftBtn);
+        creatRightBtn (galleryBtnElement);
+    },
+
+    creatRightBtn (galleryBtnElement) {
+        const rightBtn = new Image();
+        rightBtn.src = this.settings.rightBtnImage;
+        rightBtn.dataset.direction = 'right';
+        galleryBtnElement.appendChild(rightBtn);
+    },
+
     close() {
         let el = document.querySelector(`.${this.settings.openedImageWrapperClass}`);
         if (el) {
             el.remove();
         }
     },
-
 
     arrowClick(event) {
         if (event.target.tagName !== 'IMG') {
@@ -121,9 +174,14 @@ const gallery = {
     },
 
     switchImgLeft() {
+        console.log(111, this.settings);
+
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
-        console.log(this.settings.ImageSrc);
+
+
+
         let newNumImage = currentNumImage - 1;
+
         if (newNumImage >= 0) {
             this.settings.maxImageSrc = this.settings.ImageSrc[newNumImage];
         } else {
@@ -144,32 +202,6 @@ const gallery = {
         }
         this.getScreenContainer()
             .querySelector(`.${this.settings.openedImageClass}`).src = this.settings.maxImageSrc;
-    },
-
-    imgConstruction() {
-        document.getElementById('jsonBtn').addEventListener('click', () => {
-            let div2 = document.getElementById('galleryPreviewsContainer');
-            let imgArr = [];
-            for (let i = 0; i < 5; i++){
-                let img = new Image();
-                div2.appendChild(img);
-                imgArr.push(img);
-            }
-            console.log(imgArr);
-            let xhr = new XMLHttpRequest();
-            xhr.open('GET', 'gallery.json', true);
-            xhr.onload = () => {
-                let data = JSON.parse(xhr.responseText);
-                for (let i = 0; i < 5; i++){
-                    imgArr[i].src = data[i].src;
-                    imgArr[i].dataset.full_img_url = data[i].full_img_url;
-                    imgArr[i].alt = data[i].alt;
-                }
-            }
-            xhr.send();
-            document.getElementById('jsonBtn').remove();
-            return imgArr;
-        })
     },
 
     arrayConstraction() {

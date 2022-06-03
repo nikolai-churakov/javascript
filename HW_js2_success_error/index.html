@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,12 +14,19 @@
         font-size: 9pt;
         border-radius: 4px;
     }
+    .flex {
+        display: flex;
+        justify-content: flex-start;
+    }
 </style>
-
-    <button id="success">Success</button>
-    <button id="error">Error</button>
+<div class="flex">
+<label>You request <input id="input"> </label>
+    <button id="success">Send form</button>
     <button id="aboutMe">About me</button>
-
+</div>
+<div class="flex">
+    <button id="downloadJSON">Download JSON</button>
+</div>
     <script src="main.js"></script>
 </body>
 </html>
