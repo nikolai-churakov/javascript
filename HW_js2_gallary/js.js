@@ -43,8 +43,6 @@ const gallery = {
 
             document.getElementById('jsonBtn').remove();
         })
-
-        // this.arrayConstraction(); // Было прямой доступ
     },
 
     containerClickHandler(event) {
@@ -79,8 +77,6 @@ const gallery = {
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
         this.creatGalleryScreensElement(galleryWrapperElement);
-
-
 
         const closeImageElement = new Image();
         closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
