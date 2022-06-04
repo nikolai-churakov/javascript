@@ -22,13 +22,6 @@ let e = Math.floor(eSum / 10); // пятый символ 6 значного н�
 let fSum = eSum - e * 10; //
 let f =  Math.floor(fSum ); //шестой символ 6 значного номера
 
-// console.log(a);
-// console.log(b);
-// console.log(c);
-// console.log(d);
-// console.log(e);
-// console.log(f);
-
 let totalFirstThreeNumberTicket = a + b + c;
 let totalLastThreeNumberTicket = d + e + f;
 
