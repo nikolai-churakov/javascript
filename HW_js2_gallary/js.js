@@ -83,12 +83,6 @@ const gallery = {
         this.createCloseImageElement(galleryWrapperElement);
 
 
-        const closeImageElement = new Image();
-        closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
-        closeImageElement.src = this.settings.openedImageCloseBtnSrc;
-        closeImageElement.addEventListener('click', () => this.close());
-        galleryWrapperElement.appendChild(closeImageElement);
-
         const image = new Image();
         image.classList.add(this.settings.openedImageClass);
         galleryWrapperElement.appendChild(image);
