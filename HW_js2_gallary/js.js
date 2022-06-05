@@ -79,7 +79,6 @@ const gallery = {
 
         this.createGalleryScreensElement(galleryWrapperElement);
         this.createCloseImageElement(galleryWrapperElement);
-        this.createCloseImageElement(galleryWrapperElement);
         this.createImg(galleryWrapperElement);
         // this.createGalleryBtnElement(galleryWrapperElement);
 
@@ -88,15 +87,18 @@ const gallery = {
         galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
         galleryWrapperElement.appendChild(galleryBtnElement);
 
-        const leftBtn = new Image();
-        leftBtn.src = this.settings.leftBtnImage;
-        leftBtn.dataset.direction = 'left';
-        galleryBtnElement.appendChild(leftBtn);
+        this.createLeftBtn(galleryBtnElement);
+        this.createRightBtn(galleryBtnElement);
 
-        const rightBtn = new Image();
-        rightBtn.src = this.settings.rightBtnImage;
-        rightBtn.dataset.direction = 'right';
-        galleryBtnElement.appendChild(rightBtn);
+        // const leftBtn = new Image();
+        // leftBtn.src = this.settings.leftBtnImage;
+        // leftBtn.dataset.direction = 'left';
+        // galleryBtnElement.appendChild(leftBtn);
+
+        // const rightBtn = new Image();
+        // rightBtn.src = this.settings.rightBtnImage;
+        // rightBtn.dataset.direction = 'right';
+        // galleryBtnElement.appendChild(rightBtn);
 
         document.body.appendChild(galleryWrapperElement);
         return galleryWrapperElement;
