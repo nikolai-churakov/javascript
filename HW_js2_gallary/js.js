@@ -77,17 +77,11 @@ const gallery = {
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
         this.createGalleryScreensElement(galleryWrapperElement);
-
         this.createCloseImageElement(galleryWrapperElement);
-
         this.createCloseImageElement(galleryWrapperElement);
-
         this.createImg(galleryWrapperElement);
+        this.createGalleryBtnElement(galleryWrapperElement);
 
-        const galleryBtnElement = document.createElement('div');
-        galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
-        galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
-        galleryWrapperElement.appendChild(galleryBtnElement);
 
         const leftBtn = new Image();
         leftBtn.src = this.settings.leftBtnImage;
@@ -123,23 +117,21 @@ const gallery = {
         galleryWrapperElement.appendChild(image);
     },
 
-    creatGalleryBtnElement(galleryWrapperElement) {
+    createGalleryBtnElement(galleryWrapperElement) {
         const galleryBtnElement = document.createElement('div');
         galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
         galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
         galleryWrapperElement.appendChild(galleryBtnElement);
-        creatLeftBtn (galleryBtnElement);
     },
 
-    creatLeftBtn (galleryBtnElement) {
+    createLeftBtn (galleryBtnElement) {
         const leftBtn = new Image();
         leftBtn.src = this.settings.leftBtnImage;
         leftBtn.dataset.direction = 'left';
         galleryBtnElement.appendChild(leftBtn);
-        creatRightBtn (galleryBtnElement);
     },
 
-    creatRightBtn (galleryBtnElement) {
+    createRightBtn (galleryBtnElement) {
         const rightBtn = new Image();
         rightBtn.src = this.settings.rightBtnImage;
         rightBtn.dataset.direction = 'right';
@@ -171,9 +163,6 @@ const gallery = {
         console.log(111, this.settings);
 
         let currentNumImage = this.settings.ImageSrc.indexOf(this.settings.maxImageSrc);
-
-
-
         let newNumImage = currentNumImage - 1;
 
         if (newNumImage >= 0) {
