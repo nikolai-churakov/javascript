@@ -80,6 +80,7 @@ const gallery = {
 
         this.createCloseImageElement(galleryWrapperElement);
 
+        this.createCloseImageElement(galleryWrapperElement);
 
 
         const closeImageElement = new Image();
@@ -129,7 +130,6 @@ const gallery = {
         const image = new Image();
         image.classList.add(this.settings.openedImageClass);
         galleryWrapperElement.appendChild(image);
-        creatGalleryBtnElement(galleryWrapperElement);
     },
 
     creatGalleryBtnElement(galleryWrapperElement) {
