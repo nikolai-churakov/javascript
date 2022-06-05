@@ -76,7 +76,11 @@ const gallery = {
         const galleryWrapperElement = document.createElement('div');
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
-        this.creatGalleryScreensElement(galleryWrapperElement);
+        this.createGalleryScreensElement(galleryWrapperElement);
+
+        this.createCloseImageElement(galleryWrapperElement);
+
+
 
         const closeImageElement = new Image();
         closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
@@ -107,19 +111,18 @@ const gallery = {
         return galleryWrapperElement;
     },
 
-    creatGalleryScreensElement (galleryWrapperElement) {
+    createGalleryScreensElement (galleryWrapperElement) {
         const galleryScreensElement = document.createElement('div');
         galleryScreensElement.classList.add(this.settings.openedImageScreenClass);
         galleryWrapperElement.appendChild(galleryScreensElement);
     },
 
-    creatCloseImageElement(galleryWrapperElement) {
+    createCloseImageElement(galleryWrapperElement) {
         const closeImageElement = new Image();
         closeImageElement.classList.add(this.settings.openedImageCloseBtnClass);
         closeImageElement.src = this.settings.openedImageCloseBtnSrc;
         closeImageElement.addEventListener('click', () => this.close());
         galleryWrapperElement.appendChild(closeImageElement);
-        creatImg(galleryWrapperElement);
     },
 
     creatImg(galleryWrapperElement) {
