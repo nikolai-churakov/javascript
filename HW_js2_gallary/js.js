@@ -73,6 +73,7 @@ const gallery = {
     },
 
     createScreenContainer() {
+
         const galleryWrapperElement = document.createElement('div');
         galleryWrapperElement.classList.add(this.settings.openedImageWrapperClass);
 
@@ -80,8 +81,12 @@ const gallery = {
         this.createCloseImageElement(galleryWrapperElement);
         this.createCloseImageElement(galleryWrapperElement);
         this.createImg(galleryWrapperElement);
-        this.createGalleryBtnElement(galleryWrapperElement);
+        // this.createGalleryBtnElement(galleryWrapperElement);
 
+        const galleryBtnElement = document.createElement('div');
+        galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
+        galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
+        galleryWrapperElement.appendChild(galleryBtnElement);
 
         const leftBtn = new Image();
         leftBtn.src = this.settings.leftBtnImage;
@@ -115,13 +120,6 @@ const gallery = {
         const image = new Image();
         image.classList.add(this.settings.openedImageClass);
         galleryWrapperElement.appendChild(image);
-    },
-
-    createGalleryBtnElement(galleryWrapperElement) {
-        const galleryBtnElement = document.createElement('div');
-        galleryBtnElement.classList.add(this.settings.galleryBtnElementClass);
-        galleryBtnElement.addEventListener('click', (event) => this.arrowClick(event));
-        galleryWrapperElement.appendChild(galleryBtnElement);
     },
 
     createLeftBtn (galleryBtnElement) {
