@@ -120,9 +120,7 @@ const game = {
 
     render() {
         this.sellElements.forEach(cell => cell.style.backgroundColor = this.settings.emptyCellColor);
-        const playerCell = document
-            .querySelector(`tr:nth-child(${this.player.y+1})`)
-            .querySelector(`td:nth-child(${this.player.x+1})`);
+        const playerCell = document.querySelector(`tr:nth-child(${this.player.y+1})`).querySelector(`td:nth-child(${this.player.x+1})`);
 
         playerCell.style.backgroundColor = this.settings.playerCellColor;
     },
