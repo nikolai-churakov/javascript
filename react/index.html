@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-<!--<div id="root"></div>-->
+<div id="root"></div>
 <!--<div class="car">-->
 <!--    <h3>Ford Focus</h3>-->
 <!--    <p>Year: <strong>2017</strong></p>-->
@@ -32,17 +32,17 @@
 
 <script type="text/babel">
 
-        let car = () => {
+        let Car = (props) => {
             return (
                 <div className="car">
-                <h3>Mazda 3</h3>
-                <p>Year: <strong>2010</strong></p>
+                <h3>{props.name}</h3>
+                <p>Year: <strong>{props.year}</strong></p>
             </div>
             )
         }
 
         ReactDOM.render(
-            <car />,
+            <Car name="Ford" year="2016"/>,
             document.querySelector('#root')
         )
     // function MyApp() {
